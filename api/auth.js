@@ -14,9 +14,7 @@ module.exports = async (req, res) => {
     const response = await axios({
       method: 'post',
       url: 'https://github.com/login/oauth/access_token',
-      data: {
-        client_id: CLIENT_ID, client_secret: CLIENT_SECRET, code: code
-      },
+      data: { client_id: CLIENT_ID, client_secret: CLIENT_SECRET, code: code },
       headers: { 'Accept': 'application/json' }
     });
 
@@ -26,31 +24,30 @@ module.exports = async (req, res) => {
     res.status(200).send(`
       <!DOCTYPE html>
       <html>
-        <head><title>Authorizing...</title></head>
         <body style="text-align:center;font-family:sans-serif;padding-top:100px;background:#f4f4f4;">
           <h2>Access Granted</h2>
-          <p>Finalizing synchronization...</p>
+          <p>Finalizing session...</p>
           <script>
             (function() {
               const token = "${access_token}";
-              const payload = { token: token, provider: 'github' };
-              const message = "authorization:github:success:" + JSON.stringify(payload);
+              const content = "authorization:github:success:" + JSON.stringify({token: token, provider: 'github'});
               
-              // THE ARCHITECT'S "HAMMER" STRATEGY
-              // 1. Try standard postMessage
               if (window.opener) {
-                window.opener.postMessage(message, "*");
+                // 1. Try to tell the background window it's successful
+                window.opener.postMessage(content, "*");
                 
-                // 2. Try to FORCE the opener to redirect to the authenticated URL
-                // This bypasses the need for the listener to "hear" the message
+                // 2. FORCED REDIRECT: Command the background window to the dashboard URL
+                // Decap CMS automatically detects 'access_token' in the URL hash
                 try {
                   window.opener.location.href = "https://samathaom.vercel.app/admin/#access_token=" + token;
-                  setTimeout(() => { window.close(); }, 500);
                 } catch (e) {
-                  // 3. Fallback: If opener is blocked, turn popup into the dashboard
-                  window.location.href = "https://samathaom.vercel.app/admin/#access_token=" + token;
+                  console.error("Redirection failed, fallback to manual.");
                 }
+                
+                // 3. Close this popup
+                setTimeout(() => { window.close(); }, 800);
               } else {
+                // Fallback: Redirect this window if it lost its parent
                 window.location.href = "https://samathaom.vercel.app/admin/#access_token=" + token;
               }
             })();
