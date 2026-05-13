@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    // 2. Exchange Code for Access Token
+    // 2. Exchange Code for Token
     const response = await axios({
       method: 'post',
       url: 'https://github.com/login/oauth/access_token',
@@ -27,36 +27,42 @@ module.exports = async (req, res) => {
     const { access_token } = response.data;
 
     if (!access_token) {
-      return res.status(400).send("No access token received from GitHub.");
+       return res.status(400).send("GitHub Error: No token received.");
     }
 
-    // 3. The Automated "Hammer" Redirect
-    // This sends the user back to the admin page with the token in the URL.
-    // Decap CMS will see this hash and automatically log in.
+    // 3. The Final Handshake
+    // This script forces the login by injecting the token into the URL hash.
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     res.status(200).send(`
       <!DOCTYPE html>
       <html>
         <head><title>Success</title></head>
-        <body style="text-align:center;font-family:sans-serif;padding-top:100px;">
-          <h2>Authentication Successful!</h2>
-          <p>Redirecting you to the dashboard...</p>
+        <body style="text-align:center;font-family:sans-serif;padding-top:100px;background:#f4f4f4;">
+          <h2>Authentication Successful</h2>
+          <p>Finalizing session... if you are not redirected, <a href="/admin/#access_token=${access_token}">click here</a>.</p>
           <script>
             (function() {
               const token = "${access_token}";
               const authUrl = "https://samathaom.vercel.app/admin/#access_token=" + token;
+              const payload = { token: token, provider: 'github' };
+              const message = "authorization:github:success:" + JSON.stringify(payload);
               
-              // Attempt to update the background tab first
+              // PRIMARY: Attempt standard postMessage to the background tab
               if (window.opener) {
+                window.opener.postMessage(message, "*");
+                
+                // SECONDARY: Force the background tab to refresh into the dashboard
+                // This bypasses the listener entirely.
                 try {
-                  window.opener.location.href = authUrl;
+                  window.opener.location.replace(authUrl);
                   setTimeout(() => { window.close(); }, 500);
                 } catch (e) {
-                  // If background tab is blocked, redirect this window instead
-                  window.location.href = authUrl;
+                  // TERTIARY: If background access is blocked, redirect this window
+                  window.location.replace(authUrl);
                 }
               } else {
-                window.location.href = authUrl;
+                // FALLBACK: If orphaned, redirect current window
+                window.location.replace(authUrl);
               }
             })();
           </script>
@@ -64,7 +70,6 @@ module.exports = async (req, res) => {
       </html>
     `);
   } catch (err) {
-    console.error(err);
-    res.status(500).send("Auth Failed: " + err.message);
+    res.status(500).send("Auth Failure: " + err.message);
   }
 };
