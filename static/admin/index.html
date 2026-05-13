@@ -1,12 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samatha Om</title>
+  <title>Sai CMS</title>
+  <!-- Load the CMS script -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
-  <!-- This script builds the interface dynamically -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // This is the "Ear" that listens for your Vercel Function
+    window.addEventListener("message", (event) => {
+      // Check if the message is the authorization success signal
+      if (event.data && event.data.includes("authorization:github:success")) {
+        console.log("Token received!");
+      }
+    }, false);
+  </script>
 </body>
 </html>
