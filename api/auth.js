@@ -15,47 +15,42 @@ module.exports = async (req, res) => {
       method: 'post',
       url: 'https://github.com/login/oauth/access_token',
       data: {
-        client_id: CLIENT_ID,
-        client_secret: CLIENT_SECRET,
-        code: code,
+        client_id: CLIENT_ID, client_secret: CLIENT_SECRET, code: code
       },
       headers: { 'Accept': 'application/json' }
     });
 
     const { access_token } = response.data;
-    const encodedToken = Buffer.from(access_token).toString('base64');
 
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     res.status(200).send(`
       <!DOCTYPE html>
       <html>
-        <body style="text-align:center;font-family:sans-serif;padding-top:50px;background:#f4f4f4;">
-          <h2>Handshake Complete</h2>
-          // Replace the link in your res.send with this:
-          <p>If not redirected, <a href="javascript:if(window.opener){window.opener.location.href='/admin/#access_token=${access_token}';window.close();}else{window.location.href='/admin/#access_token=${access_token}';}">click here</a>.</p>          
-           <script>
+        <head><title>Authorizing...</title></head>
+        <body style="text-align:center;font-family:sans-serif;padding-top:100px;background:#f4f4f4;">
+          <h2>Access Granted</h2>
+          <p>Finalizing synchronization...</p>
+          <script>
             (function() {
-              const token = atob("${encodedToken}");
+              const token = "${access_token}";
               const payload = { token: token, provider: 'github' };
               const message = "authorization:github:success:" + JSON.stringify(payload);
               
-              // 1. Attempt to update the main window's localStorage directly if possible
-              try {
-                if (window.opener) {
-                   window.opener.localStorage.setItem("decap-cms-user", JSON.stringify({token: token, backendName: "github"}));
-                }
-              } catch(e) { console.log("Direct storage access blocked."); }
-
-              // 2. Shout to the opener
+              // THE ARCHITECT'S "HAMMER" STRATEGY
+              // 1. Try standard postMessage
               if (window.opener) {
                 window.opener.postMessage(message, "*");
-                // Force the main window to refresh to the dashboard
-                setTimeout(() => {
-                  try { window.opener.location.reload(); } catch(e) {}
-                  window.close();
-                }, 1500);
+                
+                // 2. Try to FORCE the opener to redirect to the authenticated URL
+                // This bypasses the need for the listener to "hear" the message
+                try {
+                  window.opener.location.href = "https://samathaom.vercel.app/admin/#access_token=" + token;
+                  setTimeout(() => { window.close(); }, 500);
+                } catch (e) {
+                  // 3. Fallback: If opener is blocked, turn popup into the dashboard
+                  window.location.href = "https://samathaom.vercel.app/admin/#access_token=" + token;
+                }
               } else {
-                // 3. FALLBACK: Turn this popup into the dashboard itself
                 window.location.href = "https://samathaom.vercel.app/admin/#access_token=" + token;
               }
             })();
@@ -64,6 +59,6 @@ module.exports = async (req, res) => {
       </html>
     `);
   } catch (err) {
-    res.status(500).send("Auth Error: " + err.message);
+    res.status(500).send("Auth Failed: " + err.message);
   }
 };
