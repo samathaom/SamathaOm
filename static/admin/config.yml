@@ -3,7 +3,7 @@ backend:
   repo: samathaom/SamathaOm  # Verified from your logs
   branch: main
   base_url: https://samathaom.vercel.app # Add this!
-  auth_endpoint: api/index # This points to /api/index.js
+  auth_endpoint: api/auth # This points to /api/index.js
 
 media_folder: "static/images"
 public_folder: "/images"
