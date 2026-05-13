@@ -4,7 +4,7 @@ module.exports = async (req, res) => {
   const { code } = req.query;
 
   if (!code) {
-    return res.status(400).json({ error: 'No code provided' });
+    return res.status(400).send("No code provided");
   }
 
   try {
@@ -17,44 +17,49 @@ module.exports = async (req, res) => {
         code: code,
       },
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
       }
     });
 
-    const content = response.data;
+    const { access_token } = response.data;
 
-    // Set the header so the browser doesn't just show raw text
-    res.setHeader('Content-Type', 'text/html');
+    // MANDATORY: Force Firefox to treat this as a webpage, not a JSON file
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
 
-    // This script sends the message and then tries to close itself
-    const responseScript = `
+    const message = JSON.stringify({
+      token: access_token,
+      provider: 'github'
+    });
+
+    // We use a clean HTML wrapper to ensure the script triggers immediately
+    res.status(200).send(`
       <!DOCTYPE html>
-      <html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <title>Authorizing...</title>
+      </head>
       <body>
-        <script>
-          (function() {
-            const message = "authorization:github:success:${JSON.stringify({
-              token: content.access_token,
-              provider: 'github'
-            })}";
-            
-            // Send the token to the CMS window
-            window.opener.postMessage(message, window.location.origin);
-            
-            // Give it a millisecond to send, then close the popup
-            setTimeout(() => { window.close(); }, 100);
-          })();
-        </script>
-        <p>Authorizing... you can close this window if it doesn't close automatically.</p>
+          <script>
+              (function() {
+                  const targetContent = "authorization:github:success:${message}";
+                  // Send the token back to the main CMS window
+                  window.opener.postMessage(targetContent, window.location.origin);
+                  
+                  // Brief delay to ensure message delivery, then close
+                  setTimeout(() => {
+                      window.close();
+                  }, 200);
+              })();
+          </script>
+          <div style="text-align: center; font-family: sans-serif; margin-top: 50px;">
+              <p>Authentication successful! This window will close automatically.</p>
+          </div>
       </body>
       </html>
-    `;
-
-    res.status(200).send(responseScript);
-
+    `);
   } catch (err) {
-    console.error(err);
-    res.status(500).send(`Auth Failed: ${err.message}`);
+    res.status(500).send("Auth Failed: " + err.message);
   }
 };
