@@ -31,8 +31,9 @@ module.exports = async (req, res) => {
       <html>
         <body style="text-align:center;font-family:sans-serif;padding-top:50px;background:#f4f4f4;">
           <h2>Handshake Complete</h2>
-          <p>Finalizing session... if you aren't redirected, <a href="/admin/#access_token=${access_token}">click here</a>.</p>
-          <script>
+          // Replace the link in your res.send with this:
+          <p>If not redirected, <a href="javascript:if(window.opener){window.opener.location.href='/admin/#access_token=${access_token}';window.close();}else{window.location.href='/admin/#access_token=${access_token}';}">click here</a>.</p>          
+           <script>
             (function() {
               const token = atob("${encodedToken}");
               const payload = { token: token, provider: 'github' };
