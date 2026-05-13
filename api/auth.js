@@ -30,29 +30,46 @@ module.exports = async (req, res) => {
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     
     // This script is the "Bridge" back to Decap CMS
-    res.status(200).send(`
-  <html>
-    <body>
-      <script>
-        const message = "authorization:github:success:${JSON.stringify({
-          token: access_token, 
-          provider: 'github'
-        })}";
-        
-        // The "Hammer": Send to opener AND any parent windows
-        if (window.opener) {
-          window.opener.postMessage(message, "*");
-          console.log("Sent to opener");
-          setTimeout(() => { window.close(); }, 200);
-        } else {
-          // Fallback: If opener is lost, try to redirect manually (rarely works but worth a shot)
-          window.location.href = "/admin/#/?ts=" + Date.now();
-        }
-      </script>
-      <p style="text-align:center;">Finalizing Login... if this stays open, refresh your Admin tab.</p>
-    </body>
-  </html>
-`);
+  res.status(200).send(`
+      <!DOCTYPE html>
+      <html>
+        <head><title>Authorizing...</title></head>
+        <body>
+          <script>
+            (function() {
+              const message = "authorization:github:success:${JSON.stringify({
+                token: access_token, 
+                provider: 'github'
+              })}";
+              
+              const sendToken = () => {
+                if (window.opener) {
+                  // Send message to ANY origin to ensure it hits the admin tab
+                  window.opener.postMessage(message, "*");
+                  console.log("Token sent.");
+                }
+              };
+
+              // Send immediately
+              sendToken();
+
+              // Send again every 500ms in case the admin tab was still loading
+              const interval = setInterval(sendToken, 500);
+
+              // Auto-close after 3 seconds if it hasn't already
+              setTimeout(() => {
+                clearInterval(interval);
+                window.close();
+              }, 3000);
+            })();
+          </script>
+          <div style="text-align:center; font-family:sans-serif; margin-top:50px;">
+            <p><strong>Authentication Successful!</strong></p>
+            <p>You can close this window now and check your Admin tab.</p>
+          </div>
+        </body>
+      </html>
+    `);
   } catch (err) {
     console.error(err);
     res.status(500).send("Handshake Error: " + err.message);
