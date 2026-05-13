@@ -1,0 +1,29 @@
+baseURL: "https://samathaom.github.io/"
+title: "Technical Leadership Portfolio"
+theme: "PaperMod"
+
+params:
+  env: production
+  author: "Samatha Om"
+  description: "Software Architect & Computer Science Educator"
+  
+  homeInfoParams:
+    Title: "Systemic Clarity"
+    Content: "10 years of engineering, product design, and academic leadership. Focused on minimalist, cost-effective solutions."
+
+  menu:
+    main:
+      - name: Portfolio
+        url: /projects/
+        weight: 10
+      - name: Articles
+        url: /posts/
+        weight: 20
+      - name: Archive
+        url: /archives/
+        weight: 30
+
+  # Emerging Tech Features
+  ShowCodeCopyButtons: true
+  ShowReadingTime: true
+  defaultTheme: auto # Auto dark/light mode
