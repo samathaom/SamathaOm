@@ -30,28 +30,35 @@ module.exports = async (req, res) => {
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     
     // This script is the "Bridge" back to Decap CMS
-    res.status(200).send(`
+     res.status(200).send(`
       <!DOCTYPE html>
       <html>
         <head><title>Authorizing...</title></head>
         <body>
           <script>
             (function() {
+              // The exact string Decap CMS listens for
               const message = "authorization:github:success:${JSON.stringify({
                 token: access_token, 
                 provider: 'github'
               })}";
               
-              // This is the critical line that sends the token to your /admin window
-              window.opener.postMessage(message, window.location.origin);
-              
-              // Brief delay to ensure the browser sends the message before closing
-              setTimeout(() => { window.close(); }, 500);
+              // We use "*" to bypass origin mismatches during the final handshake
+              if (window.opener) {
+                window.opener.postMessage(message, "*");
+                console.log("Token sent to opener.");
+                
+                // Give the main window a moment to process before closing
+                setTimeout(() => { window.close(); }, 1000);
+              } else {
+                document.body.innerHTML = "Configuration Error: No opener window found.";
+              }
             })();
           </script>
-          <p style="text-align:center; font-family:sans-serif; margin-top:20px;">
-            Authenticating... You may close this window if it doesn't close automatically.
-          </p>
+          <div style="text-align:center; font-family:sans-serif; margin-top:50px;">
+            <p>Authentication Successful!</p>
+            <p>Closing this window and redirecting you to the dashboard...</p>
+          </div>
         </body>
       </html>
     `);
