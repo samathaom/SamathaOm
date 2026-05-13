@@ -30,38 +30,29 @@ module.exports = async (req, res) => {
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     
     // This script is the "Bridge" back to Decap CMS
-     res.status(200).send(`
-      <!DOCTYPE html>
-      <html>
-        <head><title>Authorizing...</title></head>
-        <body>
-          <script>
-            (function() {
-              // The exact string Decap CMS listens for
-              const message = "authorization:github:success:${JSON.stringify({
-                token: access_token, 
-                provider: 'github'
-              })}";
-              
-              // We use "*" to bypass origin mismatches during the final handshake
-              if (window.opener) {
-                window.opener.postMessage(message, "*");
-                console.log("Token sent to opener.");
-                
-                // Give the main window a moment to process before closing
-                setTimeout(() => { window.close(); }, 1000);
-              } else {
-                document.body.innerHTML = "Configuration Error: No opener window found.";
-              }
-            })();
-          </script>
-          <div style="text-align:center; font-family:sans-serif; margin-top:50px;">
-            <p>Authentication Successful!</p>
-            <p>Closing this window and redirecting you to the dashboard...</p>
-          </div>
-        </body>
-      </html>
-    `);
+    res.status(200).send(`
+  <html>
+    <body>
+      <script>
+        const message = "authorization:github:success:${JSON.stringify({
+          token: access_token, 
+          provider: 'github'
+        })}";
+        
+        // The "Hammer": Send to opener AND any parent windows
+        if (window.opener) {
+          window.opener.postMessage(message, "*");
+          console.log("Sent to opener");
+          setTimeout(() => { window.close(); }, 200);
+        } else {
+          // Fallback: If opener is lost, try to redirect manually (rarely works but worth a shot)
+          window.location.href = "/admin/#/?ts=" + Date.now();
+        }
+      </script>
+      <p style="text-align:center;">Finalizing Login... if this stays open, refresh your Admin tab.</p>
+    </body>
+  </html>
+`);
   } catch (err) {
     console.error(err);
     res.status(500).send("Handshake Error: " + err.message);
