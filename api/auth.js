@@ -36,21 +36,31 @@ module.exports = async (req, res) => {
           <p>Finalizing session...</p>
           <script>
             (function() {
-              // Decode the token safely in the browser
               const token = atob("${encodedToken}");
               const payload = { token: token, provider: 'github' };
               const message = "authorization:github:success:" + JSON.stringify(payload);
               
-              // TRY 1: PostMessage to opener (Standard flow)
+              // 1. Force save the token to LocalStorage in the popup window
+              // Sometimes the opener can read from the same origin's localStorage
+              localStorage.setItem("decap-cms-user", JSON.stringify({token: token, backendName: "github"}));
+
               if (window.opener) {
+                // 2. Shout the message to the opener
                 window.opener.postMessage(message, "*");
-                setTimeout(() => { window.close(); }, 1000);
-              } 
-              
-              // TRY 2: URL Hash Fallback (If opener is blocked/closed)
-              setTimeout(() => {
+                
+                // 3. Force the opener to refresh to the dashboard
+                // This is the "Aggressive" fix to bypass the stuck login screen
+                try {
+                  window.opener.location.href = "https://samathaom.vercel.app/admin/#/";
+                } catch(e) {
+                  console.error("Could not redirect opener directly.");
+                }
+
+                setTimeout(() => { window.close(); }, 500);
+              } else {
+                // 4. Fallback if the popup was orphaned
                 window.location.href = "https://samathaom.vercel.app/admin/#access_token=" + token;
-              }, 2000);
+              }
             })();
           </script>
         </body>
