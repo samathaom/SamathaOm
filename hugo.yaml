@@ -1,4 +1,4 @@
-baseURL: "https://samathaom.vercel.app/"
+baseURL: "/"
 title: "Technical Leadership Portfolio"
 theme: "PaperMod"
 
@@ -27,3 +27,6 @@ params:
   ShowCodeCopyButtons: true
   ShowReadingTime: true
   defaultTheme: auto # Auto dark/light mode
+
+  canonifyURLs: true
+  relativeURLs: false
