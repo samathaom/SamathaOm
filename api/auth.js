@@ -1,18 +1,23 @@
 const axios = require('axios');
 
 module.exports = async (req, res) => {
+  // Use .trim() to prevent hidden space errors in Environment Variables
   const CLIENT_ID = process.env.OAUTH_CLIENT_ID?.trim();
   const CLIENT_SECRET = process.env.OAUTH_CLIENT_SECRET?.trim();
+  const REDIRECT_URI = "https://samathaom.vercel.app/api/auth";
+  
   const { code } = req.query;
 
-  // 1. If no code, start the flow
+  // STAGE 1: Start the OAuth Flow
+  // If no code is present, the user just clicked "Login"
   if (!code) {
-    const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=repo&redirect_uri=https://samathaom.vercel.app/api/auth`;
+    const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=repo&redirect_uri=${REDIRECT_URI}`;
     return res.redirect(githubAuthUrl);
   }
 
+  // STAGE 2: Complete the Handshake
+  // Exchange the temporary 'code' for a permanent 'access_token'
   try {
-    // 2. Exchange code for token
     const response = await axios({
       method: 'post',
       url: 'https://github.com/login/oauth/access_token',
@@ -21,57 +26,71 @@ module.exports = async (req, res) => {
         client_secret: CLIENT_SECRET,
         code: code,
       },
-      headers: { 'Accept': 'application/json' }
+      headers: { 
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
     });
 
     const { access_token } = response.data;
 
-    // 3. Force HTML response so the script actually runs
+    if (!access_token) {
+      throw new Error("GitHub did not return an access token.");
+    }
+
+    // STAGE 3: The "Bridge" Back to the Admin Dashboard
+    // We send a robust HTML/JS package that forces the message through
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     
-    // This script is the "Bridge" back to Decap CMS
-  res.status(200).send(`
+    const messagePayload = JSON.stringify({
+      token: access_token,
+      provider: 'github'
+    });
+
+    res.status(200).send(`
       <!DOCTYPE html>
       <html>
         <head><title>Authorizing...</title></head>
-        <body>
+        <body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+          <h2>Authentication Successful!</h2>
+          <p>Finalizing your session...</p>
+          
           <script>
             (function() {
-              const message = "authorization:github:success:${JSON.stringify({
-                token: access_token, 
-                provider: 'github'
-              })}";
-              
-              const sendToken = () => {
+              const message = "authorization:github:success:${messagePayload}";
+              const targetOrigin = "https://samathaom.vercel.app";
+
+              // 1. Primary Method: PostMessage to the Opener
+              const attemptSend = () => {
                 if (window.opener) {
-                  // Send message to ANY origin to ensure it hits the admin tab
                   window.opener.postMessage(message, "*");
-                  console.log("Token sent.");
+                  console.log("Token sent to opener.");
                 }
               };
 
-              // Send immediately
-              sendToken();
+              // Try immediately and repeat every 500ms
+              attemptSend();
+              const interval = setInterval(attemptSend, 500);
 
-              // Send again every 500ms in case the admin tab was still loading
-              const interval = setInterval(sendToken, 500);
-
-              // Auto-close after 3 seconds if it hasn't already
+              // 2. Secondary Method: Auto-close after 2 seconds
               setTimeout(() => {
                 clearInterval(interval);
-                window.close();
-              }, 3000);
+                if (window.opener) {
+                  window.close();
+                } else {
+                  // 3. Fallback: If the opener is lost, redirect the popup itself
+                  console.log("Opener lost. Redirecting...");
+                  window.location.href = "/admin/#access_token=" + "${access_token}";
+                }
+              }, 2500);
             })();
           </script>
-          <div style="text-align:center; font-family:sans-serif; margin-top:50px;">
-            <p><strong>Authentication Successful!</strong></p>
-            <p>You can close this window now and check your Admin tab.</p>
-          </div>
         </body>
       </html>
     `);
+
   } catch (err) {
-    console.error(err);
-    res.status(500).send("Handshake Error: " + err.message);
+    console.error("Auth Error:", err.message);
+    res.status(500).send("Handshake Failed: " + err.message);
   }
 };
