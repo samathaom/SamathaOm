@@ -1,11 +1,11 @@
 baseURL: "/"
-title: "Technical Leadership Portfolio"
+title: "Samatha Om"
 theme: "PaperMod"
 
 params:
   env: production
   author: "Samatha Om"
-  description: "Software Architect & Computer Science Educator"
+  description: "Technical Leader, Software Architect & Computer Science Educator"
   
   homeInfoParams:
     Title: "Systemic Clarity"
