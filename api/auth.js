@@ -23,42 +23,38 @@ module.exports = async (req, res) => {
     });
 
     const { access_token } = response.data;
-    
-    // Encode to Base64 to prevent SyntaxErrors from special characters
     const encodedToken = Buffer.from(access_token).toString('base64');
 
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     res.status(200).send(`
       <!DOCTYPE html>
       <html>
-        <body style="text-align:center;font-family:sans-serif;padding-top:50px;">
+        <body style="text-align:center;font-family:sans-serif;padding-top:50px;background:#f4f4f4;">
           <h2>Handshake Complete</h2>
-          <p>Finalizing session...</p>
+          <p>Finalizing session... if you aren't redirected, <a href="/admin/#access_token=${access_token}">click here</a>.</p>
           <script>
             (function() {
               const token = atob("${encodedToken}");
               const payload = { token: token, provider: 'github' };
               const message = "authorization:github:success:" + JSON.stringify(payload);
               
-              // 1. Force save the token to LocalStorage in the popup window
-              // Sometimes the opener can read from the same origin's localStorage
-              localStorage.setItem("decap-cms-user", JSON.stringify({token: token, backendName: "github"}));
-
-              if (window.opener) {
-                // 2. Shout the message to the opener
-                window.opener.postMessage(message, "*");
-                
-                // 3. Force the opener to refresh to the dashboard
-                // This is the "Aggressive" fix to bypass the stuck login screen
-                try {
-                  window.opener.location.href = "https://samathaom.vercel.app/admin/#/";
-                } catch(e) {
-                  console.error("Could not redirect opener directly.");
+              // 1. Attempt to update the main window's localStorage directly if possible
+              try {
+                if (window.opener) {
+                   window.opener.localStorage.setItem("decap-cms-user", JSON.stringify({token: token, backendName: "github"}));
                 }
+              } catch(e) { console.log("Direct storage access blocked."); }
 
-                setTimeout(() => { window.close(); }, 500);
+              // 2. Shout to the opener
+              if (window.opener) {
+                window.opener.postMessage(message, "*");
+                // Force the main window to refresh to the dashboard
+                setTimeout(() => {
+                  try { window.opener.location.reload(); } catch(e) {}
+                  window.close();
+                }, 1500);
               } else {
-                // 4. Fallback if the popup was orphaned
+                // 3. FALLBACK: Turn this popup into the dashboard itself
                 window.location.href = "https://samathaom.vercel.app/admin/#access_token=" + token;
               }
             })();
