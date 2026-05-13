@@ -1,27 +1,43 @@
 const axios = require('axios');
 
 module.exports = async (req, res) => {
-  const { code, state } = req.query;
+  // 1. Grab the temporary code GitHub sent to your browser
+  const { code } = req.query;
+
+  if (!code) {
+    return res.status(400).json({ error: 'No code provided' });
+  }
 
   try {
-    const response = await axios.post('https://github.com/login/oauth/access_token', {
-      client_id: process.env.OAUTH_CLIENT_ID,
-      client_secret: process.env.OAUTH_CLIENT_SECRET,
-      code,
-    }, {
-      headers: {
-        Accept: 'application/json',
+    // 2. Exchange that code for a real Access Token
+    const response = await axios({
+      method: 'post',
+      url: 'https://github.com/login/oauth/access_token',
+      data: {
+        client_id: process.env.OAUTH_CLIENT_ID,
+        client_secret: process.env.OAUTH_CLIENT_SECRET,
+        code: code,
       },
+      headers: {
+        'Content-Type': 'application/json', // Critical!
+        'Accept': 'application/json'        // Tells GitHub to return JSON, not a 404 string
+      }
     });
 
-    const { access_token, error } = response.data;
+    const content = response.data;
 
-    if (error) {
-      res.status(400).send(`<html><body><script>window.opener.postMessage("authorization:github:error:${error}", "*");</script></body></html>`);
+    // 3. Send the result back to Decap CMS in the format it expects
+    if (content.error) {
+      res.status(400).send(`<html><body><script>
+        window.opener.postMessage("authorization:github:error:${content.error}", "*");
+      </script></body></html>`);
     } else {
-      res.status(200).send(`<html><body><script>window.opener.postMessage("authorization:github:success:{"token":"${access_token}","provider":"github"}", "*");</script></body></html>`);
+      res.status(200).send(`<html><body><script>
+        window.opener.postMessage("authorization:github:success:${JSON.stringify(content)}", "*");
+      </script></body></html>`);
     }
   } catch (err) {
-    res.status(500).send(err.message);
+    console.error('OAuth Error:', err.response?.data || err.message);
+    res.status(500).send(`Auth Failed: ${err.message}`);
   }
 };
