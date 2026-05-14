@@ -7,6 +7,6 @@ date: 2026-05-14T17:49:00.000+05:30
 
 ![](/images/untitled.jpg)
 
-1.   ```
-    summary: "Version: {{version}} - {{title}}"
+1. ```
+   summary: "Version: {{version}} - {{title}}"
    ```
