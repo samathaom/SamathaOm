@@ -1,0 +1,23 @@
+<section class="contact-container">
+  <h1>{{ .Title }}</h1>
+  
+  <!-- This pulls the 'intro_text' from your markdown -->
+  <div class="intro">{{ .Params.intro_text | markdownify }}</div>
+
+  <!-- Formspree Action uses the ID from your markdown -->
+  <form action="https://formspree.io/f/{{ .Params.formspree_id }}" method="POST">
+    <label>Name</label>
+    <input type="text" name="name" required>
+
+    <label>Email ID</label>
+    <input type="email" name="email" required>
+
+    <label>Subject</label>
+    <input type="text" name="subject" required>
+
+    <label>Description</label>
+    <textarea name="description" required></textarea>
+    <input type="text" name="_gotcha" style="display:none" />
+    <button type="submit">Submit</button>
+  </form>
+</section>

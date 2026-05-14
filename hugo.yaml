@@ -1,6 +1,11 @@
 baseURL: "/"
+languageCode: "en-us"
 title: "Samatha Om"
-theme: "PaperMod"
+theme: "PaperMod" # Replace with your actual theme folder name
+
+# Ensure Hugo looks for content in these specific directories
+contentDir: "content"
+publishDir: "public"
 
 params:
   env: production
@@ -11,19 +16,33 @@ params:
     Title: "System Architect, Technical Leader and Educator"
     Content: "10 years of engineering, product design, and academic leadership. Focused on minimalist, cost-effective solutions."
 
-  menu:
-    main:
-      - name: Portfolio
-        url: /projects/
-        weight: 10
-      - name: Articles
-        url: /posts/
-        weight: 20
-      - name: Archive
-        url: /archives/
-        weight: 30
+# 10-minute SEO & Navigation Setup
+menu:
+  main:
+    - name: "Articles"
+      url: "/articles"
+      weight: 1
+    - name: "Projects"
+      url: "/projects"
+      weight: 2
+    - name: "About"
+      url: "/about"
+      weight: 3
+    - name: "Contact"
+      url: "/contact"
+      weight: 4
 
-  # Emerging Tech Features
+# Taxonomies for better organization without extra cost
+taxonomies:
+  tag: "tags"
+  category: "categories"
+
+params:
+  # Homepage logic: Limit the "Latest Writings" section to 5
+  recentPostsCount: 5
+
+
+# Emerging Tech Features
   ShowCodeCopyButtons: true
   ShowReadingTime: true
   defaultTheme: auto # Auto dark/light mode

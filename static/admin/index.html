@@ -39,6 +39,27 @@
             load_config_file: true
           }
         });
+
+        // Add this inside your script.onload after window.CMS.init
+          CMS.registerPreviewStyle("https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css");
+
+          // This creates a "Real-Time" bridge for your Markdown
+          var PostPreview = createClass({
+            render: function() {
+              var entry = this.props.entry;
+              var image = entry.getIn(['data', 'thumbnail']); // or your image field name
+              var bg = this.props.getAsset(image);
+
+              return h('div', {className: "content"},
+                h('h1', {}, entry.getIn(['data', 'title'])),
+                h('img', {src: bg ? bg.toString() : ''}),
+                h('div', {}, this.props.widgetFor('body'))
+              );
+            }
+          });
+
+          CMS.registerPreviewTemplate("blog", PostPreview);
+
         document.getElementById('status-msg').style.display = 'none';
       };
     } else {
