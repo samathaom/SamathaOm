@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    // 2. Exchange Code for Token
+    // 2. Exchange Code for Access Token
     const response = await axios({
       method: 'post',
       url: 'https://github.com/login/oauth/access_token',
@@ -30,8 +30,7 @@ module.exports = async (req, res) => {
        return res.status(400).send("GitHub Error: No token received.");
     }
 
-    // 3. The Final Handshake
-    // This script forces the login by injecting the token into the URL hash.
+    // 3. The "Ironclad" Client-Side Script
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     res.status(200).send(`
       <!DOCTYPE html>
@@ -39,7 +38,7 @@ module.exports = async (req, res) => {
         <head><title>Success</title></head>
         <body style="text-align:center;font-family:sans-serif;padding-top:100px;background:#f4f4f4;">
           <h2>Authentication Successful</h2>
-          <p>Finalizing session... if you are not redirected, <a href="/admin/#access_token=${access_token}">click here</a>.</p>
+          <p>Redirecting to your dashboard... if stuck, <a href="/admin/#access_token=${access_token}">click here</a>.</p>
           <script>
             (function() {
               const token = "${access_token}";
@@ -47,15 +46,14 @@ module.exports = async (req, res) => {
               const payload = { token: token, provider: 'github' };
               const message = "authorization:github:success:" + JSON.stringify(payload);
               
-              // PRIMARY: Attempt standard postMessage to the background tab
+              // PRIMARY: Attempt standard postMessage
               if (window.opener) {
                 window.opener.postMessage(message, "*");
                 
                 // SECONDARY: Force the background tab to refresh into the dashboard
-                // This bypasses the listener entirely.
                 try {
-                  window.opener.location.replace(authUrl);
-                  setTimeout(() => { window.close(); }, 500);
+                  window.opener.location.href = authUrl;
+                  setTimeout(() => { window.close(); }, 1000);
                 } catch (e) {
                   // TERTIARY: If background access is blocked, redirect this window
                   window.location.replace(authUrl);
