@@ -1,7 +1,32 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  <form action="https://formspree.io/f/{{ .Params.formspree_id }}" method="POST">
-    <!-- Your form fields here -->
-    <button type="submit">Send Message</button>
-  </form>
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+  
+  <div class="post-content">
+    {{ .Content }} <!-- This displays any text you write in contact.md -->
+    
+    <hr>
+
+    <!-- The Formspree Logic -->
+    <form action="https://formspree.io/f/{{ .Params.formspree_id }}" method="POST" style="margin-top: 20px;">
+      <div style="margin-bottom: 15px;">
+        <input type="text" name="name" placeholder="Full Name" required style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid var(--border);">
+      </div>
+      <div style="margin-bottom: 15px;">
+        <input type="email" name="email" placeholder="Email ID" required style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid var(--border);">
+      </div>
+      <div style="margin-bottom: 15px;">
+        <input type="text" name="subject" placeholder="Subject" required style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid var(--border);">
+      </div>
+      <div style="margin-bottom: 15px;">
+        <textarea name="description" placeholder="How can I help?" required style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid var(--border); min-height: 100px;"></textarea>
+      </div>
+      <button type="submit" style="background: var(--primary); color: var(--theme); padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
+        Submit Message
+      </button>
+    </form>
+  </div>
+</article>
 {{ end }}
