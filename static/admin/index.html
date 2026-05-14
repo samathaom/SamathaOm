@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager</title>
+  <title>Content Manager | Gateway</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f9f9f9; }
+    .gate-card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+    input { padding: 10px; width: 200px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 10px; }
+    button { padding: 10px 20px; background: #000; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+  </style>
 </head>
 <body>
-  <!-- Moving the script here ensures document.body is NOT null when it runs -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <div id="gateway" class="gate-card">
+    <h2>Secure Gateway</h2>
+    <input type="password" id="pass" placeholder="Enter Admin Password"> <br>
+    <button onclick="requestAccess()">Request CMS Access</button>
+    <p id="msg" style="font-size: 0.8rem; color: #666;"></p>
+  </div>
+
+  <script>
+    // AUTOMATION: If the URL already has a token (from the email), load the CMS immediately
+    if (window.location.hash.includes("access_token")) {
+      document.getElementById('gateway').style.display = 'none';
+      const script = document.createElement('script');
+      script.src = "https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js";
+      document.body.appendChild(script);
+    }
+
+    async function requestAccess() {
+      const password = document.getElementById('pass').value;
+      const msg = document.getElementById('msg');
+      msg.innerText = "Verifying...";
+
+      const res = await fetch('/api/magic', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password })
+      });
+
+      if (res.ok) {
+        msg.innerText = "Check your email for the magic link!";
+        msg.style.color = "green";
+      } else {
+        msg.innerText = "Invalid Password.";
+        msg.style.color = "red";
+      }
+    }
+  </script>
 </body>
 </html>
