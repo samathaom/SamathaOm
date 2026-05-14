@@ -31,19 +31,27 @@
     async function requestAccess() {
       const password = document.getElementById('pass').value;
       const msg = document.getElementById('msg');
-      msg.innerText = "Verifying...";
+      msg.innerText = "Processing...";
 
-      const res = await fetch('/api/magic', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password })
-      });
+      try {
+        const res = await fetch('/api/magic', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password })
+        });
 
-      if (res.ok) {
-        msg.innerText = "Check your email for the magic link!";
-        msg.style.color = "green";
-      } else {
-        msg.innerText = "Invalid Password.";
+        const data = await res.json(); // We now expect JSON back
+
+        if (res.ok) {
+          msg.innerText = "Check your email!";
+          msg.style.color = "green";
+        } else {
+          // This will now show you EXACTLY why it failed (e.g., "Missing Keys")
+          msg.innerText = data.error + (data.details ? ": " + data.details : "");
+          msg.style.color = "red";
+        }
+      } catch (e) {
+        msg.innerText = "Network Error or Server Crash.";
         msg.style.color = "red";
       }
     }
