@@ -29,29 +29,42 @@ module.exports = async (req, res) => {
       <!DOCTYPE html>
       <html>
         <body style="text-align:center;font-family:sans-serif;padding-top:100px;">
-          <h2>Session Synchronized</h2>
+          <h2>Step-by-Step Synchronization...</h2>
           <script>
-            (function() {
+            // We use an async IIFE to force sequential execution
+            (async function() {
               const token = "${access_token}";
+              const userKey = "decap-cms-user";
               const userObj = JSON.stringify({
                 token: token,
                 backendName: "github",
                 preserveExternalStorage: true
               });
 
-              // 1. Force write to localStorage of the main window
               if (window.opener) {
                 try {
-                  window.opener.localStorage.setItem("decap-cms-user", userObj);
-                  window.opener.localStorage.setItem("netlify-cms-user", userObj);
+                  console.log("Step 1: Purging old state...");
+                  window.opener.localStorage.removeItem(userKey);
+                  window.opener.localStorage.removeItem("netlify-cms-user");
                   
-                  // 2. Trigger the refresh on the main window
-                  window.opener.location.href = "https://samathaom.vercel.app/admin/#/";
+                  // Artificial delay to ensure the browser disk I/O completes
+                  await new Promise(r => setTimeout(r, 200));
+
+                  console.log("Step 2: Injecting fresh token...");
+                  window.opener.localStorage.setItem(userKey, userObj);
                   
-                  // 3. Close this popup
-                  setTimeout(() => { window.close(); }, 500);
+                  // Verify the write happened before moving forward
+                  const verification = window.opener.localStorage.getItem(userKey);
+                  if (verification) {
+                    console.log("Step 3: Verification success. Refreshing main window.");
+                    await new Promise(r => setTimeout(r, 300));
+                    window.opener.location.href = "https://samathaom.vercel.app/admin/#/";
+                    
+                    // Final safety delay before closing the source window
+                    setTimeout(() => { window.close(); }, 500);
+                  }
                 } catch (e) {
-                  // Fallback: If cross-origin prevents storage access, use the URL hash
+                  console.log("Storage blocked. Using URL Hash fallback.");
                   window.opener.location.href = "https://samathaom.vercel.app/admin/#access_token=" + token;
                 }
               } else {
