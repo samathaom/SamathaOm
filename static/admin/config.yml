@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: samathaom/samathaom # REPLACE WITH YOUR REPO
+  repo: samathaom/SamathaOm # REPLACE WITH YOUR REPO
   branch: main
   base_url: https://samathaom.vercel.app
   auth_endpoint: api/auth

@@ -1,59 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Content Manager | Gateway</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f9f9f9; }
-    .gate-card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
-    input { padding: 10px; width: 200px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 10px; }
-    button { padding: 10px 20px; background: #000; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
 </head>
 <body>
-
-  <div id="gateway" class="gate-card">
-    <h2>Secure Gateway</h2>
-    <input type="password" id="pass" placeholder="Enter Admin Password"> <br>
-    <button onclick="requestAccess()">Request CMS Access</button>
-    <p id="msg" style="font-size: 0.8rem; color: #666;"></p>
-  </div>
-
+  <!-- This script MUST run before the CMS script is loaded -->
   <script>
-    // AUTOMATION: If the URL already has a token (from the email), load the CMS immediately
-    if (window.location.hash.includes("access_token")) {
-      document.getElementById('gateway').style.display = 'none';
+    // 1. Tell Decap NOT to start automatically
+    window.CMS_MANUAL_INIT = true;
+
+    // 2. Extract token from URL (handles both #/ and #)
+    const hash = window.location.hash;
+    const token = hash.includes('access_token=') ? hash.split('access_token=')[1] : null;
+
+    if (token) {
+      // 3. Load the CMS core library dynamically
       const script = document.createElement('script');
       script.src = "https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js";
       document.body.appendChild(script);
-    }
 
-    async function requestAccess() {
-      const password = document.getElementById('pass').value;
-      const msg = document.getElementById('msg');
-      msg.innerText = "Processing...";
-
-      try {
-        const res = await fetch('/api/magic', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ password })
+      script.onload = () => {
+        // 4. Manually trigger the CMS with your token
+        window.CMS.init({
+          config: {
+            backend: {
+              name: "github",
+              repo: "samathaom/SamathaOm", // UPDATE THIS
+              branch: "main",
+              auth_type: "token", 
+              token: token
+            },
+            // Ensure this points to your actual config.yml location
+            load_config_file: true 
+          }
         });
-
-        const data = await res.json(); // We now expect JSON back
-
-        if (res.ok) {
-          msg.innerText = "Check your email!";
-          msg.style.color = "green";
-        } else {
-          // This will now show you EXACTLY why it failed (e.g., "Missing Keys")
-          msg.innerText = data.error + (data.details ? ": " + data.details : "");
-          msg.style.color = "red";
-        }
-      } catch (e) {
-        msg.innerText = "Network Error or Server Crash.";
-        msg.style.color = "red";
-      }
+      };
+    } else {
+      // If no token, show your password gate UI here
+      document.body.innerHTML = "<h1>Unauthorized. Please request a Magic Link.</h1>";
     }
   </script>
 </body>
