@@ -2,44 +2,48 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
 </head>
 <body>
-  <!-- This script MUST run before the CMS script is loaded -->
+  <div id="status-msg" style="text-align:center; margin-top:50px; font-family:sans-serif;">
+    Checking credentials...
+  </div>
+
   <script>
-    // 1. Tell Decap NOT to start automatically
+    // 1. Block the default Netlify/Decap login popup
     window.CMS_MANUAL_INIT = true;
 
-    // 2. Extract token from URL (handles both #/ and #)
-    const hash = window.location.hash;
-    const token = hash.includes('access_token=') ? hash.split('access_token=')[1] : null;
+    // 2. Extract and CLEAN the token
+    const fullHash = window.location.hash;
+    // This regex finds the token even if there are slashes or other junk
+    const tokenMatch = fullHash.match(/access_token=([^&/]+)/);
+    const token = tokenMatch ? tokenMatch[1] : null;
 
     if (token) {
-      // 3. Load the CMS core library dynamically
+      document.getElementById('status-msg').innerText = "Authenticating with GitHub...";
+      
       const script = document.createElement('script');
       script.src = "https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js";
       document.body.appendChild(script);
 
       script.onload = () => {
-        // 4. Manually trigger the CMS with your token
         window.CMS.init({
           config: {
             backend: {
               name: "github",
-              repo: "samathaom/SamathaOm", // UPDATE THIS
+              repo: "samathaom/SamathaOm", // <--- DOUBLE CHECK THIS
               branch: "main",
-              auth_type: "token", 
+              auth_type: "token",
               token: token
             },
-            // Ensure this points to your actual config.yml location
-            load_config_file: true 
+            load_config_file: true
           }
         });
+        document.getElementById('status-msg').style.display = 'none';
       };
     } else {
-      // If no token, show your password gate UI here
-      document.body.innerHTML = "<h1>Unauthorized. Please request a Magic Link.</h1>";
+      document.getElementById('status-msg').innerHTML = 
+        "<h2 style='color:red;'>Unauthorized</h2><p>No valid token found in URL. Please use the link sent to your email.</p>";
     }
   </script>
 </body>
