@@ -1,32 +1,53 @@
 const { Resend } = require('resend');
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 module.exports = async (req, res) => {
+  // 1. SET CORS HEADERS IMMEDIATELY
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+
+  // Handle Preflight Request
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
   const { password } = req.body;
-  
-  // 1. Efficient Security: Hardcode your internal password here
-  // Or better: use process.env.ADMIN_PASSWORD in Vercel
-  const INTERNAL_PASSWORD = "secret-code-123";
+  const INTERNAL_PASSWORD = process.env.ADMIN_PASSWORD; // Ensure this is set in Vercel
+  const RESEND_KEY = process.env.RESEND_API_KEY;
+  const GITHUB_PAT = process.env.GITHUB_PAT;
+
+  // 2. Validate Environment Variables
+  if (!RESEND_KEY || !GITHUB_PAT || !INTERNAL_PASSWORD) {
+    console.error("Missing Environment Variables");
+    return res.status(500).send("Server Configuration Error: Missing Keys.");
+  }
 
   if (password !== INTERNAL_PASSWORD) {
     return res.status(401).send("Unauthorized: Incorrect Password");
   }
 
   try {
-    const MASTER_TOKEN = process.env.GITHUB_PAT;
-    const magicLink = `https://samathaom.vercel.app/admin/#access_token=${MASTER_TOKEN}`;
+    const resend = new Resend(RESEND_KEY);
+    const magicLink = `https://samathaom.vercel.app/admin/#access_token=${GITHUB_PAT}`;
 
-    await resend.emails.send({
-      from: 'CMS Auth <onboarding@resend.dev>',
-      to: 'writetosamathaom@gmail.com', // Hardcode your destination email
+    // Note: Resend Free Tier requires sending to your OWN verified email
+    const { data, error } = await resend.emails.send({
+      from: 'onboarding@resend.dev', // Use this default for Resend Free Tier testing
+      to: 'writetosamathaom@gmail.com', // Must match your Resend dashboard email
       subject: '✨ Your CMS Magic Link',
-      html: `<h3>Access Requested</h3>
-             <p>Click the button below to bypass login and enter the dashboard:</p>
-             <a href="${magicLink}" style="display:inline-block; padding:12px 20px; background:#000; color:#fff; text-decoration:none; border-radius:5px;">Enter CMS</a>`
+      html: `<p>Access granted. Click below:</p><a href="${magicLink}">Enter Dashboard</a>`
     });
 
+    if (error) {
+      console.error(error);
+      return res.status(400).json(error);
+    }
+
     res.status(200).send("Magic link sent!");
-  } catch (error) {
-    res.status(500).send("Error sending email.");
+  } catch (err) {
+    console.error("Critical Error:", err);
+    res.status(500).send("System Error: " + err.message);
   }
 };
