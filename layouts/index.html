@@ -1,68 +1,64 @@
 {{ define "main" }}
 
-    <!-- 1. Render the Profile Header Mode (if enabled in your hugo.toml) -->
-    {{- if .Params.profileMode.enabled }}
-        {{- partial "index_profile.html" . }}
-    {{- else }}
-        {{- if .Content }}
-            <div class="post-content">
-                {{- if not .Params.disableAnchorsHeadings }}
-                    {{- .Content }}
-                {{- else }}
-                    {{- .Content | replaceRE "(<h[1-6] id=\"[^\"]+\">)(.*)(</h[1-6]>)" "${1}<a href=\"#${2}\">${2}</a>${3}" }}
-                {{- end }}
-            </div>
-        {{- end }}
-    {{- end }}
+    <!-- 1. The Exact PaperMod homeInfoParams Engine (Mirrored Perfectly) -->
+    {{- with site.Params.homeInfoParams }}
+    <article class="first-entry home-info">
+        <header class="entry-header">
+            <h1>{{ .Title | markdownify }}</h1>
+        </header>
+        <div class="entry-content md-content">
+            {{ $opts := dict "display" "block" }}
+            {{ .Content | $.Page.RenderString $opts }}
+        </div>
+        <footer class="entry-footer">
+            {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+        </footer>
+    </article>
+    {{- end -}}
 
-    <!-- 2. Minimalist Cal.com Component (Injected safely above Latest Writings) -->
-    <div class="calcom-container" style="text-align: center; margin: 2.5rem 0 1.5rem 0;">
+    <!-- 2. Minimalist Cal.com Button Component (Positioned perfectly below your bio content) -->
+    <div class="calcom-container" style="text-align: center; margin: 2rem 0 3.5rem 0;">
         <a class="calcom-btn" href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer">
             Book a 20-Min Consultation
         </a>
     </div>
 
-    <!-- 3. Embedded Lightweight Theme-Matching CSS -->
+    <!-- 3. Theme-Aware Performance UI Styles -->
     <style>
         .calcom-btn {
             display: inline-block;
-            background: var(--primary); /* Inherits theme's native text/accent color automatically */
-            color: var(--theme);     /* Inherits theme's native background color (dark or light canvas) */
-            padding: 0.6rem 1.4rem;
-            border-radius: var(--radius, 8px); /* Matches your site's standard card corner rounding radius */
+            background: var(--primary); /* Inherits theme's text/accent token dynamically */
+            color: var(--theme);     /* Inherits theme's canvas card background color */
+            padding: 0.65rem 1.6rem;
+            border-radius: var(--radius, 8px); /* Synchronizes with system corner rounding defaults */
             font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
             transition: transform 0.2s ease, opacity 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
         .calcom-btn:hover {
             transform: translateY(-2px);
-            opacity: 0.9;
+            opacity: 0.95;
         }
         .calcom-btn:active {
             transform: translateY(0);
         }
     </style>
 
-    <!-- 4. The Standard Articles/Writings Grid Loop -->
+    <!-- 4. Articles Grid Loop (Appears directly beneath your booking anchor) -->
     {{- $pages := union .RegularPages .Sections }}
     {{- if .IsHome }}
         {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
         {{- $pages = where $pages "Params.hiddenInHomeList" "!=" true }}
     {{- end }}
 
-    {{- $paginator := .Paginate $pages }}
-
-    {{- if and .IsHome site.Params.profileMode.enabled (gt $paginator.PageNumber 1) }}
-        {{- $paginator = .Paginate (where $pages "Params.hiddenInHomeList" "!=" true) }}
-    {{- end }}
-
-    {{- $term := .Data.Term }}
+    <!-- Limit the home page query loop strictly to your YAML recentPostsCount parameter -->
+    {{- $pagesCount := site.Params.recentPostsCount | default 5 }}
+    {{- $paginator := .Paginate $pages $pagesCount }}
 
     {{- range $index, $page := $paginator.Pages }}
-        {{- $class := "post-entry" }}
-        <article class="{{ $class }}">
+        <article class="post-entry">
             <header class="entry-header">
                 <h2>
                     {{- $page.Title }}
