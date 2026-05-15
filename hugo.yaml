@@ -1,5 +1,5 @@
 baseURL: "/"
-languageCode: "en-us"
+locale: "en-us"
 title: "Samatha Om"
 theme: "PaperMod" # Replace with your actual theme folder name
 
