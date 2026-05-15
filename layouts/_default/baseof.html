@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<!-- Using site.Locale and .Language.Direction to keep compilation warning-free -->
-<html lang="{{ site.Locale | default "en" }}" dir="{{ .Language.Direction | default "auto" }}">
+<!-- Using the defensive global syntax $.Site.Language.Lang to bypass compiler interface exceptions -->
+<html lang="{{ $.Site.Language.Lang | default "en" }}" dir="{{ $.Site.Language.Direction | default "auto" }}">
 
 <head>
     <!-- Explicitly hands execution to your custom head layout logic -->
     {{- partial "head.html" . }}
 </head>
 
-<body class="{{- if eq site.Params.defaultTheme "dark" }}dark{{- end }}">
+<body class="{{- if eq $.Site.Params.defaultTheme "dark" }}dark{{- end }}">
     
     {{- partial "header.html" . }}
 
