@@ -7,7 +7,7 @@
     {{- partial "head.html" . }}
 </head>
 
-<body class="{{- if bits.AsBool (site.Params.defaultTheme | default "light" | eq "dark") }}dark{{- end }}">
+<body class="{{- if eq site.Params.defaultTheme "dark" }}dark{{- end }}">
     
     {{- partial "header.html" . }}
 
