@@ -1,5 +1,29 @@
-<!-- 1. Tell Hugo to include everything PaperMod's base theme usually puts in the head -->
-{{- partial "head.html" . }}
+{{- if not .Params.searchHidden }}
+{{- if eq .Layout "search" }}
+<link rel="preload" href="{{ "index.json" | relLangURL }}" as="fetch" crossorigin="anonymous">
+{{- end }}
+{{- end }}
 
-<!-- 2. Append your cost-effective, high-performance Umami script -->
-<script async src="https://eu.umami.is/script.js" data-website-id="b91a2e9c-14de-4f90-aed2-e3d36a737d2d"></script>
+<!-- Meta Tags and Favicons -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{{- if hugo.IsProduction }}
+<meta name="robots" content="index, follow">
+{{- else }}
+<meta name="robots" content="noindex, nofollow">
+{{- end }}
+
+<title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
+
+<!-- Theme CSS Style Sheets -->
+{{- $styles := resources.Get "assets/css/main.css" | minify | fingerprint }}
+<link crossorigin="anonymous" href="{{ $styles.Permalink }}" rel="preload" as="style" integrity="{{ $styles.Data.Integrity }}">
+<link crossorigin="anonymous" href="{{ $styles.Permalink }}" rel="stylesheet" integrity="{{ $styles.Data.Integrity }}">
+
+<!-- Core Favicon Configuration -->
+<link rel="icon" href="{{ "favicon.ico" | absURL }}">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
+
+<!-- Cost-Effective Umami Analytics Integration (EU Region) -->
+<script async src="https://eu.umami.is/script.js" data-website-id="YOUR-PORTFOLIO-WEBSITE-ID"></script>
