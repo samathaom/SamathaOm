@@ -1,32 +1,5 @@
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-{{- if hugo.IsProduction }}
-<meta name="robots" content="index, follow">
-{{- else }}
-<meta name="robots" content="noindex, nofollow">
-{{- end }}
+<!-- 1. Execute the base theme's original head template logic completely -->
+{{- partial "head.html" . -}}
 
-<title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
-
-<!-- Defensive CSS Pipeline Loading -->
-{{- $cssPath := "css/main.css" }}
-{{- if not (resources.Get $cssPath) }}
-  {{- $cssPath = "assets/css/main.css" }}
-{{- end }}
-
-{{- with resources.Get $cssPath }}
-  {{- $secureStyles := . | minify | fingerprint }}
-  <link crossorigin="anonymous" href="{{ $secureStyles.Permalink }}" rel="preload" as="style" integrity="{{ $secureStyles.Data.Integrity }}">
-  <link crossorigin="anonymous" href="{{ $secureStyles.Permalink }}" rel="stylesheet" integrity="{{ $secureStyles.Data.Integrity }}">
-{{- else }}
-  <!-- Fallback to basic style injection if global path resolution fails -->
-  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
-{{- end }}
-
-<!-- Core Favicon Configurations -->
-<link rel="icon" href="{{ "favicon.ico" | absURL }}">
-<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
-
-<!-- Cost-Effective Umami Analytics Integration (EU Region) -->
+<!-- 2. Inject your lightweight, cost-effective Umami tracking tag right behind it -->
 <script async src="https://eu.umami.is/script.js" data-website-id="b91a2e9c-14de-4f90-aed2-e3d36a737d2d"></script>
