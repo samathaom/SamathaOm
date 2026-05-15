@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- Using site.Locale and .Language.Direction to keep compilation warning-free -->
+<html lang="{{ site.Locale | default "en" }}" dir="{{ .Language.Direction | default "auto" }}">
+
+<head>
+    <!-- Explicitly hands execution to your custom head layout logic -->
+    {{- partial "head.html" . }}
+</head>
+
+<body class="{{- if bits.AsBool (site.Params.defaultTheme | default "light" | eq "dark") }}dark{{- end }}">
+    
+    {{- partial "header.html" . }}
+
+    <main class="main">
+        {{- block "main" . }}{{ end }}
+    </main>
+
+    {{- partial "footer.html" . }}
+
+</body>
+</html>
