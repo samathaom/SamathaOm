@@ -28,7 +28,7 @@ params:
     buttons:
       - name: "Explore Resources"
         url: "/resources/"
-      - name: "Read Journal"
+      - name: "Read Articles"
         url: "/articles/"
 
   # --- 2. Fixed Social Icons Vector Placement ---
