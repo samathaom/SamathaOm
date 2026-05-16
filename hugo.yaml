@@ -24,11 +24,7 @@ params:
     imageWidth: 150
     imageHeight: 150
     imageTitle: "Profile Avatar"
-    buttons:
-      - name: "Explore Resources"
-        url: "/resources/"
-      - name: "Read Journal"
-        url: "/articles/"
+   
 
   # --- Native PaperMod Theme Settings ---
   ShowCodeCopyButtons: true
