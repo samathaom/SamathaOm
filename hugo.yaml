@@ -15,6 +15,33 @@ params:
   homeInfoParams:
     Title: "System Architect, Technical Leader and Educator"
     Content: "10 years of engineering, product design, and academic leadership. Focused on minimalist, cost-effective solutions."
+    Content: >
+      I focus on decomposing complex structural problems into minimalist, highly performant software solutions.
+      Over the past decade, my work has spanned software engineering, architectural systems design, and academic curriculum development.
+    AlignSocialIconsTo: "left"
+     # Inject Profile Mode Globally onto the Homepage Array
+  profileMode:
+    enabled: true
+    title: "Your Name"
+    subtitle: "Software Architect & Technology Educator"
+    imageUrl: "images/avatar.jpg" # Points to static/images/avatar.jpg
+    imageWidth: 150
+    imageHeight: 150
+    imageTitle: "Profile Avatar"
+    buttons:
+      - name: "Explore Resources"
+        url: "/resources/"
+      - name: "Read Journal"
+        url: "/posts/"
+    socialIcons:
+      - name: "github"
+        url: "https://github.com/yourusername"
+      - name: "linkedin"
+        url: "https://linkedin.com/in/yourusername"
+      - name: "twitter"
+        url: "https://twitter.com/yourusername"
+      - name: "email"
+        url: "mailto:your.email@domain.com"                  
 
 # 10-minute SEO & Navigation Setup
 menu:
@@ -47,3 +74,5 @@ taxonomies:
 
   canonifyURLs: true
   relativeURLs: false
+
+ 

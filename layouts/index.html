@@ -1,59 +1,33 @@
-{{ define "main" }}
+{{- define "main" -}}
 
-    <!-- 1. The Exact PaperMod homeInfoParams Engine (Mirrored Perfectly) -->
+    <!-- 1. Native PaperMod Profile & Home Info Module -->
     {{- with site.Params.homeInfoParams }}
     <article class="first-entry home-info">
         <header class="entry-header">
             <h1>{{ .Title | markdownify }}</h1>
         </header>
         <div class="entry-content md-content">
-            {{ $opts := dict "display" "block" }}
-            {{ .Content | $.Page.RenderString $opts }}
+            {{- $opts := dict "display" "block" }}
+            {{- .Content | $.Page.RenderString $opts }}
         </div>
         <footer class="entry-footer">
-            {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+            {{- partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
         </footer>
     </article>
     {{- end -}}
 
-    <!-- 2. Minimalist Cal.com Button Component (Positioned perfectly below your bio content) -->
-    <div class="calcom-container" style="text-align: center; margin: 2rem 0 3.5rem 0;">
-        <a class="calcom-btn" href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer">
-            Book a call
-        </a>
+    <!-- 2. Integrated Action Button (Using pure theme button logic) -->
+    <div class="post-content">
+        <p><a class="btn" href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a></p>
     </div>
 
-    <!-- 3. Theme-Aware Performance UI Styles -->
-    <style>
-        .calcom-btn {
-            display: inline-block;
-            background: var(--primary); /* Inherits theme's text/accent token dynamically */
-            color: var(--theme);     /* Inherits theme's canvas card background color */
-            padding: 0.65rem 1.6rem;
-            border-radius: var(--radius, 8px); /* Synchronizes with system corner rounding defaults */
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        .calcom-btn:hover {
-            transform: translateY(-2px);
-            opacity: 0.95;
-        }
-        .calcom-btn:active {
-            transform: translateY(0);
-        }
-    </style>
-
-    <!-- 4. Articles Grid Loop (Appears directly beneath your booking anchor) -->
+    <!-- 3. Dynamic Article Grid Loop -->
     {{- $pages := union .RegularPages .Sections }}
     {{- if .IsHome }}
         {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
         {{- $pages = where $pages "Params.hiddenInHomeList" "!=" true }}
     {{- end }}
 
-    <!-- Limit the home page query loop strictly to your YAML recentPostsCount parameter -->
     {{- $pagesCount := site.Params.recentPostsCount | default 5 }}
     {{- $paginator := .Paginate $pages $pagesCount }}
 
@@ -65,20 +39,24 @@
                     {{- if $page.Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
                 </h2>
             </header>
+            
             {{- if (ne (.Param "hideSummary") true) }}
             <div class="entry-content">
                 <p>{{ $page.Summary | plainify | htmlUnescape }}{{ if $page.Truncated }}...{{ end }}</p>
             </div>
             {{- end }}
+            
             {{- if not (.Param "hideMeta") }}
             <footer class="entry-footer">
                 {{- partial "post_meta.html" $page }}
             </footer>
             {{- end }}
+            
             <a class="entry-link" aria-label="post link to {{ $page.Title | plainify }}" href="{{ $page.Permalink }}"></a>
         </article>
     {{- end }}
 
+    <!-- 4. Native Pagination Controller -->
     {{- if gt $paginator.TotalPages 1 }}
     <footer class="page-footer">
         <nav class="pagination">
@@ -92,4 +70,4 @@
     </footer>
     {{- end }}
 
-{{ end }}
+{{- end -}}
