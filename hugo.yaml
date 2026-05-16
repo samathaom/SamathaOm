@@ -12,31 +12,38 @@ params:
   description: "Technical Leader, Software Architect & Computer Science Educator"
   recentPostsCount: 5
   
-  # CRITICAL: Tell Hugo which folder holds your journal/articles
   mainSections:
     - articles
     - posts
 
-  # --- Profile Mode Core Configuration ---
+  # --- 1. Fixed Profile Mode Matrix ---
   profileMode:
     enabled: true
     title: "Samatha Om"
     subtitle: "System Architect, Technical Leader & Educator"
-    imageUrl: "images/avatar.jpg" # Points to static/images/avatar.jpg
+    imageUrl: "images/avatar.jpg" 
     imageWidth: 150
     imageHeight: 150
     imageTitle: "Profile Avatar"
-    
-    # Theme-native button matrix loop
     buttons:
       - name: "Explore Resources"
         url: "/resources/"
       - name: "Read Journal"
         url: "/articles/"
-      - name: "Book a Call"
-        url: "https://cal.com/samathaom/20min"
 
-  # --- Native Theme Toggles ---
+  # --- 2. Fixed Social Icons Vector Placement ---
+  # Moving this here allows PaperMod's SVG asset injector to find and display them
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/yourusername"
+    - name: "linkedin"
+      url: "https://linkedin.com/in/yourusername"
+    - name: "twitter"
+      url: "https://twitter.com/yourusername"
+    - name: "email"
+      url: "mailto:your.email@domain.com"
+
+  # --- Native Theme Settings ---
   ShowCodeCopyButtons: true
   ShowReadingTime: true
   defaultTheme: auto 

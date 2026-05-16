@@ -1,11 +1,45 @@
 {{- define "main" -}}
 
-    <!-- 1. Native Profile Mode Component Injection -->
+    <!-- 1. Native Profile Header Components -->
     {{- if .IsHome }}
         {{- partial "index_profile.html" . }}
     {{- end }}
 
-    <!-- 2. Recent Articles Feed Matrix Layer -->
+    <!-- 2. Primary High-Contrast Call to Action Button -->
+    <div style="text-align: center; margin: 1.5rem 0 3rem 0;">
+        <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" 
+           style="display: inline-block; background: var(--primary); color: var(--theme); padding: 12px 28px; border-radius: var(--radius); font-weight: 700; font-size: 1.05rem; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s ease;">
+            Book a Call &rarr;
+        </a>
+    </div>
+
+    <!-- 3. Core Technical Stack Layout -->
+    <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 3rem auto; padding: 0 var(--gap);">
+        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 16px;">Core Technical Competencies</h3>
+        
+        <ul style="list-style-type: none; padding-left: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--gap);">
+            <li>
+                <strong>Languages</strong><br>
+                <span style="color: var(--secondary); font-size: 0.9rem;">JavaScript (ES6+), Python, SQL, HTML5/CSS3</span>
+            </li>
+            <li>
+                <strong>Frameworks & Environments</strong><br>
+                <span style="color: var(--secondary); font-size: 0.9rem;">React, Node.js, Next.js, FastAPI</span>
+            </li>
+            <li>
+                <strong>Cloud & Architecture</strong><br>
+                <span style="color: var(--secondary); font-size: 0.9rem;">AWS Lambda, Serverless, Jamstack, Edge Computing</span>
+            </li>
+            <li>
+                <strong>Design Systems</strong><br>
+                <span style="color: var(--secondary); font-size: 0.9rem;">UI/UX Design, Figma, Tailwind CSS</span>
+            </li>
+        </ul>
+    </div>
+
+    <hr style="border: 0; border-bottom: 1px solid var(--border); margin-bottom: var(--gap);">
+
+    <!-- 4. Recent Feed Articles Grid -->
     {{- $pages := union .RegularPages .Sections }}
     {{- if .IsHome }}
         {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
@@ -40,7 +74,7 @@
         </article>
     {{- end }}
 
-    <!-- 3. Core Pagination Controller -->
+    <!-- 5. Native Pagination Controller -->
     {{- if gt $paginator.TotalPages 1 }}
     <footer class="page-footer">
         <nav class="pagination">
