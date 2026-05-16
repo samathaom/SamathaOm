@@ -1,27 +1,20 @@
 {{- define "main" -}}
 
-    <!-- 1. Native PaperMod Profile & Home Info Module -->
-    {{- with site.Params.homeInfoParams }}
-    <article class="first-entry home-info">
-        <header class="entry-header">
-            <h1>{{ .Title | markdownify }}</h1>
-        </header>
-        <div class="entry-content md-content">
-            {{- $opts := dict "display" "block" }}
-            {{- .Content | $.Page.RenderString $opts }}
-        </div>
-        <footer class="entry-footer">
-            {{- partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
-        </footer>
-    </article>
-    {{- end -}}
+    <!-- 1. Native Profile Mode Structural Component Injection -->
+    {{- if .IsHome }}
+        {{- partial "index_profile.html" . }}
+    {{- end }}
 
-    <!-- 2. Integrated Action Button (Using pure theme button logic) -->
-    <div class="post-content">
-        <p><a class="btn" href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer">Book a Call &rarr;</a></p>
+    <!-- 2. The Correct Cal.com Call To Action Layout Vector -->
+    {{- if site.Params.profileMode.enabled }}
+    <div class="buttons" style="display: flex; justify-content: center; margin-bottom: var(--gap);">
+        <a class="other-button" href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer">
+            Book a Call &rarr;
+        </a>
     </div>
+    {{- end }}
 
-    <!-- 3. Dynamic Article Grid Loop -->
+    <!-- 3. Dynamic Articles Grid Loop Block -->
     {{- $pages := union .RegularPages .Sections }}
     {{- if .IsHome }}
         {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
@@ -56,7 +49,7 @@
         </article>
     {{- end }}
 
-    <!-- 4. Native Pagination Controller -->
+    <!-- 4. Native Pagination Navigation Block -->
     {{- if gt $paginator.TotalPages 1 }}
     <footer class="page-footer">
         <nav class="pagination">

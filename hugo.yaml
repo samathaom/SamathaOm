@@ -1,9 +1,8 @@
 baseURL: "/"
 locale: "en-us"
 title: "Samatha Om"
-theme: "PaperMod" # Replace with your actual theme folder name
+theme: "PaperMod"
 
-# Ensure Hugo looks for content in these specific directories
 contentDir: "content"
 publishDir: "public"
 
@@ -12,18 +11,16 @@ params:
   author: "Samatha Om"
   description: "Technical Leader, Software Architect & Computer Science Educator"
   recentPostsCount: 5
-  homeInfoParams:
-    Title: "System Architect, Technical Leader and Educator"
-    Content: "10 years of engineering, product design, and academic leadership. Focused on minimalist, cost-effective solutions.
-      I focus on decomposing complex structural problems into minimalist, highly performant software solutions.
-      Over the past decade, my work has spanned software engineering, architectural systems design, and academic curriculum development."
-    AlignSocialIconsTo: "left"
-     # Inject Profile Mode Globally onto the Homepage Array
+  mainSections:
+    - posts
+    - articles
+
+  # --- PRODUCTION FIX: Profile Mode Active, HomeInfo Dropped ---
   profileMode:
     enabled: true
-    title: "Your Name"
-    subtitle: "Software Architect & Technology Educator"
-    imageUrl: "images/avatar.jpg" # Points to static/images/avatar.jpg
+    title: "Samatha Om"
+    subtitle: "System Architect, Technical Leader & Educator"
+    imageUrl: "images/avatar.jpg" # Points directly to static/images/avatar.jpg
     imageWidth: 150
     imageHeight: 150
     imageTitle: "Profile Avatar"
@@ -31,47 +28,29 @@ params:
       - name: "Explore Resources"
         url: "/resources/"
       - name: "Read Journal"
-        url: "/posts/"
-    socialIcons:
-      - name: "github"
-        url: "https://github.com/yourusername"
-      - name: "linkedin"
-        url: "https://linkedin.com/in/yourusername"
-      - name: "twitter"
-        url: "https://twitter.com/yourusername"
-      - name: "email"
-        url: "mailto:your.email@domain.com"                  
+        url: "/articles/"
 
-# 10-minute SEO & Navigation Setup
+  # --- Native PaperMod Theme Settings ---
+  ShowCodeCopyButtons: true
+  ShowReadingTime: true
+  defaultTheme: auto 
+
+# Navigation Menu Configuration
 menu:
   main:
     - name: "Articles"
-      url: "/articles"
+      url: "/articles/"
       weight: 1
     - name: "Projects"
-      url: "/projects"
+      url: "/projects/"
       weight: 2
     - name: "Resources"
-      url: "/resources"
+      url: "/resources/"
       weight: 3  
-    - name: "About"
-      url: "/about"
-      weight: 4
     - name: "Contact"
-      url: "/contact"
-      weight: 5
+      url: "/contact/"
+      weight: 4
 
-# Taxonomies for better organization without extra cost
 taxonomies:
   tag: "tags"
   category: "categories"
-
-# Emerging Tech Features
-  ShowCodeCopyButtons: true
-  ShowReadingTime: true
-  defaultTheme: auto # Auto dark/light mode
-
-  canonifyURLs: true
-  relativeURLs: false
-
- 
