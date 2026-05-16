@@ -1,5 +1,5 @@
 ---
-title: "Resource Core"
+title: "Resources"
 date: 2026-05-16
 layout: "resources"
 summary: "Access premium templates and tracking utilities managed securely at the edge."
