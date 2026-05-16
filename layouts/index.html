@@ -1,45 +1,68 @@
 {{- define "main" -}}
 
-    <!-- 1. Native Profile Header Components -->
+    <!-- 1. Native PaperMod Profile Header Components -->
     {{- if .IsHome }}
         {{- partial "index_profile.html" . }}
     {{- end }}
 
-    <!-- 2. Primary High-Contrast Call to Action Button -->
-    <div style="text-align: center; margin: 1.5rem 0 3rem 0;">
+    <!-- 2. Detailed Professional Profile Narrative -->
+    <div class="post-content" style="max-width: var(--main-width); margin: 0 auto; padding: 0 var(--gap); line-height: 1.6;">
+        
+        <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Architecting Resilient Infrastructure</h3>
+        <p style="margin-bottom: 1.25rem;">
+            My engineering philosophy centers on decomposing complex, distributed system problems into minimalist, highly maintainable software systems. With a decade of experience spanning enterprise software engineering, serverless microservice pipelines, and product design, I specialize in eliminating architectural bloat. I design production environments that maximize performance parameters while maintaining a near-zero operational cost footprint by maximizing edge-computing runtimes, static site builds, and automated cloud orchestration workflows.
+        </p>
+
+        <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Curriculum Engineering & Academic Leadership</h3>
+        <p style="margin-bottom: 1.25rem;">
+            Beyond shipping production code lines, I actively engineer pedagogical systems to train the next generation of computer science professionals. My background as an educator and academic department head allows me to bridge the gap between high-level architectural abstractions and clear, foundational learning models. I focus on building robust curriculum frameworks that emphasize clean-code paradigms, algorithmic efficiency, and practical system design engineering.
+        </p>
+
+        <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Emerging Technologies & Cost Optimization</h3>
+        <p style="margin-bottom: 0px;">
+            I stay continuously aligned with the evolution of emerging technology ecosystems—specifically focusing on serverless computation models, event-driven webhooks, and modern Jamstack architectures. By leveraging open-source utilities and optimizing edge-delivery pipelines like Cloudflare Workers or AWS Lambda, I build secure, globally distributed digital assets that require zero traditional server maintenance overhead and can scale seamlessly to handle massive traffic bounds for free.
+        </p>
+    </div>
+
+    <!-- 3. Primary High-Contrast Call to Action Button (Perfectly Balanced Spacing) -->
+    <div style="text-align: center; margin: 2.5rem 0;">
         <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" 
            style="display: inline-block; background: var(--primary); color: var(--theme); padding: 12px 28px; border-radius: var(--radius); font-weight: 700; font-size: 1.05rem; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s ease;">
             Book a Call &rarr;
         </a>
     </div>
 
-    <!-- 3. Core Technical Stack Layout -->
+    <!-- 4. Core Technical Competencies (Strict 2x2 Matrix Grid) -->
     <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 3rem auto; padding: 0 var(--gap);">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 16px;">Core Technical Competencies</h3>
+        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Core Technical Competencies</h3>
         
-        <ul style="list-style-type: none; padding-left: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--gap);">
+        <ul style="list-style-type: none; padding-left: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem var(--gap);">
+            <!-- Row 1 / Column 1 -->
             <li>
-                <strong>Languages</strong><br>
-                <span style="color: var(--secondary); font-size: 0.9rem;">JavaScript (ES6+), Python, SQL, HTML5/CSS3</span>
+                <strong style="font-size: 1.05rem; color: var(--primary);">Languages & Core Scripts</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">JavaScript (ES6+), Python, SQL, HTML5/CSS3</span>
             </li>
+            <!-- Row 1 / Column 2 -->
             <li>
-                <strong>Frameworks & Environments</strong><br>
-                <span style="color: var(--secondary); font-size: 0.9rem;">React, Node.js, Next.js, FastAPI</span>
+                <strong style="font-size: 1.05rem; color: var(--primary);">Frameworks & Environments</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">React, Node.js, Next.js, FastAPI</span>
             </li>
+            <!-- Row 2 / Column 1 -->
             <li>
-                <strong>Cloud & Architecture</strong><br>
-                <span style="color: var(--secondary); font-size: 0.9rem;">AWS Lambda, Serverless, Jamstack, Edge Computing</span>
+                <strong style="font-size: 1.05rem; color: var(--primary);">Cloud & Edge Architecture</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">AWS Lambda, Serverless Pipelines, Jamstack, Edge Containers</span>
             </li>
+            <!-- Row 2 / Column 2 -->
             <li>
-                <strong>Design Systems</strong><br>
-                <span style="color: var(--secondary); font-size: 0.9rem;">UI/UX Design, Figma, Tailwind CSS</span>
+                <strong style="font-size: 1.05rem; color: var(--primary);">Product Systems & UI/UX</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">User Experience Design, Core Figma Wireframing, Tailwind CSS</span>
             </li>
         </ul>
     </div>
 
     <hr style="border: 0; border-bottom: 1px solid var(--border); margin-bottom: var(--gap);">
 
-    <!-- 4. Recent Feed Articles Grid -->
+    <!-- 5. Recent Feed Articles Grid Loop -->
     {{- $pages := union .RegularPages .Sections }}
     {{- if .IsHome }}
         {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
@@ -74,7 +97,7 @@
         </article>
     {{- end }}
 
-    <!-- 5. Native Pagination Controller -->
+    <!-- 6. Native Pagination Controller -->
     {{- if gt $paginator.TotalPages 1 }}
     <footer class="page-footer">
         <nav class="pagination">
