@@ -5,10 +5,12 @@
         {{- partial "index_profile.html" . }}
     {{- end }}
 
-    <!-- 2. Primary Call to Action Button (Opens safely in a new tab) -->
-    <div style="text-align: center; margin: 1.5rem 0 3rem 0;">
+    <!-- 2. Primary Call to Action Button (Negative margin handles the theme container collision perfectly) -->
+    <div style="text-align: center; margin: -1.5rem 0 3.5rem 0; position: relative; z-index: 10;">
         <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" 
-           style="display: inline-block; background: var(--primary); color: var(--theme); padding: 12px 28px; border-radius: var(--radius); font-weight: 700; font-size: 1.05rem; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s ease;">
+           style="display: inline-block; background: var(--primary); color: var(--theme); padding: 12px 28px; border-radius: var(--radius); font-weight: 700; font-size: 1.05rem; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s ease, opacity 0.2s ease;"
+           onmouseover="this.style.transform='translateY(-2px)'" 
+           onmouseout="this.style.transform='translateY(0)'">
             Book a Call &rarr;
         </a>
     </div>
@@ -27,7 +29,7 @@
         </p>
 
         <h3 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Emerging Technologies & Cost Optimization</h3>
-        <p style="margin-bottom: 2.5rem;">
+        <p style="margin-bottom: 3rem;">
             I stay continuously aligned with the evolution of emerging technology ecosystems—specifically focusing on serverless computation models, event-driven webhooks, and modern Jamstack architectures. By leveraging open-source utilities and optimizing edge-delivery pipelines like Cloudflare Workers or AWS Lambda, I build secure, globally distributed digital assets that require zero traditional server maintenance overhead and can scale seamlessly to handle massive traffic bounds for free.
         </p>
     </div>
@@ -56,32 +58,67 @@
         </ul>
     </div>
 
-    <!-- 5. Interactive Engineering Principles (Forced to Render Safely via safeHTML) -->
-    <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 4rem auto; padding: 0 var(--gap);">
+    <!-- 5. Interactive Engineering Principles (With Theme-Aware Hover Highlights) -->
+    <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 3.5rem auto; padding: 0 var(--gap);">
         <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Core Engineering Principles</h3>
         
-        {{ printf `
-        <details style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 14px; margin-bottom: 14px; cursor: pointer;">
-            <summary style="font-weight: 700; color: var(--primary); list-style: reset;">🌐 1. Zero-Cost Operational Mental Model</summary>
+        {{- $style := "border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 14px; margin-bottom: 14px; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease;" -}}
+        
+        <details style="{{ $style }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.05)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+            <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                <span>🌐 1. Zero-Cost Operational Mental Model</span>
+                <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal;">Click to expand</span>
+            </summary>
             <div style="margin-top: 10px; color: var(--secondary); font-size: 0.95rem; line-height: 1.5; padding-left: 4px;">
                 Every line of code should be optimized for edge runtime platforms or static asset distribution. By leveraging modern frameworks alongside platforms like Cloudflare Workers, AWS Lambda, or GitHub Actions, you can build secure pipelines that process millions of requests safely within free-tier limits.
             </div>
         </details>
 
-        <details style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 14px; margin-bottom: 14px; cursor: pointer;">
-            <summary style="font-weight: 700; color: var(--primary); list-style: reset;">⚡ 2. Radical Complexity Reduction</summary>
+        <details style="{{ $style }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.05)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+            <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                <span>⚡ 2. Radical Complexity Reduction</span>
+                <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal;">Click to expand</span>
+            </summary>
             <div style="margin-top: 10px; color: var(--secondary); font-size: 0.95rem; line-height: 1.5; padding-left: 4px;">
                 Complexity is an engineering liability. If a distributed software design or a system layout cannot be clearly explained to a junior engineer or a group of students within ten minutes, the system is over-engineered. True technical leadership focuses on aggressive structural simplification.
             </div>
         </details>
 
-        <details style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 14px; cursor: pointer;">
-            <summary style="font-weight: 700; color: var(--primary); list-style: reset;">🚀 3. Multi-Language Adaptability</summary>
+        <details style="{{ $style }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.05)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+            <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                <span>🚀 3. Multi-Language Adaptability</span>
+                <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal;">Click to expand</span>
+            </summary>
             <div style="margin-top: 10px; color: var(--secondary); font-size: 0.95rem; line-height: 1.5; padding-left: 4px;">
                 Choosing between JavaScript/TypeScript or Python isn't about preference; it's about context. Moving heavy computation to event-driven webhooks, building crisp serverless API endpoints using FastAPI, and optimizing frontend reactivity with Next.js is how you achieve high performance at zero overhead.
             </div>
         </details>
-        ` | safeHTML }}
     </div>
+
+    <!-- 6. Live Dynamic Status Vector Block -->
+    <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 4rem auto; padding: 0 var(--gap);">
+        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Operational Parameters</h3>
+        
+        <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 20px; display: flex; flex-wrap: wrap; gap: var(--gap); justify-content: space-between; align-items: center; background: rgba(var(--primary-rgb, 128,128,128), 0.02);">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <!-- Pulsing CSS-only status beacon -->
+                <span style="position: relative; display: flex; h: 10px; w: 10px; width: 10px; height: 10px;">
+                    <span style="animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite; position: absolute; inline-size: 100%; block-size: 100%; height: 100%; width: 100%; border-radius: 50%; background-color: #10b981; opacity: 0.75;"></span>
+                    <span style="position: relative; display: inline-flex; border-radius: 50%; height: 10px; width: 10px; background-color: #10b981;"></span>
+                </span>
+                <span style="font-size: 0.95rem; font-weight: 600; color: var(--primary);">Status: Available for Technical Consultation</span>
+            </div>
+            <div style="font-size: 0.9rem; color: var(--secondary);">
+                📍 <span>Base: Regional Tech Hub Node</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pure CSS Injection for the Status Pulse -->
+    <style>
+        @keyframes ping {
+            75%, 100% { transform: scale(2.5); opacity: 0; }
+        }
+    </style>
 
 {{- end -}}
