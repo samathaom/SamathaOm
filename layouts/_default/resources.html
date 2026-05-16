@@ -1,0 +1,55 @@
+{{- define "main" -}}
+
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description }}
+    </div>
+    {{- end }}
+</header>
+
+<!-- Injects any text you wrote inside content/resources.md -->
+<div class="post-content">
+    {{ .Content }}
+</div>
+
+<!-- Native PaperMod Content List Grid Container -->
+<div class="list-main">
+
+    <!-- Resource Module 1: The Google Sheet Template -->
+    <article class="post-entry">
+        <header class="entry-header">
+            <h2>System Overhead & Fee Calculator</h2>
+        </header>
+        
+        <div class="entry-content">
+            <p>Audit global transaction spreads, cross-border banking conversion leakage, and platform processing metrics interactively before dispatching production code lines.</p>
+        </div>
+        
+        <footer class="entry-footer">
+            <span>Environment: Google Sheets (USD Core)</span>
+        </footer>
+        
+        <!-- Native Clickable Overlay Link -->
+        <a class="entry-link" aria-label="Access System Overhead & Fee Calculator" href="https://yourbrand.gumroad.com/l/your-product-slug" target="_blank" rel="noopener noreferrer"></a>
+    </article>
+
+    <!-- Resource Module 2: Upcoming Asset -->
+    <article class="post-entry">
+        <header class="entry-header">
+            <h2>Edge Webhook Verification Engine</h2>
+        </header>
+        
+        <div class="entry-content">
+            <p>Lightweight signature routing handler optimized for AWS Lambda to parse cryptographic payment tokens with zero third-party framework overhead.</p>
+        </div>
+        
+        <footer class="entry-footer">
+            <span>Environment: Python / AWS Lambda (Coming Soon)</span>
+        </footer>
+    </article>
+
+</div>
+
+{{- end -}}
