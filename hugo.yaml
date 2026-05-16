@@ -11,27 +11,36 @@ params:
   author: "Samatha Om"
   description: "Technical Leader, Software Architect & Computer Science Educator"
   recentPostsCount: 5
+  
+  # CRITICAL: Tell Hugo which folder holds your journal/articles
   mainSections:
-    - posts
     - articles
+    - posts
 
-  # --- PRODUCTION FIX: Profile Mode Active, HomeInfo Dropped ---
+  # --- Profile Mode Core Configuration ---
   profileMode:
     enabled: true
     title: "Samatha Om"
     subtitle: "System Architect, Technical Leader & Educator"
-    imageUrl: "images/avatar.jpg" # Points directly to static/images/avatar.jpg
+    imageUrl: "images/avatar.jpg" # Points to static/images/avatar.jpg
     imageWidth: 150
     imageHeight: 150
     imageTitle: "Profile Avatar"
-   
+    
+    # Theme-native button matrix loop
+    buttons:
+      - name: "Explore Resources"
+        url: "/resources/"
+      - name: "Read Journal"
+        url: "/articles/"
+      - name: "Book a Call"
+        url: "https://cal.com/samathaom/20min"
 
-  # --- Native PaperMod Theme Settings ---
+  # --- Native Theme Toggles ---
   ShowCodeCopyButtons: true
   ShowReadingTime: true
   defaultTheme: auto 
 
-# Navigation Menu Configuration
 menu:
   main:
     - name: "Articles"

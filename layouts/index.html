@@ -1,20 +1,11 @@
 {{- define "main" -}}
 
-    <!-- 1. Native Profile Mode Structural Component Injection -->
+    <!-- 1. Native Profile Mode Component Injection -->
     {{- if .IsHome }}
         {{- partial "index_profile.html" . }}
     {{- end }}
 
-    <!-- 2. The Correct Cal.com Call To Action Layout Vector -->
-    {{- if site.Params.profileMode.enabled }}
-    <div class="buttons" style="display: flex; justify-content: center; margin-bottom: var(--gap);">
-        <a class="other-button" href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer">
-            Book a Call &rarr;
-        </a>
-    </div>
-    {{- end }}
-
-    <!-- 3. Dynamic Articles Grid Loop Block -->
+    <!-- 2. Recent Articles Feed Matrix Layer -->
     {{- $pages := union .RegularPages .Sections }}
     {{- if .IsHome }}
         {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
@@ -49,7 +40,7 @@
         </article>
     {{- end }}
 
-    <!-- 4. Native Pagination Navigation Block -->
+    <!-- 3. Core Pagination Controller -->
     {{- if gt $paginator.TotalPages 1 }}
     <footer class="page-footer">
         <nav class="pagination">
