@@ -4,7 +4,7 @@ date: 2026-05-17
 summary: "This is a simple and minimalist Buddhist precepts tracker tool that I have designed and created for daily use using Google sheets."
 tags: ["Habits", "Tracker", "Productivity", "Tool"]
 cover:
-  image: "images/Buddhist-precept-tracker.png" 
+  image: "images/Thumbnail.png" 
   alt: "Minimalist Habit Tracker"
 ---
 
