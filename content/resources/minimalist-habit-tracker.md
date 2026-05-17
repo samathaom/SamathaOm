@@ -10,7 +10,7 @@ cover:
 
 This is a simple and minimalist Buddhist precepts tracker tool that I have designed and created for daily use using Google sheets. No extra data. No too much clutter. It's on point. Does the job in simple and efficient way.
 
-![Minimalist Habit Tracker](/static/images/Buddhist-precept-tracker.png)
+![Habit Tracker Instructions](/static/images/Instructions.png)
 
 ### How to turn this into habit tracker?
 1. Change the Buddhist Precepts into Daily habits.
@@ -19,8 +19,6 @@ This is a simple and minimalist Buddhist precepts tracker tool that I have desig
 ### How to enable offline support?
 * Download google sheets app.
 * Click on breadcrumb(3 dots) icon associated with "Buddhist Precepts Tracker" file. Select "Make available offline".
-
-![Habit Tracker Instructions](/static/images/Buddhist-precept-tracker.png)
 
 Use the Habit Tracker : [Google sheet Habit Tracker](https://docs.google.com/spreadsheets/d/17mHYUzV2flt_JT_t09eBpPH67p1eKRTWD4ILv8yvMEE/edit?usp=sharing)
 
