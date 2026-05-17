@@ -1,16 +1,29 @@
 ---
 title: "Buddhist Precepts Tracker | Minimalist Habit Tracker"
 date: 2026-05-17
-summary: "A pure JavaScript text manipulation asset designed to streamline database payloads down to raw text strings before transmission."
-tags: ["JavaScript", "Node.js", "Performance"]
+summary: "This is a simple and minimalist Buddhist precepts tracker tool that I have designed and created for daily use using Google sheets."
+tags: ["Habits", "Tracker", "Productivity", "Tool"]
 cover:
-  image: "images/vector-tool.png" # Optional: Delete this line to instantly trigger the zero-cost fallback graphic
-  alt: "Data visualization block diagram"
+  image: "images/Buddhist-precept-tracker.png" 
+  alt: "Minimalist Habit Tracker"
 ---
 
-### System Overview
-This utility runs locally at compilation time to sanitize text strings and remove trailing spaces from application datasets.
+This is a simple and minimalist Buddhist precepts tracker tool that I have designed and created for daily use using Google sheets. No extra data. No too much clutter. It's on point. Does the job in simple and efficient way.
 
-#### Strategic Cost Reductions
-* **Zero Run Cost:** Written in lightweight native JS with 0 external dependencies.
-* **Network Savings:** Decreases structural payload file footprints by up to 25% for faster edge networking speeds.
+![Minimalist Habit Tracker](/static/images/Buddhist-precept-tracker.png)
+
+### How to turn this into habit tracker?
+1. Change the Buddhist Precepts into Daily habits.
+2. Replace the Buddhist precepts with habits you'd like to track daily. Keep it as simple and short as possible.
+
+### How to enable offline support?
+* Download google sheets app.
+* Click on breadcrumb(3 dots) icon associated with "Buddhist Precepts Tracker" file. Select "Make available offline".
+
+![Habit Tracker Instructions](/static/images/Buddhist-precept-tracker.png)
+
+Use the Habit Tracker : [Google sheet Habit Tracker](https://docs.google.com/spreadsheets/d/17mHYUzV2flt_JT_t09eBpPH67p1eKRTWD4ILv8yvMEE/edit?usp=sharing)
+
+More instructions are in Instructions sheet of the file.
+May this tool help you to progress positively.
+Lots of Metta!

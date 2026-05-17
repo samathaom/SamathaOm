@@ -4,7 +4,7 @@ date: 2026-05-16
 summary: "An event-driven serverless system processing telemetry packets globally with automated recovery workflows."
 tags: ["Python", "FastAPI", "Docker", "AWS"]
 cover:
-  image: "images/untitled1.jpg"
+  image: "images/Untitled1.jpg"
   alt: "System Architecture Design"
 ---
 
