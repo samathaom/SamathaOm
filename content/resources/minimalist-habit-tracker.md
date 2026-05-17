@@ -6,7 +6,10 @@ tags: ["Habits", "Tracker", "Productivity", "Tool"]
 cover:
   image: "images/Thumbnail.png" 
   alt: "Minimalist Habit Tracker"
+  hiddenInSingle: true
 ---
+
+![Habit Tracker Instructions](/images/Buddhist-precept-tracker.png)
 
 This is a simple and minimalist Buddhist precepts tracker tool that I have designed and created for daily use using Google sheets. No extra data. No too much clutter. It's on point. Does the job in simple and efficient way.
 
