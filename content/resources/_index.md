@@ -1,6 +1,6 @@
 ---
-title: "Curated Resources"
-description: "High-leverage engineering tools, minimal frameworks, and optimization assets curated for maximum efficiency."
+title: "Resources"
+description: "Minimalistic, simple and clean tools for your personal growth."
 date: 2026-05-17
 draft: false
 
