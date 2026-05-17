@@ -14,7 +14,7 @@ This is a simple and minimalist Buddhist precepts tracker tool that I have desig
 1. Change the Buddhist Precepts into Daily habits.
 2. Replace the Buddhist precepts with habits you'd like to track daily. Keep it as simple and short as possible.
 
-![Habit Tracker Instructions](/static/images/Instructions.png)
+![Habit Tracker Instructions](/images/Instructions.png)
 
 ### How to enable offline support?
 * Download google sheets app.
