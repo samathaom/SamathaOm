@@ -5,8 +5,15 @@
         {{- partial "index_profile.html" . }}
     {{- end }}
 
+    <!-- 💡 NEW INTEGRATION: Minimalist Hero Callout Box Box -->
+    <div class="hero-callout-container">
+        <p class="hero-statement">
+            "I help you build minimalist systems and processes across industries, to bring absolute clarity and calm to your life."
+        </p>
+    </div>
+
     <!-- 2. Primary Call to Action Button -->
-    <div style="text-align: center; margin: 0 auto; padding: 0 var(--gap); max-width: var(--main-width); position: relative; margin-top: -2rem; margin-bottom: 3.5rem; z-index: 20;">
+    <div style="text-align: center; margin: 0 auto; padding: 0 var(--gap); max-width: var(--main-width); position: relative; margin-top: -1.5rem; margin-bottom: 3.5rem; z-index: 20;">
         <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" 
            style="display: inline-block; background: var(--primary); color: var(--theme); padding: 12px 28px; border-radius: var(--radius); font-weight: 700; font-size: 1.05rem; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s ease, opacity 0.2s ease;"
            onmouseover="this.style.transform='translateY(-2px)'" 
@@ -17,7 +24,7 @@
 
     <!-- 7. Live Dynamic Status Vector Block -->
     <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 4rem auto; padding: 0 var(--gap);">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Operational Parameters</h3>
+        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Availability</h3>
         
         <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 20px; display: flex; flex-wrap: wrap; gap: var(--gap); justify-content: space-between; align-items: center; background: rgba(var(--primary-rgb, 128,128,128), 0.02);">
             <div style="display: flex; align-items: center; gap: 10px;">
@@ -27,7 +34,7 @@
                 </span>
                 <span style="font-size: 0.95rem; font-weight: 600; color: var(--primary);">Status: Available for Tech Consultation & Mentorship</span>
             </div>
-            <div style="font-size: 0.9rem; color: var(--secondary);">
+            <div style="font-size: 0.9rem; color: var(--primary);">
                 📍 <span>Mode of Work: Offline and Remote</span>
             </div>
         </div>
@@ -39,23 +46,19 @@
         
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); text-align: center;">
             <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 18px 15px; background: rgba(var(--primary-rgb, 128,128,128), 0.015);">
-             <!--    <div style="font-size: 0.8rem; text-transform: uppercase; tracking: 0.05em; color: var(--secondary); margin-bottom: 6px; font-weight: 600;">System Scope</div> -->
                 <div style="font-size: 1.35rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; justify-content: center; gap: 6px;">
                     <span>Clarity-Driven Minimalism</span>
                     <span class="pulse-green" style="width: 6px; height: 6px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
                 </div>
             </div>
             <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 18px 15px; background: rgba(var(--primary-rgb, 128,128,128), 0.015);">
-            <!--     <div style="font-size: 0.8rem; text-transform: uppercase; tracking: 0.05em; color: var(--secondary); margin-bottom: 6px; font-weight: 600;">Efficiency Index</div> -->
                 <div style="font-size: 1.35rem; font-weight: 700; color: #10b981;">Clean System Architecture</div>
             </div>
             <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 18px 15px; background: rgba(var(--primary-rgb, 128,128,128), 0.015);">
-             <!--    <div style="font-size: 0.8rem; text-transform: uppercase; tracking: 0.05em; color: var(--secondary); margin-bottom: 6px; font-weight: 600;">Leadership Track</div> -->
                 <div style="font-size: 1.35rem; font-weight: 700; color: var(--primary);">Cost/Resource Reduction</div>
             </div>
         </div>
     </div>
-
 
     <!-- 3. Detailed Professional Profile Narrative -->
     <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 3.5rem auto; padding: 0 var(--gap); line-height: 1.6;">
@@ -138,9 +141,29 @@
         </div>
     </div>
     
-
-    <!-- Pure CSS Layout Pulse Animations -->
+    <!-- Unified CSS Rendering Stylesheet Layout Block -->
     <style>
+        /* Hero Callout Component styles */
+        .hero-callout-container {
+            max-width: var(--main-width);
+            margin: 0 auto 3rem auto;
+            padding: 24px var(--gap);
+            background-color: var(--tertiary);
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius, 8px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+        .hero-statement {
+            font-family: monospace;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            color: var(--primary);
+            font-weight: 600;
+            margin: 0 !important;
+            text-align: left;
+        }
+
+        /* Native Component Keyframe Animations */
         @keyframes pulse-ping {
             75%, 100% { transform: scale(2.5); opacity: 0; }
         }
