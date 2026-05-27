@@ -24,8 +24,8 @@ content:
     fields:
       - name: title
         type: string
-      - name: description
-        type: text
+      - name: body
+        type: rich-text
       - name: date
         type: date    
       - name: tags
@@ -39,10 +39,8 @@ content:
     fields:
       - name: title
         type: string
-      - name: url
-        type: string
-      - name: description
-        type: text      
+      - name: body
+        type: rich-text     
       - name: tags
         type: list  
         items:
