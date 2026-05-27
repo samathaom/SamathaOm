@@ -11,3 +11,40 @@ content:
         type: string
       - name: body
         type: rich-text
+      - name: date
+        type: date
+      - name: tags
+        type: list
+        items:
+          type: string
+  - name: projects
+    label: Projects
+    type: collection
+    path: content/projects
+    fields:
+      - name: title
+        type: string
+      - name: description
+        type: text
+      - name: date
+        type: date    
+      - name: tags
+        type: list  
+        items:
+          type: string    
+  - name: resources
+    label: Resources
+    type: collection
+    path: content/resources
+    fields:
+      - name: title
+        type: string
+      - name: url
+        type: string
+      - name: description
+        type: text      
+      - name: tags
+        type: list  
+        items:
+          type: string  
+      
