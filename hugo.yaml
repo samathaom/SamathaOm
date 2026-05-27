@@ -36,10 +36,6 @@ params:
   socialIcons:
     - name: "github"
       url: "https://github.com/yourusername"
-    - name: "linkedin"
-      url: "https://linkedin.com/in/yourusername"
-    - name: "twitter"
-      url: "https://twitter.com/yourusername"
     - name: "email"
       url: "mailto:your.email@domain.com"
 
