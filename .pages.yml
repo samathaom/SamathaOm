@@ -14,8 +14,9 @@ content:
       - name: date
         type: date
       - name: tags
+        label: Tags
         type: list
-        items:
+        field:
           type: string
   - name: projects
     label: Projects
@@ -29,9 +30,10 @@ content:
       - name: date
         type: date    
       - name: tags
-        type: list  
-        items:
-          type: string    
+        label: Tags
+        type: list
+        field:
+          type: string
   - name: resources
     label: Resources
     type: collection
@@ -42,7 +44,7 @@ content:
       - name: body
         type: rich-text     
       - name: tags
-        type: list  
-        items:
-          type: string  
-      
+        label: Tags
+        type: list
+        field:
+          type: string
