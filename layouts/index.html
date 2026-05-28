@@ -1,83 +1,74 @@
 {{- define "main" -}}
 
-    <!-- 1. Native PaperMod Profile Header Components -->
     {{- if .IsHome }}
         {{- partial "index_profile.html" . }}
     {{- end }}
 
-   
-  <!-- 💡 NEW INTEGRATION: Modernized Hero Callout Box -->
-    <div class="hero-callout-container modern-hero-animate">
+   <div class="hero-callout-container modern-hero-animate">
         <p class="hero-statement">
             "I help you build <strong>minimalist systems and processes</strong> across industries, to bring absolute <strong>clarity and calm</strong> to your life."
         </p>
     </div>
 
-    <!-- 2. Primary Call to Action Button -->
-    <div style="text-align: center; margin: 0 auto; padding: 0 var(--gap); max-width: var(--main-width); position: relative; margin-top: -1.5rem; margin-bottom: 3.5rem; z-index: 20;">
+    <div style="text-align: center; margin: -1.5rem auto 3.5rem auto; padding: 0 var(--gap); max-width: var(--main-width); position: relative; z-index: 20;">
         <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" 
-           style="display: inline-block; background: var(--primary); color: var(--theme); padding: 12px 28px; border-radius: var(--radius); font-weight: 700; font-size: 1.05rem; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s ease, opacity 0.2s ease;"
+           style="display: inline-block; background: var(--primary); color: var(--theme); padding: 12px 28px; border-radius: var(--radius); font-weight: 700; font-size: 1.05rem; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s ease;"
            onmouseover="this.style.transform='translateY(-2px)'" 
            onmouseout="this.style.transform='translateY(0)'">
             Book a Call &rarr;
         </a>
     </div>
 
-    <!-- 7. Live Dynamic Status Vector Block -->
-    <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 4rem auto; padding: 0 var(--gap);">
+    <div class="post-content custom-layout-container">
         <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Availability</h3>
         
         <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 20px; display: flex; flex-wrap: wrap; gap: var(--gap); justify-content: space-between; align-items: center; background: rgba(var(--primary-rgb, 128,128,128), 0.02);">
             <div style="display: flex; align-items: center; gap: 10px;">
                 <span style="position: relative; display: flex; width: 10px; height: 10px;">
-                    <span style="animation: pulse-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite; position: absolute; inline-size: 100%; block-size: 100%; height: 100%; width: 100%; border-radius: 50%; background-color: #10b981; opacity: 0.75;"></span>
+                    <span style="animation: pulse-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite; position: absolute; height: 100%; width: 100%; border-radius: 50%; background-color: #10b981; opacity: 0.75;"></span>
                     <span style="position: relative; display: inline-flex; border-radius: 50%; height: 10px; width: 10px; background-color: #10b981;"></span>
                 </span>
                 <span style="font-size: 0.95rem; font-weight: 600; color: var(--primary);">Status: Available for Tech Consultation & Mentorship</span>
             </div>
-        <div style="font-size: 0.95rem; font-weight: 600; color: var(--primary); display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 1.1rem; line-height: 1; flex-shrink: 0;">👩‍💻</span>
-            <span>Mode of Work: Offline and Remote</span>
-        </div>
+            <div style="font-size: 0.95rem; font-weight: 600; color: var(--primary); display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.1rem; line-height: 1; flex-shrink: 0;">👩‍💻</span>
+                <span>Mode of Work: Offline and Remote</span>
+            </div>
         </div>
     </div>
 
-    <!-- 6. EXECUTIVE MATRICES: Leadership & Architectural Footprint -->
-    <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 4rem auto; padding: 0 var(--gap);">
+    <div class="post-content custom-layout-container" style="line-height: 1.6;">
+         <p style="margin-bottom: 1.25rem;">
+            I am a Technical Leader and Systems Architect with 10 years of experience building digital products from scratch.
+         <br/>  My technical foundation is rooted in writing clean, reliable code using front-end frameworks like React, Angular, and Polymer, combined with back-end languages like Python, Node.js, and deploying and scaling software in cloud systems like AWS and Google Cloud.
+          <br/> By blending core engineering with intuitive product design, I build systems that align perfectly with true user needs.
+          <br/> I do not just build systems; I study human behavior and conduct deep root problem analysis to strip away cognitive friction. The result is software that is modern, human-friendly, and completely straight to the point.
+          <br/> As an executive, I specialize in recruiting and leading international, cross-functional teams—uniting engineers, designers, and creators under a shared vision of absolute clarity, lean execution, and natural daily rhythm.
+        </p>
+    </div>
+
+    <div class="post-content custom-layout-container">
         <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Core Focus Areas</h3>
-        
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); text-align: center;">
-            <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 18px 15px; background: rgba(var(--primary-rgb, 128,128,128), 0.015);">
+        <div class="responsive-grid columns-3">
+            <div class="focus-card">
                 <div style="font-size: 1.35rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; justify-content: center; gap: 6px;">
                     <span>Clarity-Driven Minimalism</span>
                     <span class="pulse-green" style="width: 6px; height: 6px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
                 </div>
             </div>
-            <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 18px 15px; background: rgba(var(--primary-rgb, 128,128,128), 0.015);">
-                <div style="font-size: 1.35rem; font-weight: 700; color: #10b981;">Clean System Architecture</div>
+            <div class="focus-card">
+                <div style="font-size: 1.35rem; font-weight: 700; color: #10b981; text-align: center;">Clean System Architecture</div>
             </div>
-            <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 18px 15px; background: rgba(var(--primary-rgb, 128,128,128), 0.015);">
-                <div style="font-size: 1.35rem; font-weight: 700; color: var(--primary);">Cost/Resource Reduction</div>
+            <div class="focus-card">
+                <div style="font-size: 1.35rem; font-weight: 700; color: var(--primary); text-align: center;">Cost/Resource Reduction</div>
             </div>
         </div>
     </div>
-
-    <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 3.5rem auto; padding: 0 var(--gap); line-height: 1.6;">
-         <p style="margin-bottom: 1.25rem;">
-            I am a Technical Leader and Systems Architect with 10 years of experience building digital products from scratch.
-         <br/>   My technical foundation is rooted in writing clean, reliable code using front-end frameworks like React, Angular, and Polymer, combined with back-end languages like Python, Node.js, and deploying and scaling software in cloud systems like AWS and Google Cloud.
-          <br/>  By blending core engineering with intuitive product design, I build systems that align perfectly with true user needs.
-          <br/>  I do not just build systems; I study human behavior and conduct deep root problem analysis to strip away cognitive friction. The result is software that is modern, human-friendly, and completely straight to the point.
-          <br/>  As an executive, I specialize in recruiting and leading international, cross-functional teams—uniting engineers, designers, and creators under a shared vision of absolute clarity, lean execution, and natural daily rhythm.
-        </p>
-    </div>
   
 
-    <!-- 4. Core Technical Competencies (Strict 2x2 Matrix Grid) -->
-    <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 4rem auto; padding: 0 var(--gap);">
+    <div class="post-content custom-layout-container">
         <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Core Competencies</h3>
-        
-        <ul style="list-style-type: none; padding-left: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem var(--gap);">
+        <ul class="responsive-grid columns-2" style="list-style-type: none; padding-left: 0;">
             <li>
                 <strong style="font-size: 1.05rem; color: var(--primary);">User Research</strong><br>
                 <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Understanding the user pain points</span>
@@ -97,8 +88,7 @@
         </ul>
     </div>
 
-    <!-- 5. Core Engineering Principles (Breathable & Perfectly Spaced Dropdowns) -->
-    <div class="post-content" style="max-width: var(--main-width); margin: 0 auto 4rem auto; padding: 0 var(--gap);">
+    <div class="post-content custom-layout-container">
         <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Core Engineering Principles</h3>
         
         <div style="display: flex; flex-direction: column; gap: 1.5rem;">
@@ -136,82 +126,69 @@
         </div>
     </div>
     
-    <!-- Unified CSS Rendering Stylesheet Layout Block -->
     <style>
-    /* Modernized Hero Callout Box Container */
+    /* Global Section Container Utils */
+    .custom-layout-container {
+        max-width: var(--main-width);
+        margin: 0 auto 4rem auto;
+        padding: 0 var(--gap);
+    }
 
+    /* Core Responsive Grid System */
+    .responsive-grid {
+        display: grid;
+        gap: var(--gap);
+    }
+    .columns-2 { grid-template-columns: repeat(2, 1fr); gap: 2rem var(--gap); }
+    .columns-3 { grid-template-columns: repeat(3, 1fr); text-align: center; }
+
+    /* Structural Grid Card Elements */
+    .focus-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius, 8px);
+        padding: 18px 15px;
+        background: rgba(var(--primary-rgb, 128,128,128), 0.015);
+    }
+
+    /* Mobile Adaptations */
+    @media (max-width: 768px) {
+        .responsive-grid.columns-2, 
+        .responsive-grid.columns-3 {
+            grid-template-columns: 1fr; /* Force full-width elements to stack naturally */
+        }
+    }
+
+    /* Modernized Hero Callout Box Container */
     .hero-callout-container {
         max-width: var(--main-width);
         margin: 0 auto 3.5rem auto;
         padding: 32px 36px;
-        
-        /* High-contrast, ultra-light modern grey background */
         background: rgba(var(--primary-rgb, 128, 128, 128), 0.04); 
-        
-        /* Clean structural alignment with an elegant thin accent border */
         border: 1px solid rgba(var(--primary-rgb, 128, 128, 128), 0.15);
         border-left: 5px solid var(--primary); 
         border-radius: var(--radius, 12px);
-        
         position: relative;
         overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
-        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-                    box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-                    border-color 0.3s ease;
+        transition: transform 0.3s ease;
     }
+    .hero-callout-container:hover { transform: translateY(-4px); }
 
-    /* Modern Hover State: Dynamic Elevation Lift */
-    .hero-callout-container:hover {
-        transform: translateY(-4px);
-        border-color: rgba(var(--primary-rgb, 128, 128, 128), 0.3);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
-    }
-
-    /* Clean, Professional Typography */
     .hero-statement {
-        /* Stripped monotype. System sans-serif inherits theme styling fluidly */
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         font-size: 1.4rem;
         line-height: 1.6;
         color: var(--primary);
-        font-weight: 400;
         margin: 0 !important;
-        text-align: left;
-        letter-spacing: -0.01em;
     }
+    .hero-statement strong { font-weight: 700; }
 
-    /* Explicit Typographic Highlighting Target Rules */
-    .hero-statement strong {
-        font-weight: 700;
-        color: var(--primary);
-        position: relative;
-        display: inline-block;
-    }
-
-    /* Subtle Entry Animation Loop */
-    .modern-hero-animate {
-        animation: hero-fade-in-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
+    /* Animations */
+    .modern-hero-animate { animation: hero-fade-in-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
     @keyframes hero-fade-in-slide {
-        0% {
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        0% { opacity: 0; transform: translateY(15px); }
+        100% { opacity: 1; transform: translateY(0); }
     }
-
-    /* Native Component Keyframe Animations for Availability Status */
-    @keyframes pulse-ping {
-        75%, 100% { transform: scale(2.5); opacity: 0; }
-    }
-    .pulse-green {
-        animation: pulse-glow 2s infinite alternate;
-    }
+    @keyframes pulse-ping { 75%, 100% { transform: scale(2.5); opacity: 0; } }
+    .pulse-green { animation: pulse-glow 2s infinite alternate; }
     @keyframes pulse-glow {
         0% { transform: scale(0.9); opacity: 0.6; }
         100% { transform: scale(1.2); opacity: 1; }
