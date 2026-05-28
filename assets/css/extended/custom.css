@@ -1,7 +1,123 @@
 :root {
-    --font-family: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* Core Typography */
+    --font-family: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    /* ----------------------------------------------------
+       LIGHT THEME: Pastel Sage & Linen (Easy on the Eyes)
+       ---------------------------------------------------- */
+    /* A very soft, non-glare linen background gradient */
+    --theme: linear-gradient(to bottom, #F4F7F4, #F9FBF9); 
+    
+    /* Soft pastel white/cream card surfaces */
+    --entry: #FFFFFF; 
+    
+    /* High-readability desaturated slate for primary headers */
+    --primary: #2C3531; 
+    
+    /* Muted sage-gray for descriptions and metadata */
+    --secondary: #6E7A74; 
+    
+    /* Gentle 1px structural borders */
+    --tertiary: #E1E8E4; 
+    
+    /* Soft charcoal-teal for comfortable body text reading */
+    --content: #3B4742; 
+    
+    /* The 10% Accent Rule: Pastel Sage Green for links & primary actions */
+    --accent-green: #77A48D;
+    --code-bg: #EAF0EC;
+    --border: #E1E8E4;
 }
 
+.dark {
+    /* ----------------------------------------------------
+       DARK THEME: Deep Forest Mint & Slate (No-Glare Night)
+       ---------------------------------------------------- */
+    /* Deep, desaturated slate-green gradient to remove peripheral glare */
+    --theme: linear-gradient(to bottom, #121815, #0A0D0C); 
+    
+    /* Muted dark-slate surfaces for workflow containers */
+    --entry: #1A231F; 
+    
+    /* Soft, anti-glare pastel white for headers */
+    --primary: #E3EAE6; 
+    
+    /* Soft forest-gray for secondary elements */
+    --secondary: #87948E; 
+    
+    /* Muted dark boundaries */
+    --tertiary: #25302B; 
+    
+    /* Comfortable, desaturated text display */
+    --content: #CDD7D2; 
+    
+    /* Night Mode Action Accent: Calming Pastel Mint */
+    --accent-green: #8EC3A7;
+    --code-bg: #222C27;
+    --border: #25302B;
+}
+
+/* ----------------------------------------------------
+   PaperMod Theme Overrides & Global Alignments
+   ---------------------------------------------------- */
 body {
+    font-family: var(--font-family) !important;
+    background: var(--theme) !important;
+    color: var(--content) !important;
+}
+
+/* Enforcing the Pastel Green Accent System on Links & Interactive items */
+a {
+    color: var(--accent-green) !important;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.85;
+}
+
+/* Typography polish for clean process systems */
+.page-header h1, .post-title, .first-entry .entry-header h2 {
     font-family: var(--font-family);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--primary);
+}
+
+/* Restructuring posts/cards into clean, architectural flat panels */
+.entry-wrapper {
+    background: var(--entry) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01) !important;
+    border-radius: 12px;
+    padding: 24px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.entry-wrapper:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(119, 164, 141, 0.05) !important;
+}
+
+/* Code blocks & tags adjusted for low-contrast utility */
+code {
+    background: var(--code-bg) !important;
+    color: var(--primary) !important;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+/* Buttons and primary UI components styling */
+.button, button, input[type="submit"] {
+    background-color: var(--accent-green) !important;
+    color: var(--entry) !important; /* High contrast text against green accent */
+    font-family: var(--font-family);
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    transition: filter 0.2s ease;
+}
+
+.button:hover, button:hover {
+    filter: brightness(0.95);
 }
