@@ -121,3 +121,60 @@ code {
 .button:hover, button:hover {
     filter: brightness(0.95);
 }
+
+/* Container Layout */
+.cta-container {
+    text-align: center;
+    margin: -1.5rem auto 3.5rem auto;
+    padding: 0 var(--gap);
+    max-width: var(--main-width);
+    position: relative;
+    z-index: 20;
+}
+
+/* Base Call-to-Action Button */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-center;
+    padding: 14px 32px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    text-decoration: none !important;
+    border-radius: 9999px; /* Perfect circular grounding */
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    
+    /* LIGHT MODE: Pastel Sage Shift */
+    background: linear-gradient(135deg, #77A48D, #92BC9A) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 12px rgba(119, 164, 141, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Micro-interactions for Human Behavior */
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(119, 164, 141, 0.3), 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(119, 164, 141, 0.2);
+}
+
+/* DARK MODE OVERRIDES */
+.dark .cta-button {
+    /* DARK MODE: Deep Mint Luminescence */
+    background: linear-gradient(135deg, #8EC3A7, #72A88D) !important;
+    color: #121815 !important; /* High-contrast clean dark text for readability */
+    box-shadow: 0 4px 14px rgba(142, 195, 167, 0.15), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.dark .cta-button:hover {
+    box-shadow: 0 8px 24px rgba(142, 195, 167, 0.25), 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark .cta-button:active {
+    box-shadow: 0 4px 12px rgba(142, 195, 167, 0.15);
+}
