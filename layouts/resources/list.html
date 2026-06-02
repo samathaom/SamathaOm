@@ -22,8 +22,8 @@
 
             {{- range $pages }}
             <article class="project-card-node" 
-                     style="border: 1px solid var(--border); border-radius: var(--radius, 8px); overflow: hidden; background: rgba(var(--primary-rgb, 128,128,128), 0.015); transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column;"
-                     onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.06)'" 
+                     style="border: 1px solid var(--border); border-radius: var(--radius, 12px); overflow: hidden; background: var(--entry); transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column;"
+                     onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.02)'" 
                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
                 
                 <!-- Explicit 1:1 Aspect Ratio Square Image Wrapper Layer -->
@@ -58,7 +58,7 @@
                         {{- if .Params.tags }}
                         <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
                             {{- range .Params.tags }}
-                            <span style="font-size: 0.75rem; font-family: monospace; padding: 2px 8px; background: var(--border); border-radius: 4px; color: var(--secondary);">{{ . }}</span>
+                            <span style="font-size: 0.75rem; font-family: monospace; padding: 2px 8px; background: var(--code-bg); border-radius: 4px; color: var(--secondary);">{{ . }}</span>
                             {{- end }}
                         </div>
                         {{- end }}
