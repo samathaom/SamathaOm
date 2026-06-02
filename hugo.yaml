@@ -14,7 +14,8 @@ params:
   
   mainSections:
     - articles
-    - posts
+    - projects
+    - resources
 
   # --- 1. Fixed Profile Mode Matrix ---
   profileMode:
@@ -33,11 +34,11 @@ params:
 
   # --- 2. Fixed Social Icons Vector Placement ---
   # Moving this here allows PaperMod's SVG asset injector to find and display them
-  socialIcons:
-    - name: "github"
-      url: "https://github.com/yourusername"
-    - name: "email"
-      url: "mailto:your.email@domain.com"
+  # socialIcons:
+   # - name: "github"
+   #   url: "https://github.com/yourusername"
+   # - name: "email"
+   #   url: "mailto:your.email@domain.com"
 
   # --- Native Theme Settings ---
   ShowCodeCopyButtons: true
