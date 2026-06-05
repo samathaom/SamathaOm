@@ -20,13 +20,13 @@ While travelling from the train station to Prashanthi Nilayam ashram, I kept see
 
 Went to the information centre and asked for details. An elderly person helped a lot and shared his personal stories of how he joined seva and his people not believing in Swami despite being in close proximity, within a few mins. I was thrilled to hear this because it's a personal story. 
 
-Got two days accomodation. I went to the ashram in pants and t-shirt since that's my usual go-to attire. When I opened the bag, I saw Kurtis and pants with a shawl. How did I pack that, didn't have 1% percent idea about that because I usually don't wear that. But, I know I did that after receiving the message somehow. 
+Got two days accomodation. I went to the ashram in pants and t-shirt since that's my usual go-to attire. When I opened the bag, I saw **Kurtis and pants with a shawl**. How did I pack that, didn't have 1% percent idea about that because I usually don't wear that. But, I know I did that after receiving the message somehow. 
 
 Again, another elderly person helped to see places, temples, museums, showed me the way around canteens of ashram to eat, etc. 
 
-The next morning I got ready and went to places to see everything. I went to Shiva temple where a person standing there told me to do Puja for Lord Shiva. Since I was not a very external ritualistic person, I hesitated a bit. Then, I thought, don't know when I will come back again. So, let me do it. Bought a mala for Lord Shiva and did complete pooja for nearly 20 mins with arati, offering flowers, rice grains and slogan chanting. 
+The next morning I got ready and went to places to see everything. I went to Shiva temple where a person standing there told me to do **Puja for Lord Shiva**. Since I was not a very external ritualistic person, I hesitated a bit. Then, I thought, don't know when I will come back again. So, let me do it. Bought a mala for Lord Shiva and did complete pooja for nearly 20 mins with arati, offering flowers, rice grains and slogan chanting. 
 
-Then, I came to Sathyamma temple where Sai Baba did the pratistha. Then a person in the temple explained to me the history of the temple. This person goes to Devi idol and takes 3 bangles put on her and gives it to me. Couldn't really comprehend what was happening there. 
+Then, I came to Sathyamma temple where Sai Baba did the pratistha. Then a person in the temple explained to me the history of the temple. This person goes to Devi idol and takes **3 bangles** put on her and gives it to me. Couldn't really comprehend what was happening there. 
 
 Because a few days before, a navaratri festival happened. I visited a temple in Bangalore. But, just before me the Bangles got finished. So, I felt a bit disappointed with that. 
 
@@ -36,11 +36,11 @@ I felt an invisible presence guiding and even was physically there and directing
 
 A day went by. 
 
-The next day, I attended bhajans for some time. Went to the meditation tree to meditate. It was raining a bit so I went with a shawl and meditated for nearly 2.5 hours. Got completely drenched while meditating but didn't feel anything while on meditation. 
+The next day, I attended bhajans for some time. Went to the meditation tree to meditate. It was raining a bit so I went with a shawl and meditated for nearly 2.5 hours. Got drenched while meditating but didn't feel anything while on meditation. 
 
-When I finished watching the video show, I saw a man come up to me with a Sai Baba photo, vibuthi packet, do get married sometime. Went away immediately into nowhere. 
+When I finished watching the video show, I saw a man come up to me with a **Sai Baba photo, vibuthi packet**, do get married sometime. Went away immediately into nowhere. 
 
-When I went to the museum, a lady asked are you a teacher? I said, no. See how this prophecy manifested later. 
+When I went to the museum, a lady asked **are you a teacher**? I said, no. See how this prophecy manifested later. 
 
 With all these profound experiences, I went back to Bangalore. 
 
