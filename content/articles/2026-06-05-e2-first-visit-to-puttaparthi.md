@@ -8,7 +8,8 @@ tags:
 ---
 The day to visit Puttaparthi for the first time, finally came.
 
-> ***whoever visits here is coming with Baba's permission. Without Baba's permission, nobody can land here***
+> ***Whoever visits Puttaparthi is coming with Baba's permission.  
+> Without Baba's approval, nobody can land here.***
 
 Went to the Yeshwantpur station at Bangalore and boarded the required train. While on the train, I was deeply immersed in Naam jaap with mala in hand. I was very delighted to see the mountain and monkeys. Shared a couple of biscuits with monkey friends which they happily accepted. 
 
