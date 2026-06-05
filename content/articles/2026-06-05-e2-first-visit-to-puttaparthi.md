@@ -8,11 +8,13 @@ tags:
 ---
 The day to visit Puttaparthi for the first time, finally came.
 
+> ***whoever visits here is coming with Baba's permission. Without Baba's permission, nobody can land here***
+
 Went to the Yeshwantpur station at Bangalore and boarded the required train. While on the train, I was deeply immersed in Naam jaap with mala in hand. I was very delighted to see the mountain and monkeys. Shared a couple of biscuits with monkey friends which they happily accepted. 
 
 Before getting down, I asked someone how to get to the ashram. I thought he was a fellow traveller on the train. He was in his white clothes. He asked me questions about are you visiting here for the first time? I said, Yes. It just happened spontaneously. 
 
-He said, whoever visits here is coming with Baba's permission. Without Baba's permission, nobody can land here. He asked me to find an auto to get to the ashram by paying 50 rupees or can have a ride with him in his two wheeler. I chose auto and travelled. 
+He said, ***whoever visits here is coming with Baba's permission. Without Baba's permission, nobody can land here***. He asked me to find an auto to get to the ashram by paying 50 rupees or can have a ride with him in his two wheeler. I chose auto and travelled. 
 
 Just by landing at Sri Sathya Sai Prashanthi Nilayam railway station (SSPN), I deeply felt a sense of relief and calmness. Couldn't explain in words but felt it significantly. 
 
