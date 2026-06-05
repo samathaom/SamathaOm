@@ -3,6 +3,8 @@ title: E2- First Visit to Puttaparthi
 date: 2026-06-05
 tags:
   - Sri Sathya Sai Baba
+  - Puttaparthi
+  - Prashanthi Nilayam
 ---
 The day to visit Puttaparthi for the first time, finally came.
 
