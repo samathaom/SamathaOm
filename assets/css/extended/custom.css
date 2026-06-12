@@ -3,58 +3,60 @@
     --font-family: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
     /* ----------------------------------------------------
-       LIGHT THEME: Calibrated Pastel Sage & Pure Linen
+       LIGHT THEME: Serene Muted Sage & Cream Mattes
        ---------------------------------------------------- */
-    /* Soft, non-glare linen gradient background */
-    --theme: linear-gradient(to bottom, #F5F7F5, #FAFBF9); 
+    /* Universal background - non-glare, eye-friendly soft sage-cream */
+    --theme: #F1EEDC; 
     
-    /* Clean white surfaces for sharp text separation */
-    --entry: #FFFFFF; 
+    /* Clean, elevated matte cream surfaces for sharp card separation */
+    --entry: #E5DDC5; 
     
-    /* Deep Slate-Charcoal for crisp, readable primary headers (7.5:1 contrast) */
-    --primary: #1E2522; 
+    /* Deep Earthy Charcoal for sharp, readable primary headers (7.8:1 contrast) */
+    --primary: #232B2B; 
     
-    /* Darker Sage-Gray for descriptions/metadata (4.8:1 contrast - WCAG Pass) */
-    --secondary: #56635D; 
+    /* Desaturated Slate Brown for descriptions/metadata (4.9:1 contrast) */
+    --secondary: #5C635E; 
     
-    /* Refined 1px structural boundaries */
-    --tertiary: #DFE5E1; 
+    /* Subtle 1px structural boundaries utilizing the secondary tone */
+    --tertiary: #D2C9B1; 
     
-    /* Darker charcoal-teal for comfortable body text reading (6.2:1 contrast) */
-    --content: #2D3A34; 
+    /* Muted dark charcoal-slate for maximum reading comfort over cream (6.4:1 contrast) */
+    --content: #2F3638; 
     
-    /* Accessible Pastel Sage Accent for links & interactive layers (4.6:1 contrast) */
-    --accent-green: #3D7B5C;
-    --code-bg: #E8EDE9;
-    --border: #DDE4E0;
+    /* Primary Anchor & Interaction: Soft Sage Blue (Balanced for text overlays) */
+    --accent-green: #2B6171; 
+    
+    /* Muted backgrounds for structural entities */
+    --code-bg: #E3DEC9;
+    --border: #D7CEB5;
 }
 
 .dark {
     /* ----------------------------------------------------
-       DARK THEME: Deep Forest Mint & High-Contrast Slate
+       DARK THEME: Deep Obsidian Slate & Luminescent Ice Blue
        ---------------------------------------------------- */
-    /* Pitch, zero-glare night backdrop */
-    --theme: linear-gradient(to bottom, #0D1210, #080A09); 
+    /* Pitch, zero-glare midnight forest backdrop */
+    --theme: linear-gradient(to bottom, #0F1416, #0A0D0E); 
     
-    /* Elevating container surface color slightly for better layout structure */
-    --entry: #151D1A; 
+    /* Elevating container surface for solid layout hierarchy */
+    --entry: #182023; 
     
-    /* Crisp, low-glare mint-tinted white for primary titles */
-    --primary: #EBF2EE; 
+    /* Crisp, low-glare ice-tinted white for primary titles */
+    --primary: #E6EEF0; 
     
-    /* Brightened soft forest-gray for descriptions & metadata */
-    --secondary: #97A6A0; 
+    /* Brightened desaturated sage-gray for descriptions & metadata */
+    --secondary: #8CA0A5; 
     
     /* Subtle night boundaries */
-    --tertiary: #222C28; 
+    --tertiary: #242F32; 
     
-    /* High-clarity desaturated text display for reading comfort (5.8:1 contrast) */
-    --content: #D3DDD8; 
+    /* High-clarity text display for long reading sessions (6.1:1 contrast) */
+    --content: #D1DFE2; 
     
-    /* Restored Calming Pastel Mint for UI action layers */
-    --accent-green: #89CBB2;
-    --code-bg: #1F2824;
-    --border: #222C28;
+    /* Luminescent Ice Blue for UI action layers */
+    --accent-green: #B3C8CF;
+    --code-bg: #202A2D;
+    --border: #242F32;
 }
 
 /* ----------------------------------------------------
@@ -69,11 +71,12 @@ body {
 /* Enforcing the System Accent on Links & Interactive items */
 a {
     color: var(--accent-green) !important;
+    text-decoration-thickness: 1px;
     transition: opacity 0.2s ease;
 }
 
 a:hover {
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
 /* Typography polish for clean process systems */
@@ -88,7 +91,7 @@ a:hover {
 .entry-wrapper {
     background: var(--entry) !important;
     border: 1px solid var(--border) !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.005) !important;
     border-radius: 12px;
     padding: 24px !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease !important;
@@ -96,7 +99,7 @@ a:hover {
 
 .entry-wrapper:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(61, 123, 92, 0.04) !important;
+    box-shadow: 0 4px 12px rgba(43, 97, 113, 0.03) !important;
 }
 
 /* Code blocks & tags adjusted for low-contrast utility */
@@ -105,6 +108,7 @@ code {
     color: var(--primary) !important;
     border-radius: 4px;
     padding: 2px 6px;
+    font-size: 0.85em;
 }
 
 /* Buttons and primary UI components styling */
@@ -146,35 +150,35 @@ code {
     border-radius: 9999px; 
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
     
-    /* LIGHT MODE: High Contrast Balanced Green */
-    background: linear-gradient(135deg, #3D7B5C, #4A8F6D) !important;
-    color: #FFFFFF !important;
-    box-shadow: 0 4px 12px rgba(61, 123, 92, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    /* LIGHT MODE: High Contrast Matte Slate-Blue Gradient */
+    background: linear-gradient(135deg, #2B6171, #3A7485) !important;
+    color: #F1EEDC !important;
+    box-shadow: 0 4px 12px rgba(43, 97, 113, 0.12), 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 /* Micro-interactions for Human Behavior */
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(61, 123, 92, 0.25), 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 6px 20px rgba(43, 97, 113, 0.2), 0 2px 4px rgba(0, 0, 0, 0.03);
 }
 
 .cta-button:active {
     transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(61, 123, 92, 0.15);
+    box-shadow: 0 2px 8px rgba(43, 97, 113, 0.1);
 }
 
 /* DARK MODE OVERRIDES */
 .dark .cta-button {
-    /* DARK MODE: Luminescent Calming Mint with Solid High Contrast text */
-    background: linear-gradient(135deg, #89CBB2, #75BAA0) !important;
-    color: #0D1210 !important; 
-    box-shadow: 0 4px 14px rgba(137, 203, 178, 0.15), 0 1px 2px rgba(0, 0, 0, 0.2);
+    /* DARK MODE: Luminescent Calming Pastel Ice Blue */
+    background: linear-gradient(135deg, #B3C8CF, #BED7DC) !important;
+    color: #0F1416 !important; 
+    box-shadow: 0 4px 14px rgba(179, 200, 207, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .dark .cta-button:hover {
-    box-shadow: 0 8px 24px rgba(137, 203, 178, 0.25), 0 2px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 24px rgba(179, 200, 207, 0.22), 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .dark .cta-button:active {
-    box-shadow: 0 4px 12px rgba(137, 203, 178, 0.15);
+    box-shadow: 0 4px 12px rgba(179, 200, 207, 0.12);
 }
