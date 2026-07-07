@@ -23,6 +23,9 @@ content:
     fields:
       - name: title
         type: string
+      - name: thumbnail
+        label: Project Thumbnail
+        type: image
       - name: body
         type: rich-text
       - name: date
@@ -37,6 +40,9 @@ content:
     fields:
       - name: title
         type: string     
+      - name: thumbnail
+        label: Resource Thumbnail
+        type: image
       - name: body
         type: rich-text     
       - name: tags
@@ -52,4 +58,4 @@ content:
             type: image
           - name: description
             label: Description / Caption
-            type: string  
+            type: string
