@@ -1,20 +1,190 @@
-{{- $v := . -}}
-{{- $covertable := false -}}
+{{ define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- partial "post_meta.html" . -}}
+  </header>
 
-{{- if .Params.thumbnail -}}
-    {{- $covertable = .Params.thumbnail -}}
+  <div class="post-content">
+    {{ if .Params.slider_images }}
+    <div class="minimal-slider-container">
+      <div class="minimal-slider">
+        {{ range $index, $item := .Params.slider_images }}
+        <div class="slider-slide {{ if eq $index 0 }}active{{ end }}">
+          <div class="image-wrapper">
+            <img src="{{ $item.image | relURL }}" alt="Wallpaper Preview" loading="lazy" onload="autoScaleSlider()">
+          </div>
+          {{ if $item.description }}
+          <div class="slide-caption">
+            {{ $item.description | markdownify }}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
 
-{{- else if .Params.slider_images -}}
-    {{- range first 1 .Params.slider_images -}}
-        {{- $covertable = .image -}}
-    {{- end -}}
-{{- end -}}
+      {{ if gt (len .Params.slider_images) 1 }}
+      <button class="slider-arrow prev" aria-label="Previous Slide" onclick="moveSlide(-1)">&#8592;</button>
+      <button class="slider-arrow next" aria-label="Next Slide" onclick="moveSlide(1)">&#8594;</button>
+      {{ end }}
+    </div>
+    {{ end }}
 
-{{- if $covertable }}
-    {{- $alt := .Title }}
-    <figure class="entry-cover">
-        <img loading="lazy" src="{{ $covertable | relURL }}" alt="{{ $alt }}">
-    </figure>
-{{- else -}}
-    {{- partial "post_thumbnail.html" . -}}
-{{- end -}}
+    {{ .Content }}
+  </div>
+</article>
+
+<style>
+  .minimal-slider-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 3rem auto;
+    display: block;
+    clear: both;
+  }
+
+  .minimal-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    transition: height 0.2s ease-in-out;
+  }
+
+  /* Structural fix: Hide alternative slides completely unless they carry the active token */
+  .slider-slide {
+    display: none;
+    width: 100%;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .slider-slide.active {
+    display: block !important;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 100%;
+    background: var(--code-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .slide-caption {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--secondary);
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--theme);
+    border: 1px solid var(--border);
+    font-size: 1.2rem;
+    color: var(--primary);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: opacity 0.2s ease, background 0.2s;
+    user-select: none;
+    z-index: 10;
+  }
+
+  .slider-arrow:hover {
+    opacity: 1;
+    background: var(--code-bg);
+  }
+
+  .slider-arrow.prev { left: 15px; }
+  .slider-arrow.next { right: 15px; }
+
+  .post-content h3 { margin-top: 2.5rem !important; margin-bottom: 1rem !important; }
+  .post-content p { margin-bottom: 1.5rem !important; }
+  .post-content ul, .post-content ol { margin-top: 1rem !important; margin-bottom: 1.5rem !important; padding-left: 2rem !important; }
+  .post-content li { margin-bottom: 0.5rem !important; }
+
+  @keyframes fadeIn {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+  }
+</style>
+
+<script>
+  let currentSlideIndex = 0;
+
+  function autoScaleSlider() {
+    const wrappers = document.querySelectorAll('.image-wrapper');
+    const slider = document.querySelector('.minimal-slider');
+    let maxFoundHeight = 0;
+
+    // Temporarily verify layouts safely
+    const slides = document.querySelectorAll('.slider-slide');
+    slides.forEach(slide => {
+      const isHidden = (slide.style.display === 'none' || !slide.classList.contains('active'));
+      if (isHidden) slide.style.display = 'block'; // open frame metrics
+      
+      const img = slide.querySelector('.image-wrapper img');
+      if (img && img.naturalHeight > 0) {
+        const renderedHeight = img.getBoundingClientRect().height;
+        if (renderedHeight > maxFoundHeight) {
+          maxFoundHeight = renderedHeight;
+        }
+      }
+      if (isHidden) slide.style.display = ''; // revert display values cleanly
+    });
+
+    if (maxFoundHeight > 0) {
+      const calculatedPadding = 32; 
+      const finalContainerHeight = maxFoundHeight + calculatedPadding;
+      
+      wrappers.forEach(wrapper => {
+        wrapper.style.height = finalContainerHeight + 'px';
+      });
+      if (slider) {
+        slider.style.height = finalContainerHeight + 'px';
+      }
+    }
+  }
+
+  function moveSlide(direction) {
+    const slides = document.querySelectorAll('.slider-slide');
+    if (!slides.length) return;
+
+    slides[currentSlideIndex].classList.remove('active');
+    currentSlideIndex += direction;
+    
+    if (currentSlideIndex >= slides.length) {
+      currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+      currentSlideIndex = slides.length - 1;
+    }
+    
+    slides[currentSlideIndex].className = 'slider-slide active';
+  }
+
+  window.addEventListener('resize', autoScaleSlider);
+  window.addEventListener('DOMContentLoaded', autoScaleSlider);
+</script>
+{{ end }}

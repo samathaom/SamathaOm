@@ -1,20 +1,26 @@
-{{- $v := . -}}
+{{- $html := . }}
+{{- /* Extract proper PaperMod context matrix */ -}}
+{{- if KindOf . | eq "map" }}
+  {{- $html = .cxt }}
+{{- end }}
+
 {{- $covertable := false -}}
 
-{{- if .Params.thumbnail -}}
-    {{- $covertable = .Params.thumbnail -}}
+{{- with $html }}
+    {{- if .Params.thumbnail -}}
+        {{- $covertable = .Params.thumbnail -}}
 
-{{- else if .Params.slider_images -}}
-    {{- range first 1 .Params.slider_images -}}
-        {{- $covertable = .image -}}
+    {{- else if .Params.slider_images -}}
+        {{- range first 1 .Params.slider_images -}}
+            {{- $covertable = .image -}}
+        {{- end -}}
     {{- end -}}
-{{- end -}}
 
-{{- if $covertable }}
-    {{- $alt := .Title }}
-    <figure class="entry-cover">
-        <img loading="lazy" src="{{ $covertable | relURL }}" alt="{{ $alt }}">
-    </figure>
-{{- else -}}
-    {{- partial "post_thumbnail.html" . -}}
-{{- end -}}
+    {{- if $covertable }}
+        <figure class="entry-cover">
+            <img loading="lazy" src="{{ $covertable | relURL }}" alt="{{ .Title }}">
+        </figure>
+    {{- else -}}
+        {{- partial "post_thumbnail.html" . -}}
+    {{- end -}}
+{{- end }}
