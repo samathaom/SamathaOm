@@ -6,10 +6,10 @@
        LIGHT THEME: Crisp Alabaster & Nordic Ice Blue
        ---------------------------------------------------- */
     /* Universal background - non-glare, premium soft milk-white */
-    --theme: #FBF9F1; 
+    --theme: #fff; 
     
     /* Clean, elevated pristine alabaster surfaces for minimal layout structure */
-    --entry: #F8F6F4; 
+    --entry: #fcfcfc; 
     
     /* Deep Slate-Charcoal for high-clarity primary headers (8.2:1 contrast) */
     --primary: #1C2324; 
