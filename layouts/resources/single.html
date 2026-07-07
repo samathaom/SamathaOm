@@ -5,8 +5,6 @@
   </header>
 
   <div class="post-content">
-    {{ .Content }}
-
     {{ if .Params.gallery }}
     <!-- Minimalist Slider Container -->
     <div class="minimal-slider-container">
@@ -28,6 +26,7 @@
       <button class="slider-arrow next" aria-label="Next Slide" onclick="moveSlide(1)">&#8594;</button>
     </div>
     {{ end }}
+    {{ .Content }}
   </div>
 </article>
 
