@@ -9,4 +9,4 @@ gallery:
     description: "01. Serene Fog — A study on negative space and quiet mornings."
   - image: "/images/wallpaper2.jpg"
     description: "02. Concrete Forms — Clean lines and brutalist architectural shadow play."
----
+--
