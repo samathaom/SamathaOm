@@ -1,0 +1,65 @@
+baseURL: "/"
+locale: "en-us"
+title: "Samatha Om"
+theme: "PaperMod"
+
+contentDir: "content"
+publishDir: "public"
+
+params:
+  env: production
+  author: "Samatha Om"
+  description: "Technical Leader, Software Architect & Computer Science Educator"
+  recentPostsCount: 5
+  
+  mainSections:
+    - articles
+    - projects
+    - resources
+
+  # --- 1. Fixed Profile Mode Matrix ---
+  profileMode:
+    enabled: true
+    title: "Samatha Om"
+    subtitle: "System Architect, Technical Leader & Educator"
+    imageUrl: "images/avatar.jpg" 
+    imageWidth: 150
+    imageHeight: 150
+    imageTitle: "Profile Avatar"
+    buttons:
+      - name: "Explore Resources"
+        url: "/resources/"
+      - name: "Read Articles"
+        url: "/articles/"
+
+  # --- 2. Fixed Social Icons Vector Placement ---
+  # Moving this here allows PaperMod's SVG asset injector to find and display them
+  # socialIcons:
+   # - name: "github"
+   #   url: "https://github.com/yourusername"
+   # - name: "email"
+   #   url: "mailto:your.email@domain.com"
+
+  # --- Native Theme Settings ---
+  ShowCodeCopyButtons: true
+  ShowReadingTime: true
+  defaultTheme: auto 
+
+menu:
+  main:
+    - name: "Articles"
+      url: "/articles/"
+      weight: 1
+    - name: "Projects"
+      url: "/projects/"
+      weight: 2
+    - name: "Resources"
+      url: "/resources/"
+      weight: 3  
+    - name: "Contact"
+      url: "/contact/"
+      weight: 4
+
+taxonomies:
+  tag: "tags"
+  category: "categories"

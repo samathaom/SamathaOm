@@ -1,0 +1,100 @@
+{{- define "main" -}}
+
+    <!-- 1. Native Section Header Elements -->
+    {{- if .Title }}
+    <header class="page-header" style="max-width: var(--main-width); margin: 2rem auto 2rem auto; padding: 0 var(--gap);">
+        <h1 style="font-size: 2.25rem; font-weight: 900; margin-bottom: 8px;">{{ .Title }}</h1>
+        {{- if .Description }}
+        <p style="color: var(--secondary); font-size: 1.05rem;">{{ .Description }}</p>
+        {{- end }}
+    </header>
+    {{- end }}
+
+    <!-- 2. Rigid 2-Column Product Grid -->
+    <div style="max-width: var(--main-width); margin: 0 auto 5rem auto; padding: 0 var(--gap);">
+        <div class="architect-projects-grid">
+            
+            <!-- Loop through markdown data files in content/projects/ -->
+            {{- $pages := .Pages }}
+            {{- if .IsHome }}
+                {{- $pages = where site.RegularPages "Type" "projects" }}
+            {{- end }}
+
+            {{- range $pages }}
+            <article class="project-card-node" 
+                     style="border: 1px solid var(--border); border-radius: var(--radius, 12px); overflow: hidden; background: var(--entry); transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column;"
+                     onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.02)'" 
+                     onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                
+                <!-- Explicit 1:1 Aspect Ratio Square Image Wrapper Layer -->
+                <a href="{{ .Permalink }}" style="display: block; width: 100%; aspect-ratio: 1 / 1; position: relative; background: var(--code-bg); border-bottom: 1px solid var(--border); overflow: hidden;">
+                    
+                    {{- if .Params.cover.image }}
+                        <!-- Render Custom Image Thumbnail if declared -->
+                        <img src="{{ .Params.cover.image | absURL }}" 
+                             alt="{{ .Params.cover.alt | default .Title }}" 
+                             style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    {{- else }}
+                        <!-- AUTOMATIC FALLBACK: Zero-Resource inline abstract vector graphic -->
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(var(--primary-rgb, 128,128,128), 0.01);">
+                            <svg viewBox="0 0 100 100" style="width: 55%; height: 55%; opacity: 0.25;" fill="none" stroke="var(--primary)" stroke-width="1.2">
+                                <circle cx="50" cy="50" r="35" stroke-dasharray="4 2" />
+                                <polygon points="50,20 75,70 25,70" stroke-dasharray="1 1" />
+                                <line x1="50" y1="20" x2="50" y2="70" />
+                                <circle cx="50" cy="20" r="3" fill="var(--primary)" />
+                                <circle cx="75" cy="70" r="3" fill="var(--primary)" />
+                                <circle cx="25" cy="70" r="3" fill="var(--primary)" />
+                                <circle cx="50" cy="50" r="4" fill="var(--primary)" />
+                            </svg>
+                        </div>
+                    {{- end }}
+                    
+                </a>
+
+                <!-- Meta Content Area with breathable padding variables -->
+                <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <!-- Tech Tags Matrix -->
+                        {{- if .Params.tags }}
+                        <div style="display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap;">
+                            {{- range .Params.tags }}
+                            <span style="font-size: 0.75rem; font-family: monospace; padding: 2px 8px; background: var(--code-bg); border-radius: 4px; color: var(--secondary);">{{ . }}</span>
+                            {{- end }}
+                        </div>
+                        {{- end }}
+
+                        <h3 style="margin: 0 0 10px 0; font-size: 1.3rem; font-weight: 700;">
+                            <a href="{{ .Permalink }}" style="color: var(--primary); text-decoration: none;">{{ .Title }}</a>
+                        </h3>
+                        
+                        {{- if .Summary }}
+                        <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--secondary);">{{ .Summary | plainify | truncate 140 }}</p>
+                        {{- end }}
+                    </div>
+                </div>
+
+            </article>
+            {{- end }}
+
+        </div>
+    </div>
+
+    <!-- 3. Explicit 2-in-a-Row Structural Styling Rules -->
+    <style>
+        .architect-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Forces exactly 2 per row on desktop layout viewports */
+            gap: 2.5rem var(--gap);
+            width: 100%;
+        }
+        
+        /* Smooth fallback transition for mobile devices to keep UX highly readable */
+        @media (max-width: 768px) {
+            .architect-projects-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+        }
+    </style>
+
+{{- end -}}

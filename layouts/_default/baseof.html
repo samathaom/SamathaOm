@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- Using the defensive global syntax $.Site.Language.Lang to bypass compiler interface exceptions -->
+<html lang="{{ $.Site.Language.Lang | default "en" }}" dir="{{ $.Site.Language.Direction | default "auto" }}">
+
+<head>
+    <!-- Explicitly hands execution to your custom head layout logic -->
+    {{- partial "head.html" . }}
+    <script async src="https://eu.umami.is/script.js" data-website-id="b91a2e9c-14de-4f90-aed2-e3d36a737d2d"></script>
+</head>
+
+<body id="top" class="{{- if eq $.Site.Params.defaultTheme "dark" }}dark{{- end }}">
+    
+    {{- partial "header.html" . }}
+
+    <main class="main">
+        {{- block "main" . }}{{ end }}
+    </main>
+
+    {{- partial "footer.html" . }}
+
+</body>
+</html>

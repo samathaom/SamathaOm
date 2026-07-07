@@ -1,0 +1,226 @@
+{{- define "main" -}}
+
+    {{- if .IsHome }}
+        {{- partial "index_profile.html" . }}
+    {{- end }}
+
+   <div class="hero-callout-container modern-hero-animate">
+        <p class="hero-statement">
+            "I help you build <strong>minimalist systems and processes</strong> across industries, to bring absolute <strong>clarity and calm</strong> to your life."
+        </p>
+    </div>
+
+    <div class="post-content custom-layout-container">
+        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">About me</h3>
+        <div class="post-content custom-layout-container" style="line-height: 1.6;">
+            <p style="margin-bottom: 1.25rem;">
+                I am a Technical Leader and Systems Architect with 10 years of experience building digital products from scratch.
+            <br/>  My technical foundation is rooted in writing clean, reliable code using front-end frameworks like React, Angular, and Polymer, combined with back-end languages like Python, Node.js, and deploying and scaling software in cloud systems like AWS and Google Cloud.
+            <br/> By blending core engineering with intuitive product design, I build systems that align perfectly with true user needs.
+            <br/> I do not just build systems; I study human behavior and conduct deep root problem analysis to strip away cognitive friction. The result is software that is modern, human-friendly, and completely straight to the point.
+            <br/> As an executive, I specialize in recruiting and leading international, cross-functional teams—uniting engineers, designers, and creators under a shared vision of absolute clarity, lean execution, and natural daily rhythm.
+            </p>
+        </div>
+    </div>
+
+    <div class="cta-container">
+        <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" class="cta-button">
+            Book a Call &rarr;
+        </a>
+    </div>
+
+    <div class="post-content custom-layout-container">
+        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Core Focus Areas</h3>
+        <div class="responsive-grid columns-3">
+            <div class="focus-card">
+                <div style="font-size: 1.35rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Clarity-Driven Minimalism</span>
+                </div>
+            </div>
+            <div class="focus-card">
+                <div style="font-size: 1.35rem; font-weight: 700; text-align: center;">
+                    <span style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Clean System Architecture</span>
+                </div>
+            </div>
+            <div class="focus-card">
+                <div style="font-size: 1.35rem; font-weight: 700; text-align: center;">
+                    <span style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Cost/Resource Reduction</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-content custom-layout-container">
+        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Core Competencies</h3>
+        <ul class="responsive-grid columns-2" style="list-style-type: none; padding-left: 0;">
+            <li>
+                <strong style="font-size: 1.05rem; color: var(--primary);">User Research</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Understanding the user pain points</span>
+            </li>
+            <li>
+                <strong style="font-size: 1.05rem; color: var(--primary);">Cross-Functional Leadership</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Guiding diverse teams across technical & non-technical domains</span>
+            </li>
+            <li>
+                <strong style="font-size: 1.05rem; color: var(--primary);">Root Problem Analysis</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Finding the core issues & implementing effective solutions</span>
+            </li>
+            <li>
+                <strong style="font-size: 1.05rem; color: var(--primary);">Building scalable systems</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Designing systems with futuristic vision</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="post-content custom-layout-container">
+        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Services</h3>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            {{- $btnStyle := "border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 20px 24px; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; display: block;" -}}
+            
+            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Building Smooth Business Workflows</span>
+                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
+                </summary>
+                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
+                    By looking at the messy, repetitive tasks slowing your business down, I turn them into smooth, automated steps. I fix the bottlenecks so your daily operations run completely on autopilot.                </div>
+            </details>
+
+            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Technical Consultation</span>
+                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
+                </summary>
+                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
+                    Through clear advice on choosing the right software, tools, and setup, I help you avoid expensive tech mistakes before they happen so your platforms never crash.                </div>
+            </details>
+
+            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Recruitment & Onboarding</span>
+                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
+                </summary>
+                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
+                    By building simple ways to find, interview, and hire the right people, I create clear training steps so new hires can start doing great work from day one without confusion.                </div>
+            </details>
+
+            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Content Writing</span>
+                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
+                </summary>
+                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
+                    Taking complicated ideas and rewriting them into simple, easy-to-read words, I make sure every guide, page, or article grabs attention and makes sense to anyone.                </div>
+            </details>
+
+            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Mentorship</span>
+                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
+                </summary>
+                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
+                    Guiding and coaching your team to help them improve their skills and build great habits, I break down complicated concepts into daily practices so they can grow with confidence.                </div>
+            </details>
+
+            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Speaking Engagements</span>
+                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
+                </summary>
+                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
+                    Delivering friendly, easy-to-understand talks at events and workshops, I take complex topics and share them in a way that leaves the audience inspired and ready to take action.                </div>
+            </details>
+        </div>
+    </div>
+
+
+    <div class="post-content custom-layout-container">
+        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Availability</h3>
+        
+        <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 20px; display: flex; flex-wrap: wrap; gap: var(--gap); justify-content: space-between; align-items: center; background: rgba(var(--primary-rgb, 128,128,128), 0.02);">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="position: relative; display: flex; width: 10px; height: 10px;">
+                    <span style="animation: pulse-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite; position: absolute; height: 100%; width: 100%; border-radius: 50%; background-color: #10b981; opacity: 0.75;"></span>
+                    <span style="position: relative; display: inline-flex; border-radius: 50%; height: 10px; width: 10px; background-color: #10b981;"></span>
+                </span>
+                <span style="font-size: 0.95rem; font-weight: 600; color: var(--primary);">Status: Available to take on new projects</span>
+            </div>
+            <div style="font-size: 0.95rem; font-weight: 600; color: var(--primary); display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.1rem; line-height: 1; flex-shrink: 0;">👩‍💻</span>
+                <span>Mode of Work: Online & Offline</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <style>
+    /* Global Section Container Utils */
+    .custom-layout-container {
+        max-width: var(--main-width);
+        margin: 0 auto 4rem auto;
+        padding: 0 var(--gap);
+    }
+
+    /* Core Responsive Grid System */
+    .responsive-grid {
+        display: grid;
+        gap: var(--gap);
+    }
+    .columns-2 { grid-template-columns: repeat(2, 1fr); gap: 2rem var(--gap); }
+    .columns-3 { grid-template-columns: repeat(3, 1fr); text-align: center; }
+
+    /* Structural Grid Card Elements */
+    .focus-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius, 8px);
+        padding: 18px 15px;
+        background: rgba(var(--primary-rgb, 128,128,128), 0.015);
+    }
+
+    /* Mobile Adaptations */
+    @media (max-width: 768px) {
+        .responsive-grid.columns-2, 
+        .responsive-grid.columns-3 {
+            grid-template-columns: 1fr; /* Force full-width elements to stack naturally */
+        }
+    }
+
+    /* Modernized Hero Callout Box Container */
+    .hero-callout-container {
+        max-width: var(--main-width);
+        margin: 0 auto 3.5rem auto;
+        padding: 32px 36px;
+        background: rgba(var(--primary-rgb, 128, 128, 128), 0.04); 
+        border: 1px solid rgba(var(--primary-rgb, 128, 128, 128), 0.15);
+        border-left: 5px solid var(--primary); 
+        border-radius: var(--radius, 12px);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+    .hero-callout-container:hover { transform: translateY(-4px); }
+
+    .hero-statement {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        color: var(--primary);
+        margin: 0 !important;
+    }
+    .hero-statement strong { font-weight: 700; }
+
+    /* Animations */
+    .modern-hero-animate { animation: hero-fade-in-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    @keyframes hero-fade-in-slide {
+        0% { opacity: 0; transform: translateY(15px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse-ping { 75%, 100% { transform: scale(2.5); opacity: 0; } }
+    .pulse-green { animation: pulse-glow 2s infinite alternate; }
+    @keyframes pulse-glow {
+        0% { transform: scale(0.9); opacity: 0.6; }
+        100% { transform: scale(1.2); opacity: 1; }
+    }
+</style>
+
+{{- end -}}

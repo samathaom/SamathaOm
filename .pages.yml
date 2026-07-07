@@ -1,0 +1,44 @@
+media:
+  input: static/images
+  output: /images
+content:
+  - name: articles
+    label: Articles
+    type: collection
+    path: content/articles
+    fields:
+      - name: title
+        type: string
+      - name: body
+        type: rich-text
+      - name: date
+        type: date
+      - name: tags
+        type: string
+        list: true
+  - name: projects
+    label: Projects
+    type: collection
+    path: content/projects
+    fields:
+      - name: title
+        type: string
+      - name: body
+        type: rich-text
+      - name: date
+        type: date    
+      - name: tags
+        type: string
+        list: true
+  - name: resources
+    label: Resources
+    type: collection
+    path: content/resources
+    fields:
+      - name: title
+        type: string
+      - name: body
+        type: rich-text     
+      - name: tags
+        type: string
+        list: true
