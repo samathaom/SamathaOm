@@ -1,8 +1,8 @@
 {{- $ctx := . -}}
 
-{{- /* Safely check if PaperMod wrapped this inside a dictionary */ -}}
-{{- if hasField $ctx "cxt" }}
-  {{- $ctx = $ctx.cxt }}
+{{- /* Version-agnostic extraction of PaperMod dict context */ -}}
+{{- if .cxt }}
+  {{- $ctx = .cxt }}
 {{- end }}
 
 {{- $covertable := false -}}
