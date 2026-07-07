@@ -1,12 +1,13 @@
-{{- $html := . }}
-{{- /* Extract proper PaperMod context matrix */ -}}
-{{- if KindOf . | eq "map" }}
-  {{- $html = .cxt }}
+{{- $ctx := . -}}
+
+{{- /* Safely check if PaperMod wrapped this inside a dictionary */ -}}
+{{- if hasField $ctx "cxt" }}
+  {{- $ctx = $ctx.cxt }}
 {{- end }}
 
 {{- $covertable := false -}}
 
-{{- with $html }}
+{{- with $ctx }}
     {{- if .Params.thumbnail -}}
         {{- $covertable = .Params.thumbnail -}}
 
