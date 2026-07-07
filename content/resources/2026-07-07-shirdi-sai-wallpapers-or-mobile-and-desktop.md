@@ -18,7 +18,7 @@ Minimalist Shirdi Sai Wallpaper with his main teachings - Shraddha and Saburi - 
 
 ### Desktop Wallpaper
 
-![Shirdi Sai Wallpaper](</images/Shirdi Sai Wallpapers.jpg>)
+![](</images/Shirdi Sai DTP.jpg>)
 
 ### Mobile Phone Wallpaper
 
