@@ -4,7 +4,7 @@
   {{- $ctx = .cxt }}
 {{- end }}
 
-{{- $covertable := false -}}
+{{- $covertable := "" -}}
 
 {{- with $ctx }}
     {{- if .Params.thumbnail -}}
@@ -17,9 +17,13 @@
     {{- end -}}
 {{- end -}}
 
-{{- if $covertable }}
-    <div class="entry-cover-wrapper" style="margin-bottom: 20px;">
-        <img loading="lazy" src="{{ $covertable | relURL }}" alt="Post Thumbnail" style="width: 100%; height: auto; border-radius: var(--radius); object-fit: cover; max-height: 240px; display: block;">
+{{- if ne $covertable "" }}
+    <div class="entry-cover-wrapper" style="margin-bottom: 20px; width: 100%;">
+        {{- $image_url := $covertable | absURL -}}
+        {{- if hasPrefix $covertable "/" }}
+            {{- $image_url = printf "%s%s" site.BaseURL (strings.TrimPrefix "/" $covertable) -}}
+        {{- end }}
+        <img loading="lazy" src="{{ $image_url }}" alt="Post Thumbnail" style="width: 100%; height: auto; border-radius: var(--radius); object-fit: cover; max-height: 240px; display: block;">
     </div>
 {{- else -}}
     {{- partial "post_thumbnail.html" . -}}
