@@ -36,9 +36,20 @@ content:
     path: content/resources
     fields:
       - name: title
-        type: string
+        type: string     
       - name: body
         type: rich-text     
       - name: tags
         type: string
         list: true
+      - name: gallery
+        label: Wallpaper Gallery
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Wallpaper Image
+            type: image
+          - name: description
+            label: Description / Caption
+            type: string  
