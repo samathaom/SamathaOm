@@ -26,5 +26,7 @@
         <img loading="lazy" src="{{ $image_url }}" alt="Post Thumbnail" style="width: 100%; height: auto; border-radius: var(--radius); object-fit: cover; max-height: 240px; display: block;">
     </div>
 {{- else -}}
-    {{- partial "post_thumbnail.html" . -}}
+    {{- if $ctx.Params.cover.image -}}
+        <img loading="lazy" src="{{ $ctx.Params.cover.image | absURL }}" alt="{{ $ctx.Title }}">
+    {{- end -}}
 {{- end -}}
