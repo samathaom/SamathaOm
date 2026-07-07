@@ -7,7 +7,7 @@ tags:
   - Minimalist
   - Mobile
   - Desktop
-images:
+slider_images:
   - image: "/images/Shirdi%20Sai%20DTP.jpg"
     description: "Shirdi Sai Desktop Wallpaper"
   - image: "/images/Shirdi%20Sai%20Mobile.jpg"

@@ -4,8 +4,8 @@
 {{- if .Params.thumbnail -}}
     {{- $covertable = .Params.thumbnail -}}
 
-{{- else if .Params.images -}}
-    {{- range first 1 .Params.images -}}
+{{- else if .Params.slider_images -}}
+    {{- range first 1 .Params.slider_images -}}
         {{- $covertable = .image -}}
     {{- end -}}
 {{- end -}}
