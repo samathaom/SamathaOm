@@ -48,7 +48,7 @@ content:
       - name: tags
         type: string
         list: true
-      - name: images
+      - name: slider_images
         label: Wallpaper Gallery
         type: object
         list: true
