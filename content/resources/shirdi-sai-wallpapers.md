@@ -19,10 +19,10 @@ gallery:
 Minimalist Shirdi Sai Wallpaper with his core teachings—Shraddha and Saburi (Faith and Patience)—in a simple, focused depiction.
 
 ### Desktop Layout
-![Shirdi Sai Desktop Wallpaper](/images/Shirdi Sai DTP.jpg)
+<img src="/images/Shirdi Sai DTP.jpg" alt="Shirdi Sai Desktop Wallpaper" style="max-width: 100%; border-radius: 8px; margin-bottom: 2rem;">
 
 ### Mobile Layout
-![Shirdi Sai Mobile Wallpaper](/images/Shirdi Sai Mobile.jpg)
+<img src="/images/Shirdi Sai Mobile.jpg" alt="Shirdi Sai Mobile Wallpaper" style="max-width: 100%; max-height: 500px; border-radius: 8px; margin-bottom: 2rem;">
 
 ### Assets
 - **Desktop View**: [Download High-Resolution Asset](https://drive.google.com/drive/folders/1owBG1NCrvedFBh4Qpygi4B4qU3fJOcC4?usp=drive_link)
