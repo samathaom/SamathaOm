@@ -7,13 +7,12 @@
 
   <div class="post-content">
     {{ if .Params.gallery }}
-    <!-- Minimalist Slider Container -->
     <div class="minimal-slider-container">
       <div class="minimal-slider">
         {{ range $index, $item := .Params.gallery }}
         <div class="slider-slide {{ if eq $index 0 }}active{{ end }}">
           <div class="image-wrapper">
-            <img src="{{ $item.image | relURL }}" alt="Wallpaper Preview" loading="lazy">
+            <img src="{{ $item.image | relURL }}" alt="Wallpaper Preview" loading="lazy" onload="autoScaleSlider()">
           </div>
           <div class="slide-caption">
             {{ $item.description | markdownify }}
@@ -22,9 +21,10 @@
         {{ end }}
       </div>
 
-      <!-- Navigation Arrows -->
+      {{ if gt (len .Params.gallery) 1 }}
       <button class="slider-arrow prev" aria-label="Previous Slide" onclick="moveSlide(-1)">&#8592;</button>
       <button class="slider-arrow next" aria-label="Next Slide" onclick="moveSlide(1)">&#8594;</button>
+      {{ end }}
     </div>
     {{ end }}
 
@@ -45,6 +45,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
+    transition: height 0.2s ease-in-out; /* Smooth transition when resizing */
   }
 
   .slider-slide {
@@ -57,9 +58,10 @@
     display: block;
   }
 
+  /* Base wrapper defaults to auto; height is dynamically overwritten by JS */
   .image-wrapper {
     width: 100%;
-    height: 450px;
+    height: 100%;
     background: var(--code-bg);
     border-radius: var(--radius);
     overflow: hidden;
@@ -87,9 +89,10 @@
     text-align: left;
   }
 
+  /* Arrows look directly at the calculated slider parent for clean 50% vertical centering */
   .slider-arrow {
     position: absolute;
-    top: 225px;
+    top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
@@ -110,7 +113,6 @@
   .slider-arrow.prev { left: -40px; }
   .slider-arrow.next { right: -40px; }
 
-  /* Enforces PaperMod Content Spacing Patterns */
   .post-content h3 {
     margin-top: 2.5rem !important;
     margin-bottom: 1rem !important;
@@ -133,15 +135,6 @@
     display: list-item !important;
   }
 
-  @media (min-width: 768px) {
-    .image-wrapper {
-      height: 550px;
-    }
-    .slider-arrow {
-      top: 275px;
-    }
-  }
-
   @media (max-width: 768px) {
     .slider-arrow.prev { left: 10px; }
     .slider-arrow.next { right: 10px; }
@@ -160,6 +153,38 @@
 <script>
   let currentSlideIndex = 0;
 
+  // Automatically scales the container to match the tallest rendered image inside this section
+  function autoScaleSlider() {
+    const wrappers = document.querySelectorAll('.image-wrapper');
+    const slider = document.querySelector('.minimal-slider');
+    let maxFoundHeight = 0;
+
+    // Temporarily make slides visible to capture real rendered image heights
+    wrappers.forEach(wrapper => {
+      const img = wrapper.querySelector('img');
+      if (img && img.naturalHeight > 0) {
+        // Calculate relative aspect-ratio height inside the responsive width layout
+        const renderedHeight = img.getBoundingClientRect().height;
+        if (renderedHeight > maxFoundHeight) {
+          maxFoundHeight = renderedHeight;
+        }
+      }
+    });
+
+    // Enforce layout boundaries based on logic constraints
+    if (maxFoundHeight > 0) {
+      const calculatedPadding = 32; // Accommodates the top/bottom wrapper padding bounds
+      const finalContainerHeight = maxFoundHeight + calculatedPadding;
+      
+      wrappers.forEach(wrapper => {
+        wrapper.style.height = finalContainerHeight + 'px';
+      });
+      if (slider) {
+        slider.style.height = finalContainerHeight + 'px';
+      }
+    }
+  }
+
   function moveSlide(direction) {
     const slides = document.querySelectorAll('.slider-slide');
     if (!slides.length) return;
@@ -175,5 +200,9 @@
     
     slides[currentSlideIndex].classList.add('active');
   }
+
+  // Recalculate layout heights responsively if the user tilts or resizes their browser window
+  window.addEventListener('resize', autoScaleSlider);
+  window.addEventListener('DOMContentLoaded', autoScaleSlider);
 </script>
 {{ end }}
