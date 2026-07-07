@@ -5,7 +5,7 @@ tags:
   - Tracker
   - Productivity
   - Tool
-gallery:
+images:
   - image: /images/Buddhist-precept-tracker.png
   - image: /images/Instructions.png
 ---
