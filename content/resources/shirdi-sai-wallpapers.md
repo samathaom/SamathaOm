@@ -7,16 +7,14 @@ tags:
   - Minimalist
   - Mobile
   - Desktop
+gallery:
+  - image: "/images/Shirdi%20Sai%20DTP.jpg"
+    description: "Shirdi Sai Desktop Wallpaper"
+  - image: "/images/Shirdi%20Sai%20Mobile.jpg"
+    description: "Shirdi Sai Mobile Wallpaper"
+
 ---
 Minimalist Shirdi Sai Wallpaper with his main teachings - Shraddha and Saburi - Faith and Patience in simple depiction.
-
-### Desktop Wallpaper
-
-![](</images/Shirdi Sai DTP.jpg>)
-
-### Mobile Phone Wallpaper
-
-![](</images/Shirdi Sai Mobile.jpg>)
 
 ### Download
 
