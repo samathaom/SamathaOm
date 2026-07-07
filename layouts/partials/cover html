@@ -1,0 +1,20 @@
+{{- $v := . -}}
+{{- $covertable := false -}}
+
+{{- if .Params.thumbnail -}}
+    {{- $covertable = .Params.thumbnail -}}
+
+{{- else if .Params.images -}}
+    {{- range first 1 .Params.images -}}
+        {{- $covertable = .image -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if $covertable }}
+    {{- $alt := .Title }}
+    <figure class="entry-cover">
+        <img loading="lazy" src="{{ $covertable | relURL }}" alt="{{ $alt }}">
+    </figure>
+{{- else -}}
+    {{- partial "post_thumbnail.html" . -}}
+{{- end -}}

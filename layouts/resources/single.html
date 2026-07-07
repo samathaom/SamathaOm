@@ -2,21 +2,14 @@
 <article class="post-single">
   <header class="post-header">
     <h1 class="post-title">{{ .Title }}</h1>
-    
-    {{ if and (not .Params.thumbnail) .Params.gallery }}
-      {{ range first 1 .Params.gallery }}
-        {{ $.Scratch.Set "auto_thumb" .image }}
-      {{ end }}
-    {{ end }}
-    
     {{- partial "post_meta.html" . -}}
   </header>
 
   <div class="post-content">
-    {{ if .Params.gallery }}
+    {{ if .Params.images }}
     <div class="minimal-slider-container">
       <div class="minimal-slider">
-        {{ range $index, $item := .Params.gallery }}
+        {{ range $index, $item := .Params.images }}
         <div class="slider-slide {{ if eq $index 0 }}active{{ end }}">
           <div class="image-wrapper">
             <img src="{{ $item.image | relURL }}" alt="Wallpaper Preview" loading="lazy" onload="autoScaleSlider()">
@@ -28,7 +21,7 @@
         {{ end }}
       </div>
 
-      {{ if gt (len .Params.gallery) 1 }}
+      {{ if gt (len .Params.images) 1 }}
       <button class="slider-arrow prev" aria-label="Previous Slide" onclick="moveSlide(-1)">&#8592;</button>
       <button class="slider-arrow next" aria-label="Next Slide" onclick="moveSlide(1)">&#8594;</button>
       {{ end }}
