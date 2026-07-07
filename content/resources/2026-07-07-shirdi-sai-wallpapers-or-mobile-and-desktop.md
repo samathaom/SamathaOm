@@ -16,7 +16,7 @@ gallery:
     description: "Shirdi Sai Mobile Wallpaper"
 ---
 
-Minimalist Shirdi Sai Wallpaper with his core teachings—Shraddha and Saburi (Faith and Patience)—in a simple, focused depiction.
+Minimalist Shirdi Sai Wallpaper with his core teachings— Shraddha and Saburi (Faith and Patience)—in a simple depiction.
 
 ### Desktop Layout
 ![Shirdi Sai Desktop Wallpaper](/images/Shirdi Sai DTP.jpg)
