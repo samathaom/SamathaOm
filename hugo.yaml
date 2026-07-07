@@ -68,3 +68,11 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
+cascade:
+  - target:
+      kind: page
+      path: /resources/**
+    params:
+      cover:
+        image: ":source"

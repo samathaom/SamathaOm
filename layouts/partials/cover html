@@ -1,6 +1,5 @@
 {{- $ctx := . -}}
 
-{{- /* Version-agnostic extraction of PaperMod dict context */ -}}
 {{- if .cxt }}
   {{- $ctx = .cxt }}
 {{- end }}
@@ -16,12 +15,12 @@
             {{- $covertable = .image -}}
         {{- end -}}
     {{- end -}}
+{{- end -}}
 
-    {{- if $covertable }}
-        <figure class="entry-cover">
-            <img loading="lazy" src="{{ $covertable | relURL }}" alt="{{ .Title }}">
-        </figure>
-    {{- else -}}
-        {{- partial "post_thumbnail.html" . -}}
-    {{- end -}}
-{{- end }}
+{{- if $covertable }}
+    <div class="entry-cover-wrapper" style="margin-bottom: 20px;">
+        <img loading="lazy" src="{{ $covertable | relURL }}" alt="Post Thumbnail" style="width: 100%; height: auto; border-radius: var(--radius); object-fit: cover; max-height: 240px; display: block;">
+    </div>
+{{- else -}}
+    {{- partial "post_thumbnail.html" . -}}
+{{- end -}}
