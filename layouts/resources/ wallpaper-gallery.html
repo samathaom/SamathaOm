@@ -1,0 +1,142 @@
+{{ define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+
+    {{ if .Params.gallery }}
+    <!-- Minimalist Slider Container -->
+    <div class="minimal-slider-container">
+      <div class="minimal-slider">
+        {{ range $index, $item := .Params.gallery }}
+        <div class="slider-slide {{ if eq $index 0 }}active{{ end }}">
+          <div class="image-wrapper">
+            <img src="{{ $item.image | relURL }}" alt="Wallpaper Preview" loading="lazy">
+          </div>
+          <div class="slide-caption">
+            {{ $item.description | markdownify }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="slider-arrow prev" aria-label="Previous Slide" onclick="moveSlide(-1)">&#8592;</button>
+      <button class="slider-arrow next" aria-label="Next Slide" onclick="moveSlide(1)">&#8594;</button>
+    </div>
+    {{ end }}
+  </div>
+</article>
+
+<style>
+  .minimal-slider-container {
+    position: relative;
+    width: 100%;
+    margin: 2rem auto;
+  }
+
+  .minimal-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 400px;
+  }
+
+  .slider-slide {
+    display: none;
+    width: 100%;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .slider-slide.active {
+    display: block;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    background: var(--code-bg); /* Matches PaperMod dynamic background */
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .slide-caption {
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+    color: var(--secondary); /* Matches PaperMod secondary text color */
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  /* Raw, borderless arrows using system symbols */
+  .slider-arrow {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 10px;
+    opacity: 0.4;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    user-select: none;
+    z-index: 10;
+  }
+
+  .slider-arrow:hover {
+    opacity: 1;
+  }
+
+  .slider-arrow.prev { left: -40px; }
+  .slider-arrow.next { right: -40px; }
+
+  @media (max-width: 768px) {
+    .slider-arrow.prev { left: 10px; }
+    .slider-arrow.next { right: 10px; }
+    .slider-arrow {
+      background: var(--theme);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+  }
+</style>
+
+<script>
+  let currentSlideIndex = 0;
+
+  function moveSlide(direction) {
+    const slides = document.querySelectorAll('.slider-slide');
+    if (!slides.length) return;
+
+    slides[currentSlideIndex].classList.remove('active');
+    
+    currentSlideIndex += direction;
+    
+    if (currentSlideIndex >= slides.length) {
+      currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+      currentSlideIndex = slides.length - 1;
+    }
+    
+    slides[currentSlideIndex].classList.add('active');
+  }
+</script>
+{{ end }}
