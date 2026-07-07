@@ -36,8 +36,9 @@
   .minimal-slider-container {
     position: relative;
     width: 100%;
-    margin: 2rem auto;
-    display: block; /* Prevents collapsing or interfering with text flow */
+    margin: 0 auto 3rem auto;
+    display: block;
+    clear: both;
   }
 
   .minimal-slider {
@@ -108,6 +109,29 @@
 
   .slider-arrow.prev { left: -40px; }
   .slider-arrow.next { right: -40px; }
+
+  /* Enforces PaperMod Content Spacing Patterns */
+  .post-content h3 {
+    margin-top: 2.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .post-content p {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .post-content ul, .post-content ol {
+    margin-top: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    padding-left: 2rem !important;
+    list-style: disc outside !important;
+  }
+
+  .post-content li {
+    margin-bottom: 0.5rem !important;
+    padding-left: 0.25rem !important;
+    display: list-item !important;
+  }
 
   @media (min-width: 768px) {
     .image-wrapper {
