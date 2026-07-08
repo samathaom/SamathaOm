@@ -1,5 +1,5 @@
 ---
-title: Buddhist Precepts Tracker | Minimalist Habit Tracker
+title: Buddhist Precepts Tracker | Minimalist Habit Trackers
 tags:
   - Habits
   - Tracker
