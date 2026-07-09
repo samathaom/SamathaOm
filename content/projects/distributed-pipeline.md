@@ -1,20 +1,24 @@
 ---
-title: "Distributed Microservices Pipeline"
+title: Distributed Microservices Pipeline
+thumbnail: /images/Shirdi Sai DTP.jpg
 date: 2026-05-16
-summary: "An event-driven serverless system processing telemetry packets globally with automated recovery workflows."
-tags: ["Python", "FastAPI", "Docker", "AWS"]
-cover:
-  image: "images/Untitled1.jpg"
-  alt: "System Architecture Design"
+tags:
+  - Python
+  - FastAPI
+  - Docker
+  - AWS
 ---
-
 ### Architecture Overview
+
 This project targets high-throughput telemetry data ingestion. By utilizing an asynchronous framework pattern, we reduced running execution overhead down to zero-cost idle limits.
 
 #### Core Tech Stack
-* **Python / FastAPI**: Core API data worker processes.
-* **Docker**: Containerized deployment pipelines.
+
+- **Python / FastAPI**: Core API data worker processes.
+- **Docker**: Containerized deployment pipelines.
 
 #### Key Engineering Metrics
-* **Zero Overhead**: Scales to zero compute usage when processing idle states.
-* **Sub-50ms Latency**: Native async execution event-loops.
+
+- **Zero Overhead**: Scales to zero compute usage when processing idle states.
+- **Sub-50ms Latency**: Native async execution event-loops.
+
