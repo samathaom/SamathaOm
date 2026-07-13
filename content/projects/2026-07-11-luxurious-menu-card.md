@@ -4,7 +4,7 @@ date: 2026-07-11
 ---
 ![](/images/11.png)
 
-![](/images/avatar.jpg)
+![](/images/IDCard2.png)
 
 ![](/images/IDcard1.png)
 
