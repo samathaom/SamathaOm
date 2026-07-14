@@ -5,5 +5,15 @@ tags:
   - Python
   - Project
 ---
+
+
+&nbsp;
+
+![](</images/Book Mockup - 7.png>)
+
+
+
+&nbsp;
+
 ![](</images/Book Mockup - 6.png>)
 
