@@ -3,10 +3,10 @@ title: Premium Business Card Designs
 thumbnail: /images/BC1 Mockup.png
 date: 2026-05-16
 tags:
-  - Python
-  - FastAPI
-  - Docker
-  - AWS
+  - Portfolio
+  - Business Cards
+  - Visiting Cards
+  - Figma
 ---
 Business card 1
 
