@@ -1,5 +1,6 @@
 ---
 title: Calming Journal Notebooks
+thumbnail: /images/Book Mockup - 9.png
 date: 2026-05-16
 tags:
   - Python
