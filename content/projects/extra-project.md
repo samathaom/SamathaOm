@@ -8,25 +8,35 @@ tags:
 ---
 ![](</images/Book Mockup - 7.png>)
 
+
+
+&nbsp;
+
 ![](</images/Book mockup(2).png>)
+
+
+
+![](</images/Book mockup(3).png>)
+
+
+
+&nbsp;
 
 ![](</images/Book mockup(4).png>)
 
 
 
-![](</images/Mockup - Main.png>)
+&nbsp;
+
+![](</images/Book mockup(5).png>)
 
 
 
-![](</images/Frame 6.png>)
+![](</images/Book mockup(6).png>)
 
 
 
-![](</images/Frame 7.png>)
-
-![](</images/Frame 8.png>)
-
-
+&nbsp;
 
 ![](</images/Book Mockup - 8(1).png>)
 
