@@ -8,6 +8,10 @@ tags:
 ---
 ![](</images/Book Mockup - 7.png>)
 
+![](</images/Book mockup(2).png>)
+
+![](</images/Book mockup(4).png>)
+
 
 
 ![](</images/Mockup - Main.png>)
@@ -16,7 +20,7 @@ tags:
 
 ![](</images/Frame 6.png>)
 
- 
+
 
 ![](</images/Frame 7.png>)
 
