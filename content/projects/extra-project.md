@@ -17,10 +17,6 @@ tags:
 
 &nbsp;
 
-![](</images/Book Mockup - 8.png>)
-
-
-
 &nbsp;
 
 ![](</images/Book Mockup - 6.png>)
