@@ -7,9 +7,11 @@ tags:
 ---
 
 
-&nbsp;
-
 ![](</images/Book Mockup - 7.png>)
+
+
+
+![](</images/Book Mockup - 8.png>)
 
 
 
