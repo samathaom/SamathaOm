@@ -1,6 +1,11 @@
 ---
 title: Letterhead Design
 date: 2026-07-11
+tags:
+  - Letterhead
+  - Design
+  - Branding
+  - Minimalism
 ---
 ![](</images/Mockup 07.png>)
 
