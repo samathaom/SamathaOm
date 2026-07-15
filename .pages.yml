@@ -16,10 +16,10 @@ content:
       - name: tags
         type: string
         list: true
-  - name: projects
-    label: Projects
+  - name: portfolio
+    label: Portfolio
     type: collection
-    path: content/projects
+    path: content/portfolio
     fields:
       - name: title
         type: string
