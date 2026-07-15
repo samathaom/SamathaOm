@@ -1,17 +1,17 @@
 {{- define "main" -}}
 
+    <!-- 1. Native PaperMod Profile Header -->
     {{- if .IsHome }}
         {{- partial "index_profile.html" . }}
     {{- end }}
 
-    <!-- Animated Hero Section -->
-    <div class="hero-callout-container modern-hero-animate">
-        <h1 class="hero-statement">
-            I am a Senior Digital Designer. <br>
+    <!-- 2. Animated Dynamic Sub-Hero Statement -->
+    <div class="hero-callout-container modern-hero-animate" style="margin-top: -1.5rem;">
+        <h2 class="hero-statement" style="font-size: 1.5rem; text-align: center; font-weight: 600;">
             <span class="txt-rotate" 
                   data-period="2000" 
                   data-rotate='[ "I design high clarity printed materials.", "I code.", "I manage international teams." ]'></span>
-        </h1>
+        </h2>
     </div>
 
     <!-- About Section -->
@@ -89,7 +89,7 @@
         </ul>
     </div>
 
-    <!-- Curated Knowledge Feed (Articles & Resources Links) -->
+    <!-- Curated Knowledge Feed -->
     <div class="post-content custom-layout-container">
         <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Writing & Systems</h3>
         <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px;">
@@ -161,18 +161,18 @@
         </div>
     </div>
 
-    <!-- Action Action Area (Closing Intent) -->
+    <!-- Call to Action Footer (Double-checked Outline Variant) -->
     <div class="post-content custom-layout-container" style="text-align: center; margin-top: 4rem; padding: 40px 20px; border-top: 1px solid var(--border);">
         <h3 style="font-weight: 700; font-size: 1.5rem; margin-bottom: 8px;">Let's build a clean system.</h3>
         <p style="color: var(--secondary); font-size: 0.95rem; margin-bottom: 24px;">Select a slot to discuss your digital architecture strategy.</p>
         <div class="cta-container">
-            <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" class="cta-button">
+            <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" class="cta-button-outline">
                 Book a Strategic Call &rarr;
             </a>
         </div>
     </div>
 
-    <!-- Native Lightweight Typewriter Animation Engine -->
+    <!-- Lightweight Typewriter Script -->
     <script>
         var TxtRotate = function(el, toRotate, period) {
             this.toRotate = toRotate;
@@ -224,7 +224,6 @@
                     new TxtRotate(elements[i], JSON.parse(toRotate), period);
                 }
             }
-            // Inject structural layout animation styles dynamically
             var css = document.createElement("style");
             css.type = "text/css";
             css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid var(--primary); padding-right: 2px; }";
@@ -233,7 +232,7 @@
     </script>
 
     <style>
-    /* Global Section Layout Systems */
+    /* Layout Variables & Structure */
     .custom-layout-container {
         max-width: var(--main-width);
         margin: 0 auto 4rem auto;
@@ -250,7 +249,7 @@
         text-decoration: underline;
     }
 
-    /* Core Layout Responsive Component Grids */
+    /* Grids */
     .responsive-grid {
         display: grid;
         gap: var(--gap);
@@ -258,7 +257,7 @@
     .columns-2 { grid-template-columns: repeat(2, 1fr); gap: 2rem var(--gap); }
     .columns-3 { grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
 
-    /* Structural Component Cards */
+    /* Cards */
     .focus-card {
         border: 1px solid var(--border);
         border-radius: var(--radius, 8px);
@@ -270,59 +269,49 @@
         justify-content: center;
     }
 
-    /* Primary Action Component Styling */
+    /* Primary CTA Layout */
     .cta-container {
         display: flex;
         justify-content: center;
         margin: 1.5rem 0;
     }
-    .cta-button {
+
+    /* Footer Outline Button Variant */
+    .cta-button-outline {
         display: inline-block;
-        background: var(--primary);
-        color: var(--bg);
+        background: transparent;
+        color: var(--primary);
+        border: 1px solid var(--border);
         padding: 12px 28px;
         font-weight: 600;
         border-radius: var(--radius, 8px);
         text-decoration: none;
-        transition: transform 0.2s ease, opacity 0.2s ease;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .cta-button:hover {
+    .cta-button-outline:hover {
+        border-color: var(--primary);
+        background-color: rgba(var(--primary-rgb, 128, 128, 128), 0.04);
         transform: translateY(-2px);
-        opacity: 0.95;
     }
 
-    /* Mobile Screen Adjustments */
+    /* Responsive Adjustments */
     @media (max-width: 768px) {
         .responsive-grid.columns-2, 
         .responsive-grid.columns-3 {
             grid-template-columns: 1fr;
         }
-        .hero-statement {
-            font-size: 1.4rem !important;
-        }
     }
 
-    /* Hero Block Callout Layouts */
+    /* Callout Card Base Styling */
     .hero-callout-container {
         max-width: var(--main-width);
         margin: 0 auto 3.5rem auto;
-        padding: 40px 36px;
-        background: rgba(var(--primary-rgb, 128, 128, 128), 0.02); 
-        border: 1px solid var(--border);
-        border-radius: var(--radius, 12px);
-        position: relative;
-        overflow: hidden;
+        padding: 24px 20px;
+        background: transparent;
+        border: none;
     }
 
-    .hero-statement {
-        font-size: 1.8rem;
-        line-height: 1.5;
-        color: var(--primary);
-        font-weight: 700;
-        margin: 0 !important;
-    }
-
-    /* Basic Entrance Animations */
+    /* Entrance Animations */
     .modern-hero-animate { animation: hero-fade-in-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
     @keyframes hero-fade-in-slide {
         0% { opacity: 0; transform: translateY(10px); }
