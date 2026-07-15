@@ -3,60 +3,42 @@
     --font-family: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
     /* ----------------------------------------------------
+       LAYOUT SYSTEM: Responsive Expanded Viewport 
+       ---------------------------------------------------- */
+    --main-width: 1140px; 
+    --gap: 32px;
+
+    /* ----------------------------------------------------
        LIGHT THEME: Crisp Alabaster & Nordic Ice Blue
        ---------------------------------------------------- */
-    /* Universal background - non-glare, premium soft milk-white */
     --theme: #fff; 
-    
-    /* Clean, elevated pristine alabaster surfaces for minimal layout structure */
+    --bg: #fff;
     --entry: #fcfcfc; 
-    
-    /* Deep Slate-Charcoal for high-clarity primary headers (8.2:1 contrast) */
     --primary: #1C2324; 
-    
-    /* Desaturated Slate Gray for secondary metadata (5.1:1 contrast) */
     --secondary: #596566; 
-    
-    /* Refined structural layout boundaries */
     --tertiary: #EBE8E2; 
-    
-    /* Clean dark slate for absolute reading comfort (6.7:1 contrast) */
     --content: #242D2E; 
-    
-    /* Primary Action Layer: Deepened Pastel Blue to guarantee solid WCAG contrast over light creams */
     --accent-blue: #29606B; 
-    
-    /* Low-contrast tech components styling */
     --code-bg: #F0EDE6;
     --border: #E3DFD5;
+    --primary-rgb: 28, 35, 36;
 }
 
 .dark {
     /* ----------------------------------------------------
        DARK THEME: Arctic Deep Night & Luminescent Frost
        ---------------------------------------------------- */
-    /* Deep obsidian-ink backdrop */
     --theme: linear-gradient(to bottom, #0A0E10, #06090A); 
-    
-    /* Elevated dark slate surface for clean container hierarchy */
+    --bg: #0A0E10;
     --entry: #131A1D; 
-    
-    /* Crisp, low-glare mint-ice white for primary titles */
     --primary: #EBF3F5; 
-    
-    /* Soft desaturated slate-blue for secondary metadata */
     --secondary: #8AA1A6; 
-    
-    /* Subtle deep night boundaries */
     --tertiary: #1D272A; 
-    
-    /* High-clarity text display for long reading sessions (6.3:1 contrast) */
     --content: #D2DFE2; 
-    
-    /* Luminescent Arctic Frost for UI action links */
     --accent-blue: #92C7CF;
     --code-bg: #1B2427;
     --border: #1D272A;
+    --primary-rgb: 235, 243, 245;
 }
 
 /* ----------------------------------------------------
@@ -66,6 +48,31 @@ body {
     font-family: var(--font-family) !important;
     background: var(--theme) !important;
     color: var(--content) !important;
+}
+
+/* Main Layout Width Structural Enforcements */
+.main,
+.custom-layout-container, 
+.hero-callout-container {
+    max-width: var(--main-width) !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Sticky Header Grounding with Definition Border */
+.header {
+    border-bottom: 1px solid var(--border);
+    background: var(--theme);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav {
+    max-width: var(--main-width) !important;
+    margin: 0 auto !important;
 }
 
 /* Enforcing the System Accent on Links & Interactive items */
@@ -125,7 +132,40 @@ code {
     filter: brightness(0.95);
 }
 
-/* Container Layout */
+/* ----------------------------------------------------
+   Grid Component & High Contrast Visibility Fixes
+   ---------------------------------------------------- */
+.minimal-grid {
+    display: grid;
+    width: 100%;
+}
+
+/* Absolute contrast container fix for both light and dark backgrounds */
+.card-accent {
+    border: 1px solid var(--primary) !important;
+    background-color: var(--primary) !important;
+}
+
+/* Dynamically forces absolute inverted legibility inside the accent container */
+.card-accent,
+.card-accent .card-title,
+.card-accent .card-desc,
+.card-accent .card-tag,
+.card-accent a.card-cta-link {
+    color: var(--entry) !important; 
+}
+
+.card-accent .card-tag {
+    opacity: 0.75;
+}
+
+.card-accent a.card-cta-link {
+    text-decoration: underline !important;
+}
+
+/* ----------------------------------------------------
+   Call to Action Mechanics
+   ---------------------------------------------------- */
 .cta-container {
     text-align: center;
     margin: -1.5rem auto 3.5rem auto;
@@ -135,7 +175,6 @@ code {
     z-index: 20;
 }
 
-/* Base Call-to-Action Button */
 .cta-button {
     display: inline-flex;
     align-items: center;
@@ -149,13 +188,11 @@ code {
     border-radius: 9999px; 
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
     
-    /* LIGHT MODE: High Contrast Ice Blue Gradient */
     background: linear-gradient(135deg, #29606B, #377682) !important;
     color: #FBF9F1 !important;
     box-shadow: 0 4px 12px rgba(41, 96, 107, 0.12), 0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
-/* Micro-interactions for Human Behavior */
 .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(41, 96, 107, 0.18), 0 2px 4px rgba(0, 0, 0, 0.02);
@@ -166,9 +203,7 @@ code {
     box-shadow: 0 2px 8px rgba(41, 96, 107, 0.08);
 }
 
-/* DARK MODE OVERRIDES */
 .dark .cta-button {
-    /* DARK MODE: Luminescent Ice Frost with High Contrast Dark Slate text */
     background: linear-gradient(135deg, #92C7CF, #AAD7D9) !important;
     color: #0A0E10 !important; 
     box-shadow: 0 4px 14px rgba(146, 199, 207, 0.12), 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -182,7 +217,9 @@ code {
     box-shadow: 0 4px 12px rgba(146, 199, 207, 0.12);
 }
 
-/* Optimized, Slimmer Navbar CTA Button */
+/* ----------------------------------------------------
+   Optimized Navigation Bar Interactions
+   ---------------------------------------------------- */
 #menu a[href*="cal.com"], 
 #menu a[href*="booking"],
 .nav a[href*="cal.com"],
@@ -191,28 +228,20 @@ code {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    
-    /* Reduced vertical padding (4px instead of 6px) to slim it down */
     padding: 4px 12px !important;
     margin-left: 12px !important;
-    
-    /* Compact text scaling */
     font-weight: 600 !important;
     font-size: 0.8rem !important;
     line-height: 1.2 !important;
-    
     text-decoration: none !important;
     border-radius: var(--radius, 6px) !important;
     border: 1px solid var(--border) !important;
     background-color: transparent !important;
     color: var(--primary) !important;
-
-    /* Subtle, hardware-accelerated breathing animation */
     animation: breathing-border 4s ease-in-out infinite alternate !important;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* Clear, sharp hover state */
 #menu a[href*="cal.com"]:hover, 
 #menu a[href*="booking"]:hover,
 .nav a[href*="cal.com"]:hover,
@@ -224,11 +253,29 @@ code {
 }
 
 @keyframes breathing-border {
-    0% {
-        border-color: var(--border) !important;
+    0% { border-color: var(--border) !important; }
+    100% { border-color: rgba(var(--primary-rgb, 128, 128, 128), 0.7) !important; box-shadow: 0 0 6px rgba(var(--primary-rgb, 128, 128, 128), 0.15) !important; }
+}
+
+/* ----------------------------------------------------
+   Fluid Responsiveness & Breakpoint Enforcements
+   ---------------------------------------------------- */
+@media screen and (max-width: 1200px) {
+    :root {
+        --main-width: 100%;
+        --gap: 24px;
     }
-    100% {
-        border-color: rgba(var(--primary-rgb, 128, 128, 128), 0.7) !important;
-        box-shadow: 0 0 6px rgba(var(--primary-rgb, 128, 128, 128), 0.15) !important;
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --gap: 16px;
+    }
+    .custom-layout-container {
+        padding: 0 var(--gap) !important;
+    }
+    /* Grid breakdown for smaller touchscreens */
+    .cols-2, .cols-3 {
+        grid-template-columns: 1fr !important;
     }
 }
