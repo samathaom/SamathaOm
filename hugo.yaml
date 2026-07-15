@@ -18,19 +18,19 @@ params:
     - resources
 
   # --- 1. Fixed Profile Mode Matrix ---
-  profileMode:
-    enabled: true
-    title: "Samatha Om"
-    subtitle: "System Architect, Technical Leader & Educator"
-    imageUrl: "images/avatar.jpg" 
-    imageWidth: 150
-    imageHeight: 150
-    imageTitle: "Profile Avatar"
-    buttons:
-      - name: "Explore Resources"
-        url: "/resources/"
-      - name: "Read Articles"
-        url: "/articles/"
+  # --- profileMode:---
+   # enabled: true
+    #title: "Samatha Om"
+    #subtitle: "System Architect, Technical Leader & Educator"
+    #imageUrl: "images/avatar.jpg" 
+    #imageWidth: 150
+    #imageHeight: 150
+    #imageTitle: "Profile Avatar"
+    #buttons:
+     # - name: "Explore Resources"
+    #    url: "/resources/"
+      #- name: "Read Articles"
+      #  url: "/articles/"
 
   # --- 2. Fixed Social Icons Vector Placement ---
   # Moving this here allows PaperMod's SVG asset injector to find and display them

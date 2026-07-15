@@ -1,17 +1,14 @@
 {{- define "main" -}}
 
-    <!-- 1. Native PaperMod Profile Header -->
     {{- if .IsHome }}
         {{- partial "index_profile.html" . }}
     {{- end }}
 
-    <!-- 2. Animated Dynamic Sub-Hero Statement -->
-    <div class="hero-callout-container modern-hero-animate" style="margin-top: -1.5rem;">
-        <h2 class="hero-statement" style="font-size: 1.5rem; text-align: center; font-weight: 600;">
-            <span class="txt-rotate" 
-                  data-period="2000" 
-                  data-rotate='[ "I design high clarity printed materials.", "I code.", "I manage international teams." ]'></span>
-        </h2>
+    <!-- Reverted: Standalone Minimalist Hero Callout Container -->
+    <div class="hero-callout-container modern-hero-animate">
+        <p class="hero-statement">
+            "I help you build <strong>minimalist systems and processes</strong> across industries, to bring absolute <strong>clarity and calm</strong> to your life."
+        </p>
     </div>
 
     <!-- About Section -->
@@ -19,49 +16,33 @@
         <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">About me</h3>
         <div style="line-height: 1.6;">
             <p style="margin-bottom: 1.25rem;">
-                I am a Senior Digital Designer and Curriculum Architect with 10 years of experience building raw, minimal, and high-clarity software products. 
-            <br/>  My technical foundation bridges design and code, combining expert UI/UX tools like Figma and Adobe Creative Suite with engineering execution in Python, JavaScript, React, and Angular.js.
-            <br/>  By combining human behavior analysis with clean engineering, I eliminate cognitive friction and replace complex clutter with absolute layout clarity.
-            <br/>  As a technical leader, I direct cross-functional international teams—uniting developers and creatives under a single shared vision of lean product execution, minimal aesthetics, and disciplined daily systems.
+                I am a Technical Leader and Systems Architect with 10 years of experience building digital products from scratch.
+            <br/>  My technical foundation is rooted in writing clean, reliable code using front-end frameworks like React, Angular, and Polymer, combined with back-end languages like Python, Node.js, and deploying and scaling software in cloud systems like AWS and Google Cloud.
+            <br/>  By blending core engineering with intuitive product design, I build systems that align perfectly with true user needs.
+            <br/>  I do not just build systems; I study human behavior and conduct deep root problem analysis to strip away cognitive friction. The result is software that is modern, human-friendly, and completely straight to the point.
+            <br/>  As an executive, I specialize in recruiting and leading international, cross-functional teams—uniting engineers, designers, and creators under a shared vision of absolute clarity, lean execution, and natural daily rhythm.
             </p>
-        </div>
-    </div>
-
-    <!-- Featured Case Study Section -->
-    <div class="post-content custom-layout-container">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Featured Work</h3>
-        <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); overflow: hidden; background: rgba(var(--primary-rgb, 128,128,128), 0.015); padding: 24px;">
-            <h4 style="margin: 0 0 12px 0; font-size: 1.25rem; font-weight: 700;">Data System Simplification</h4>
-            <p style="color: var(--secondary); font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">
-                Restructuring complex corporate dashboards into high-clarity user streams. Removed intentional operational clutter, resulting in a 35% reduction in user task completion times.
-            </p>
-            <div style="display: flex; gap: 16px;">
-                <a href="/portfolio" class="inline-cta-link">View Portfolio &rarr;</a>
-            </div>
         </div>
     </div>
 
     <!-- Design Philosophy & Focus Areas -->
     <div class="post-content custom-layout-container">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Design Philosophy</h3>
+        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Core Focus Areas</h3>
         <div class="responsive-grid columns-3">
             <div class="focus-card">
                 <div style="font-size: 1.15rem; font-weight: 700; text-align: center; color: var(--primary);">
-                    Clarity Over Clutter
+                    Clarity-Driven Minimalism
                 </div>
-                <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 8px; line-height: 1.4;">Stripping out visual distractions to lower cognitive load.</p>
             </div>
             <div class="focus-card">
                 <div style="font-size: 1.15rem; font-weight: 700; text-align: center; color: var(--primary);">
-                    Behavioral Psychology
+                    Clean System Architecture
                 </div>
-                <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 8px; line-height: 1.4;">Guiding user actions naturally through deliberate patterns.</p>
             </div>
             <div class="focus-card">
                 <div style="font-size: 1.15rem; font-weight: 700; text-align: center; color: var(--primary);">
-                    Scalable Design Systems
+                    Cost/Resource Reduction
                 </div>
-                <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 8px; line-height: 1.4;">Building highly reusable, code-aligned structural components.</p>
             </div>
         </div>
     </div>
@@ -71,35 +52,20 @@
         <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Core Competencies</h3>
         <ul class="responsive-grid columns-2" style="list-style-type: none; padding-left: 0;">
             <li>
-                <strong style="font-size: 1.05rem; color: var(--primary);">UI/UX Architecture</strong><br>
-                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Translating complex processes into simple design patterns.</span>
+                <strong style="font-size: 1.05rem; color: var(--primary);">User Research</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Understanding the user pain points</span>
             </li>
             <li>
-                <strong style="font-size: 1.05rem; color: var(--primary);">Cross-Functional Team Management</strong><br>
-                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Leading global teams across design and engineering parameters.</span>
+                <strong style="font-size: 1.05rem; color: var(--primary);">Cross-Functional Leadership</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Guiding diverse teams across technical & non-technical domains</span>
             </li>
             <li>
-                <strong style="font-size: 1.05rem; color: var(--primary);">Behavioral Loop Analysis</strong><br>
-                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Pinpointing interface friction points using core human psychology.</span>
+                <strong style="font-size: 1.05rem; color: var(--primary);">Root Problem Analysis</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Finding the core issues & implementing effective solutions</span>
             </li>
             <li>
-                <strong style="font-size: 1.05rem; color: var(--primary);">Front-End Development</strong><br>
-                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Writing modern, high-performance HTML/CSS, React, and JavaScript code.</span>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Curated Knowledge Feed -->
-    <div class="post-content custom-layout-container">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Writing & Systems</h3>
-        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border); padding-bottom: 8px;">
-                <a href="/articles" style="color: var(--primary); font-weight: 600; text-decoration: none;">Designing for the Minimalist Focus Loop</a>
-                <span style="font-size: 0.85rem; color: var(--secondary);">Article</span>
-            </li>
-            <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border); padding-bottom: 8px;">
-                <a href="/resources" style="color: var(--primary); font-weight: 600; text-decoration: none;">Minimalist UI Component Framework (v1.0)</a>
-                <span style="font-size: 0.85rem; color: var(--secondary);">Resource</span>
+                <strong style="font-size: 1.05rem; color: var(--primary);">Building scalable systems</strong><br>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Designing systems with futuristic vision</span>
             </li>
         </ul>
     </div>
@@ -113,31 +79,61 @@
             
             <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
                 <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    <span>Digital Product Systems Architecture</span>
+                    <span>Building Smooth Business Workflows</span>
                     <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
                 </summary>
                 <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
-                    Transforming complex structural layouts and high-friction operational configurations into pure, high-performance interfaces. I eliminate interface clutter to scale interaction models cleanly.
+                    By looking at the messy, repetitive tasks slowing your business down, I turn them into smooth, automated steps. I fix the bottlenecks so your daily operations run completely on autopilot.
                 </div>
             </details>
 
             <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
                 <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    <span>UI/UX & Front-End Consultation</span>
+                    <span>Technical Consultation</span>
                     <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
                 </summary>
                 <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
-                    Strategic guidance linking modern engineering implementations with optimal layout frameworks. I ensure your platform codebase balances visual precision with swift performance benchmarks.
+                    Through clear advice on choosing the right software, tools, and setup, I help you avoid expensive tech mistakes before they happen so your platforms never crash.
                 </div>
             </details>
 
             <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
                 <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    <span>Creative Team Leadership & Architecture</span>
+                    <span>Recruitment & Onboarding</span>
                     <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
                 </summary>
                 <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
-                    Organizing international teams under structural agile design sprint mechanics. I engineer clean organizational systems and clear workflow pipelines for seamless product delivery.
+                    By building simple ways to find, interview, and hire the right people, I create clear training steps so new hires can start doing great work from day one without confusion.
+                </div>
+            </details>
+
+            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Content Writing</span>
+                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
+                </summary>
+                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
+                    Taking complicated ideas and rewriting them into simple, easy-to-read words, I make sure every guide, page, or article grabs attention and makes sense to anyone.
+                </div>
+            </details>
+
+            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Mentorship</span>
+                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
+                </summary>
+                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
+                    Guiding and coaching your team to help them improve their skills and build great habits, I break down complicated concepts into daily practices so they can grow with confidence.
+                </div>
+            </details>
+
+            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
+                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Speaking Engagements</span>
+                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
+                </summary>
+                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
+                    Delivering friendly, easy-to-understand talks at events and workshops, I take complex topics and share them in a way that leaves the audience inspired and ready to take action.
                 </div>
             </details>
         </div>
@@ -152,16 +148,16 @@
                     <span style="animation: pulse-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite; position: absolute; height: 100%; width: 100%; border-radius: 50%; background-color: #10b981; opacity: 0.75;"></span>
                     <span style="position: relative; display: inline-flex; border-radius: 50%; height: 10px; width: 10px; background-color: #10b981;"></span>
                 </span>
-                <span style="font-size: 0.95rem; font-weight: 600; color: var(--primary);">Status: Accepting Select Design Architecture Inquiries</span>
+                <span style="font-size: 0.95rem; font-weight: 600; color: var(--primary);">Status: Available to take on new projects</span>
             </div>
             <div style="font-size: 0.95rem; font-weight: 600; color: var(--primary); display: flex; align-items: center; gap: 10px;">
-                <span style="font-size: 1.1rem; line-height: 1; flex-shrink: 0;">💻</span>
-                <span>Work Format: Remote Systems Collaboration</span>
+                <span style="font-size: 1.1rem; line-height: 1; flex-shrink: 0;">👩‍💻</span>
+                <span>Mode of Work: Online & Offline</span>
             </div>
         </div>
     </div>
 
-    <!-- Call to Action Footer (Double-checked Outline Variant) -->
+    <!-- Action Call Area (Closing Intent) -->
     <div class="post-content custom-layout-container" style="text-align: center; margin-top: 4rem; padding: 40px 20px; border-top: 1px solid var(--border);">
         <h3 style="font-weight: 700; font-size: 1.5rem; margin-bottom: 8px;">Let's build a clean system.</h3>
         <p style="color: var(--secondary); font-size: 0.95rem; margin-bottom: 24px;">Select a slot to discuss your digital architecture strategy.</p>
@@ -172,84 +168,55 @@
         </div>
     </div>
 
-    <!-- Lightweight Typewriter Script -->
+    <!-- Client-Side DOM Injection for Forcing the Outlined Nav Button -->
     <script>
-        var TxtRotate = function(el, toRotate, period) {
-            this.toRotate = toRotate;
-            this.el = el;
-            this.loopNum = 0;
-            this.period = parseInt(period, 10) || 2000;
-            this.txt = '';
-            this.tick();
-            this.isDeleting = false;
-        };
-
-        TxtRotate.prototype.tick = function() {
-            var i = this.loopNum % this.toRotate.length;
-            var fullTxt = this.toRotate[i];
-
-            if (this.isDeleting) {
-                this.txt = fullTxt.substring(0, this.txt.length - 1);
-            } else {
-                this.txt = fullTxt.substring(0, this.txt.length + 1);
-            }
-
-            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-            var that = this;
-            var delta = 150 - Math.random() * 50;
-
-            if (this.isDeleting) { delta /= 2; }
-
-            if (!this.isDeleting && this.txt === fullTxt) {
-                delta = this.period;
-                this.isDeleting = true;
-            } else if (this.isDeleting && this.txt === '') {
-                this.isDeleting = false;
-                this.loopNum++;
-                delta = 500;
-            }
-
-            setTimeout(function() {
-                that.tick();
-            }, delta);
-        };
-
         document.addEventListener("DOMContentLoaded", function() {
-            var elements = document.getElementsByClassName('txt-rotate');
-            for (var i=0; i<elements.length; i++) {
-                var toRotate = elements[i].getAttribute('data-rotate');
-                var period = elements[i].getAttribute('data-period');
-                if (toRotate) {
-                    new TxtRotate(elements[i], JSON.parse(toRotate), period);
+            // Locate any navigation link referencing your booking URL
+            const bookingUrl = "https://cal.com/samathaom/20min";
+            const navLinks = document.querySelectorAll(".menu a, #menu a, nav a");
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute("href") === bookingUrl) {
+                    // Force the raw styling inline to completely override PaperMod's reset values
+                    link.style.display = "inline-flex";
+                    link.style.alignItems = "center";
+                    link.style.padding = "6px 14px";
+                    link.style.marginLeft = "12px";
+                    link.style.border = "1px solid var(--border)";
+                    link.style.borderRadius = "var(--radius, 8px)";
+                    link.style.fontWeight = "600";
+                    link.style.fontSize = "0.85rem";
+                    link.style.color = "var(--primary)";
+                    link.style.background = "transparent";
+                    link.style.textDecoration = "none";
+                    link.style.transition = "all 0.2s ease";
+
+                    // Handle interaction states programmatically 
+                    link.addEventListener("mouseenter", () => {
+                        link.style.borderColor = "var(--primary)";
+                        link.style.backgroundColor = "rgba(128, 128, 128, 0.04)";
+                        link.style.transform = "translateY(-1px)";
+                    });
+                    
+                    link.addEventListener("mouseleave", () => {
+                        link.style.borderColor = "var(--border)";
+                        link.style.backgroundColor = "transparent";
+                        link.style.transform = "translateY(0)";
+                    });
                 }
-            }
-            var css = document.createElement("style");
-            css.type = "text/css";
-            css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid var(--primary); padding-right: 2px; }";
-            document.body.appendChild(css);
+            });
         });
     </script>
 
     <style>
-    /* Layout Variables & Structure */
+    /* Global Section Layout Systems */
     .custom-layout-container {
         max-width: var(--main-width);
         margin: 0 auto 4rem auto;
         padding: 0 var(--gap);
     }
 
-    .inline-cta-link {
-        color: var(--primary);
-        font-weight: 600;
-        text-decoration: none;
-        font-size: 0.95rem;
-    }
-    .inline-cta-link:hover {
-        text-decoration: underline;
-    }
-
-    /* Grids */
+    /* Core Layout Responsive Component Grids */
     .responsive-grid {
         display: grid;
         gap: var(--gap);
@@ -257,7 +224,7 @@
     .columns-2 { grid-template-columns: repeat(2, 1fr); gap: 2rem var(--gap); }
     .columns-3 { grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
 
-    /* Cards */
+    /* Structural Component Cards */
     .focus-card {
         border: 1px solid var(--border);
         border-radius: var(--radius, 8px);
@@ -294,7 +261,7 @@
         transform: translateY(-2px);
     }
 
-    /* Responsive Adjustments */
+    /* Mobile Screen Adjustments */
     @media (max-width: 768px) {
         .responsive-grid.columns-2, 
         .responsive-grid.columns-3 {
@@ -302,19 +269,33 @@
         }
     }
 
-    /* Callout Card Base Styling */
+    /* Original: Minimalist Hero Callout Box Container */
     .hero-callout-container {
         max-width: var(--main-width);
         margin: 0 auto 3.5rem auto;
-        padding: 24px 20px;
-        background: transparent;
-        border: none;
+        padding: 32px 36px;
+        background: rgba(var(--primary-rgb, 128, 128, 128), 0.04); 
+        border: 1px solid rgba(var(--primary-rgb, 128, 128, 128), 0.15);
+        border-left: 5px solid var(--primary); 
+        border-radius: var(--radius, 12px);
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
     }
+    .hero-callout-container:hover { transform: translateY(-4px); }
 
-    /* Entrance Animations */
+    .hero-statement {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        color: var(--primary);
+        margin: 0 !important;
+    }
+    .hero-statement strong { font-weight: 700; }
+
+    /* Basic Entrance Animations */
     .modern-hero-animate { animation: hero-fade-in-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
     @keyframes hero-fade-in-slide {
-        0% { opacity: 0; transform: translateY(10px); }
+        0% { opacity: 0; transform: translateY(15px); }
         100% { opacity: 1; transform: translateY(0); }
     }
     @keyframes pulse-ping { 75%, 100% { transform: scale(2.5); opacity: 0; } }
