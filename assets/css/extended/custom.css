@@ -21,12 +21,12 @@
     --tertiary: #E2E8F0; 
     --content: #1E293B; 
     
-    /* WCAG Compliant Structural Blue (Clear Contrast on White) */
-    --accent-blue: #0B4F6C; 
+    /* Dedicated Custom Core Blue */
+    --accent-blue: #2388FF; 
     
     --code-bg: #F1F5F9;
     --border: #E2E8F0;
-    --primary-rgb: 15, 23, 42;
+    --primary-rgb: 35, 136, 255;
 }
 
 .dark {
@@ -43,12 +43,12 @@
     --tertiary: #1E293B; 
     --content: #E2E8F0; 
     
-    /* High-Visibility Electric Blue (Flashes vividly against dark backgrounds) */
-    --accent-blue: #38BDF8; 
+    /* Unified Custom Core Blue */
+    --accent-blue: #2388FF; 
     
     --code-bg: #1E293B;
     --border: #1E293B;
-    --primary-rgb: 248, 250, 252;
+    --primary-rgb: 35, 136, 255;
 }
 
 /* ----------------------------------------------------
@@ -85,12 +85,16 @@ body {
     margin: 0 auto !important;
 }
 
-/* Enforcing Clear Active Blue on Navbar Links explicitly */
-.menu a,
+/* ----------------------------------------------------
+   Unified Brand Blue Navbar Elements (Light & Dark)
+   ---------------------------------------------------- */
+.header a,
+.nav a,
+.logo a,
 #menu a,
-.nav a {
+.menu a {
     color: var(--accent-blue) !important;
-    font-weight: 500;
+    font-weight: 600 !important;
 }
 
 /* Global Link Interaction Rules */
@@ -123,7 +127,7 @@ a:hover {
 
 .entry-wrapper:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.03) !important;
+    box-shadow: 0 4px 12px rgba(35, 136, 255, 0.05) !important;
 }
 
 /* Code blocks & tags adjusted for low-contrast utility */
@@ -151,14 +155,14 @@ code {
 }
 
 /* ----------------------------------------------------
-   Grid Component & Theme-Adaptive Contrast Fixes
+   Grid Component & Adaptive Featured Work Fixes
    ---------------------------------------------------- */
 .minimal-grid {
     display: grid;
     width: 100%;
 }
 
-/* Theme-Adaptive Feature Block (Resolves the dark-theme font/background clash) */
+/* Clean, modern containers. Adapts to --entry to eliminate harsh dark contrast issues */
 .card-accent {
     border: 1px solid var(--border) !important;
     background-color: var(--entry) !important;
@@ -166,7 +170,7 @@ code {
     border-radius: 12px;
 }
 
-/* Enforcing Strict Typographic Hierarchy for Featured Work */
+/* Enforcing sharp, theme-aware text hierarchy inside featured cards */
 .card-accent .card-title {
     color: var(--primary) !important;
     font-weight: 600;
@@ -221,22 +225,22 @@ code {
     
     background: var(--accent-blue) !important;
     color: #FFFFFF !important;
-    box-shadow: 0 4px 12px rgba(11, 79, 108, 0.15);
+    box-shadow: 0 4px 12px rgba(35, 136, 255, 0.2);
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(11, 79, 108, 0.25);
+    box-shadow: 0 6px 20px rgba(35, 136, 255, 0.3);
 }
 
 .dark .cta-button {
     background: var(--accent-blue) !important;
     color: #070A12 !important; 
-    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.2);
+    box-shadow: 0 4px 14px rgba(35, 136, 255, 0.25);
 }
 
 .dark .cta-button:hover {
-    box-shadow: 0 8px 24px rgba(56, 189, 248, 0.35);
+    box-shadow: 0 8px 24px rgba(35, 136, 255, 0.4);
 }
 
 /* ----------------------------------------------------
@@ -270,13 +274,13 @@ code {
 .nav a[href*="booking"]:hover {
     animation: none !important;
     border-color: var(--accent-blue) !important;
-    background-color: rgba(var(--primary-rgb, 128, 128, 128), 0.06) !important;
+    background-color: rgba(35, 136, 255, 0.08) !important;
     transform: translateY(-1px) !important;
 }
 
 @keyframes breathing-border {
     0% { border-color: var(--border) !important; }
-    100% { border-color: var(--accent-blue) !important; box-shadow: 0 0 6px rgba(56, 189, 248, 0.15) !important; }
+    100% { border-color: var(--accent-blue) !important; box-shadow: 0 0 6px rgba(35, 136, 255, 0.2) !important; }
 }
 
 /* ----------------------------------------------------
