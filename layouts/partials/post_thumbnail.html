@@ -1,32 +1,29 @@
 {{- $ctx := . -}}
 
-{{- if .cxt }}
-  {{- $ctx = .cxt }}
-{{- end }}
+{{- /* Safely extract the page context out of PaperMod's custom dictionary loop */ -}}
+{{- if reflect.IsMap . -}}
+  {{- if .cxt -}}
+    {{- $ctx = .cxt -}}
+  {{- end -}}
+{{- end -}}
 
 {{- $covertable := "" -}}
 
 {{- with $ctx }}
     {{- if .Params.thumbnail -}}
         {{- $covertable = .Params.thumbnail -}}
-
-    {{- else if .Params.slider_images -}}
-        {{- range first 1 .Params.slider_images -}}
-            {{- $covertable = .image -}}
-        {{- end -}}
     {{- end -}}
-{{- end -}}
 
-{{- if ne $covertable "" }}
-    <div class="entry-cover-wrapper" style="margin-bottom: 20px; width: 100%;">
-        {{- $image_url := $covertable | absURL -}}
-        {{- if hasPrefix $covertable "/" }}
-            {{- $image_url = printf "%s%s" site.BaseURL (strings.TrimPrefix "/" $covertable) -}}
+    {{- if ne $covertable "" }}
+        <figure class="entry-cover">
+            <img loading="lazy" src="{{ $covertable | relURL }}" alt="{{ .Title }}">
+        </figure>
+    {{- else -}}
+        {{- $images := partial "templates/_funcs/get-page-images" . }}
+        {{- with index $images 0 }}
+            <figure class="entry-cover">
+                <img loading="lazy" src="{{ .Permalink }}" alt="{{ $ctx.Title }}">
+            </figure>
         {{- end }}
-        <img loading="lazy" src="{{ $image_url }}" alt="Post Thumbnail" style="width: 100%; height: auto; border-radius: var(--radius); object-fit: cover; max-height: 240px; display: block;">
-    </div>
-{{- else -}}
-    {{- if $ctx.Params.cover.image -}}
-        <img loading="lazy" src="{{ $ctx.Params.cover.image | absURL }}" alt="{{ $ctx.Title }}">
-    {{- end -}}
-{{- end -}}
+    {{- end }}
+{{- end }}
