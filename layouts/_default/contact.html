@@ -1,40 +1,41 @@
 {{ define "main" }}
-<article class="post-single">
-  <header class="post-header">
-    <h1 class="post-title">{{ .Title }}</h1>
+<article class="post-single" style="max-width: var(--main-width); margin: 2rem auto 5rem auto; padding: 0 var(--gap);">
+  
+  <header class="post-header" style="margin-bottom: 2.5rem;">
+    <h1 class="post-title" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 8px; color: var(--primary); letter-spacing: -0.015em;">{{ .Title }}</h1>
   </header>
   
-  <div class="post-content">
+  <div class="post-content" style="font-size: 1.1rem; line-height: 1.6; color: var(--content);">
     {{ .Content }}
     
-    <form id="contact-form" action="https://formspree.io/f/{{ .Params.formspree_id }}" method="POST" style="margin-top: 20px;">
+    <form id="contact-form" action="https://formspree.io/f/{{ .Params.formspree_id }}" method="POST" style="margin-top: 2rem; max-width: 640px;">
       
       <!-- Spam Protection -->
       <input type="text" name="_gotcha" style="display:none !important" tabIndex="-1" autocomplete="off">
 
-      <div style="margin-bottom: 15px;">
-        <label for="name" style="display:block; font-weight:bold;">Name</label>
-        <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; background: var(--entry); color: var(--primary); border: 1px solid var(--border); border-radius: 4px;">
+      <div style="margin-bottom: 1.25rem;">
+        <label for="name" style="display:block; font-weight:500; font-size: 0.95rem; margin-bottom: 6px; color: var(--primary);">Name</label>
+        <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; font-family: var(--font-family); background: var(--entry); color: var(--primary); border: 1px solid var(--border); border-radius: 8px; box-sizing: border-box; outline: none; transition: border-color 0.2s ease;">
       </div>
 
-      <div style="margin-bottom: 15px;">
-        <label for="email" style="display:block; font-weight:bold;">Email ID</label>
-        <input type="email" id="email" name="_replyto" required style="width: 100%; padding: 10px; background: var(--entry); color: var(--primary); border: 1px solid var(--border); border-radius: 4px;">
-        <small id="email-hint" style="color: #ff4d4d; display: none;">Please enter a valid email (e.g., name@domain.com)</small>
+      <div style="margin-bottom: 1.25rem;">
+        <label for="email" style="display:block; font-weight:500; font-size: 0.95rem; margin-bottom: 6px; color: var(--primary);">Email ID</label>
+        <input type="email" id="email" name="_replyto" required style="width: 100%; padding: 12px; font-family: var(--font-family); background: var(--entry); color: var(--primary); border: 1px solid var(--border); border-radius: 8px; box-sizing: border-box; outline: none; transition: border-color 0.2s ease;">
+        <small id="email-hint" style="color: #EF4444; font-size: 0.85rem; display: none; margin-top: 6px; font-weight: 500;">Please enter a valid email address (e.g., name@domain.com)</small>
       </div>
 
-      <div style="margin-bottom: 15px;">
-        <label for="subject" style="display:block; font-weight:bold;">Subject</label>
-        <input type="text" id="subject" name="subject" required style="width: 100%; padding: 10px; background: var(--entry); color: var(--primary); border: 1px solid var(--border); border-radius: 4px;">
+      <div style="margin-bottom: 1.25rem;">
+        <label for="subject" style="display:block; font-weight:500; font-size: 0.95rem; margin-bottom: 6px; color: var(--primary);">Subject</label>
+        <input type="text" id="subject" name="subject" required style="width: 100%; padding: 12px; font-family: var(--font-family); background: var(--entry); color: var(--primary); border: 1px solid var(--border); border-radius: 8px; box-sizing: border-box; outline: none; transition: border-color 0.2s ease;">
       </div>
 
-      <div style="margin-bottom: 15px;">
-        <label for="description" style="display:block; font-weight:bold;">Description</label>
-        <textarea id="description" name="description" required style="width: 100%; padding: 10px; background: var(--entry); color: var(--primary); border: 1px solid var(--border); border-radius: 4px; min-height: 120px;"></textarea>
+      <div style="margin-bottom: 1.5rem;">
+        <label for="description" style="display:block; font-weight:500; font-size: 0.95rem; margin-bottom: 6px; color: var(--primary);">Description</label>
+        <textarea id="description" name="description" required style="width: 100%; padding: 12px; font-family: var(--font-family); background: var(--entry); color: var(--primary); border: 1px solid var(--border); border-radius: 8px; min-height: 140px; box-sizing: border-box; resize: vertical; outline: none; transition: border-color 0.2s ease;"></textarea>
       </div>
 
-      <button type="submit" id="submit-btn" disabled style="background: var(--secondary); color: var(--theme); padding: 12px 24px; border: none; border-radius: 4px; cursor: not-allowed; width: 100%; opacity: 0.5; transition: all 0.3s ease;">
-        Submit
+      <button type="submit" id="submit-btn" disabled style="background: var(--border); color: var(--secondary); padding: 14px 28px; font-family: var(--font-family); font-size: 1rem; font-weight: 600; border: none; border-radius: 8px; cursor: not-allowed; width: 100%; opacity: 0.6; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);">
+        Submit Message
       </button>
 
     </form>
@@ -48,8 +49,18 @@
   const emailHint = document.getElementById('email-hint');
   const requiredInputs = form.querySelectorAll('input[required], textarea[required]');
 
-  // Regex for strict email validation: requires @ and a TLD (like .com, .in, .org)
+  // Regex for strict email validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  // Focus and Active Border Transitions
+  requiredInputs.forEach(input => {
+    input.addEventListener('focus', () => {
+      input.style.borderColor = 'var(--accent-blue)';
+    });
+    input.addEventListener('blur', () => {
+      input.style.borderColor = 'var(--border)';
+    });
+  });
 
   form.addEventListener('input', () => {
     let allFilled = true;
@@ -62,24 +73,26 @@
       }
     });
 
-    // 2. Show/Hide email hint for better UX
+    // 2. Show/Hide email hint with clean execution
     if (emailInput.value.length > 5 && !emailValid) {
       emailHint.style.display = 'block';
     } else {
       emailHint.style.display = 'none';
     }
 
-    // 3. Toggle Button State
+    // 3. Toggle Button State to match new Brand Blue #2388FF configuration
     if (allFilled && emailValid) {
       btn.disabled = false;
       btn.style.cursor = 'pointer';
       btn.style.opacity = '1';
-      btn.style.background = 'var(--primary)';
+      btn.style.background = 'var(--accent-blue)';
+      btn.style.color = '#FFFFFF';
     } else {
       btn.disabled = true;
       btn.style.cursor = 'not-allowed';
-      btn.style.opacity = '0.5';
-      btn.style.background = 'var(--secondary)';
+      btn.style.opacity = '0.6';
+      btn.style.background = 'var(--border)';
+      btn.style.color = 'var(--secondary)';
     }
   });
 </script>
