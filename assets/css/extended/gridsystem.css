@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Structural Minimal Grid Engine (Ramesh Balsekar Inspired)
+   ========================================================================== */
+
+/* 1. Base Grid Layout Container */
+.minimal-grid {
+    display: grid;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Column Rules */
+.cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.cols-2 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.cols-3 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+
+/* Flexible Gaps */
+.gap-sm { gap: 1rem; }
+.gap-md { gap: 1.75rem; }
+.gap-lg { gap: 2.5rem; }
+
+/* 2. Responsive Breakpoints */
+@media (min-width: 768px) {
+    .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+    .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* 3. The Grid Card Component */
+.grid-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: var(--radius, 4px); /* Fallback to crisp 4px if theme variable is unset */
+    box-sizing: border-box;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.2s ease;
+}
+
+/* Hover Physics - Clean physical translation */
+.grid-card:hover {
+    transform: translateY(-2px);
+}
+
+/* 4. Padding Utility Modifiers */
+.pad-sm { padding: 1.5rem; }
+.pad-md { padding: 2.25rem; }
+.pad-lg { padding: 3.25rem; }
+
+/* 5. Custom Color themes (Easily apply to any card) */
+
+/* Default/Neutral Style (Adapts to Light/Dark Mode) */
+.card-neutral {
+    border: 1px solid var(--border);
+    background-color: rgba(var(--primary-rgb, 128, 128, 128), 0.015);
+    color: var(--primary);
+}
+.card-neutral:hover {
+    border-color: var(--primary);
+    box-shadow: 0 6px 16px rgba(var(--primary-rgb, 128, 128, 128), 0.03);
+}
+
+/* High Contrast Accent Style (Solid Background) */
+.card-accent {
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    color: var(--bg); /* Inverts text color based on your theme background */
+}
+.card-accent .card-tag {
+    color: var(--bg);
+    opacity: 0.6;
+}
+.card-accent:hover {
+    opacity: 0.95;
+    box-shadow: 0 6px 16px rgba(var(--primary-rgb, 128, 128, 128), 0.15);
+}
+
+/* Pure Minimal Borderless Style */
+.card-minimal {
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: var(--primary);
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.card-minimal:hover {
+    transform: none; /* Keep it completely static */
+}
+
+/* 6. Typography & Internal Card Layout */
+.card-tag {
+    font-family: monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    display: block;
+    font-weight: 600;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 1rem 0 !important; /* Forces strict spacing override */
+    color: inherit;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: inherit;
+    opacity: 0.85;
+    margin: 0 !important;
+    margin-top: auto !important; /* Safely pushes description text to the bottom */
+}

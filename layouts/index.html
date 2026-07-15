@@ -11,10 +11,10 @@
     </div>
 
     <!-- About Section -->
-    <div class="post-content custom-layout-container">
+    <div class="custom-layout-container">
         <h3 class="section-title">About me</h3>
         <div style="line-height: 1.6;">
-            <p style="margin-bottom: 1.25rem;">
+            <p style="margin-bottom: 1.25rem; font-size: 1.05rem;">
                 I am a Senior Digital Designer and Curriculum Architect with 10 years of experience building raw, minimal, and high-clarity software products. 
                 <br/><br/>
                 My technical foundation bridges design and code, combining UI/UX execution in Figma with engineering implementation in Python, JavaScript, React, and Angular.js. By combining human behavior analysis with clean architecture, I eliminate cognitive friction and replace complex clutter with absolute layout clarity.
@@ -22,85 +22,124 @@
         </div>
     </div>
 
-    <!-- Featured Case Study Section -->
-    <div class="post-content custom-layout-container">
+    <!-- Featured Case Study Section (Using a high-contrast Accent Card for focal prominence) -->
+    <div class="custom-layout-container">
         <h3 class="section-title">Featured Work</h3>
-        <div class="featured-card">
-            <h4 style="margin: 0 0 12px 0; font-size: 1.25rem; font-weight: 700;">Data System Simplification</h4>
-            <p style="color: var(--secondary); font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">
-                Restructuring complex corporate dashboards into high-clarity user streams. Removed intentional operational clutter, resulting in a 35% reduction in user task completion times.
-            </p>
-            <div style="display: flex; gap: 16px;">
-                <a href="/portfolio" class="inline-cta-link">View Portfolio &rarr;</a>
+        <div class="minimal-grid cols-1">
+            <div class="grid-card pad-md card-accent">
+                <span class="card-tag">CASE STUDY 01</span>
+                <h3 class="card-title">Data System Simplification</h3>
+                <p class="card-desc" style="margin-bottom: 24px !important;">
+                    Restructuring complex corporate dashboards into high-clarity user streams. Removed intentional operational clutter, resulting in a 35% reduction in user task completion times.
+                </p>
+                <div>
+                    <a href="/portfolio" class="card-cta-link text-light-link">View Portfolio &rarr;</a>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Design Philosophy -->
-    <div class="post-content custom-layout-container">
+    <!-- Design Philosophy Section (3-Column Clean Neutral Cards) -->
+    <div class="custom-layout-container">
         <h3 class="section-title">Design Philosophy</h3>
-        <div class="responsive-grid columns-3">
-            <div class="focus-card">
-                <div class="focus-card-title">Clarity Over Clutter</div>
-                <p class="focus-card-text">Stripping out visual distractions to lower cognitive load.</p>
+        <div class="minimal-grid cols-3 gap-md">
+            <div class="grid-card pad-md card-neutral">
+                <span class="card-tag">01 / INTENT</span>
+                <h3 class="card-title">Clarity Over Clutter</h3>
+                <p class="card-desc">Stripping out visual distractions to lower cognitive load and keep focus absolute.</p>
             </div>
-            <div class="focus-card">
-                <div class="focus-card-title">Behavioral Psychology</div>
-                <p class="focus-card-text">Guiding user actions naturally through deliberate patterns.</p>
+            <div class="grid-card pad-md card-neutral">
+                <span class="card-tag">02 / FLOW</span>
+                <h3 class="card-title">Behavioral Loops</h3>
+                <p class="card-desc">Guiding user actions naturally through deliberate patterns grounded in psychology.</p>
             </div>
-            <div class="focus-card">
-                <div class="focus-card-title">Scalable Systems</div>
-                <p class="focus-card-text">Building highly reusable, code-aligned structural components.</p>
+            <div class="grid-card pad-md card-neutral">
+                <span class="card-tag">03 / CODE</span>
+                <h3 class="card-title">Scalable Systems</h3>
+                <p class="card-desc">Building highly reusable, code-aligned structural components for fast execution.</p>
             </div>
         </div>
     </div>
 
-    <!-- Core Competencies -->
-    <div class="post-content custom-layout-container">
-        <h3 class="section-title">Core Competencies</h3>
-        <ul class="responsive-grid columns-2" style="list-style-type: none; padding-left: 0;">
-            <li>
-                <strong style="font-size: 1.05rem; color: var(--primary);">UI/UX Architecture</strong><br>
-                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Translating complex processes into simple design patterns.</span>
-            </li>
-            <li>
-                <strong style="font-size: 1.05rem; color: var(--primary);">Cross-Functional Management</strong><br>
-                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Leading global teams across design and engineering parameters.</span>
-            </li>
-            <li>
-                <strong style="font-size: 1.05rem; color: var(--primary);">Behavioral Loop Analysis</strong><br>
-                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Pinpointing interface friction points using core human psychology.</span>
-            </li>
-            <li>
-                <strong style="font-size: 1.05rem; color: var(--primary);">Front-End Development</strong><br>
-                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Writing modern, high-performance HTML/CSS, React, and JavaScript.</span>
-            </li>
-        </ul>
+    <!-- Services Section (Restored 3-Column Neutral Grid) -->
+    <div class="custom-layout-container">
+        <h3 class="section-title">Services</h3>
+        <div class="minimal-grid cols-3 gap-md">
+            <div class="grid-card pad-md card-neutral">
+                <span class="card-tag">ENGAGEMENT 01</span>
+                <h3 class="card-title">Interface Architecture</h3>
+                <p class="card-desc" style="margin-bottom: 20px !important;">Translating complex application processes, massive datasets, and legacy product structures into clean, high-clarity UI/UX layouts.</p>
+                <a href="https://cal.com/samathaom/20min" class="card-cta-link">Inquire &rarr;</a>
+            </div>
+            <div class="grid-card pad-md card-neutral">
+                <span class="card-tag">ENGAGEMENT 02</span>
+                <h3 class="card-title">Curriculum Design</h3>
+                <p class="card-desc" style="margin-bottom: 20px !important;">Designing minimalist, high-impact instructional pathways for technical and computer science education that maximize retention.</p>
+                <a href="https://cal.com/samathaom/20min" class="card-cta-link">Inquire &rarr;</a>
+            </div>
+            <div class="grid-card pad-md card-neutral">
+                <span class="card-tag">ENGAGEMENT 03</span>
+                <h3 class="card-title">Strategic Consulting</h3>
+                <p class="card-desc" style="margin-bottom: 20px !important;">Conducting rapid cognitive friction audits on existing web systems to identify and resolve critical behavioral drop-off zones.</p>
+                <a href="https://cal.com/samathaom/20min" class="card-cta-link">Inquire &rarr;</a>
+            </div>
+        </div>
     </div>
 
-    <!-- Writing Feed -->
-    <div class="post-content custom-layout-container">
+    <!-- Core Competencies (2-Column Minimal Borderless Grid) -->
+    <div class="custom-layout-container">
+        <h3 class="section-title">Core Competencies</h3>
+        <div class="minimal-grid cols-2 gap-lg">
+            <div class="grid-card pad-sm card-minimal">
+                <span class="card-tag">CAPABILITY A</span>
+                <h3 class="card-title">UI/UX Architecture</h3>
+                <p class="card-desc">Translating complex technical processes and backend data models into simple, human-usable design patterns.</p>
+            </div>
+            <div class="grid-card pad-sm card-minimal">
+                <span class="card-tag">CAPABILITY B</span>
+                <h3 class="card-title">Cross-Functional Leadership</h3>
+                <p class="card-desc">Leading global development and creative teams to align engineering parameters with intuitive user experiences.</p>
+            </div>
+            <div class="grid-card pad-sm card-minimal">
+                <span class="card-tag">CAPABILITY C</span>
+                <h3 class="card-title">Behavioral Loop Analysis</h3>
+                <p class="card-desc">Pinpointing interface friction and drop-off points using core cognitive principles and raw interaction metrics.</p>
+            </div>
+            <div class="grid-card pad-sm card-minimal">
+                <span class="card-tag">CAPABILITY D</span>
+                <h3 class="card-title">Front-End Engineering</h3>
+                <p class="card-desc">Developing lightweight, semantic interfaces using modular HTML/CSS, clean JavaScript, React, and Angular.js.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Writing & Systems (2-Column Layout using Minimal Cards) -->
+    <div class="custom-layout-container">
         <h3 class="section-title">Writing & Systems</h3>
-        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li class="feed-item">
-                <a href="/articles" style="color: var(--primary); font-weight: 600; text-decoration: none;">Designing for the Minimalist Focus Loop</a>
-                <span style="font-size: 0.85rem; color: var(--secondary);">Article</span>
-            </li>
-            <li class="feed-item">
-                <a href="/resources" style="color: var(--primary); font-weight: 600; text-decoration: none;">Minimalist UI Component Framework (v1.0)</a>
-                <span style="font-size: 0.85rem; color: var(--secondary);">Resource</span>
-            </li>
-        </ul>
+        <div class="minimal-grid cols-2 gap-md">
+            <div class="grid-card pad-md card-neutral">
+                <span class="card-tag">ESSAY</span>
+                <h3 class="card-title">Designing for the Minimalist Focus Loop</h3>
+                <p class="card-desc" style="margin-bottom: 20px !important;">How interface layouts impact dopamine cycles and focus in productivity applications.</p>
+                <a href="/articles/focus-loop" class="card-cta-link">Read Article &rarr;</a>
+            </div>
+            <div class="grid-card pad-md card-neutral">
+                <span class="card-tag">FRAMEWORK</span>
+                <h3 class="card-title">Minimalist UI Component Framework (v1.0)</h3>
+                <p class="card-desc" style="margin-bottom: 20px !important;">A highly opinionated library built to enforce cognitive restraint in dashboards.</p>
+                <a href="/resources/ui-framework" class="card-cta-link">Access Resource &rarr;</a>
+            </div>
+        </div>
     </div>
 
     <!-- Availability Block -->
-    <div class="post-content custom-layout-container">
+    <div class="custom-layout-container">
         <h3 class="section-title">Availability</h3>
-        <div class="availability-banner">
+        <div class="availability-banner-override">
             <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="position: relative; display: flex; width: 10px; height: 10px;">
-                    <span style="animation: pulse-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite; position: absolute; height: 100%; width: 100%; border-radius: 50%; background-color: #10b981; opacity: 0.75;"></span>
-                    <span style="position: relative; display: inline-flex; border-radius: 50%; height: 10px; width: 10px; background-color: #10b981;"></span>
+                <span class="pulse-indicator">
+                    <span class="pulse-ping"></span>
+                    <span class="pulse-dot"></span>
                 </span>
                 <span style="font-size: 0.95rem; font-weight: 600; color: var(--primary);">Status: Accepting Strategic Architect Inquiries</span>
             </div>
@@ -112,7 +151,7 @@
     </div>
 
     <!-- Call to Action Area -->
-    <div class="post-content custom-layout-container text-center-cta">
+    <div class="custom-layout-container text-center-cta">
         <h3 style="font-weight: 700; font-size: 1.5rem; margin-bottom: 8px;">Let's build a clean system.</h3>
         <p style="color: var(--secondary); font-size: 0.95rem; margin-bottom: 24px;">Select a slot to discuss your digital architecture strategy.</p>
         <div class="cta-container">
@@ -182,10 +221,10 @@
     </script>
 
     <style>
-    /* Global Section Layout Systems */
+    /* Page Layout Container Constraints */
     .custom-layout-container {
         max-width: var(--main-width);
-        margin: 0 auto 4rem auto;
+        margin: 0 auto 4.5rem auto;
         padding: 0 var(--gap);
     }
 
@@ -194,133 +233,111 @@
         padding-bottom: 8px;
         margin-bottom: 24px;
         font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--secondary);
     }
 
-    .inline-cta-link {
-        color: var(--primary);
+    /* Helper styles for grid card anchors */
+    .card-cta-link {
         font-weight: 600;
         text-decoration: none;
-        font-size: 0.95rem;
-    }
-    .inline-cta-link:hover {
-        text-decoration: underline;
-    }
-
-    /* Core Layout Responsive Component Grids */
-    .responsive-grid {
-        display: grid;
-        gap: var(--gap);
-    }
-    .columns-2 { grid-template-columns: repeat(2, 1fr); gap: 2rem var(--gap); }
-    .columns-3 { grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
-
-    /* Structural Component Cards */
-    .featured-card {
-        border: 1px solid var(--border);
-        border-radius: var(--radius, 8px);
-        overflow: hidden;
-        background: rgba(var(--primary-rgb, 128,128,128), 0.015);
-        padding: 24px;
-    }
-
-    .focus-card {
-        border: 1px solid var(--border);
-        border-radius: var(--radius, 8px);
-        padding: 24px 20px;
-        background: rgba(var(--primary-rgb, 128,128,128), 0.015);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .focus-card-title {
-        font-size: 1.15rem;
-        font-weight: 700;
-        text-align: center;
+        font-size: 0.9rem;
         color: var(--primary);
     }
-
-    .focus-card-text {
-        font-size: 0.85rem;
-        color: var(--secondary);
-        margin-top: 8px;
-        line-height: 1.4;
-        text-align: center;
+    .card-cta-link:hover {
+        text-decoration: underline;
+    }
+    .text-light-link {
+        color: var(--bg) !important;
     }
 
-    .feed-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px dashed var(--border);
-        padding-bottom: 8px;
-    }
-
-    .availability-banner {
+    /* Availability Component Restructure */
+    .availability-banner-override {
         border: 1px solid var(--border);
-        border-radius: var(--radius, 8px);
-        padding: 20px;
+        border-radius: var(--radius, 4px);
+        padding: 24px;
         display: flex;
         flex-wrap: wrap;
-        gap: var(--gap);
+        gap: 24px;
         justify-content: space-between;
         align-items: center;
-        background: rgba(var(--primary-rgb, 128,128,128), 0.02);
+        background: rgba(var(--primary-rgb, 128, 128, 128), 0.015);
+    }
+
+    .pulse-indicator {
+        position: relative;
+        display: flex;
+        width: 10px;
+        height: 10px;
+    }
+    .pulse-ping {
+        animation: pulse-ping-anim 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        background-color: #10b981;
+        opacity: 0.75;
+    }
+    .pulse-dot {
+        position: relative;
+        display: inline-flex;
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+        background-color: #10b981;
     }
 
     .text-center-cta {
         text-align: center;
-        margin-top: 4rem;
-        padding: 40px 20px;
+        margin-top: 5rem;
+        padding: 48px 24px;
         border-top: 1px solid var(--border);
     }
 
-    /* Primary Action Component Styling */
     .cta-container {
         display: flex;
         justify-content: center;
         margin: 1.5rem 0;
     }
+
     .cta-button {
         display: inline-block;
         background: var(--primary);
         color: var(--bg);
         padding: 12px 28px;
         font-weight: 600;
-        border-radius: var(--radius, 8px);
+        border-radius: var(--radius, 4px);
         text-decoration: none;
-        transition: transform 0.2s ease, opacity 0.2s ease;
+        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
     }
     .cta-button:hover {
-        transform: translateY(-2px);
+        transform: translateY(-1px);
         opacity: 0.95;
     }
 
-    /* Mobile Screen Adjustments */
+    /* Mobile Screen Responsiveness Adjustment */
     @media (max-width: 768px) {
-        .responsive-grid.columns-2, 
-        .responsive-grid.columns-3 {
-            grid-template-columns: 1fr;
-        }
-        .hero-statement {
-            font-size: 1.4rem !important;
-        }
-        .availability-banner {
+        .availability-banner-override {
             flex-direction: column;
             align-items: flex-start;
             gap: 12px;
         }
+        .hero-statement {
+            font-size: 1.4rem !important;
+        }
     }
 
-    /* Hero Block Callout Layouts */
+    /* Hero Block Styles */
     .hero-callout-container {
         max-width: var(--main-width);
         margin: 0 auto 3.5rem auto;
         padding: 40px 36px;
-        background: rgba(var(--primary-rgb, 128, 128, 128), 0.02); 
+        background: rgba(var(--primary-rgb, 128, 128, 128), 0.015); 
         border: 1px solid var(--border);
-        border-radius: var(--radius, 12px);
+        border-radius: var(--radius, 4px);
         position: relative;
         overflow: hidden;
     }
@@ -333,13 +350,13 @@
         margin: 0 !important;
     }
 
-    /* Basic Entrance Animations */
+    /* Entrance Animations */
     .modern-hero-animate { animation: hero-fade-in-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
     @keyframes hero-fade-in-slide {
-        0% { opacity: 0; transform: translateY(10px); }
+        0% { opacity: 0; transform: translateY(8px); }
         100% { opacity: 1; transform: translateY(0); }
     }
-    @keyframes pulse-ping { 75%, 100% { transform: scale(2.5); opacity: 0; } }
+    @keyframes pulse-ping-anim { 75%, 100% { transform: scale(2.5); opacity: 0; } }
 </style>
 
 {{- end -}}

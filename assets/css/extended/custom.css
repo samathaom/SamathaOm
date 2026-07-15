@@ -182,7 +182,7 @@ code {
     box-shadow: 0 4px 12px rgba(146, 199, 207, 0.12);
 }
 
-/* Highly Specific Selector for the Navbar CTA Button */
+/* Optimized, Slimmer Navbar CTA Button */
 #menu a[href*="cal.com"], 
 #menu a[href*="booking"],
 .nav a[href*="cal.com"],
@@ -191,50 +191,44 @@ code {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 6px 14px !important;
-    margin-left: 12px !important;
-    font-weight: 600 !important;
-    font-size: 0.85rem !important;
-    text-decoration: none !important;
-    border-radius: var(--radius, 8px) !important;
     
-    /* 1px Solid Border - Starts with theme border, animates with keyframes */
+    /* Reduced vertical padding (4px instead of 6px) to slim it down */
+    padding: 4px 12px !important;
+    margin-left: 12px !important;
+    
+    /* Compact text scaling */
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+    line-height: 1.2 !important;
+    
+    text-decoration: none !important;
+    border-radius: var(--radius, 6px) !important;
     border: 1px solid var(--border) !important;
     background-color: transparent !important;
     color: var(--primary) !important;
 
-    /* Subtle pulse animation */
+    /* Subtle, hardware-accelerated breathing animation */
     animation: breathing-border 4s ease-in-out infinite alternate !important;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* Clear hover response */
+/* Clear, sharp hover state */
 #menu a[href*="cal.com"]:hover, 
 #menu a[href*="booking"]:hover,
 .nav a[href*="cal.com"]:hover,
 .nav a[href*="booking"]:hover {
-    animation: none !important; /* Stop animating on hover */
+    animation: none !important;
     border-color: var(--primary) !important;
-    background-color: rgba(var(--primary-rgb, 128, 128, 128), 0.08) !important;
+    background-color: rgba(var(--primary-rgb, 128, 128, 128), 0.06) !important;
     transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px rgba(var(--primary-rgb, 128, 128, 128), 0.1) !important;
 }
 
-/* Subtle Breathing Border Animation:
-   Slowly transitions the border and gives a soft, natural 
-   inner/outer shadow glow that fades in and out.
-*/
 @keyframes breathing-border {
     0% {
         border-color: var(--border) !important;
-        box-shadow: 0 0 0 0px rgba(var(--primary-rgb, 128, 128, 128), 0);
-    }
-    50% {
-        border-color: rgba(var(--primary-rgb, 128, 128, 128), 0.6) !important;
-        box-shadow: 0 0 6px 1px rgba(var(--primary-rgb, 128, 128, 128), 0.15);
     }
     100% {
-        border-color: var(--primary) !important;
-        box-shadow: 0 0 10px 2px rgba(var(--primary-rgb, 128, 128, 128), 0.25);
+        border-color: rgba(var(--primary-rgb, 128, 128, 128), 0.7) !important;
+        box-shadow: 0 0 6px rgba(var(--primary-rgb, 128, 128, 128), 0.15) !important;
     }
 }
