@@ -33,10 +33,8 @@
                     {{- end }}
 
                     {{- if ne $covertable "" }}
-                        {{- $image_url := $covertable | relURL -}}
-                        {{- if hasPrefix $covertable "/" }}
-                            {{- $image_url = printf "%s" (strings.TrimPrefix "/" $covertable) | relURL -}}
-                        {{- end }}
+                        {{- $cleaned_path := strings.TrimPrefix "/" $covertable -}}
+                        {{- $image_url := printf "%s%s" site.BaseURL $cleaned_path -}}
 
                         <img src="{{ $image_url }}" 
                              alt="{{ .Title }}" 
@@ -86,12 +84,11 @@
     <style>
         .architect-projects-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Forces exactly 2 per row on desktop layout viewports */
+            grid-template-columns: repeat(2, 1fr);
             gap: 2.5rem var(--gap);
             width: 100%;
         }
         
-        /* Smooth fallback transition for mobile devices to keep UX highly readable */
         @media (max-width: 768px) {
             .architect-projects-grid {
                 grid-template-columns: 1fr !important;
