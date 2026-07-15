@@ -59,6 +59,11 @@ menu:
     - name: "Contact"
       url: "/contact/"
       weight: 4
+    - name: "Book a Call"
+      url: "https://cal.com/samathaom/20min"
+      weight: 5
+      params:
+        class: "nav-cta-button"  
 
 taxonomies:
   tag: "tags"

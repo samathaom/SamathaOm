@@ -181,3 +181,30 @@ code {
 .dark .cta-button:active {
     box-shadow: 0 4px 12px rgba(146, 199, 207, 0.12);
 }
+
+/* Navigation CTA Button Styling */
+.menu a.nav-cta-button, 
+.menu .nav-cta-button a {
+    background-color: var(--primary);
+    color: var(--bg) !important;
+    padding: 6px 14px !important;
+    border-radius: var(--radius, 6px);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.menu a.nav-cta-button:hover,
+.menu .nav-cta-button a:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+    text-decoration: none !important;
+}
+
+/* Ensure perfect vertical centering in PaperMod's flex header */
+.menu {
+    align-items: center;
+}
