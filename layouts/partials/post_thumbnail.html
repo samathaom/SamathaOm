@@ -15,8 +15,14 @@
     {{- end -}}
 
     {{- if ne $covertable "" }}
+        {{- $image_url := $covertable | relURL -}}
+        
+        {{- if hasPrefix $covertable "/" }}
+            {{- $image_url = printf "%s" (strings.TrimPrefix "/" $covertable) | relURL -}}
+        {{- end }}
+        
         <figure class="entry-cover">
-            <img loading="lazy" src="{{ $covertable | relURL }}" alt="{{ .Title }}">
+            <img loading="lazy" src="{{ $image_url }}" alt="{{ .Title }}">
         </figure>
     {{- else -}}
         {{- $images := partial "templates/_funcs/get-page-images" . }}
