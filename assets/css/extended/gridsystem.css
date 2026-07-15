@@ -66,17 +66,31 @@
 
 /* High Contrast Accent Style (Solid Background) */
 .card-accent {
-    border: 1px solid var(--primary);
-    background-color: var(--primary);
-    color: var(--bg); /* Inverts text color based on your theme background */
+    border: 1px solid var(--primary) !important;
+    background-color: var(--primary) !important;
 }
+
+/* Force all text inside the accent card to invert cleanly against var(--primary) */
+.card-accent,
+.card-accent .card-title,
+.card-accent .card-desc,
 .card-accent .card-tag {
-    color: var(--bg);
-    opacity: 0.6;
+    color: var(--bg) !important; 
 }
+
+.card-accent .card-tag {
+    opacity: 0.7;
+}
+
+/* Ensure the link inside matches the inverted theme */
+.card-accent a.card-cta-link {
+    color: var(--bg) !important;
+    text-decoration: underline;
+}
+
 .card-accent:hover {
     opacity: 0.95;
-    box-shadow: 0 6px 16px rgba(var(--primary-rgb, 128, 128, 128), 0.15);
+    box-shadow: 0 6px 20px rgba(var(--primary-rgb, 128, 128, 128), 0.2) !important;
 }
 
 /* Pure Minimal Borderless Style */
