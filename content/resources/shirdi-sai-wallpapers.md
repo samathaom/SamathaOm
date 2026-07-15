@@ -1,5 +1,6 @@
 ---
 title: "Shirdi Sai Wallpapers | Mobile and desktop "
+thumbnail: /images/Buddhist-precept-tracker.png
 tags:
   - Sai Baba
   - Shirdi
@@ -8,14 +9,12 @@ tags:
   - Mobile
   - Desktop
 slider_images:
-  - image: "/images/Shirdi%20Sai%20DTP.jpg"
-    description: "Shirdi Sai Desktop Wallpaper"
-  - image: "/images/Shirdi%20Sai%20Mobile.jpg"
-    description: "Shirdi Sai Mobile Wallpaper"
-
+  - image: /images/Shirdi Sai DTP.jpg
+    description: Shirdi Sai Desktop Wallpaper
+  - image: /images/Shirdi Sai Mobile.jpg
+    description: Shirdi Sai Mobile Wallpaper
 ---
 Minimalist Shirdi Sai Wallpaper with his main teachings - Shraddha and Saburi - Faith and Patience in simple depiction.
-
 
 ### Download
 
