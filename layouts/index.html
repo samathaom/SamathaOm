@@ -1,36 +1,31 @@
 {{- define "main" -}}
 
-    {{- if .IsHome }}
-        {{- partial "index_profile.html" . }}
-    {{- end }}
-
     <!-- Animated Hero Section -->
     <div class="hero-callout-container modern-hero-animate">
         <h1 class="hero-statement">
-            I am a Senior Digital Designer. <br>
+            I am a Senior Digital Designer & Curriculum Architect. <br>
             <span class="txt-rotate" 
                   data-period="2000" 
-                  data-rotate='[ "I design high clarity printed materials.", "I code.", "I manage international teams." ]'></span>
+                  data-rotate='[ "I design high clarity digital systems.", "I write clean front-end code.", "I manage cross-functional teams." ]'></span>
         </h1>
     </div>
 
     <!-- About Section -->
     <div class="post-content custom-layout-container">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">About me</h3>
+        <h3 class="section-title">About me</h3>
         <div style="line-height: 1.6;">
             <p style="margin-bottom: 1.25rem;">
                 I am a Senior Digital Designer and Curriculum Architect with 10 years of experience building raw, minimal, and high-clarity software products. 
-            <br/>  My technical foundation bridges design and code, combining expert UI/UX tools like Figma and Adobe Creative Suite with engineering execution in Python, JavaScript, React, and Angular.js.
-            <br/>  By combining human behavior analysis with clean engineering, I eliminate cognitive friction and replace complex clutter with absolute layout clarity.
-            <br/>  As a technical leader, I direct cross-functional international teams—uniting developers and creatives under a single shared vision of lean product execution, minimal aesthetics, and disciplined daily systems.
+                <br/><br/>
+                My technical foundation bridges design and code, combining UI/UX execution in Figma with engineering implementation in Python, JavaScript, React, and Angular.js. By combining human behavior analysis with clean architecture, I eliminate cognitive friction and replace complex clutter with absolute layout clarity.
             </p>
         </div>
     </div>
 
     <!-- Featured Case Study Section -->
     <div class="post-content custom-layout-container">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Featured Work</h3>
-        <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); overflow: hidden; background: rgba(var(--primary-rgb, 128,128,128), 0.015); padding: 24px;">
+        <h3 class="section-title">Featured Work</h3>
+        <div class="featured-card">
             <h4 style="margin: 0 0 12px 0; font-size: 1.25rem; font-weight: 700;">Data System Simplification</h4>
             <p style="color: var(--secondary); font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">
                 Restructuring complex corporate dashboards into high-clarity user streams. Removed intentional operational clutter, resulting in a 35% reduction in user task completion times.
@@ -41,41 +36,35 @@
         </div>
     </div>
 
-    <!-- Design Philosophy & Focus Areas -->
+    <!-- Design Philosophy -->
     <div class="post-content custom-layout-container">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Design Philosophy</h3>
+        <h3 class="section-title">Design Philosophy</h3>
         <div class="responsive-grid columns-3">
             <div class="focus-card">
-                <div style="font-size: 1.15rem; font-weight: 700; text-align: center; color: var(--primary);">
-                    Clarity Over Clutter
-                </div>
-                <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 8px; line-height: 1.4;">Stripping out visual distractions to lower cognitive load.</p>
+                <div class="focus-card-title">Clarity Over Clutter</div>
+                <p class="focus-card-text">Stripping out visual distractions to lower cognitive load.</p>
             </div>
             <div class="focus-card">
-                <div style="font-size: 1.15rem; font-weight: 700; text-align: center; color: var(--primary);">
-                    Behavioral Psychology
-                </div>
-                <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 8px; line-height: 1.4;">Guiding user actions naturally through deliberate patterns.</p>
+                <div class="focus-card-title">Behavioral Psychology</div>
+                <p class="focus-card-text">Guiding user actions naturally through deliberate patterns.</p>
             </div>
             <div class="focus-card">
-                <div style="font-size: 1.15rem; font-weight: 700; text-align: center; color: var(--primary);">
-                    Scalable Design Systems
-                </div>
-                <p style="font-size: 0.85rem; color: var(--secondary); margin-top: 8px; line-height: 1.4;">Building highly reusable, code-aligned structural components.</p>
+                <div class="focus-card-title">Scalable Systems</div>
+                <p class="focus-card-text">Building highly reusable, code-aligned structural components.</p>
             </div>
         </div>
     </div>
 
     <!-- Core Competencies -->
     <div class="post-content custom-layout-container">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Core Competencies</h3>
+        <h3 class="section-title">Core Competencies</h3>
         <ul class="responsive-grid columns-2" style="list-style-type: none; padding-left: 0;">
             <li>
                 <strong style="font-size: 1.05rem; color: var(--primary);">UI/UX Architecture</strong><br>
                 <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Translating complex processes into simple design patterns.</span>
             </li>
             <li>
-                <strong style="font-size: 1.05rem; color: var(--primary);">Cross-Functional Team Management</strong><br>
+                <strong style="font-size: 1.05rem; color: var(--primary);">Cross-Functional Management</strong><br>
                 <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Leading global teams across design and engineering parameters.</span>
             </li>
             <li>
@@ -84,85 +73,46 @@
             </li>
             <li>
                 <strong style="font-size: 1.05rem; color: var(--primary);">Front-End Development</strong><br>
-                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Writing modern, high-performance HTML/CSS, React, and JavaScript code.</span>
+                <span style="color: var(--secondary); font-size: 0.95rem; line-height: 1.4;">Writing modern, high-performance HTML/CSS, React, and JavaScript.</span>
             </li>
         </ul>
     </div>
 
-    <!-- Curated Knowledge Feed (Articles & Resources Links) -->
+    <!-- Writing Feed -->
     <div class="post-content custom-layout-container">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Writing & Systems</h3>
+        <h3 class="section-title">Writing & Systems</h3>
         <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 12px;">
-            <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border); padding-bottom: 8px;">
+            <li class="feed-item">
                 <a href="/articles" style="color: var(--primary); font-weight: 600; text-decoration: none;">Designing for the Minimalist Focus Loop</a>
                 <span style="font-size: 0.85rem; color: var(--secondary);">Article</span>
             </li>
-            <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border); padding-bottom: 8px;">
+            <li class="feed-item">
                 <a href="/resources" style="color: var(--primary); font-weight: 600; text-decoration: none;">Minimalist UI Component Framework (v1.0)</a>
                 <span style="font-size: 0.85rem; color: var(--secondary);">Resource</span>
             </li>
         </ul>
     </div>
 
-    <!-- Services -->
-    <div class="post-content custom-layout-container">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 24px; font-weight: 700;">Services</h3>
-        
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            {{- $btnStyle := "border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 20px 24px; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; display: block;" -}}
-            
-            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
-                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    <span>Digital Product Systems Architecture</span>
-                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
-                </summary>
-                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
-                    Transforming complex structural layouts and high-friction operational configurations into pure, high-performance interfaces. I eliminate interface clutter to scale interaction models cleanly.
-                </div>
-            </details>
-
-            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
-                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    <span>UI/UX & Front-End Consultation</span>
-                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
-                </summary>
-                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
-                    Strategic guidance linking modern engineering implementations with optimal layout frameworks. I ensure your platform codebase balances visual precision with swift performance benchmarks.
-                </div>
-            </details>
-
-            <details style="{{ $btnStyle }}" onmouseover="this.style.background='rgba(var(--primary-rgb, 128,128,128), 0.04)'; this.style.transform='translateX(4px)'" onmouseout="this.style.background='none'; this.style.transform='translateX(0)'">
-                <summary style="font-weight: 700; color: var(--primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    <span>Creative Team Leadership & Architecture</span>
-                    <span style="font-size: 0.8rem; color: var(--secondary); font-weight: normal; background: var(--code-bg); padding: 4px 10px; border-radius: 4px;">Discover &rarr;</span>
-                </summary>
-                <div style="margin-top: 16px; color: var(--secondary); font-size: 0.95rem; line-height: 1.6; padding: 16px 4px 8px 4px; border-top: 1px solid var(--border);">
-                    Organizing international teams under structural agile design sprint mechanics. I engineer clean organizational systems and clear workflow pipelines for seamless product delivery.
-                </div>
-            </details>
-        </div>
-    </div>
-
     <!-- Availability Block -->
     <div class="post-content custom-layout-container">
-        <h3 style="border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; font-weight: 700;">Availability</h3>
-        <div style="border: 1px solid var(--border); border-radius: var(--radius, 8px); padding: 20px; display: flex; flex-wrap: wrap; gap: var(--gap); justify-content: space-between; align-items: center; background: rgba(var(--primary-rgb, 128,128,128), 0.02);">
+        <h3 class="section-title">Availability</h3>
+        <div class="availability-banner">
             <div style="display: flex; align-items: center; gap: 10px;">
                 <span style="position: relative; display: flex; width: 10px; height: 10px;">
                     <span style="animation: pulse-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite; position: absolute; height: 100%; width: 100%; border-radius: 50%; background-color: #10b981; opacity: 0.75;"></span>
                     <span style="position: relative; display: inline-flex; border-radius: 50%; height: 10px; width: 10px; background-color: #10b981;"></span>
                 </span>
-                <span style="font-size: 0.95rem; font-weight: 600; color: var(--primary);">Status: Accepting Select Design Architecture Inquiries</span>
+                <span style="font-size: 0.95rem; font-weight: 600; color: var(--primary);">Status: Accepting Strategic Architect Inquiries</span>
             </div>
             <div style="font-size: 0.95rem; font-weight: 600; color: var(--primary); display: flex; align-items: center; gap: 10px;">
                 <span style="font-size: 1.1rem; line-height: 1; flex-shrink: 0;">💻</span>
-                <span>Work Format: Remote Systems Collaboration</span>
+                <span>Format: Remote Systems Collaboration</span>
             </div>
         </div>
     </div>
 
-    <!-- Action Action Area (Closing Intent) -->
-    <div class="post-content custom-layout-container" style="text-align: center; margin-top: 4rem; padding: 40px 20px; border-top: 1px solid var(--border);">
+    <!-- Call to Action Area -->
+    <div class="post-content custom-layout-container text-center-cta">
         <h3 style="font-weight: 700; font-size: 1.5rem; margin-bottom: 8px;">Let's build a clean system.</h3>
         <p style="color: var(--secondary); font-size: 0.95rem; margin-bottom: 24px;">Select a slot to discuss your digital architecture strategy.</p>
         <div class="cta-container">
@@ -224,7 +174,6 @@
                     new TxtRotate(elements[i], JSON.parse(toRotate), period);
                 }
             }
-            // Inject structural layout animation styles dynamically
             var css = document.createElement("style");
             css.type = "text/css";
             css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid var(--primary); padding-right: 2px; }";
@@ -238,6 +187,13 @@
         max-width: var(--main-width);
         margin: 0 auto 4rem auto;
         padding: 0 var(--gap);
+    }
+
+    .section-title {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 8px;
+        margin-bottom: 24px;
+        font-weight: 700;
     }
 
     .inline-cta-link {
@@ -259,6 +215,14 @@
     .columns-3 { grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
 
     /* Structural Component Cards */
+    .featured-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius, 8px);
+        overflow: hidden;
+        background: rgba(var(--primary-rgb, 128,128,128), 0.015);
+        padding: 24px;
+    }
+
     .focus-card {
         border: 1px solid var(--border);
         border-radius: var(--radius, 8px);
@@ -268,6 +232,48 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .focus-card-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        text-align: center;
+        color: var(--primary);
+    }
+
+    .focus-card-text {
+        font-size: 0.85rem;
+        color: var(--secondary);
+        margin-top: 8px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .feed-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px dashed var(--border);
+        padding-bottom: 8px;
+    }
+
+    .availability-banner {
+        border: 1px solid var(--border);
+        border-radius: var(--radius, 8px);
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap);
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(var(--primary-rgb, 128,128,128), 0.02);
+    }
+
+    .text-center-cta {
+        text-align: center;
+        margin-top: 4rem;
+        padding: 40px 20px;
+        border-top: 1px solid var(--border);
     }
 
     /* Primary Action Component Styling */
@@ -299,6 +305,11 @@
         }
         .hero-statement {
             font-size: 1.4rem !important;
+        }
+        .availability-banner {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
         }
     }
 

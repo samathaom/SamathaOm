@@ -182,32 +182,77 @@ code {
     box-shadow: 0 4px 12px rgba(146, 199, 207, 0.12);
 }
 
-/* Navigation CTA Button - Minimal Outline Style */
-.menu a.nav-cta-button, 
-.menu .nav-cta-button a {
-    background-color: transparent !important;
-    color: var(--primary) !important;
-    border: 1px solid var(--border);
-    padding: 6px 14px !important;
-    border-radius: var(--radius, 8px);
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+/* Premium Subtle Moving Border for "Book a Call" */
+.nav a[href*="cal.com"], 
+.nav a[href*="booking"] {
+    position: relative;
     display: inline-flex;
     align-items: center;
+    padding: 6px 14px !important;
     margin-left: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--primary) !important;
+    background: var(--theme) !important; /* Matches current light/dark background */
+    border-radius: var(--radius, 8px);
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    
+    /* Fallback border for browsers that don't support gradients */
+    border: 1px solid transparent; 
 }
 
-/* Subtle, high-clarity hover response */
-.menu a.nav-cta-button:hover,
-.menu .nav-cta-button a:hover {
-    border-color: var(--primary);
-    background-color: rgba(var(--primary-rgb, 128, 128, 128), 0.04) !important;
+/* The Animated Gradient Border Background */
+.nav a[href*="cal.com"]::before,
+.nav a[href*="booking"]::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* Subtle shifting colors: theme primary, a soft grey/border, and back */
+    background: conic-gradient(
+        transparent, 
+        rgba(var(--primary-rgb, 128, 128, 128), 0.1), 
+        var(--border), 
+        var(--primary), 
+        transparent 60%
+    );
+    /* Super slow 6-second rotation for ultimate subtlety */
+    animation: rotate-border 6s linear infinite;
+    z-index: -2;
+}
+
+/* The Mask: Keeps the center clean and matches your site's background */
+.nav a[href*="cal.com"]::after,
+.nav a[href*="booking"]::after {
+    content: '';
+    position: absolute;
+    inset: 1px; /* This defines the 1px border thickness */
+    background: var(--theme); 
+    border-radius: calc(var(--radius, 8px) - 1px);
+    z-index: -1;
+    transition: background 0.2s ease;
+}
+
+/* Hover States */
+.nav a[href*="cal.com"]:hover::after,
+.nav a[href*="booking"]:hover::after {
+    /* Subtle reveal of the active theme color behind the text */
+    background: rgba(var(--primary-rgb, 128, 128, 128), 0.03);
+}
+
+.nav a[href*="cal.com"]:hover,
+.nav a[href*="booking"]:hover {
     transform: translateY(-1px);
-    text-decoration: none !important;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Perfect alignment for PaperMod header menus */
-.menu {
-    align-items: center;
+/* Smooth Rotation Keyframe */
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
 }
