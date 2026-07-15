@@ -1,6 +1,6 @@
 ---
 title: "Shirdi Sai Wallpapers | Mobile and desktop "
-thumbnail: /images/Buddhist-precept-tracker.png
+thumbnail: /images/avatar.jpg
 tags:
   - Sai Baba
   - Shirdi
