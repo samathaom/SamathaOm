@@ -359,28 +359,51 @@ code {
 }
 
 /* ----------------------------------------------------
-   Core Structural Cards
+   Services Matrix Container & Layout
    ---------------------------------------------------- */
-:root {
-    --card-w-desktop: 380px;
-    --card-w-mobile: 300px;
-    --card-gap: 1.5rem;
+.services-section {
+    max-width: var(--main-width);
+    margin: 6rem auto;
+    padding: 0 var(--gap);
+    overflow: hidden;
 }
 
+.services-header {
+    margin-bottom: 3rem;
+}
+
+.services-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.015em;
+    margin: 0 0 8px 0;
+}
+
+.services-header p {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* ----------------------------------------------------
+   Reinforced Hardware-Accelerated Marquee Engine
+   ---------------------------------------------------- */
 .services-marquee-viewport {
     overflow: hidden;
     width: 100%;
     position: relative;
-    padding: 12px 0;
-    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    padding: 16px 0;
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
 
 .services-marquee-track {
     display: flex;
+    flex-wrap: nowrap;
     gap: var(--card-gap);
     width: max-content;
-    animation: glideLinear 30s linear infinite;
+    animation: glideLinear 35s linear infinite;
     will-change: transform;
 }
 
@@ -389,17 +412,16 @@ code {
 }
 
 @keyframes glideLinear {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        /* Flawless structural split point regardless of screen changes */
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - (var(--card-gap) / 2))); }
 }
 
+/* ----------------------------------------------------
+   Minimalist Floating Panels
+   ---------------------------------------------------- */
 .service-scroll-card {
     flex: 0 0 var(--card-w-desktop);
+    flex-shrink: 0;
     background: var(--entry) !important;
     border: 1px solid var(--border) !important;
     border-radius: 16px;
@@ -408,7 +430,7 @@ code {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 390px;
+    min-height: 400px;
 }
 
 .card-header-meta {
@@ -474,6 +496,9 @@ code {
     color: #070A12 !important;
 }
 
+/* ----------------------------------------------------
+   Responsive Layout States
+   ---------------------------------------------------- */
 @media screen and (max-width: 768px) {
     .service-scroll-card {
         flex: 0 0 var(--card-w-mobile);
@@ -481,7 +506,6 @@ code {
         min-height: 360px;
     }
 }
-
 
 /* ----------------------------------------------------
    Mobile Breakpoint Optimizations
@@ -497,4 +521,44 @@ code {
         top: 0;
     }
        
+}
+
+/* ----------------------------------------------------
+   Pure CSS Fluid Text Rotation System
+   ---------------------------------------------------- */
+.rotator-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 4 lines total = moving up in 25% increments */
+    animation: rotatePhrases 9s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+}
+
+.rotator-line {
+    height: 1.6em;
+    line-height: 1.6em;
+    white-space: nowrap;
+    display: block;
+}
+
+@keyframes rotatePhrases {
+    /* Phrase 1 Active */
+    0%, 28% {
+        transform: translateY(0);
+    }
+    /* Shift to Phrase 2 */
+    33%, 61% {
+        transform: translateY(-25%);
+    }
+    /* Shift to Phrase 3 */
+    66%, 94% {
+        transform: translateY(-50%);
+    }
+    /* Snap to Loop (Duplicate Item) */
+    100% {
+        transform: translateY(-75%);
+    }
 }
