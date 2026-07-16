@@ -1,10 +1,12 @@
 {{- define "main" -}}
 
+    <!-- About Section -->
     <div class="hero-callout-container modern-hero-animate">
         <h1 class="hero-statement">
             <span class="hero-greeting">👋 Hi there!</span>
             <span class="hero-title">I am a Senior Digital Designer.</span>
             
+            <!-- JavaScript Typewriter Target Hook -->
             <span class="css-txt-rotator">
                 <span id="typewriter-hook" class="rotator-line"></span>
                 <span class="txt-cursor">|</span>
@@ -12,6 +14,7 @@
         </h1>
     </div>
 
+    <!-- Featured Case Study Section -->
     <div class="custom-layout-container">
         <h3 class="section-title">Featured Work</h3>
         <div class="minimal-grid cols-1">
@@ -28,6 +31,7 @@
         </div>
     </div>
    
+    <!-- Asymmetric Design Philosophy Layout -->
     <section class="philosophy-section">
         <div class="philosophy-layout">
             
@@ -66,6 +70,7 @@
         </div>
     </section>
 
+    <!-- Services Marquee Matrix Block -->
     <section class="services-section">
         <header class="services-header">
             <h2>Expertise & Offerings</h2>
@@ -75,6 +80,7 @@
         <div class="services-marquee-viewport">
             <div class="services-marquee-track">
                 
+                <!-- Core Content Set -->
                 <div class="service-scroll-card">
                     <div class="card-header-meta">
                         <span class="service-num">01</span>
@@ -117,6 +123,7 @@
                     </div>
                 </div>
 
+                <!-- Cloned Duplicate Set (Prevents Blank Space Boundary Collapse) -->
                 <div class="service-scroll-card" aria-hidden="true">
                     <div class="card-header-meta">
                         <span class="service-num">01</span>
@@ -163,48 +170,7 @@
         </div>
     </section>
 
-    <!-- Core Competencies Section -->
-<section class="competencies-section">
-    <div class="custom-layout-container">
-        <h3 class="section-title">Core Competencies</h3>
-        
-        <div class="raw-structural-layout">
-            <div class="competency-block">
-                <span class="structural-tag">[A]</span>
-                <div class="competency-content">
-                    <h4>UI/UX Architecture</h4>
-                    <p>Translating complex technical processes and backend data models into simple, human-usable design patterns.</p>
-                </div>
-            </div>
-
-            <div class="competency-block">
-                <span class="structural-tag">[B]</span>
-                <div class="competency-content">
-                    <h4>Cross-Functional Leadership</h4>
-                    <p>Leading global development and creative teams to align engineering parameters with intuitive user experiences.</p>
-                </div>
-            </div>
-
-            <div class="competency-block">
-                <span class="structural-tag">[C]</span>
-                <div class="competency-content">
-                    <h4>Behavioral Loop Analysis</h4>
-                    <p>Pinpointing interface friction and drop-off points using core cognitive principles and raw interaction metrics.</p>
-                </div>
-            </div>
-
-            <div class="competency-block">
-                <span class="structural-tag">[D]</span>
-                <div class="competency-content">
-                    <h4>Front-End Engineering</h4>
-                    <p>Developing lightweight, semantic interfaces using modular HTML/CSS, clean JavaScript, React, and Angular.js.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
+    <!-- Writing & Systems -->
     <div class="custom-layout-container">
         <h3 class="section-title">Writing & Systems</h3>
         <div class="minimal-grid cols-2 gap-md">
@@ -223,23 +189,7 @@
         </div>
     </div>
 
-    <div class="custom-layout-container">
-        <h3 class="section-title">Availability</h3>
-        <div class="availability-banner-override">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <span class="pulse-indicator">
-                    <span class="pulse-ping"></span>
-                    <span class="pulse-dot"></span>
-                </span>
-                <span style="font-size: 0.95rem; font-weight: 600; color: var(--primary);">Status: Accepting Strategic Architect Inquiries</span>
-            </div>
-            <div style="font-size: 0.95rem; font-weight: 600; color: var(--primary); display: flex; align-items: center; gap: 10px;">
-                <span style="font-size: 1.1rem; line-height: 1; flex-shrink: 0;">💻</span>
-                <span>Format: Remote Systems Collaboration</span>
-            </div>
-        </div>
-    </div>
-
+    <!-- Call to Action Area -->
     <div class="custom-layout-container text-center-cta">
         <h3 style="font-weight: 700; font-size: 1.5rem; margin-bottom: 8px;">Let's build a clean system.</h3>
         <p style="color: var(--secondary); font-size: 0.95rem; margin-bottom: 24px;">Select a slot to discuss your digital architecture strategy.</p>
@@ -250,6 +200,7 @@
         </div>
     </div>
 
+    <!-- JavaScript Native Typewriter Script Component -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var el = document.getElementById('typewriter-hook');
@@ -268,24 +219,24 @@
                 var fullTxt = toRotate[i];
 
                 if (isDeleting) {
-                    txt = fullTxt.substring(0, txt.length - 1);
+                    // Instant Reset: Empty string immediately, bypassing character-by-character delete
+                    txt = '';
+                    isDeleting = false;
+                    loopNum++;
+                    el.innerHTML = txt;
+                    setTimeout(tick, 400); // Quick pause before typing next line
+                    return;
                 } else {
                     txt = fullTxt.substring(0, txt.length + 1);
                 }
 
                 el.innerHTML = txt;
 
-                var delta = 100 - Math.random() * 50; // Sizing character speed offsets
-
-                if (isDeleting) { delta /= 2; }
+                var delta = 100 - Math.random() * 50; 
 
                 if (!isDeleting && txt === fullTxt) {
-                    delta = period;
+                    delta = period; // Pause once typing is complete
                     isDeleting = true;
-                } else if (isDeleting && txt === '') {
-                    isDeleting = false;
-                    loopNum++;
-                    delta = 400;
                 }
 
                 setTimeout(tick, delta);
@@ -326,43 +277,6 @@
     }
     .text-light-link {
         color: var(--bg) !important;
-    }
-
-    /* Availability Component Restructure */
-    .availability-banner-override {
-        border: 1px solid var(--border);
-        border-radius: var(--radius, 4px);
-        padding: 24px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 24px;
-        justify-content: space-between;
-        align-items: center;
-        background: rgba(var(--primary-rgb, 128, 128, 128), 0.015);
-    }
-
-    .pulse-indicator {
-        position: relative;
-        display: flex;
-        width: 10px;
-        height: 10px;
-    }
-    .pulse-ping {
-        animation: pulse-ping-anim 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        border-radius: 50%;
-        background-color: #10b981;
-        opacity: 0.75;
-    }
-    .pulse-dot {
-        position: relative;
-        display: inline-flex;
-        border-radius: 50%;
-        height: 10px;
-        width: 10px;
-        background-color: #10b981;
     }
 
     .text-center-cta {
@@ -449,11 +363,6 @@
 
     /* Mobile Screen Responsiveness Adjustment */
     @media (max-width: 768px) {
-        .availability-banner-override {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
-        }
         .hero-statement {
             font-size: 1.4rem !important;
         }
@@ -477,7 +386,6 @@
         0% { opacity: 0; transform: translateY(8px); }
         100% { opacity: 1; transform: translateY(0); }
     }
-    @keyframes pulse-ping-anim { 75%, 100% { transform: scale(2.5); opacity: 0; } }
 </style>
 
 {{- end -}}
