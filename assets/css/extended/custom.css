@@ -543,3 +543,54 @@ code {
 @keyframes blinkCursor {
     to { opacity: 0; }
 }
+
+
+.competencies-section {
+    max-width: var(--main-width);
+    margin: 6rem auto;
+    padding: 0 var(--gap);
+}
+
+.raw-structural-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.competency-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.structural-tag {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    line-height: 1.4;
+    flex-shrink: 0;
+}
+
+.competency-content h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0 0 6px 0;
+    letter-spacing: -0.015em;
+}
+
+.competency-content p {
+    color: var(--secondary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    .competency-block {
+        gap: 1rem;
+    }
+}
