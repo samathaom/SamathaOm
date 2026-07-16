@@ -85,6 +85,11 @@
                     <span class="card-tag">FEATURED ARTICLE</span>
                     <span class="card-meta-time">{{ $firstArticle.ReadingTime }} min read</span>
                 </div>
+                {{- with $firstArticle.Params.image -}}
+                <div class="explore-media-wrapper">
+                    <img src="{{ . }}" alt="{{ $firstArticle.Title }}" class="explore-media-img" />
+                </div>
+                {{- end -}}
                 <h3 class="card-title">{{ $firstArticle.Title }}</h3>
                 <p class="card-desc space-adjust">
                     {{ $firstArticle.Description | default $firstArticle.Summary }}
