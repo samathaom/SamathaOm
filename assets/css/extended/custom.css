@@ -324,60 +324,68 @@ code {
 /* ----------------------------------------------------
    Horizontal Services Scroll Track
    ---------------------------------------------------- */
-.services-scroll-track {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding-bottom: 1.5rem;
-    margin-right: calc(-1 * var(--gap)); /* Pulls track to the edge of screen */
-    padding-right: var(--gap);
-    
-    /* Elegant modern snap scroll behavior */
-    scroll-snap-type: x mandatory;
-    
-    /* Hide default ugly scrollbars while retaining scroll ability */
-    -ms-overflow-style: none;  /* IE/Edge */
-    scrollbar-width: none;  /* Firefox */
+<style>
+/* ----------------------------------------------------
+   Infinite CSS Marquee Engine
+   ---------------------------------------------------- */
+.services-marquee-viewport {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
 }
 
-.services-scroll-track::-webkit-scrollbar {
-    display: none; /* Chrome/Safari/Opera */
+.services-marquee-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    /* Continuous automated movement from left to right */
+    animation: linearMarquee 25s linear infinite;
+}
+
+/* Pause execution upon direct cursor hover to maximize human usability */
+.services-marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes linearMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Translates exactly half the track width (the duplicate barrier) */
+        transform: translateX(calc(-50% - 0.75rem));
+    }
 }
 
 /* ----------------------------------------------------
-   Floating Card Configuration
+   Core Structural Cards
    ---------------------------------------------------- */
 .service-scroll-card {
-    flex: 0 0 380px; /* Locked optimal card width */
-    max-width: 85vw; /* Keeps layout friendly on tiny mobile screens */
-    scroll-snap-align: start;
-    
+    flex: 0 0 380px;
     background: var(--entry) !important;
     border: 1px solid var(--border) !important;
     border-radius: 16px;
     padding: 32px;
     box-sizing: border-box;
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 380px;
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
 }
 
-.service-scroll-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(35, 136, 255, 0.08) !important;
-    border-color: var(--accent-blue) !important;
-}
-
-/* Card Metadata Utilities */
 .card-header-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
+}
+
+.service-num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+    line-height: 1;
 }
 
 .card-tag {
@@ -387,52 +395,51 @@ code {
     background: var(--code-bg);
     padding: 4px 10px;
     border-radius: 20px;
-    letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
-/* Card Booking Buttons (Uses our true brand blue #2388FF) */
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0 0 8px 0;
+    letter-spacing: -0.015em;
+}
+
+.service-desc {
+    color: var(--secondary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
 .service-booking-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
     width: 100%;
     padding: 12px 18px;
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none !important;
-    text-align: center;
-    box-sizing: border-box;
-    
     background: var(--accent-blue) !important;
     color: #FFFFFF !important;
-    transition: filter 0.2s ease;
-}
-
-.service-booking-btn:hover {
-    filter: brightness(0.92);
+    box-sizing: border-box;
 }
 
 .dark .service-booking-btn {
-    background: var(--accent-blue) !important;
     color: #070A12 !important;
 }
 
-/* ----------------------------------------------------
-   Responsiveness Breakpoints
-   ---------------------------------------------------- */
 @media screen and (max-width: 768px) {
     .service-scroll-card {
-        flex: 0 0 290px; /* Slightly narrower cards on mobile */
+        flex: 0 0 300px;
         padding: 24px;
-        min-height: 340px;
-    }
-    .scroll-helper {
-        display: none !important; /* Hide scroll helper text on mobile touch-devices */
+        min-height: 350px;
     }
 }
+
 
 /* ----------------------------------------------------
    Mobile Breakpoint Optimizations
