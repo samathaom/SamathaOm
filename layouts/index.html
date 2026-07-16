@@ -1,43 +1,40 @@
 {{- define "main" -}}
 
-
-<!-- Animated Hero Section -->
+    <!-- Animated Hero Section -->
     <div class="hero-callout-container modern-hero-animate">
-    <h1 class="hero-statement" style="font-family: var(--font-family); margin: 0; line-height: 1.2; letter-spacing: -0.02em;">
-        <span class="hero-greeting" style="font-size: 1.25rem; font-weight: 500; color: var(--secondary); display: block; margin-bottom: 8px;">👋 Hi there!</span>
-        <span class="hero-title" style="font-size: 3rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 12px; letter-spacing: -0.025em;">I am a Senior Digital Designer.</span>
-        <span class="txt-rotate" 
-              style="font-size: 1.25rem; font-weight: 500; color: var(--accent-blue); display: inline-block; min-height: 1.5em;"
-              style="font-size: 1.5rem; font-weight: 500; color: var(--accent-blue); display: inline-block; min-height: 1.5em;"
-              data-period="2000" 
-              data-rotate='[ "I design high-clarity digital systems and print materials.", " I have a strong technical foundation in coding.", "I manage international cross-functional teams." ]'></span>
+        <h1 class="hero-statement">
+            <span class="hero-greeting">👋 Hi there!</span>
+            <span class="hero-title">I am a Senior Digital Designer.</span>
+            <!-- CSS-driven, high-performance floating text loop -->
+            <span class="css-txt-rotator">
+                <span class="rotator-line" id="typewriter-hook"></span><span class="txt-cursor">|</span>
+            </span>
         </h1>
     
-
-        <h1 class="hero-statement">
-        <h3 class="section-title">About me</h3>
-        <div style="line-height: 1.6;">
-            <p style="margin-bottom: 1.25rem; font-size: 1.05rem;">
-                I am a Senior Digital Designer with 10 years of experience crafting raw, minimal, and high-clarity software products and print materials.                
-                <br/><br/>
-                    While my daily focus is entirely on UI/UX and visual execution, my technical foundation in Python, JavaScript, React, and Angular.js allows me to bridge the gap between design and engineering seamlessly.
-                <br/><br/>
-                    By combining human behavior analysis with clean design architecture, I eliminate cognitive friction and replace complex clutter with absolute visual clarity.
-                </p>
-                </div>
-             </h1>   
+        <div class="about-bio-text">
+            <h3 class="section-title">About me</h3>
+            <p>
+                I am a Senior Digital Designer with 10 years of experience crafting raw, minimal, and high-clarity software products and print materials.
+            </p>
+            <p>
+                While my daily focus is entirely on UI/UX and visual execution, my technical foundation in Python, JavaScript, React, and Angular.js allows me to bridge the gap between design and engineering seamlessly.
+            </p>
+            <p>
+                By combining human behavior analysis with clean design architecture, I eliminate cognitive friction and replace complex clutter with absolute visual clarity.
+            </p>
+        </div>
     </div>
 
-
-
-    <!-- Explore Section (2-Column Grid with Images) -->
+    <!-- Refactored Explore Section (Compact, balanced layout) -->
     <div class="custom-layout-container">
         <h3 class="section-title">Explore</h3>
         <div class="minimal-grid cols-2 gap-md">
             
             <!-- Left Column: Featured Project -->
             <div class="grid-card pad-md card-neutral flex-column">
-                <span class="card-tag">FEATURED PROJECT</span>
+                <div class="card-header-meta">
+                    <span class="card-tag">FEATURED PROJECT</span>
+                </div>
                 <div class="explore-media-wrapper">
                     <img src="image_agent_tag_4043656101480693346" alt="Minimalist dashboard user interface layout with clean typography" class="explore-media-img" />
                 </div>
@@ -52,11 +49,13 @@
 
             <!-- Right Column: Featured Resource -->
             <div class="grid-card pad-md card-neutral flex-column">
-                <span class="card-tag">FEATURED RESOURCE</span>
+                <div class="card-header-meta">
+                    <span class="card-tag">FEATURED RESOURCE</span>
+                </div>
                 <div class="explore-media-wrapper">
                     <img src="image_agent_tag_4043656101480691167" alt="Geometric and structural grid book design layout template" class="explore-media-img" />
                 </div>
-                <h3 class="card-title">Minimalist UI Component Framework (v1.0)</h3>
+                <h3 class="card-title">Minimalist UI Framework (v1.0)</h3>
                 <p class="card-desc space-adjust">
                     A highly opinionated library built to enforce cognitive restraint in dashboard design, helping developers maintain strict typographic hierarchies out of the box.
                 </p>
@@ -206,25 +205,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Writing & Systems -->
-    <div class="custom-layout-container">
-        <h3 class="section-title">Writing & Systems</h3>
-        <div class="minimal-grid cols-2 gap-md">
-            <div class="grid-card pad-md card-neutral">
-                <span class="card-tag">ESSAY</span>
-                <h3 class="card-title">Designing for the Minimalist Focus Loop</h3>
-                <p class="card-desc compact-space">How interface layouts impact dopamine cycles and focus in productivity applications.</p>
-                <a href="/articles/focus-loop" class="card-cta-link">Read Article &rarr;</a>
-            </div>
-            <div class="grid-card pad-md card-neutral">
-                <span class="card-tag">FRAMEWORK</span>
-                <h3 class="card-title">The Typography Rules of Physical Paper</h3>
-                <p class="card-desc compact-space">Applying structural grid ratios derived from historical Swiss designs to print layouts.</p>
-                <a href="/resources/print-grid" class="card-cta-link">Access Resource &rarr;</a>
-            </div>
-        </div>
-    </div>
 
     <!-- Call to Action Area -->
     <div class="custom-layout-container text-center-cta">

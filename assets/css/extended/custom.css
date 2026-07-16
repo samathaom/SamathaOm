@@ -270,13 +270,14 @@ a:hover {
 }
 
 .css-txt-rotator {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 500;
     color: var(--accent-blue);
     display: inline-block;
     position: relative;
     vertical-align: top;
     white-space: normal;
+    min-height: 1.8em;
 }
 
 .rotator-line {
@@ -296,7 +297,7 @@ a:hover {
 }
 
 .about-bio-text {
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     border-top: 1px solid var(--border);
     padding-top: 1.5rem;
 }
@@ -305,7 +306,7 @@ a:hover {
     color: var(--secondary);
     font-size: 1.05rem;
     line-height: 1.7;
-    margin: 0 0 8px 0;
+    margin: 0 0 16px 0;
     max-width: 800px;
 }
 
@@ -323,57 +324,65 @@ a:hover {
 }
 
 /* ==========================================================================
-   6. EXPLORE SECTION ARCHITECTURE (ALIGNED WITH SERVICES / PHILOSOPHY)
+   6. EXPLORE SECTION ARCHITECTURE (ALIGNED & SCALED DOWN)
    ========================================================================== */
 .card-neutral {
     background: var(--entry) !important;
     border: 1px solid var(--border) !important;
     border-radius: var(--radius);
-    padding: 32px; /* Aligned padding with Service cards */
+    padding: 32px; 
 }
 
 .card-neutral:hover {
     box-shadow: 0 4px 12px rgba(35, 136, 255, 0.05) !important;
 }
 
-/* Aligned directly with the typography of the Services Scroll Card header elements */
+/* Meta wrapper inside explore cards */
+.card-neutral .card-header-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* Custom Tag Capsules */
 .card-neutral .card-tag {
     color: var(--accent-blue) !important;
     background-color: var(--code-bg);
     padding: 4px 10px;
-    border-radius: 20px; /* Rounded capsule look matches services */
-    font-size: 0.75rem;
+    border-radius: 20px; 
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.05em;
     align-self: start;
     text-transform: uppercase;
 }
 
-/* Typography scale and spacing match .service-title exactly */
+/* Typographic scale matches standard service headings */
 .card-neutral .card-title {
     color: var(--primary) !important;
-    font-size: 1.5rem; /* Service card heading size */
+    font-size: 1.4rem; 
     font-weight: 600;
     margin: 0 0 10px 0;
     letter-spacing: -0.015em;
 }
 
-/* Text weight and leading match the layout of Services descriptions */
 .card-neutral .card-desc {
     color: var(--secondary) !important;
-    font-size: 1.02rem;
-    line-height: 1.6;
+    font-size: 0.98rem;
+    line-height: 1.55;
 }
 
-/* High-Clarity Image Container System */
+/* Rescaled Compact Media Wrappers */
 .explore-media-wrapper {
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9; /* Cinematic, space-efficient landscape ratio */
+    max-height: 190px;    /* Strict cap on absolute height */
     overflow: hidden;
-    border-radius: var(--radius);
+    border-radius: 8px;
     border: 1px solid var(--border);
     background-color: var(--code-bg);
-    margin: 20px 0 24px 0;
+    margin: 0 0 16px 0;
     position: relative;
 }
 
@@ -385,7 +394,6 @@ a:hover {
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Subtle, polished motion response */
 .grid-card:hover .explore-media-img {
     transform: scale(1.02);
 }
@@ -393,7 +401,7 @@ a:hover {
 .card-cta-link {
     font-weight: 600;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--accent-blue);
     display: inline-block;
     transition: transform 0.2s ease;
