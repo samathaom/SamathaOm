@@ -669,3 +669,18 @@ a:hover {
         min-height: 360px;
     }
 }
+
+/* Bento Grid Layout Extensions */
+.bento-cols {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.bento-article-span {
+    grid-column: span 2;
+}
+
+@media screen and (max-width: 768px) {
+    .bento-article-span {
+        grid-column: span 1 !important;
+    }
+}
