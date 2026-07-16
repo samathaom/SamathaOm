@@ -12,22 +12,49 @@
                 <span class="txt-cursor">|</span>
             </span>
         </h1>
+        <div class="about-bio-text">
+            <!-- REPLACE THE THREE LINES BELOW WITH YOUR EXACT TEXT -->
+            <p class="bio-line-1">This is your first line of custom about text.</p>
+            <p class="bio-line-2">This is your second line of custom about text.</p>
+            <p class="bio-line-3">This is your third line of custom about text.</p>
+        </div>
     </div>
 
-    <!-- Featured Case Study Section -->
+    <!-- Explore Section (2-Column Grid with Images) -->
     <div class="custom-layout-container">
-        <h3 class="section-title">Featured Work</h3>
-        <div class="minimal-grid cols-1">
-            <div class="grid-card pad-md card-accent">
-                <span class="card-tag">CASE STUDY 01</span>
+        <h3 class="section-title">Explore</h3>
+        <div class="minimal-grid cols-2 gap-md">
+            
+            <!-- Left Column: Featured Project -->
+            <div class="grid-card pad-md card-neutral flex-column">
+                <span class="card-tag">FEATURED PROJECT</span>
+                <div class="explore-media-wrapper">
+                    <img src="image_agent_tag_4043656101480693346" alt="Minimalist dashboard user interface layout with clean typography" class="explore-media-img" />
+                </div>
                 <h3 class="card-title">Data System Simplification</h3>
-                <p class="card-desc" style="margin-bottom: 24px !important;">
-                    Restructuring complex corporate dashboards into high-clarity user streams. Removed intentional operational clutter, resulting in a 35% reduction in user task completion times.
+                <p class="card-desc space-adjust">
+                    Restructuring complex enterprise data dashboards into high-clarity user streams. Stripped away operational clutter, resulting in a 35% reduction in user task completion times.
                 </p>
-                <div>
-                    <a href="/portfolio" class="card-cta-link text-light-link">View Portfolio &rarr;</a>
+                <div class="mt-auto">
+                    <a href="/portfolio" class="card-cta-link">View Portfolio &rarr;</a>
                 </div>
             </div>
+
+            <!-- Right Column: Featured Resource -->
+            <div class="grid-card pad-md card-neutral flex-column">
+                <span class="card-tag">FEATURED RESOURCE</span>
+                <div class="explore-media-wrapper">
+                    <img src="image_agent_tag_4043656101480691167" alt="Geometric and structural grid book design layout template" class="explore-media-img" />
+                </div>
+                <h3 class="card-title">Minimalist UI Component Framework (v1.0)</h3>
+                <p class="card-desc space-adjust">
+                    A highly opinionated library built to enforce cognitive restraint in dashboard design, helping developers maintain strict typographic hierarchies out of the box.
+                </p>
+                <div class="mt-auto">
+                    <a href="/resources/ui-framework" class="card-cta-link">Access Resource &rarr;</a>
+                </div>
+            </div>
+
         </div>
     </div>
    
@@ -59,7 +86,7 @@
                     </p>
                 </div>
 
-                <div class="principle-block" style="margin: 0;">
+                <div class="principle-block end-margin-reset">
                     <h3>Tactile Print Precision</h3>
                     <p>
                         Clarity transcends digital boundaries. I apply structural typographic principles and strict geometric grids to tactile print mediums with identical layout rigor.
@@ -177,22 +204,22 @@
             <div class="grid-card pad-md card-neutral">
                 <span class="card-tag">ESSAY</span>
                 <h3 class="card-title">Designing for the Minimalist Focus Loop</h3>
-                <p class="card-desc" style="margin-bottom: 20px !important;">How interface layouts impact dopamine cycles and focus in productivity applications.</p>
+                <p class="card-desc compact-space">How interface layouts impact dopamine cycles and focus in productivity applications.</p>
                 <a href="/articles/focus-loop" class="card-cta-link">Read Article &rarr;</a>
             </div>
             <div class="grid-card pad-md card-neutral">
                 <span class="card-tag">FRAMEWORK</span>
-                <h3 class="card-title">Minimalist UI Component Framework (v1.0)</h3>
-                <p class="card-desc" style="margin-bottom: 20px !important;">A highly opinionated library built to enforce cognitive restraint in dashboards.</p>
-                <a href="/resources/ui-framework" class="card-cta-link">Access Resource &rarr;</a>
+                <h3 class="card-title">The Typography Rules of Physical Paper</h3>
+                <p class="card-desc compact-space">Applying structural grid ratios derived from historical Swiss designs to print layouts.</p>
+                <a href="/resources/print-grid" class="card-cta-link">Access Resource &rarr;</a>
             </div>
         </div>
     </div>
 
     <!-- Call to Action Area -->
     <div class="custom-layout-container text-center-cta">
-        <h3 style="font-weight: 700; font-size: 1.5rem; margin-bottom: 8px;">Let's build a clean system.</h3>
-        <p style="color: var(--secondary); font-size: 0.95rem; margin-bottom: 24px;">Select a slot to discuss your digital architecture strategy.</p>
+        <h3 class="cta-heading">Let's build a clean system.</h3>
+        <p class="cta-subheading">Select a slot to discuss your digital architecture strategy.</p>
         <div class="cta-container">
             <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" class="cta-button">
                 Book a Strategic Call &rarr;
@@ -219,12 +246,11 @@
                 var fullTxt = toRotate[i];
 
                 if (isDeleting) {
-                    // Instant Reset: Empty string immediately, bypassing character-by-character delete
                     txt = '';
                     isDeleting = false;
                     loopNum++;
                     el.innerHTML = txt;
-                    setTimeout(tick, 400); // Quick pause before typing next line
+                    setTimeout(tick, 400); 
                     return;
                 } else {
                     txt = fullTxt.substring(0, txt.length + 1);
@@ -235,7 +261,7 @@
                 var delta = 100 - Math.random() * 50; 
 
                 if (!isDeleting && txt === fullTxt) {
-                    delta = period; // Pause once typing is complete
+                    delta = period; 
                     isDeleting = true;
                 }
 
@@ -245,147 +271,5 @@
             tick();
         });
     </script>
-
-    <style>
-    /* Page Layout Container Constraints */
-    .custom-layout-container {
-        max-width: var(--main-width);
-        margin: 0 auto 4.5rem auto;
-        padding: 0 var(--gap);
-    }
-
-    .section-title {
-        border-bottom: 1px solid var(--border);
-        padding-bottom: 8px;
-        margin-bottom: 24px;
-        font-weight: 700;
-        font-size: 1.1rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: var(--secondary);
-    }
-
-    /* Helper styles for grid card anchors */
-    .card-cta-link {
-        font-weight: 600;
-        text-decoration: none;
-        font-size: 0.9rem;
-        color: var(--primary);
-    }
-    .card-cta-link:hover {
-        text-decoration: underline;
-    }
-    .text-light-link {
-        color: var(--bg) !important;
-    }
-
-    .text-center-cta {
-        text-align: center;
-        margin-top: 5rem;
-        padding: 48px 24px;
-        border-top: 1px solid var(--border);
-    }
-
-    .cta-container {
-        display: flex;
-        justify-content: center;
-        margin: 1.5rem 0;
-    }
-
-    .cta-button {
-        display: inline-block;
-        background: var(--primary);
-        color: var(--bg);
-        padding: 12px 28px;
-        font-weight: 600;
-        border-radius: var(--radius, 4px);
-        text-decoration: none;
-        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
-    }
-    .cta-button:hover {
-        transform: translateY(-1px);
-        opacity: 0.95;
-    }
-
-    /* Philosophy Section Structural Formatting */
-    .philosophy-section {
-        max-width: var(--main-width); 
-        margin: 6rem auto; 
-        padding: 0 var(--gap);
-    }
-    
-    .philosophy-layout {
-        display: grid;
-        grid-template-columns: 1fr 1.3fr;
-        gap: 4rem;
-        align-items: start;
-    }
-    
-    .philosophy-left h2 {
-        font-size: 2.25rem; 
-        font-weight: 700; 
-        line-height: 1.25; 
-        color: var(--primary); 
-        letter-spacing: -0.02em; 
-        margin: 0 0 16px 0;
-    }
-    
-    .philosophy-left h2 span {
-        color: var(--accent-blue);
-    }
-    
-    .philosophy-left p {
-        color: var(--secondary); 
-        font-size: 1.1rem; 
-        line-height: 1.6; 
-        margin: 0; 
-        max-width: 320px;
-    }
-    
-    .philosophy-right .principle-block {
-        margin-bottom: 3.5rem;
-    }
-    
-    .philosophy-right .principle-block h3 {
-        font-size: 1.4rem; 
-        font-weight: 600; 
-        color: var(--primary); 
-        margin: 0 0 12px 0; 
-        letter-spacing: -0.01em;
-    }
-    
-    .philosophy-right .principle-block p {
-        color: var(--secondary); 
-        font-size: 1.05rem; 
-        line-height: 1.6; 
-        margin: 0;
-    }
-
-    /* Mobile Screen Responsiveness Adjustment */
-    @media (max-width: 768px) {
-        .hero-statement {
-            font-size: 1.4rem !important;
-        }
-    }
-
-    /* Hero Block Styles */
-    .hero-callout-container {
-        max-width: var(--main-width);
-        margin: 5rem auto 3.5rem auto;
-        padding: 40px 36px;
-        background: rgba(var(--primary-rgb, 128, 128, 128), 0.015); 
-        border: 1px solid var(--border);
-        border-radius: var(--radius, 4px);
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* Entrance Animations */
-    .modern-hero-animate { animation: hero-fade-in-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
-    @keyframes hero-fade-in-slide {
-        0% { opacity: 0; transform: translateY(8px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-</style>
 
 {{- end -}}
