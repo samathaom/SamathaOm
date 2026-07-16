@@ -322,7 +322,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   6. EXPLORE SECTION ARCHITECTURE & IMAGE RESOLUTION FIXES
+   6. EXPLORE SECTION ARCHITECTURE & ARTICLE EXCERPT FORMATTING
    ========================================================================== */
 .card-neutral {
     background: var(--entry) !important;
@@ -364,8 +364,15 @@ a:hover {
     color: var(--primary) !important;
     font-size: 1.4rem; 
     font-weight: 600;
-    margin: 0;
+    margin: 0 0 12px 0;
     letter-spacing: -0.015em;
+}
+
+.card-excerpt {
+    color: var(--secondary);
+    font-size: 1.02rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .card-title-link {

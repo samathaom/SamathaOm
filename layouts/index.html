@@ -68,7 +68,7 @@
         </div>
     </section>
 
-    <!-- Explore Section (Thumbnail & Heading Only Layout with Reliable Asset Fallbacks) -->
+    <!-- Explore Section (Heading, Excerpt for Article, Thumbnail for Project/Resource) -->
     <div class="custom-layout-container">
         <header class="section-standard-header">
             <h2>Explore</h2>
@@ -77,25 +77,18 @@
         
         <div class="minimal-grid bento-cols gap-md">
             
-            <!-- Bento Item 1: Featured Article -->
+            <!-- Bento Item 1: Featured Article (Text & Excerpt Only) -->
             {{- $firstArticle := index (where .Site.RegularPages "Section" "articles") 0 -}}
             {{- if $firstArticle -}}
-            {{- $articleImg := $firstArticle.Params.image | default $firstArticle.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstArticle.Content 1) 0) -}}
             <div class="grid-card pad-md card-neutral flex-column bento-article-span">
                 <div class="card-header-meta">
                     <span class="card-tag">FEATURED ARTICLE</span>
                     <span class="card-meta-time">{{ $firstArticle.ReadingTime }} min read</span>
                 </div>
-                {{- if $articleImg -}}
-                <div class="explore-media-wrapper">
-                    <img src="{{ if strings.HasPrefix $articleImg "<img" }}{{ index (findRE "src=\"([^\">]+)\"" $articleImg 1) 1 }}{{ else }}{{ $articleImg }}{{ end }}" alt="{{ $firstArticle.Title }}" class="explore-media-img" loading="lazy" />
-                </div>
-                {{- else -}}
-                <div class="explore-media-wrapper fallback-media-slot">
-                    <span class="fallback-media-text">ARTICLE PREVIEW</span>
-                </div>
-                {{- end -}}
-                <h3 class="card-title mt-auto"><a href="{{ $firstArticle.RelPermalink }}" class="card-title-link">{{ $firstArticle.Title }}</a></h3>
+                <h3 class="card-title"><a href="{{ $firstArticle.RelPermalink }}" class="card-title-link">{{ $firstArticle.Title }}</a></h3>
+                {{- $words := split $firstArticle.Summary " " -}}
+                {{- $snippetLength := cond (gt (len $words) 30) 30 (len $words) -}}
+                <p class="card-excerpt mt-auto">{{ delimit (first $snippetLength $words) " " }}...</p>
             </div>
             {{- end -}}
 
