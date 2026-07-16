@@ -322,7 +322,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   6. EXPLORE SECTION ARCHITECTURE
+   6. EXPLORE SECTION ARCHITECTURE & IMAGE RESOLUTION FIXES
    ========================================================================== */
 .card-neutral {
     background: var(--entry) !important;
@@ -389,6 +389,9 @@ a:hover {
     background-color: var(--code-bg);
     margin: 0 0 20px 0;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .explore-media-img {
@@ -401,6 +404,19 @@ a:hover {
 
 .grid-card:hover .explore-media-img {
     transform: scale(1.02);
+}
+
+.fallback-media-slot {
+    background: var(--code-bg);
+    border: 1px dashed var(--border);
+}
+
+.fallback-media-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--secondary);
+    text-transform: uppercase;
 }
 
 /* ==========================================================================
