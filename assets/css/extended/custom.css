@@ -160,7 +160,6 @@ a:hover {
     padding: 0 var(--gap);
 }
 
-/* Unified Section Header Design System */
 .section-standard-header {
     margin-bottom: 3rem;
     width: 100%;
@@ -180,7 +179,6 @@ a:hover {
     margin: 0;
 }
 
-/* Spacer explicitly applied to headings inside Explore block to protect spacing layout */
 .section-subtitle-spacer {
     margin-bottom: 2.5rem !important;
 }
@@ -190,8 +188,12 @@ a:hover {
     width: 100%;
 }
 
-.cols-2 {
-    grid-template-columns: repeat(2, 1fr);
+.bento-cols {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.bento-article-span {
+    grid-column: span 2;
 }
 
 .gap-md {
@@ -219,10 +221,6 @@ a:hover {
 
 .space-adjust {
     margin-bottom: 24px !important;
-}
-
-.compact-space {
-    margin-bottom: 20px !important;
 }
 
 .end-margin-reset {
@@ -304,7 +302,6 @@ a:hover {
     max-width: 100% !important;
 }
 
-/* System overrides to force the paragraph lines to extend across the layout margins */
 .about-bio-text.full-width-constraint p {
     color: var(--secondary);
     font-size: 1.05rem;
@@ -359,6 +356,12 @@ a:hover {
     letter-spacing: 0.05em;
     align-self: start;
     text-transform: uppercase;
+}
+
+.card-meta-time {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    font-weight: 500;
 }
 
 .card-neutral .card-title {
@@ -657,8 +660,12 @@ a:hover {
         padding: 0 var(--gap) !important;
     }
     
-    .cols-2 {
+    .bento-cols {
         grid-template-columns: 1fr !important;
+    }
+
+    .bento-article-span {
+        grid-column: span 1 !important;
     }
 
     .service-scroll-card {
@@ -667,20 +674,5 @@ a:hover {
         flex: 0 0 var(--card-w-mobile);
         padding: 24px;
         min-height: 360px;
-    }
-}
-
-/* Bento Grid Layout Extensions */
-.bento-cols {
-    grid-template-columns: repeat(2, 1fr) !important;
-}
-
-.bento-article-span {
-    grid-column: span 2;
-}
-
-@media screen and (max-width: 768px) {
-    .bento-article-span {
-        grid-column: span 1 !important;
     }
 }
