@@ -322,51 +322,116 @@ code {
 }
 
 /* ----------------------------------------------------
-   Pure Canvas Typographic Services List
+   Horizontal Services Scroll Track
    ---------------------------------------------------- */
-.services-canvas-grid {
+.services-scroll-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 1.5rem;
+    margin-right: calc(-1 * var(--gap)); /* Pulls track to the edge of screen */
+    padding-right: var(--gap);
+    
+    /* Elegant modern snap scroll behavior */
+    scroll-snap-type: x mandatory;
+    
+    /* Hide default ugly scrollbars while retaining scroll ability */
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.services-scroll-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+}
+
+/* ----------------------------------------------------
+   Floating Card Configuration
+   ---------------------------------------------------- */
+.service-scroll-card {
+    flex: 0 0 380px; /* Locked optimal card width */
+    max-width: 85vw; /* Keeps layout friendly on tiny mobile screens */
+    scroll-snap-align: start;
+    
+    background: var(--entry) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 16px;
+    padding: 32px;
+    box-sizing: border-box;
+    
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    justify-content: space-between;
+    min-height: 380px;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
 }
 
-.service-canvas-item {
+.service-scroll-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(35, 136, 255, 0.08) !important;
+    border-color: var(--accent-blue) !important;
+}
+
+/* Card Metadata Utilities */
+.card-header-meta {
     display: flex;
-    align-items: start;
-    gap: 2.5rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--border);
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
 }
 
-.service-canvas-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-/* Clean, oversized brand-blue numbering */
-.service-num {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--accent-blue);
-    font-family: var(--font-family);
-    line-height: 1;
-    user-select: none;
-}
-
-.service-title {
-    font-size: 1.5rem;
+.card-tag {
+    font-size: 0.75rem;
     font-weight: 600;
-    color: var(--primary);
-    margin: 0 0 8px 0;
-    letter-spacing: -0.015em;
+    color: var(--accent-blue);
+    background: var(--code-bg);
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-.service-desc {
-    color: var(--secondary);
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin: 0;
-    max-width: 680px;
+/* Card Booking Buttons (Uses our true brand blue #2388FF) */
+.service-booking-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    text-align: center;
+    box-sizing: border-box;
+    
+    background: var(--accent-blue) !important;
+    color: #FFFFFF !important;
+    transition: filter 0.2s ease;
+}
+
+.service-booking-btn:hover {
+    filter: brightness(0.92);
+}
+
+.dark .service-booking-btn {
+    background: var(--accent-blue) !important;
+    color: #070A12 !important;
+}
+
+/* ----------------------------------------------------
+   Responsiveness Breakpoints
+   ---------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    .service-scroll-card {
+        flex: 0 0 290px; /* Slightly narrower cards on mobile */
+        padding: 24px;
+        min-height: 340px;
+    }
+    .scroll-helper {
+        display: none !important; /* Hide scroll helper text on mobile touch-devices */
+    }
 }
 
 /* ----------------------------------------------------
@@ -382,10 +447,5 @@ code {
         position: relative;
         top: 0;
     }
-    
-    .service-canvas-item {
-        flex-direction: column;
-        gap: 1rem;
-        padding-bottom: 2rem;
-    }
+       
 }

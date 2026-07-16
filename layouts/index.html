@@ -126,36 +126,90 @@
     </div>
 </section>
 
-<section class="services-section" style="max-width: var(--main-width); margin: 6rem auto; padding: 0 var(--gap);">
+<section class="services-section" style="max-width: var(--main-width); margin: 6rem auto; padding: 0 var(--gap); overflow: hidden;">
     
-    <header style="margin-bottom: 4rem;">
-        <h2 style="font-size: 2rem; font-weight: 700; color: var(--primary); letter-spacing: -0.015em; margin: 0 0 8px 0;">Expertise & Offerings</h2>
-        <p style="color: var(--secondary); font-size: 1.1rem; margin: 0;">Core capabilities crafted with absolute execution.</p>
+    <header style="margin-bottom: 3rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+        <div>
+            <h2 style="font-size: 2rem; font-weight: 700; color: var(--primary); letter-spacing: -0.015em; margin: 0 0 8px 0;">Expertise & Offerings</h2>
+            <p style="color: var(--secondary); font-size: 1.1rem; margin: 0;">Core capabilities crafted with absolute execution.</p>
+        </div>
+        <span class="scroll-helper" style="font-size: 0.85rem; font-weight: 600; color: var(--accent-blue); display: inline-flex; align-items: center; gap: 6px;">
+            Swipe to explore 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </span>
     </header>
 
-    <div class="services-canvas-grid">
+    <div class="services-scroll-track">
         
-        <div class="service-canvas-item">
-            <span class="service-num">01</span>
-            <div class="service-info">
-                <h3 class="service-title">Digital Product Design</h3>
-                <p class="service-desc">End-to-end UI/UX systems, user flow engineering, structural wireframing, high-fidelity Figma systems, and interactive software prototyping.</p>
+        <!-- Service Card 01: Print Systems -->
+        <div class="service-scroll-card">
+            <div class="card-header-meta">
+                <span class="service-num">01</span>
+                <span class="card-tag">Print</span>
             </div>
-        </div>
-
-        <div class="service-canvas-item">
-            <span class="service-num">02</span>
-            <div class="service-info">
+            <div class="card-content">
                 <h3 class="service-title">High-Clarity Print Systems</h3>
                 <p class="service-desc">Structural print layout design, editorial design, physical product packaging, brand identity guidelines, and premium typographic systems.</p>
             </div>
+            <div class="card-footer-action">
+                <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">
+                    Book Print Project Call
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </a>
+            </div>
         </div>
 
-        <div class="service-canvas-item">
-            <span class="service-num">03</span>
-            <div class="service-info">
+        <!-- Service Card 02: UI/UX Design -->
+        <div class="service-scroll-card">
+            <div class="card-header-meta">
+                <span class="service-num">02</span>
+                <span class="card-tag">UI/UX</span>
+            </div>
+            <div class="card-content">
+                <h3 class="service-title">Digital Product Design</h3>
+                <p class="service-desc">End-to-end UI/UX systems, user flow engineering, structural wireframing, high-fidelity Figma systems, and interactive software prototyping.</p>
+            </div>
+            <div class="card-footer-action">
+                <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">
+                    Book Product Discovery
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Service Card 03: Technical Translation -->
+        <div class="service-scroll-card">
+            <div class="card-header-meta">
+                <span class="service-num">03</span>
+                <span class="card-tag">Code</span>
+            </div>
+            <div class="card-content">
                 <h3 class="service-title">Technical Translation</h3>
                 <p class="service-desc">Bridging visual vision directly with front-end implementation. Auditing production codebase logic to keep code design-accurate.</p>
+            </div>
+            <div class="card-footer-action">
+                <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">
+                    Book Technical Audit
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                </a>
             </div>
         </div>
 
