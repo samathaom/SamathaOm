@@ -7,6 +7,11 @@
        ---------------------------------------------------- */
     --main-width: 1140px; 
     --gap: 32px;
+    
+    /* Marquee Dimension Tokens */
+    --card-w-desktop: 380px;
+    --card-w-mobile: 300px;
+    --card-gap: 1.5rem;
 
     /* ----------------------------------------------------
        LIGHT THEME: High-Clarity Clear Canvas
@@ -305,7 +310,6 @@ code {
     }
 }
 
-
 /* ----------------------------------------------------
    Asymmetric Design Philosophy Layout
    ---------------------------------------------------- */
@@ -318,76 +322,11 @@ code {
 
 .philosophy-left {
     position: sticky;
-    top: 140px; /* Aligns neatly right under your sticky navigation bar */
+    top: 140px;
 }
 
-/* ----------------------------------------------------
-   Horizontal Services Scroll Track
-   ---------------------------------------------------- */
-<style>
 /* ----------------------------------------------------
    Infinite CSS Marquee Engine
-   ---------------------------------------------------- */
-.services-marquee-viewport {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    padding: 10px 0;
-}
-
-.services-marquee-track {
-    display: flex;
-    gap: 1.5rem;
-    width: max-content;
-    /* Continuous automated movement from left to right */
-    animation: linearMarquee 25s linear infinite;
-}
-
-/* Pause execution upon direct cursor hover to maximize human usability */
-.services-marquee-track:hover {
-    animation-play-state: paused;
-}
-
-@keyframes linearMarquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        /* Translates exactly half the track width (the duplicate barrier) */
-        transform: translateX(calc(-50% - 0.75rem));
-    }
-}
-
-/* ----------------------------------------------------
-   Services Matrix Container & Layout
-   ---------------------------------------------------- */
-.services-section {
-    max-width: var(--main-width);
-    margin: 6rem auto;
-    padding: 0 var(--gap);
-    overflow: hidden;
-}
-
-.services-header {
-    margin-bottom: 3rem;
-}
-
-.services-header h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary);
-    letter-spacing: -0.015em;
-    margin: 0 0 8px 0;
-}
-
-.services-header p {
-    color: var(--secondary);
-    font-size: 1.1rem;
-    margin: 0;
-}
-
-/* ----------------------------------------------------
-   Reinforced Hardware-Accelerated Marquee Engine
    ---------------------------------------------------- */
 .services-marquee-viewport {
     overflow: hidden;
@@ -417,9 +356,41 @@ code {
 }
 
 /* ----------------------------------------------------
+   Services Matrix Container & Layout
+   ---------------------------------------------------- */
+.services-section {
+    max-width: var(--main-width);
+    margin: 6rem auto;
+    padding: 0 var(--gap);
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.services-header {
+    margin-bottom: 3rem;
+}
+
+.services-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.015em;
+    margin: 0 0 8px 0;
+}
+
+.services-header p {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* ----------------------------------------------------
    Minimalist Floating Panels
    ---------------------------------------------------- */
 .service-scroll-card {
+    width: var(--card-w-desktop);
+    min-width: var(--card-w-desktop);
     flex: 0 0 var(--card-w-desktop);
     flex-shrink: 0;
     background: var(--entry) !important;
@@ -501,15 +472,14 @@ code {
    ---------------------------------------------------- */
 @media screen and (max-width: 768px) {
     .service-scroll-card {
+        width: var(--card-w-mobile);
+        min-width: var(--card-w-mobile);
         flex: 0 0 var(--card-w-mobile);
         padding: 24px;
         min-height: 360px;
     }
 }
 
-/* ----------------------------------------------------
-   Mobile Breakpoint Optimizations
-   ---------------------------------------------------- */
 @media screen and (max-width: 868px) {
     .philosophy-layout {
         grid-template-columns: 1fr;
@@ -520,12 +490,45 @@ code {
         position: relative;
         top: 0;
     }
-       
 }
 
 /* ----------------------------------------------------
    Pure CSS Fluid Text Rotation System
    ---------------------------------------------------- */
+.hero-statement {
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.hero-greeting {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--secondary);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 12px;
+    letter-spacing: -0.025em;
+}
+
+.css-txt-rotator {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--accent-blue);
+    display: block;
+    position: relative;
+    height: 1.6em;
+    overflow: hidden;
+    width: 100%;
+}
+
 .rotator-wrapper {
     display: flex;
     flex-direction: column;
@@ -533,7 +536,6 @@ code {
     top: 0;
     left: 0;
     width: 100%;
-    /* 4 lines total = moving up in 25% increments */
     animation: rotatePhrases 9s cubic-bezier(0.76, 0, 0.24, 1) infinite;
 }
 
@@ -542,23 +544,13 @@ code {
     line-height: 1.6em;
     white-space: nowrap;
     display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @keyframes rotatePhrases {
-    /* Phrase 1 Active */
-    0%, 28% {
-        transform: translateY(0);
-    }
-    /* Shift to Phrase 2 */
-    33%, 61% {
-        transform: translateY(-25%);
-    }
-    /* Shift to Phrase 3 */
-    66%, 94% {
-        transform: translateY(-50%);
-    }
-    /* Snap to Loop (Duplicate Item) */
-    100% {
-        transform: translateY(-75%);
-    }
+    0%, 28% { transform: translateY(0); }
+    33%, 61% { transform: translateY(-25%); }
+    66%, 94% { transform: translateY(-50%); }
+    100% { transform: translateY(-75%); }
 }

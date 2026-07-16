@@ -1,35 +1,23 @@
 {{- define "main" -}}
 
-    <!-- Animated Hero Section -->
+    <!-- About Section -->
     <div class="hero-callout-container modern-hero-animate">
-    <h1 class="hero-statement" style="font-family: var(--font-family); margin: 0; line-height: 1.2; letter-spacing: -0.02em;">
-        <span class="hero-greeting" style="font-size: 1.25rem; font-weight: 500; color: var(--secondary); display: block; margin-bottom: 8px;">👋 Hi there!</span>
-        <span class="hero-title" style="font-size: 3rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 12px; letter-spacing: -0.025em;">I am a Senior Digital Designer.</span>
-        <span class="txt-rotate" 
-              style="font-size: 1.5rem; font-weight: 500; color: var(--accent-blue); display: inline-block; min-height: 1.5em;"
-              data-period="2000" 
-              data-rotate='[ "I design high-clarity digital systems and print materials.", " I have a strong technical foundation in coding.", "I manage international cross-functional teams." ]'></span>
-    </h1>
+        <h1 class="hero-statement">
+            <span class="hero-greeting">👋 Hi there!</span>
+            <span class="hero-title">I am a Senior Digital Designer.</span>
+            
+            <span class="css-txt-rotator">
+                <span class="rotator-wrapper">
+                    <span class="rotator-line">I design high-clarity digital systems and print materials.</span>
+                    <span class="rotator-line">I have a strong technical foundation in coding.</span>
+                    <span class="rotator-line">I manage international cross-functional teams.</span>
+                    <span class="rotator-line">I design high-clarity digital systems and print materials.</span>
+                </span>
+            </span>
+        </h1>
     </div>
 
-    <!-- About Section -->
-    <<div class="hero-callout-container modern-hero-animate">
-    <h1 class="hero-statement" style="font-family: var(--font-family); margin: 0; line-height: 1.2; letter-spacing: -0.02em;">
-        <span class="hero-greeting" style="font-size: 1.25rem; font-weight: 500; color: var(--secondary); display: block; margin-bottom: 8px;">👋 Hi there!</span>
-        <span class="hero-title" style="font-size: 3rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 12px; letter-spacing: -0.025em;">I am a Senior Digital Designer.</span>
-        
-        <span class="css-txt-rotator" style="font-size: 1.5rem; font-weight: 500; color: var(--accent-blue); display: inline-block; position: relative; height: 1.6em; overflow: hidden; vertical-align: top;">
-            <span class="rotator-wrapper">
-                <span class="rotator-line">I design high-clarity digital systems and print materials.</span>
-                <span class="rotator-line">I have a strong technical foundation in coding.</span>
-                <span class="rotator-line">I manage international cross-functional teams.</span>
-                <span class="rotator-line">I design high-clarity digital systems and print materials.</span>
-            </span>
-        </span>
-    </h1>
-</div>
-
-    <!-- Featured Case Study Section (Using a high-contrast Accent Card for focal prominence) -->
+    <!-- Featured Case Study Section -->
     <div class="custom-layout-container">
         <h3 class="section-title">Featured Work</h3>
         <div class="minimal-grid cols-1">
@@ -46,146 +34,146 @@
         </div>
     </div>
    
-    <section class="philosophy-section" style="max-width: var(--main-width); margin: 6rem auto; padding: 0 var(--gap);">
-    <div class="philosophy-layout">
-        
-        <div class="philosophy-left">
-            <h2 style="font-size: 2.25rem; font-weight: 700; line-height: 1.25; color: var(--primary); letter-spacing: -0.02em; margin: 0 0 16px 0;">
-                Design is <br><span style="color: var(--accent-blue);">architecture</span>, not decoration.
-            </h2>
-            <p style="color: var(--secondary); font-size: 1.1rem; line-height: 1.6; margin: 0; max-width: 320px;">
-                I replace complex digital clutter with absolute layout clarity, building interfaces anchored in human behavior.
-            </p>
-        </div>
-
-        <div class="philosophy-right">
-            <div class="principle-block" style="margin-bottom: 3.5rem;">
-                <h3 style="font-size: 1.4rem; font-weight: 600; color: var(--primary); margin: 0 0 12px 0; letter-spacing: -0.01em;">Cognitive Ease First</h3>
-                <p style="color: var(--secondary); font-size: 1.05rem; line-height: 1.6; margin: 0;">
-                    Every pixel must justify its existence. By analyzing human mental models, I structure workflows that require zero learning curves and eliminate user friction.
-                </p>
-            </div>
-
-            <div class="principle-block" style="margin-bottom: 3.5rem;">
-                <h3 style="font-size: 1.4rem; font-weight: 600; color: var(--primary); margin: 0 0 12px 0; letter-spacing: -0.01em;">Engineering Alignment</h3>
-                <p style="color: var(--secondary); font-size: 1.05rem; line-height: 1.6; margin: 0;">
-                    Great designs survive the production pipeline. Understanding Python, JavaScript, and modern frameworks ensures that what is designed is precisely what gets deployed.
-                </p>
-            </div>
-
-            <div class="principle-block" style="margin: 0;">
-                <h3 style="font-size: 1.4rem; font-weight: 600; color: var(--primary); margin: 0 0 12px 0; letter-spacing: -0.01em;">Tactile Print Precision</h3>
-                <p style="color: var(--secondary); font-size: 1.05rem; line-height: 1.6; margin: 0;">
-                    Clarity transcends digital boundaries. I apply structural typographic principles and strict geometric grids to tactile print mediums with identical layout rigor.
-                </p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- Services Marquee Matrix Block -->
-<section class="services-section">
-    <header class="services-header">
-        <h2>Expertise & Offerings</h2>
-        <p>Core capabilities crafted with absolute execution.</p>
-    </header>
-
-    <div class="services-marquee-viewport">
-        <div class="services-marquee-track">
+    <!-- Asymmetric Design Philosophy Layout -->
+    <section class="philosophy-section">
+        <div class="philosophy-layout">
             
-            <!-- Core Content Set -->
-            <div class="service-scroll-card">
-                <div class="card-header-meta">
-                    <span class="service-num">01</span>
-                    <span class="card-tag">Print</span>
-                </div>
-                <div class="card-content">
-                    <h3 class="service-title">High-Clarity Print Systems</h3>
-                    <p class="service-desc">Structural print layout design, editorial design, physical product packaging, brand identity guidelines, and premium typographic systems.</p>
-                </div>
-                <div class="card-footer-action">
-                    <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Print Project Call</a>
-                </div>
+            <div class="philosophy-left">
+                <h2>
+                    Design is <br><span>architecture</span>, not decoration.
+                </h2>
+                <p>
+                    I replace complex digital clutter with absolute layout clarity, building interfaces anchored in human behavior.
+                </p>
             </div>
 
-            <div class="service-scroll-card">
-                <div class="card-header-meta">
-                    <span class="service-num">02</span>
-                    <span class="card-tag">UI/UX</span>
+            <div class="philosophy-right">
+                <div class="principle-block">
+                    <h3>Cognitive Ease First</h3>
+                    <p>
+                        Every pixel must justify its existence. By analyzing human mental models, I structure workflows that require zero learning curves and eliminate user friction.
+                    </p>
                 </div>
-                <div class="card-content">
-                    <h3 class="service-title">Digital Product Design</h3>
-                    <p class="service-desc">End-to-end UI/UX systems, user flow engineering, structural wireframing, high-fidelity Figma systems, and interactive software prototyping.</p>
-                </div>
-                <div class="card-footer-action">
-                    <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Product Discovery</a>
-                </div>
-            </div>
 
-            <div class="service-scroll-card">
-                <div class="card-header-meta">
-                    <span class="service-num">03</span>
-                    <span class="card-tag">Consult</span>
+                <div class="principle-block">
+                    <h3>Engineering Alignment</h3>
+                    <p>
+                        Great designs survive the production pipeline. Understanding Python, JavaScript, and modern frameworks ensures that what is designed is precisely what gets deployed.
+                    </p>
                 </div>
-                <div class="card-content">
-                    <h3 class="service-title">Technical Consultation</h3>
-                    <p class="service-desc">Strategic guidance on software architectures, front-end infrastructure scaling, curriculum blueprints, and cross-functional workflow optimization.</p>
-                </div>
-                <div class="card-footer-action">
-                    <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation</a>
-                </div>
-            </div>
 
-            <!-- Cloned Duplicate Set (Prevents Blank Space Boundary Collapse) -->
-            <div class="service-scroll-card" aria-hidden="true">
-                <div class="card-header-meta">
-                    <span class="service-num">01</span>
-                    <span class="card-tag">Print</span>
-                </div>
-                <div class="card-content">
-                    <h3 class="service-title">High-Clarity Print Systems</h3>
-                    <p class="service-desc">Structural print layout design, editorial design, physical product packaging, brand identity guidelines, and premium typographic systems.</p>
-                </div>
-                <div class="card-footer-action">
-                    <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Print Project Call</a>
-                </div>
-            </div>
-
-            <div class="service-scroll-card" aria-hidden="true">
-                <div class="card-header-meta">
-                    <span class="service-num">02</span>
-                    <span class="card-tag">UI/UX</span>
-                </div>
-                <div class="card-content">
-                    <h3 class="service-title">Digital Product Design</h3>
-                    <p class="service-desc">End-to-end UI/UX systems, user flow engineering, structural wireframing, high-fidelity Figma systems, and interactive software prototyping.</p>
-                </div>
-                <div class="card-footer-action">
-                    <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Product Discovery</a>
-                </div>
-            </div>
-
-            <div class="service-scroll-card" aria-hidden="true">
-                <div class="card-header-meta">
-                    <span class="service-num">03</span>
-                    <span class="card-tag">Consult</span>
-                </div>
-                <div class="card-content">
-                    <h3 class="service-title">Technical Consultation</h3>
-                    <p class="service-desc">Strategic guidance on software architectures, front-end infrastructure scaling, curriculum blueprints, and cross-functional workflow optimization.</p>
-                </div>
-                <div class="card-footer-action">
-                    <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation</a>
+                <div class="principle-block" style="margin: 0;">
+                    <h3>Tactile Print Precision</h3>
+                    <p>
+                        Clarity transcends digital boundaries. I apply structural typographic principles and strict geometric grids to tactile print mediums with identical layout rigor.
+                    </p>
                 </div>
             </div>
 
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Services Marquee Matrix Block -->
+    <section class="services-section">
+        <header class="services-header">
+            <h2>Expertise & Offerings</h2>
+            <p>Core capabilities crafted with absolute execution.</p>
+        </header>
 
-    <!-- Core Competencies (2-Column Minimal Borderless Grid) -->
+        <div class="services-marquee-viewport">
+            <div class="services-marquee-track">
+                
+                <!-- Core Content Set -->
+                <div class="service-scroll-card">
+                    <div class="card-header-meta">
+                        <span class="service-num">01</span>
+                        <span class="card-tag">Print</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="service-title">High-Clarity Print Systems</h3>
+                        <p class="service-desc">Structural print layout design, editorial design, physical product packaging, brand identity guidelines, and premium typographic systems.</p>
+                    </div>
+                    <div class="card-footer-action">
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Print Project Call</a>
+                    </div>
+                </div>
+
+                <div class="service-scroll-card">
+                    <div class="card-header-meta">
+                        <span class="service-num">02</span>
+                        <span class="card-tag">UI/UX</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="service-title">Digital Product Design</h3>
+                        <p class="service-desc">End-to-end UI/UX systems, user flow engineering, structural wireframing, high-fidelity Figma systems, and interactive software prototyping.</p>
+                    </div>
+                    <div class="card-footer-action">
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Product Discovery</a>
+                    </div>
+                </div>
+
+                <div class="service-scroll-card">
+                    <div class="card-header-meta">
+                        <span class="service-num">03</span>
+                        <span class="card-tag">Consult</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="service-title">Technical Consultation</h3>
+                        <p class="service-desc">Strategic guidance on software architectures, front-end infrastructure scaling, curriculum blueprints, and cross-functional workflow optimization.</p>
+                    </div>
+                    <div class="card-footer-action">
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Cloned Duplicate Set (Prevents Blank Space Boundary Collapse) -->
+                <div class="service-scroll-card" aria-hidden="true">
+                    <div class="card-header-meta">
+                        <span class="service-num">01</span>
+                        <span class="card-tag">Print</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="service-title">High-Clarity Print Systems</h3>
+                        <p class="service-desc">Structural print layout design, editorial design, physical product packaging, brand identity guidelines, and premium typographic systems.</p>
+                    </div>
+                    <div class="card-footer-action">
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Print Project Call</a>
+                    </div>
+                </div>
+
+                <div class="service-scroll-card" aria-hidden="true">
+                    <div class="card-header-meta">
+                        <span class="service-num">02</span>
+                        <span class="card-tag">UI/UX</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="service-title">Digital Product Design</h3>
+                        <p class="service-desc">End-to-end UI/UX systems, user flow engineering, structural wireframing, high-fidelity Figma systems, and interactive software prototyping.</p>
+                    </div>
+                    <div class="card-footer-action">
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Product Discovery</a>
+                    </div>
+                </div>
+
+                <div class="service-scroll-card" aria-hidden="true">
+                    <div class="card-header-meta">
+                        <span class="service-num">03</span>
+                        <span class="card-tag">Consult</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="service-title">Technical Consultation</h3>
+                        <p class="service-desc">Strategic guidance on software architectures, front-end infrastructure scaling, curriculum blueprints, and cross-functional workflow optimization.</p>
+                    </div>
+                    <div class="card-footer-action">
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies -->
     <div class="custom-layout-container">
         <h3 class="section-title">Core Competencies</h3>
         <div class="minimal-grid cols-2 gap-lg">
@@ -212,7 +200,7 @@
         </div>
     </div>
 
-    <!-- Writing & Systems (2-Column Layout using Minimal Cards) -->
+    <!-- Writing & Systems -->
     <div class="custom-layout-container">
         <h3 class="section-title">Writing & Systems</h3>
         <div class="minimal-grid cols-2 gap-md">
@@ -259,51 +247,6 @@
             </a>
         </div>
     </div>
-
-    <!-- Native Lightweight Typewriter Animation Engine -->
-    <script>
-        var TxtRotate = function(el, toRotate, period) {
-            this.toRotate = toRotate;
-            this.el = el;
-            this.loopNum = 0;
-            this.period = parseInt(period, 10) || 2000;
-            this.txt = '';
-            this.tick();
-            this.isDeleting = false;
-        };
-
-        TxtRotate.prototype.tick = function() {
-            var i = this.loopNum % this.toRotate.length;
-            var fullTxt = this.toRotate[i];
-
-            if (this.isDeleting) {
-                this.txt = fullTxt.substring(0, this.txt.length - 1);
-            } else {
-                this.txt = fullTxt.substring(0, this.txt.length + 1);
-            }
-
-            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-            var that = this;
-            var delta = 150 - Math.random() * 50;
-
-            if (this.isDeleting) { delta /= 2; }
-
-            if (!this.isDeleting && this.txt === fullTxt) {
-                delta = this.period;
-                this.isDeleting = true;
-            } else if (this.isDeleting && this.txt === '') {
-                this.isDeleting = false;
-                this.loopNum++;
-                delta = 500;
-            }
-
-            setTimeout(function() {
-                that.tick();
-            }, delta);
-        };
-              
-</script>
 
     <style>
     /* Page Layout Container Constraints */
@@ -403,6 +346,53 @@
         opacity: 0.95;
     }
 
+    /* Philosophy Section Structural Formatting */
+    .philosophy-section {
+        max-width: var(--main-width); 
+        margin: 6rem auto; 
+        padding: 0 var(--gap);
+    }
+    
+    .philosophy-left h2 {
+        font-size: 2.25rem; 
+        font-weight: 700; 
+        line-height: 1.25; 
+        color: var(--primary); 
+        letter-spacing: -0.02em; 
+        margin: 0 0 16px 0;
+    }
+    
+    .philosophy-left h2 span {
+        color: var(--accent-blue);
+    }
+    
+    .philosophy-left p {
+        color: var(--secondary); 
+        font-size: 1.1rem; 
+        line-height: 1.6; 
+        margin: 0; 
+        max-width: 320px;
+    }
+    
+    .philosophy-right .principle-block {
+        margin-bottom: 3.5rem;
+    }
+    
+    .philosophy-right .principle-block h3 {
+        font-size: 1.4rem; 
+        font-weight: 600; 
+        color: var(--primary); 
+        margin: 0 0 12px 0; 
+        letter-spacing: -0.01em;
+    }
+    
+    .philosophy-right .principle-block p {
+        color: var(--secondary); 
+        font-size: 1.05rem; 
+        line-height: 1.6; 
+        margin: 0;
+    }
+
     /* Mobile Screen Responsiveness Adjustment */
     @media (max-width: 768px) {
         .availability-banner-override {
@@ -418,21 +408,13 @@
     /* Hero Block Styles */
     .hero-callout-container {
         max-width: var(--main-width);
-        margin: 0 auto 3.5rem auto;
+        margin: 5rem auto 3.5rem auto;
         padding: 40px 36px;
         background: rgba(var(--primary-rgb, 128, 128, 128), 0.015); 
         border: 1px solid var(--border);
         border-radius: var(--radius, 4px);
         position: relative;
         overflow: hidden;
-    }
-
-    .hero-statement {
-        font-size: 1.8rem;
-        line-height: 1.5;
-        color: var(--primary);
-        font-weight: 700;
-        margin: 0 !important;
     }
 
     /* Entrance Animations */
