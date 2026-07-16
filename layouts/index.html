@@ -1,6 +1,5 @@
 {{- define "main" -}}
 
-    <!-- Animated Hero Section -->
     <div class="hero-callout-container modern-hero-animate">
         <h1 class="hero-statement">
             <span class="hero-greeting">👋 Hi there!</span>
@@ -11,12 +10,11 @@
         </h1>
     </div>
 
-    <!-- About Me Section -->
     <div class="custom-layout-container section-about-align">
         <header class="section-standard-header">
             <h2>About me</h2>
         </header>
-        <div class="about-bio-text">
+        <div class="about-bio-text full-width-constraint">
             <p>
                 I am a Senior Digital Designer with 10 years of experience crafting raw, minimal, and high-clarity software products and print materials.
             </p>
@@ -29,7 +27,6 @@
         </div>
     </div>
    
-    <!-- Asymmetric Design Philosophy Layout -->
     <section class="philosophy-section">
         <div class="philosophy-layout">
             
@@ -68,16 +65,14 @@
         </div>
     </section>
 
-    <!-- Explore Section -->
     <div class="custom-layout-container">
         <header class="section-standard-header">
             <h2>Explore</h2>
-            <p>Selected framework structures and case implementations.</p>
+            <p class="section-subtitle-spacer">Selected framework structures and case implementations.</p>
         </header>
         
         <div class="minimal-grid cols-2 gap-md">
             
-            <!-- Left Column: Featured Project -->
             <div class="grid-card pad-md card-neutral flex-column">
                 <div class="card-header-meta">
                     <span class="card-tag">FEATURED PROJECT</span>
@@ -94,7 +89,6 @@
                 </div>
             </div>
 
-            <!-- Right Column: Featured Resource -->
             <div class="grid-card pad-md card-neutral flex-column">
                 <div class="card-header-meta">
                     <span class="card-tag">FEATURED RESOURCE</span>
@@ -114,7 +108,6 @@
         </div>
     </div>
 
-    <!-- Services Marquee Matrix Block -->
     <section class="services-section">
         <header class="section-standard-header">
             <h2>Expertise & Offerings</h2>
@@ -124,7 +117,6 @@
         <div class="services-marquee-viewport">
             <div class="services-marquee-track">
                 
-                <!-- Core Content Set -->
                 <div class="service-scroll-card">
                     <div class="card-header-meta">
                         <span class="service-num">01</span>
@@ -167,7 +159,6 @@
                     </div>
                 </div>
 
-                <!-- Cloned Duplicate Set -->
                 <div class="service-scroll-card" aria-hidden="true">
                     <div class="card-header-meta">
                         <span class="service-num">01</span>
@@ -214,7 +205,6 @@
         </div>
     </section>
 
-    <!-- Call to Action Area -->
     <div class="custom-layout-container text-center-cta">
         <h3 class="cta-heading">Let's build a clean system.</h3>
         <p class="cta-subheading">Select a slot to discuss your digital architecture strategy.</p>
@@ -225,7 +215,6 @@
         </div>
     </div>
 
-    <!-- JavaScript Native Typewriter Script Component -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var el = document.getElementById('typewriter-hook');

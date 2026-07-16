@@ -2,30 +2,23 @@
    1. GLOBAL SYSTEM VARIABLES (LIGHT & DARK SYSTEM THEMES)
    ========================================================================== */
 :root {
-    /* Core Typography */
     --font-family: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
-    /* Layout System Viewport Dimensions */
     --main-width: 1140px; 
     --gap: 32px;
     
-    /* Dynamic Marquee Dimension Tokens */
     --card-w-desktop: 380px;
     --card-w-mobile: 300px;
     --card-gap: 1.5rem;
 
-    /* Light Theme Palette */
     --theme: #FFFFFF; 
     --bg: #FFFFFF;
     --entry: #F8FAFC; 
     
-    /* High-contrast Typography */
     --primary: #0F172A; 
     --secondary: #475569; 
     --tertiary: #E2E8F0; 
     --content: #1E293B; 
     
-    /* Accent Core Color */
     --accent-blue: #2388FF; 
     
     --code-bg: #F1F5F9;
@@ -35,18 +28,15 @@
 }
 
 .dark {
-    /* Dark Theme Palette */
     --theme: linear-gradient(to bottom, #070A12, #03050A); 
     --bg: #070A12;
     --entry: #0F1626; 
     
-    /* High Luminance Typography */
     --primary: #F8FAFC; 
     --secondary: #94A3B8; 
     --tertiary: #1E293B; 
     --content: #E2E8F0; 
     
-    /* Accent Core Color */
     --accent-blue: #2388FF; 
     
     --code-bg: #1E293B;
@@ -56,7 +46,7 @@
 }
 
 /* ==========================================================================
-   2. BASE HTML & RESET OVERRIDES (PAPERMOD COMPATIBILITY)
+   2. BASE HTML & RESET OVERRIDES
    ========================================================================== */
 body {
     font-family: var(--font-family) !important;
@@ -66,7 +56,6 @@ body {
     padding: 0;
 }
 
-/* Global Content Container Alignments */
 .main,
 .custom-layout-container, 
 .hero-callout-container {
@@ -77,7 +66,6 @@ body {
     box-sizing: border-box !important;
 }
 
-/* Sticky Navigation Header Layout */
 .header {
     border-bottom: 1px solid var(--border);
     background: var(--theme);
@@ -112,7 +100,6 @@ a:hover {
     opacity: 0.85;
 }
 
-/* Primary Form Inputs & Action Buttons styling */
 .button, button, input[type="submit"] {
     background-color: var(--accent-blue) !important;
     color: #FFFFFF !important; 
@@ -127,7 +114,6 @@ a:hover {
     filter: brightness(0.95);
 }
 
-/* Optimized Calendar Booking Element in Navigation */
 #menu a[href*="cal.com"], 
 #menu a[href*="booking"],
 .nav a[href*="cal.com"],
@@ -153,7 +139,7 @@ a:hover {
 #menu a[href*="cal.com"]:hover, 
 #menu a[href*="booking"]:hover,
 .nav a[href*="cal.com"]:hover,
-.nav a[href*="booking"]:hover {
+.nav a[href*="booking"] {
     animation: none !important;
     border-color: var(--accent-blue) !important;
     background-color: rgba(35, 136, 255, 0.08) !important;
@@ -166,7 +152,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   4. LAYOUT CONTROLLERS & SHARED COMPONENT GRIDS
+   4. LAYOUT CONTROLLERS, UNIFIED HEADERS & GRIDS
    ========================================================================== */
 .custom-layout-container {
     max-width: var(--main-width);
@@ -174,18 +160,31 @@ a:hover {
     padding: 0 var(--gap);
 }
 
-.section-title {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 8px;
-    margin-bottom: 24px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--secondary);
+/* Unified Section Header Design System */
+.section-standard-header {
+    margin-bottom: 3rem;
+    width: 100%;
 }
 
-/* Grid Framework Mechanics */
+.section-standard-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.015em;
+    margin: 0 0 8px 0;
+}
+
+.section-standard-header p {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Spacer explicitly applied to headings inside Explore block to protect spacing layout */
+.section-subtitle-spacer {
+    margin-bottom: 2.5rem !important;
+}
+
 .minimal-grid {
     display: grid;
     width: 100%;
@@ -199,7 +198,6 @@ a:hover {
     gap: 2.5rem;
 }
 
-/* Flat UI Architecture Cards */
 .grid-card {
     box-sizing: border-box;
     transition: transform 0.2s ease, box-shadow 0.2s ease !important;
@@ -209,7 +207,6 @@ a:hover {
     padding: 32px;
 }
 
-/* Utility Helper Classes */
 .flex-column {
     display: flex;
     flex-direction: column;
@@ -233,11 +230,11 @@ a:hover {
 }
 
 /* ==========================================================================
-   5. HERO CALLOUT BLOCK, ALIGNED ABOUT ME, & TYPEWRITER ENGINE
+   5. HERO CALLOUT BLOCK & OPTIMIZED ABOUT ME ALIGNMENT
    ========================================================================== */
 .hero-callout-container {
     max-width: var(--main-width);
-    margin: 1.5rem auto 2.5rem auto; /* Clean, reduced top spacing */
+    margin: 1.5rem auto 2.5rem auto; 
     padding: 40px 36px;
     background: rgba(var(--primary-rgb, 128, 128, 128), 0.015); 
     border: 1px solid var(--border);
@@ -296,7 +293,6 @@ a:hover {
     to { opacity: 0; }
 }
 
-/* Extracted & Structured About Me Alignment */
 .section-about-align {
     margin-top: 3rem !important;
     margin-bottom: 5rem !important;
@@ -304,17 +300,22 @@ a:hover {
 
 .about-bio-text {
     padding-top: 0.5rem;
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
-.about-bio-text p {
+/* System overrides to force the paragraph lines to extend across the layout margins */
+.about-bio-text.full-width-constraint p {
     color: var(--secondary);
     font-size: 1.05rem;
     line-height: 1.7;
     margin: 0 0 16px 0;
-    max-width: 800px;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block;
 }
 
-.about-bio-text p:last-child {
+.about-bio-text.full-width-constraint p:last-child {
     margin-bottom: 0;
 }
 
@@ -328,7 +329,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   6. EXPLORE SECTION ARCHITECTURE (ALIGNED & SCALED DOWN)
+   6. EXPLORE SECTION ARCHITECTURE
    ========================================================================== */
 .card-neutral {
     background: var(--entry) !important;
@@ -341,7 +342,6 @@ a:hover {
     box-shadow: 0 4px 12px rgba(35, 136, 255, 0.05) !important;
 }
 
-/* Meta wrapper inside explore cards */
 .card-neutral .card-header-meta {
     display: flex;
     justify-content: space-between;
@@ -349,7 +349,6 @@ a:hover {
     margin-bottom: 16px;
 }
 
-/* Custom Tag Capsules */
 .card-neutral .card-tag {
     color: var(--accent-blue) !important;
     background-color: var(--code-bg);
@@ -362,7 +361,6 @@ a:hover {
     text-transform: uppercase;
 }
 
-/* Typographic scale matches standard service headings */
 .card-neutral .card-title {
     color: var(--primary) !important;
     font-size: 1.4rem; 
@@ -377,11 +375,10 @@ a:hover {
     line-height: 1.55;
 }
 
-/* Rescaled Compact Media Wrappers */
 .explore-media-wrapper {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Cinematic, space-efficient landscape ratio */
-    max-height: 190px;    /* Strict cap on absolute height */
+    aspect-ratio: 16 / 9; 
+    max-height: 190px;    
     overflow: hidden;
     border-radius: 8px;
     border: 1px solid var(--border);
@@ -489,25 +486,6 @@ a:hover {
     box-sizing: border-box;
 }
 
-.services-header {
-    margin-bottom: 3rem;
-}
-
-.services-header h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary);
-    letter-spacing: -0.015em;
-    margin: 0 0 8px 0;
-}
-
-.services-header p {
-    color: var(--secondary);
-    font-size: 1.1rem;
-    margin: 0;
-}
-
-/* Continuous CSS Marquee Container */
 .services-marquee-viewport {
     overflow: hidden;
     width: 100%;
@@ -535,7 +513,6 @@ a:hover {
     100% { transform: translateX(calc(-50% - (var(--card-gap) / 2))); }
 }
 
-/* Service scroll-cards styles */
 .service-scroll-card {
     width: var(--card-w-desktop);
     min-width: var(--card-w-desktop);
@@ -550,13 +527,6 @@ a:hover {
     flex-direction: column;
     justify-content: space-between;
     min-height: 400px;
-}
-
-.card-header-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
 }
 
 .service-num {
@@ -602,7 +572,7 @@ a:hover {
 }
 
 .dark .service-booking-btn {
-    color: #FFFFFF !important; /* Force white text over blue in dark mode */
+    color: #FFFFFF !important; 
 }
 
 /* ==========================================================================
@@ -633,7 +603,6 @@ a:hover {
     margin: 1.5rem 0;
 }
 
-/* Fixed: Explicitly forced vibrant accent-blue with white text for both themes */
 .cta-button {
     display: inline-block;
     background: var(--accent-blue) !important;
@@ -653,14 +622,13 @@ a:hover {
     box-shadow: 0 6px 20px rgba(35, 136, 255, 0.3);
 }
 
-/* Ensures dark theme styles do not inherit default parent background overrides */
 .dark .cta-button {
     background: var(--accent-blue) !important;
     color: #FFFFFF !important;
 }
 
 /* ==========================================================================
-   10. RESPONSIVE BREAKPOINTS & LAYOUT REBALANCING
+   10. RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media screen and (max-width: 1200px) {
     :root {
