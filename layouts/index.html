@@ -142,7 +142,7 @@
         </span>
     </header>
 
-    <div class="services-scroll-track">
+    <div id="services-track" class="services-scroll-track">
         
         <!-- Service Card 01: Print Systems -->
         <div class="service-scroll-card">
@@ -349,7 +349,38 @@
             css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid var(--primary); padding-right: 2px; }";
             document.body.appendChild(css);
         });
-    </script>
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("services-track");
+        if (!track) return;
+
+        let autoScrollInterval;
+        
+        const startAutoScroll = () => {
+            autoScrollInterval = setInterval(() => {
+                const maxScrollLeft = track.scrollWidth - track.clientWidth;
+                
+                // If we reach the end, smoothly loop back to the start, otherwise step forward
+                if (track.scrollLeft >= maxScrollLeft - 1) {
+                    track.scrollTo({ left: 0, behavior: "smooth" });
+                } else {
+                    track.scrollBy({ left: 300, behavior: "smooth" });
+                }
+            }, 3500); // Transitions every 3.5 seconds
+        };
+
+        const stopAutoScroll = () => clearInterval(autoScrollInterval);
+
+        // Human behavior safeguards: Pause animation if user interacts or hovers over cards
+        track.addEventListener("mouseenter", stopAutoScroll);
+        track.addEventListener("mouseleave", startAutoScroll);
+        track.addEventListener("touchstart", stopAutoScroll, { passive: true });
+        track.addEventListener("touchend", startAutoScroll, { passive: true });
+
+        // Run auto-scroll immediately
+        startAutoScroll();
+    });
+</script>
 
     <style>
     /* Page Layout Container Constraints */
