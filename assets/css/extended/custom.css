@@ -219,10 +219,6 @@ a:hover {
     margin-top: auto;
 }
 
-.space-adjust {
-    margin-bottom: 24px !important;
-}
-
 .end-margin-reset {
     margin: 0 !important;
 }
@@ -368,25 +364,30 @@ a:hover {
     color: var(--primary) !important;
     font-size: 1.4rem; 
     font-weight: 600;
-    margin: 0 0 10px 0;
+    margin: 0;
     letter-spacing: -0.015em;
 }
 
-.card-neutral .card-desc {
-    color: var(--secondary) !important;
-    font-size: 0.98rem;
-    line-height: 1.55;
+.card-title-link {
+    color: var(--primary) !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-title-link:hover {
+    color: var(--accent-blue) !important;
+    text-decoration: underline;
 }
 
 .explore-media-wrapper {
     width: 100%;
     aspect-ratio: 16 / 9; 
-    max-height: 190px;    
+    max-height: 220px;    
     overflow: hidden;
     border-radius: 8px;
     border: 1px solid var(--border);
     background-color: var(--code-bg);
-    margin: 0 0 16px 0;
+    margin: 0 0 20px 0;
     position: relative;
 }
 
@@ -400,20 +401,6 @@ a:hover {
 
 .grid-card:hover .explore-media-img {
     transform: scale(1.02);
-}
-
-.card-cta-link {
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 0.88rem;
-    color: var(--accent-blue);
-    display: inline-block;
-    transition: transform 0.2s ease;
-}
-
-.card-cta-link:hover {
-    text-decoration: underline;
-    transform: translateX(2px);
 }
 
 /* ==========================================================================

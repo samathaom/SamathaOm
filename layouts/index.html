@@ -68,7 +68,7 @@
         </div>
     </section>
 
-    <!-- Explore Section (CMS Automated Data Binding) -->
+    <!-- Explore Section (Thumbnail & Heading Only Layout) -->
     <div class="custom-layout-container">
         <header class="section-standard-header">
             <h2>Explore</h2>
@@ -77,70 +77,55 @@
         
         <div class="minimal-grid bento-cols gap-md">
             
-            <!-- Bento Item 1: Featured Article (Pulled from CMS Articles Section) -->
+            <!-- Bento Item 1: Featured Article -->
             {{- $firstArticle := index (where .Site.RegularPages "Section" "articles") 0 -}}
             {{- if $firstArticle -}}
+            {{- $articleImg := $firstArticle.Params.image | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstArticle.Content 1) 0) -}}
             <div class="grid-card pad-md card-neutral flex-column bento-article-span">
                 <div class="card-header-meta">
                     <span class="card-tag">FEATURED ARTICLE</span>
                     <span class="card-meta-time">{{ $firstArticle.ReadingTime }} min read</span>
                 </div>
-                {{- with $firstArticle.Params.image -}}
+                {{- if $articleImg -}}
                 <div class="explore-media-wrapper">
-                    <img src="{{ . }}" alt="{{ $firstArticle.Title }}" class="explore-media-img" />
+                    <img src="{{ if strings.HasPrefix $articleImg "<img" }}{{ index (findRE "src=\"([^\">]+)\"" $articleImg 1) 1 }}{{ else }}{{ $articleImg }}{{ end }}" alt="{{ $firstArticle.Title }}" class="explore-media-img" />
                 </div>
                 {{- end -}}
-                <h3 class="card-title">{{ $firstArticle.Title }}</h3>
-                <p class="card-desc space-adjust">
-                    {{ $firstArticle.Description | default $firstArticle.Summary }}
-                </p>
-                <div class="mt-auto">
-                    <a href="{{ $firstArticle.RelPermalink }}" class="card-cta-link">Read Essay &rarr;</a>
-                </div>
+                <h3 class="card-title mt-auto"><a href="{{ $firstArticle.RelPermalink }}" class="card-title-link">{{ $firstArticle.Title }}</a></h3>
             </div>
             {{- end -}}
 
-            <!-- Bento Item 2: Featured Project (Pulled from CMS Projects/Portfolio Section) -->
+            <!-- Bento Item 2: Featured Project -->
             {{- $firstProject := index (where .Site.RegularPages "Section" "portfolio") 0 -}}
             {{- if $firstProject -}}
+            {{- $projectImg := $firstProject.Params.image | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstProject.Content 1) 0) -}}
             <div class="grid-card pad-md card-neutral flex-column">
                 <div class="card-header-meta">
-                    <span class="card-tag">PROJECT</span>
+                    <span class="card-tag">FEATURED PROJECT</span>
                 </div>
-                {{- with $firstProject.Params.image -}}
+                {{- if $projectImg -}}
                 <div class="explore-media-wrapper">
-                    <img src="{{ . }}" alt="{{ $firstProject.Title }}" class="explore-media-img" />
+                    <img src="{{ if strings.HasPrefix $projectImg "<img" }}{{ index (findRE "src=\"([^\">]+)\"" $projectImg 1) 1 }}{{ else }}{{ $projectImg }}{{ end }}" alt="{{ $firstProject.Title }}" class="explore-media-img" />
                 </div>
                 {{- end -}}
-                <h3 class="card-title">{{ $firstProject.Title }}</h3>
-                <p class="card-desc space-adjust">
-                    {{ $firstProject.Description | default $firstProject.Summary }}
-                </p>
-                <div class="mt-auto">
-                    <a href="{{ $firstProject.RelPermalink }}" class="card-cta-link">View Portfolio &rarr;</a>
-                </div>
+                <h3 class="card-title mt-auto"><a href="{{ $firstProject.RelPermalink }}" class="card-title-link">{{ $firstProject.Title }}</a></h3>
             </div>
             {{- end -}}
 
-            <!-- Bento Item 3: Featured Resource (Pulled from CMS Resources Section) -->
+            <!-- Bento Item 3: Featured Resource -->
             {{- $firstResource := index (where .Site.RegularPages "Section" "resources") 0 -}}
             {{- if $firstResource -}}
+            {{- $resourceImg := $firstResource.Params.image | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstResource.Content 1) 0) -}}
             <div class="grid-card pad-md card-neutral flex-column">
                 <div class="card-header-meta">
-                    <span class="card-tag">RESOURCE</span>
+                    <span class="card-tag">FEATURED RESOURCE</span>
                 </div>
-                {{- with $firstResource.Params.image -}}
+                {{- if $resourceImg -}}
                 <div class="explore-media-wrapper">
-                    <img src="{{ . }}" alt="{{ $firstResource.Title }}" class="explore-media-img" />
+                    <img src="{{ if strings.HasPrefix $resourceImg "<img" }}{{ index (findRE "src=\"([^\">]+)\"" $resourceImg 1) 1 }}{{ else }}{{ $resourceImg }}{{ end }}" alt="{{ $firstResource.Title }}" class="explore-media-img" />
                 </div>
                 {{- end -}}
-                <h3 class="card-title">{{ $firstResource.Title }}</h3>
-                <p class="card-desc space-adjust">
-                    {{ $firstResource.Description | default $firstResource.Summary }}
-                </p>
-                <div class="mt-auto">
-                    <a href="{{ $firstResource.RelPermalink }}" class="card-cta-link">Access Resource &rarr;</a>
-                </div>
+                <h3 class="card-title mt-auto"><a href="{{ $firstResource.RelPermalink }}" class="card-title-link">{{ $firstResource.Title }}</a></h3>
             </div>
             {{- end -}}
 
