@@ -361,8 +361,45 @@ code {
 /* ----------------------------------------------------
    Core Structural Cards
    ---------------------------------------------------- */
+:root {
+    --card-w-desktop: 380px;
+    --card-w-mobile: 300px;
+    --card-gap: 1.5rem;
+}
+
+.services-marquee-viewport {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 12px 0;
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.services-marquee-track {
+    display: flex;
+    gap: var(--card-gap);
+    width: max-content;
+    animation: glideLinear 30s linear infinite;
+    will-change: transform;
+}
+
+.services-marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes glideLinear {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Flawless structural split point regardless of screen changes */
+        transform: translateX(-50%);
+    }
+}
+
 .service-scroll-card {
-    flex: 0 0 380px;
+    flex: 0 0 var(--card-w-desktop);
     background: var(--entry) !important;
     border: 1px solid var(--border) !important;
     border-radius: 16px;
@@ -371,7 +408,7 @@ code {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 380px;
+    min-height: 390px;
 }
 
 .card-header-meta {
@@ -408,7 +445,7 @@ code {
 
 .service-desc {
     color: var(--secondary);
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     line-height: 1.6;
     margin: 0;
 }
@@ -426,6 +463,11 @@ code {
     background: var(--accent-blue) !important;
     color: #FFFFFF !important;
     box-sizing: border-box;
+    transition: filter 0.2s ease;
+}
+
+.service-booking-btn:hover {
+    filter: brightness(0.9);
 }
 
 .dark .service-booking-btn {
@@ -434,9 +476,9 @@ code {
 
 @media screen and (max-width: 768px) {
     .service-scroll-card {
-        flex: 0 0 300px;
+        flex: 0 0 var(--card-w-mobile);
         padding: 24px;
-        min-height: 350px;
+        min-height: 360px;
     }
 }
 

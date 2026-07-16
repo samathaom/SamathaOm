@@ -79,18 +79,16 @@
     </div>
 </section>
 
-<section class="services-section" style="max-width: var(--main-width); margin: 6rem auto; padding: 0 var(--gap); overflow: hidden;">
+<section class="services-section">
     
-    <header style="margin-bottom: 3rem;">
-        <h2 style="font-size: 2rem; font-weight: 700; color: var(--primary); letter-spacing: -0.015em; margin: 0 0 8px 0;">Expertise & Offerings</h2>
-        <p style="color: var(--secondary); font-size: 1.1rem; margin: 0;">Core capabilities crafted with absolute execution.</p>
+    <header class="services-header">
+        <h2 class="services-main-title">Expertise & Offerings</h2>
+        <p class="services-subtitle">Core capabilities crafted with absolute execution.</p>
     </header>
 
-    <!-- The Infinite Motion Viewport -->
     <div class="services-marquee-viewport">
         <div class="services-marquee-track">
             
-            <!-- Original Set -->
             <div class="service-scroll-card">
                 <div class="card-header-meta">
                     <span class="service-num">01</span>
@@ -122,18 +120,17 @@
             <div class="service-scroll-card">
                 <div class="card-header-meta">
                     <span class="service-num">03</span>
-                    <span class="card-tag">Code</span>
+                    <span class="card-tag">Consult</span>
                 </div>
                 <div class="card-content">
-                    <h3 class="service-title">Technical Translation</h3>
-                    <p class="service-desc">Bridging visual vision directly with front-end implementation. Auditing production codebase logic to keep code design-accurate.</p>
+                    <h3 class="service-title">Technical Consultation</h3>
+                    <p class="service-desc">Strategic guidance on software architectures, front-end infrastructure scaling, curriculum blueprints, and cross-functional workflow optimization.</p>
                 </div>
                 <div class="card-footer-action">
-                    <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Audit</a>
+                    <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation</a>
                 </div>
             </div>
 
-            <!-- Cloned Duplicate Set for Seamless Seamless Looping -->
             <div class="service-scroll-card" aria-hidden="true">
                 <div class="card-header-meta">
                     <span class="service-num">01</span>
@@ -165,14 +162,14 @@
             <div class="service-scroll-card" aria-hidden="true">
                 <div class="card-header-meta">
                     <span class="service-num">03</span>
-                    <span class="card-tag">Code</span>
+                    <span class="card-tag">Consult</span>
                 </div>
                 <div class="card-content">
-                    <h3 class="service-title">Technical Translation</h3>
-                    <p class="service-desc">Bridging visual vision directly with front-end implementation. Auditing production codebase logic to keep code design-accurate.</p>
+                    <h3 class="service-title">Technical Consultation</h3>
+                    <p class="service-desc">Strategic guidance on software architectures, front-end infrastructure scaling, curriculum blueprints, and cross-functional workflow optimization.</p>
                 </div>
                 <div class="card-footer-action">
-                    <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Audit</a>
+                    <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation</a>
                 </div>
             </div>
 
@@ -298,52 +295,7 @@
                 that.tick();
             }, delta);
         };
-
-        document.addEventListener("DOMContentLoaded", function() {
-            var elements = document.getElementsByClassName('txt-rotate');
-            for (var i=0; i<elements.length; i++) {
-                var toRotate = elements[i].getAttribute('data-rotate');
-                var period = elements[i].getAttribute('data-period');
-                if (toRotate) {
-                    new TxtRotate(elements[i], JSON.parse(toRotate), period);
-                }
-            }
-            var css = document.createElement("style");
-            css.type = "text/css";
-            css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid var(--primary); padding-right: 2px; }";
-            document.body.appendChild(css);
-        });
-    
-    document.addEventListener("DOMContentLoaded", () => {
-        const track = document.getElementById("services-track");
-        if (!track) return;
-
-        let autoScrollInterval;
-        
-        const startAutoScroll = () => {
-            autoScrollInterval = setInterval(() => {
-                const maxScrollLeft = track.scrollWidth - track.clientWidth;
-                
-                // If we reach the end, smoothly loop back to the start, otherwise step forward
-                if (track.scrollLeft >= maxScrollLeft - 1) {
-                    track.scrollTo({ left: 0, behavior: "smooth" });
-                } else {
-                    track.scrollBy({ left: 300, behavior: "smooth" });
-                }
-            }, 3500); // Transitions every 3.5 seconds
-        };
-
-        const stopAutoScroll = () => clearInterval(autoScrollInterval);
-
-        // Human behavior safeguards: Pause animation if user interacts or hovers over cards
-        track.addEventListener("mouseenter", stopAutoScroll);
-        track.addEventListener("mouseleave", startAutoScroll);
-        track.addEventListener("touchstart", stopAutoScroll, { passive: true });
-        track.addEventListener("touchend", startAutoScroll, { passive: true });
-
-        // Run auto-scroll immediately
-        startAutoScroll();
-    });
+              
 </script>
 
     <style>
