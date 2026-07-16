@@ -77,7 +77,7 @@
         
         <div class="minimal-grid bento-cols gap-md">
             
-            <!-- Bento Item 1: Featured Article (Text & Excerpt Only) -->
+            <!-- Bento Item 1: Featured Article (Text & Excerpt Only without Raw Tags) -->
             {{- $firstArticle := index (where .Site.RegularPages "Section" "articles") 0 -}}
             {{- if $firstArticle -}}
             <div class="grid-card pad-md card-neutral flex-column bento-article-span">
@@ -86,9 +86,9 @@
                     <span class="card-meta-time">{{ $firstArticle.ReadingTime }} min read</span>
                 </div>
                 <h3 class="card-title"><a href="{{ $firstArticle.RelPermalink }}" class="card-title-link">{{ $firstArticle.Title }}</a></h3>
-                {{- $words := split $firstArticle.Summary " " -}}
+                {{- $words := split ($firstArticle.Summary | plainify) " " -}}
                 {{- $snippetLength := cond (gt (len $words) 30) 30 (len $words) -}}
-                <p class="card-excerpt mt-auto">{{ delimit (first $snippetLength $words) " " }}...</p>
+                <div class="card-excerpt mt-auto">{{ delimit (first $snippetLength $words) " " }}...</div>
             </div>
             {{- end -}}
 
