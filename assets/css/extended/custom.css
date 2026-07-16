@@ -233,11 +233,11 @@ a:hover {
 }
 
 /* ==========================================================================
-   5. HERO CALLOUT BLOCK & TYPEWRITER ENGINE
+   5. HERO CALLOUT BLOCK, ALIGNED ABOUT ME, & TYPEWRITER ENGINE
    ========================================================================== */
 .hero-callout-container {
     max-width: var(--main-width);
-    margin: 5rem auto 3.5rem auto;
+    margin: 1.5rem auto 2.5rem auto; /* Clean, reduced top spacing */
     padding: 40px 36px;
     background: rgba(var(--primary-rgb, 128, 128, 128), 0.015); 
     border: 1px solid var(--border);
@@ -296,10 +296,14 @@ a:hover {
     to { opacity: 0; }
 }
 
+/* Extracted & Structured About Me Alignment */
+.section-about-align {
+    margin-top: 3rem !important;
+    margin-bottom: 5rem !important;
+}
+
 .about-bio-text {
-    margin-top: 2.5rem;
-    border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
+    padding-top: 0.5rem;
 }
 
 .about-bio-text p {
@@ -417,7 +421,7 @@ a:hover {
    ========================================================================== */
 .philosophy-section {
     max-width: var(--main-width); 
-    margin: 6rem auto; 
+    margin: 5rem auto 6rem auto; 
     padding: 0 var(--gap);
 }
 
