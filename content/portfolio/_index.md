@@ -1,6 +1,6 @@
 ---
 title: "Portfolio"
-description: "Architecting software solutions optimized for performance and zero operational overhead."
+description: "Curated designs built for absolute clarity and human-centered design."
 draft: false
 layout: "list"
 cascade:
