@@ -1,6 +1,6 @@
 ---
 title: Buddhist Precepts Tracker | Minimalist Habit Trackers
-thumbnail: /images/Buddhist-precept-tracker.png
+thumbnail: /images/Thumbnail.png
 tags:
   - Habits
   - Tracker

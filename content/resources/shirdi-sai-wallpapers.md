@@ -1,6 +1,6 @@
 ---
 title: "Shirdi Sai Wallpapers | Mobile and desktop "
-thumbnail: /images/avatar.jpg
+thumbnail: /images/Shirdi Sai DTP.jpg
 tags:
   - Sai Baba
   - Shirdi
