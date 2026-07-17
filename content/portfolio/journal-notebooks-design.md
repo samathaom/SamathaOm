@@ -13,8 +13,6 @@ tags:
 
 
 
-&nbsp;
-
 ![](</images/Book mockup(2).png>)
 
 
@@ -23,13 +21,9 @@ tags:
 
 
 
-&nbsp;
-
 ![](</images/Book mockup(4).png>)
 
 
-
-&nbsp;
 
 ![](</images/Book mockup(5).png>)
 
@@ -39,19 +33,13 @@ tags:
 
 
 
-&nbsp;
-
 ![](</images/Book Mockup - 8(1).png>)
 
 
 
-&nbsp;
-
 ![](</images/Book Mockup - 8(2).png>)
 
 
-
-&nbsp;
 
 ![](</images/Book Mockup - 6.png>)
 
