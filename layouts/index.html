@@ -81,17 +81,17 @@
     <div class="custom-layout-container">
         <header class="section-standard-header">
             <h2>Explore</h2>
-            <p class="section-subtitle-spacer">Selected frameworks, systems, and spiritual writings.</p>
+            <p class="section-subtitle-spacer">Selected design, free resource, and spiritual writings.</p>
         </header>
         
         <div class="minimal-grid bento-cols gap-md">
             
-            <!-- Bento Item 1: Featured Article (Text & Excerpt Only) -->
+            <!-- Bento Item 1: Recent Article (Text & Excerpt Only) -->
             {{- $firstArticle := index (where .Site.RegularPages "Section" "articles") 0 -}}
             {{- if $firstArticle -}}
             <div class="grid-card pad-md card-neutral flex-column bento-article-span">
                 <div class="card-header-meta">
-                    <span class="card-tag">FEATURED ARTICLE</span>
+                    <span class="card-tag">Recent ARTICLE</span>
                     <span class="card-meta-time">{{ $firstArticle.ReadingTime }} min read</span>
                 </div>
                 <h3 class="card-title"><a href="{{ $firstArticle.RelPermalink }}" class="card-title-link">{{ $firstArticle.Title }}</a></h3>
@@ -101,13 +101,13 @@
             </div>
             {{- end -}}
 
-            <!-- Bento Item 2: Featured Project -->
+            <!-- Bento Item 2: Recent Project -->
             {{- $firstProject := index (where .Site.RegularPages "Section" "portfolio") 0 -}}
             {{- if $firstProject -}}
             {{- $projectImg := $firstProject.Params.image | default $firstProject.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstProject.Content 1) 0) -}}
             <div class="grid-card pad-md card-neutral flex-column">
                 <div class="card-header-meta">
-                    <span class="card-tag">FEATURED PROJECT</span>
+                    <span class="card-tag">Recent PROJECT</span>
                 </div>
                 {{- if $projectImg -}}
                 <div class="explore-media-wrapper">
@@ -122,13 +122,13 @@
             </div>
             {{- end -}}
 
-            <!-- Bento Item 3: Featured Resource -->
+            <!-- Bento Item 3: Recent Resource -->
             {{- $firstResource := index (where .Site.RegularPages "Section" "resources") 0 -}}
             {{- if $firstResource -}}
             {{- $resourceImg := $firstResource.Params.image | default $firstResource.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstResource.Content 1) 0) -}}
             <div class="grid-card pad-md card-neutral flex-column">
                 <div class="card-header-meta">
-                    <span class="card-tag">FEATURED RESOURCE</span>
+                    <span class="card-tag">Recent RESOURCE</span>
                 </div>
                 {{- if $resourceImg -}}
                 <div class="explore-media-wrapper">
@@ -149,7 +149,7 @@
     <!-- Services Marquee Matrix Block -->
     <section class="services-section">
         <header class="section-standard-header">
-            <h2>Expertise & Offerings</h2>
+            <h2>Services</h2>
             <p>Core capabilities crafted with absolute execution.</p>
         </header>
 
