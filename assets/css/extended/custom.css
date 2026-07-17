@@ -224,7 +224,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   5. HERO CALLOUT BLOCK & OPTIMIZED ABOUT ME ALIGNMENT
+   5. HERO CALLOUT BLOCK & PROFILE PICTURE INTEGRATION (MOBILE ORDER FIXED)
    ========================================================================== */
 .hero-callout-container {
     max-width: var(--main-width);
@@ -235,6 +235,46 @@ a:hover {
     border-radius: var(--radius);
     position: relative;
     overflow: hidden;
+    box-sizing: border-box;
+}
+
+.hero-content-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text-column {
+    min-width: 0;
+    order: 1;
+}
+
+.hero-image-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+}
+
+.hero-profile-wrapper {
+    width: 130px;
+    height: 130px;
+    min-width: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    background-color: var(--code-bg);
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.hero-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .hero-statement {
@@ -287,31 +327,6 @@ a:hover {
     to { opacity: 0; }
 }
 
-.section-about-align {
-    margin-top: 3rem !important;
-    margin-bottom: 5rem !important;
-}
-
-.about-bio-text {
-    padding-top: 0.5rem;
-    width: 100% !important;
-    max-width: 100% !important;
-}
-
-.about-bio-text.full-width-constraint p {
-    color: var(--secondary);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin: 0 0 16px 0;
-    width: 100% !important;
-    max-width: 100% !important;
-    display: block;
-}
-
-.about-bio-text.full-width-constraint p:last-child {
-    margin-bottom: 0;
-}
-
 .modern-hero-animate { 
     animation: hero-fade-in-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; 
 }
@@ -322,15 +337,24 @@ a:hover {
 }
 
 /* ==========================================================================
-   6. EXPLORE SECTION ARCHITECTURE & ARTICLE EXCERPT FORMATTING
+   6. ENTRY WRAPPER & CONTAINER BOX ARCHITECTURE
    ========================================================================== */
+.entry-wrapper,
+.entry,
+.post-entry,
 .card-neutral {
     background: var(--entry) !important;
     border: 1px solid var(--border) !important;
-    border-radius: var(--radius);
-    padding: 32px; 
+    border-radius: var(--radius) !important;
+    padding: 32px !important;
+    margin-bottom: var(--card-gap) !important;
+    box-sizing: border-box !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 }
 
+.entry-wrapper:hover,
+.entry:hover,
+.post-entry:hover,
 .card-neutral:hover {
     box-shadow: 0 4px 12px rgba(35, 136, 255, 0.05) !important;
 }
@@ -670,6 +694,32 @@ a:hover {
         padding: 0 var(--gap) !important;
     }
     
+    .hero-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .hero-text-column {
+        order: 1;
+    }
+
+    .hero-image-column {
+        order: 2;
+        justify-content: flex-start;
+        margin-top: 0.5rem;
+    }
+
+    .hero-profile-wrapper {
+        width: 100px;
+        height: 100px;
+        min-width: 100px;
+    }
+
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
     .bento-cols {
         grid-template-columns: 1fr !important;
     }
@@ -685,137 +735,4 @@ a:hover {
         padding: 24px;
         min-height: 360px;
     }
-}
-
-
-/* ==========================================================================
-   ENTRY WRAPPER & CONTAINER BOX ARCHITECTURE
-   ========================================================================== */
-.entry-wrapper,
-.entry,
-.post-entry {
-    background: var(--entry) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: var(--radius) !important;
-    padding: 32px !important;
-    margin-bottom: var(--card-gap) !important;
-    box-sizing: border-box !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-}
-
-.entry-wrapper:hover,
-.entry:hover,
-.post-entry:hover {
-    box-shadow: 0 4px 12px rgba(35, 136, 255, 0.05) !important;
-}
-
-/* ==========================================================================
-   5. HERO CALLOUT BLOCK & PROFILE PICTURE INTEGRATION
-   ========================================================================== */
-.hero-callout-container {
-    max-width: var(--main-width);
-    margin: 1.5rem auto 2.5rem auto; 
-    padding: 40px 36px;
-    background: rgba(var(--primary-rgb, 128, 128, 128), 0.015); 
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.hero-content-grid {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2.5rem;
-    align-items: center;
-    width: 100%;
-}
-
-.hero-text-column {
-    min-width: 0;
-}
-
-.hero-image-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-profile-wrapper {
-    width: 130px;
-    height: 130px;
-    min-width: 130px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid var(--border);
-    background-color: var(--code-bg);
-    position: relative;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-}
-
-.hero-profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.hero-statement {
-    margin: 0;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-}
-
-.hero-greeting {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--secondary);
-    display: block;
-    margin-bottom: 8px;
-}
-
-.hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary);
-    display: block;
-    margin-bottom: 12px;
-    letter-spacing: -0.025em;
-}
-
-.css-txt-rotator {
-    font-size: 1.35rem;
-    font-weight: 500;
-    color: var(--accent-blue);
-    display: inline-block;
-    position: relative;
-    vertical-align: top;
-    white-space: normal;
-    min-height: 1.8em;
-}
-
-.rotator-line {
-    display: inline;
-}
-
-.txt-cursor {
-    display: inline-block;
-    margin-left: 2px;
-    font-weight: 300;
-    color: var(--accent-blue);
-    animation: blinkCursor 0.8s steps(2, start) infinite;
-}
-
-@keyframes blinkCursor {
-    to { opacity: 0; }
-}
-
-.modern-hero-animate { 
-    animation: hero-fade-in-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; 
-}
-
-@keyframes hero-fade-in-slide {
-    0% { opacity: 0; transform: translateY(8px); }
-    100% { opacity: 1; transform: translateY(0); }
 }
