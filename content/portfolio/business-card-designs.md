@@ -6,25 +6,12 @@ tags:
   - Portfolio
   - Business Cards
   - Visiting Cards
-  - Figma
 ---
-Business card 1
-
-
-
 ![](</images/BC1 Mockup.png>)
 
 
 
-&nbsp;
-
 ![](</images/Business Card1 Design.png>)
-
-
-
-&nbsp;
-
-Business card 2
 
 
 
