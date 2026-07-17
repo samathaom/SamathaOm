@@ -686,3 +686,25 @@ a:hover {
         min-height: 360px;
     }
 }
+
+
+/* ==========================================================================
+   ENTRY WRAPPER & CONTAINER BOX ARCHITECTURE
+   ========================================================================== */
+.entry-wrapper,
+.entry,
+.post-entry {
+    background: var(--entry) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    padding: 32px !important;
+    margin-bottom: var(--card-gap) !important;
+    box-sizing: border-box !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.entry-wrapper:hover,
+.entry:hover,
+.post-entry:hover {
+    box-shadow: 0 4px 12px rgba(35, 136, 255, 0.05) !important;
+}
