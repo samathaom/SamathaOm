@@ -1,9 +1,18 @@
 {{- define "main" -}}
 
-    <!-- Animated Hero Section with Profile Picture Layout -->
+    <!-- Hero Section (Designer Architectural Studio Style) -->
     <div class="hero-callout-container modern-hero-animate">
+        <!-- Minimal Grid Crosshair Accents -->
+        <span class="hero-corner-cross top-left">+</span>
+        <span class="hero-corner-cross bottom-right">+</span>
+
         <div class="hero-content-grid">
             <div class="hero-text-column">
+                <!-- Designer Status Pill Badge -->
+                <div class="hero-status-pill">
+                    <span class="status-dot"></span> Available for Q3/Q4 Projects
+                </div>
+                
                 <h1 class="hero-statement">
                     <span class="hero-greeting">👋 Hi there!</span>
                     <span class="hero-title">I am a Creative Director & Technical Architect.</span>
@@ -77,7 +86,81 @@
         </div>
     </section>
 
-    <!-- Explore Section (Option 3: Editorial Typography List with In-Layout Image Reveal) -->
+    <!-- Services & Deliverables Matrix Section -->
+    <section class="services-matrix-section">
+        <div class="custom-layout-container">
+            <header class="section-standard-header">
+                <h2>Capabilities & Deliverables</h2>
+                <p class="section-subtitle-spacer">Concrete outcomes and tangible end products engineered for impact.</p>
+            </header>
+
+            <div class="deliverables-grid">
+                
+                <!-- Pillar 1: Design -->
+                <div class="deliverable-card">
+                    <div class="card-num-badge">01</div>
+                    <span class="pillar-tag">DESIGN</span>
+                    <h3 class="pillar-title">High-Fidelity Design Systems & Print Kits</h3>
+                    <ul class="pillar-list">
+                        <li>Figma UI/UX component libraries & wireframes</li>
+                        <li>User journey maps & frictionless flow diagrams</li>
+                        <li>Print vector layouts & brand guidelines</li>
+                    </ul>
+                    <div class="pillar-outcome">
+                        <strong>Outcome:</strong> Zero user friction; pixel-perfect consistency across web & print.
+                    </div>
+                </div>
+
+                <!-- Pillar 2: Technical Architecture -->
+                <div class="deliverable-card">
+                    <div class="card-num-badge">02</div>
+                    <span class="pillar-tag">TECHNICAL</span>
+                    <h3 class="pillar-title">Scalable System Blueprints & Audits</h3>
+                    <ul class="pillar-list">
+                        <li>Software architecture diagrams & database schemas</li>
+                        <li>Front-end structural specs (React / Angular.js)</li>
+                        <li>UX & performance accessibility audit reports</li>
+                    </ul>
+                    <div class="pillar-outcome">
+                        <strong>Outcome:</strong> A bulletproof technical foundation for scaling and low maintenance.
+                    </div>
+                </div>
+
+                <!-- Pillar 3: Coding -->
+                <div class="deliverable-card">
+                    <div class="card-num-badge">03</div>
+                    <span class="pillar-tag">CODING</span>
+                    <h3 class="pillar-title">Modern Front-End & Custom Engines</h3>
+                    <ul class="pillar-list">
+                        <li>Fast-loading, responsive web applications</li>
+                        <li>Clean Python & JavaScript custom scripts</li>
+                        <li>Light/Dark mode responsive CSS design engines</li>
+                    </ul>
+                    <div class="pillar-outcome">
+                        <strong>Outcome:</strong> Blazing performance, zero bloat, and responsive layout polish.
+                    </div>
+                </div>
+
+                <!-- Pillar 4: Education -->
+                <div class="deliverable-card">
+                    <div class="card-num-badge">04</div>
+                    <span class="pillar-tag">EDUCATION</span>
+                    <h3 class="pillar-title">Curriculum Blueprints & Team Frameworks</h3>
+                    <ul class="pillar-list">
+                        <li>Structured CS curriculums & learning paths</li>
+                        <li>Comprehensive developer onboarding documentation</li>
+                        <li>Technical workshop modules & training guides</li>
+                    </ul>
+                    <div class="pillar-outcome">
+                        <strong>Outcome:</strong> Rapid skill acquisition and streamlined team knowledge transfer.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Section (Editorial Typography List) -->
     <div class="custom-layout-container">
         <header class="section-standard-header">
             <h2>Explore</h2>
@@ -168,106 +251,6 @@
             </ul>
         </div>
     </div>
-
-    <!-- Services Marquee Matrix Block -->
-    <section class="services-section">
-        <header class="section-standard-header">
-            <h2>Services</h2>
-            <p>Core capabilities crafted with absolute execution.</p>
-        </header>
-
-        <div class="services-marquee-viewport">
-            <div class="services-marquee-track">
-                
-                <!-- Core Content Set -->
-                <div class="service-scroll-card">
-                    <div class="card-header-meta">
-                        <span class="service-num">01</span>
-                        <span class="card-tag">Print</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="service-title">High-Clarity Print Systems</h3>
-                        <p class="service-desc">Structural print layout design, editorial design, physical product packaging, brand identity guidelines, and premium typographic systems.</p>
-                    </div>
-                    <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Print Project Call</a>
-                    </div>
-                </div>
-
-                <div class="service-scroll-card">
-                    <div class="card-header-meta">
-                        <span class="service-num">02</span>
-                        <span class="card-tag">UI/UX</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="service-title">Digital Product Design</h3>
-                        <p class="service-desc">End-to-end UI/UX systems, user flow engineering, structural wireframing, high-fidelity Figma systems, and interactive software prototyping.</p>
-                    </div>
-                    <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Product Discovery</a>
-                    </div>
-                </div>
-
-                <div class="service-scroll-card">
-                    <div class="card-header-meta">
-                        <span class="service-num">03</span>
-                        <span class="card-tag">Consult</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="service-title">Technical Consultation</h3>
-                        <p class="service-desc">Strategic guidance on software architectures, front-end infrastructure scaling, curriculum blueprints, and cross-functional workflow optimization.</p>
-                    </div>
-                    <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation</a>
-                    </div>
-                </div>
-
-                <!-- Cloned Duplicate Set -->
-                <div class="service-scroll-card" aria-hidden="true">
-                    <div class="card-header-meta">
-                        <span class="service-num">01</span>
-                        <span class="card-tag">Print</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="service-title">High-Clarity Print Systems</h3>
-                        <p class="service-desc">Structural print layout design, editorial design, physical product packaging, brand identity guidelines, and premium typographic systems.</p>
-                    </div>
-                    <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Print Project Call</a>
-                    </div>
-                </div>
-
-                <div class="service-scroll-card" aria-hidden="true">
-                    <div class="card-header-meta">
-                        <span class="service-num">02</span>
-                        <span class="card-tag">UI/UX</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="service-title">Digital Product Design</h3>
-                        <p class="service-desc">End-to-end UI/UX systems, user flow engineering, structural wireframing, high-fidelity Figma systems, and interactive software prototyping.</p>
-                    </div>
-                    <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Product Discovery</a>
-                    </div>
-                </div>
-
-                <div class="service-scroll-card" aria-hidden="true">
-                    <div class="card-header-meta">
-                        <span class="service-num">03</span>
-                        <span class="card-tag">Consult</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="service-title">Technical Consultation</h3>
-                        <p class="service-desc">Strategic guidance on software architectures, front-end infrastructure scaling, curriculum blueprints, and cross-functional workflow optimization.</p>
-                    </div>
-                    <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
     <!-- Call to Action Area -->
     <div class="custom-layout-container text-center-cta">
