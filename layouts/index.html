@@ -5,7 +5,7 @@
         <div class="hero-content-grid">
             <div class="hero-text-column">
                 <h1 class="hero-statement">
-                    <span class="hero-greeting animate-fade-up">👋 Hi there!</span>
+                    <span class="hero-greeting animate-fade-in">👋 Hi there!</span>
                     <span class="hero-title animate-fade-up delay-1">I am a Creative Director & Technical Architect.</span>
                     <span class="css-txt-rotator animate-fade-up delay-2">
                         <span class="rotator-line" id="typewriter-hook"></span><span class="txt-cursor">|</span>
@@ -208,7 +208,7 @@
                     </div>
                 </div>
 
-                <!-- Cloned Duplicate Set for Infinite Marquee loop -->
+                <!-- Cloned Duplicate Set -->
                 <div class="service-scroll-card" aria-hidden="true">
                     <div class="card-header-meta">
                         <span class="service-num">01</span>
@@ -268,16 +268,14 @@
 
     <!-- Styles & Hardware-Accelerated Animations -->
     <style>
-        /* Import clean modern designer typography stack */
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
         body, h1, h2, h3, h4, p, span, a {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
         }
 
-        /* Giant typography scaling for modern designer look */
         .hero-statement {
-            font-size. clamp(2rem, 4vw, 3.2rem);
+            font-size: clamp(2rem, 4vw, 3.2rem);
             line-height: 1.15;
             letter-spacing: -0.03em;
         }
@@ -330,9 +328,8 @@
             margin-bottom: 1rem;
         }
 
-        /* Hardware Accelerated CSS Micro-Interactions (Zero JS overhead) */
         .interactive-card, .grid-card, .service-scroll-card {
-            will-change: transform, background-color, border-color;
+            will-change: transform, background-color, border-color, box-shadow;
             transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
@@ -343,7 +340,6 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
         }
 
-        /* Explore card layout interaction match with article rows */
         .explore-card-link {
             position: relative;
             text-decoration: none;
@@ -372,7 +368,6 @@
             transition: color 0.2s ease;
         }
 
-        /* Subtle load-in animations using pure CSS keyframes */
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -411,7 +406,6 @@
             animation: scaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Modern CTA Button Micro-interaction */
         .cta-button-animated {
             display: inline-flex;
             align-items: center;
@@ -439,7 +433,6 @@
             transform: translateX(4px);
         }
 
-        /* Service booking button enhancement */
         .service-booking-btn {
             display: inline-block;
             font-weight: 600;
