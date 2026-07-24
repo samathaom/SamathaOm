@@ -111,9 +111,10 @@
 
     <style>
         .article-filters .filter-btn {
-            background: var(--code-bg);
+            background-color: var(--code-bg) !important;
+            background: var(--code-bg) !important;
+            color: var(--secondary) !important;
             border: none;
-            color: var(--secondary);
             padding: 8px 16px;
             border-radius: 100px;
             font-size: 14px;
@@ -122,10 +123,11 @@
         }
 
         .article-filters .filter-btn:hover {
-            color: var(--primary);
+            color: var(--primary) !important;
         }
 
         .article-filters .filter-btn.active {
+            background-color: var(--accent-blue) !important;
             background: var(--accent-blue) !important;
             color: #FFFFFF !important;
         }
