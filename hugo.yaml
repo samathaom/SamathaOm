@@ -47,19 +47,19 @@ params:
 
 menu:
   main:
-    - name: "Articles"
-      url: "/articles/"
-      weight: 1
     - name: "Portfolio"
       url: "/portfolio/"
-      weight: 2
+      weight: 1
+    - name: "Articles"
+      url: "/articles/"
+      weight: 2    
     - name: "Resources"
       url: "/resources/"
       weight: 3  
     - name: "Contact"
       url: "/contact/"
       weight: 4
-    - name: "Book a Call"
+    - name: "Book a Free Call"
       url: "https://cal.com/samathaom/20min"
       weight: 5
       params:
