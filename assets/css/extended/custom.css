@@ -1,15 +1,15 @@
 /* ==========================================================================
-   1. GLOBAL VIBRANT THEME VARIABLES
+   1. GLOBAL VIBRANT THEME VARIABLES & LIGHT/DARK MODES
    ========================================================================== */
 :root {
     --font-family: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     
-    /* Dynamic Full-Width Layout */
+    /* Layout */
     --main-width: 100%;
     
     /* Vibrant Color Palette */
-    --accent-blue: #0066FF;      /* Dominant Vibrant Blue */
-    --accent-cyan: #00F0FF;      /* Secondary Bright Accent */
+    --accent-blue: #0066FF;      /* Dominant Electric Blue */
+    --accent-cyan: #00F0FF;      /* High-Impact Neon Cyan */
     --accent-glow: rgba(0, 240, 255, 0.25);
     
     --theme: #FFFFFF; 
@@ -46,7 +46,7 @@
 }
 
 /* ==========================================================================
-   2. BASE & FULL-CONTAINER LAYOUT RESET
+   2. BASE & CONTAINER LAYOUT RESET
    ========================================================================== */
 html {
     scroll-behavior: smooth;
@@ -61,7 +61,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Force elements to stretch full-width */
+/* Full-width alignment */
 .main,
 .custom-layout-container, 
 .hero-callout-container {
@@ -89,7 +89,6 @@ body {
     padding: 0 5vw !important;
 }
 
-/* Navigation Links */
 .header a, .nav a, .logo a, #menu a, .menu a {
     color: var(--accent-blue) !important;
     font-weight: 700 !important;
@@ -104,7 +103,7 @@ a:hover {
     color: var(--accent-cyan) !important;
 }
 
-/* Cal.com CTA Button in Nav */
+/* Navigation Booking CTA */
 #menu a[href*="cal.com"], 
 #menu a[href*="booking"],
 .nav a[href*="cal.com"],
@@ -122,7 +121,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   3. NATIVE CSS SCROLL ANIMATIONS & FRAMER-LIKE PARALLAX FLOW
+   3. PURE CSS SCROLL ANIMATIONS (FRAMER-LIKE FLOW)
    ========================================================================== */
 .section-block, 
 .hero-callout-container {
@@ -248,7 +247,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   5. FULL-BLEED ELECTRIC BLUE DESIGN PHILOSOPHY SECTION
+   5. DESIGN PHILOSOPHY SECTION (FULL-BLEED STUDIO BLUE)
    ========================================================================== */
 .section-philosophy-bg {
     width: 100vw !important;
@@ -257,7 +256,7 @@ a:hover {
     right: 50%;
     margin-left: -50vw !important;
     margin-right: -50vw !important;
-    background: #0052CC !important; /* Bold Full-Width Studio Blue */
+    background: #0052CC !important;
     color: #FFFFFF !important;
     padding: 6rem 5vw;
     box-sizing: border-box;
@@ -304,98 +303,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   6. SERVICES & DELIVERABLES MATRIX
-   ========================================================================== */
-.section-services-bg {
-    width: 100%;
-    padding: 4rem 0;
-}
-
-.deliverables-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    width: 100%;
-}
-
-.deliverable-card {
-    background: var(--entry);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--accent-blue);
-    border-radius: var(--radius);
-    padding: 36px;
-    position: relative;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.deliverable-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent-cyan);
-    box-shadow: 0 10px 30px var(--accent-glow);
-}
-
-.card-num-badge {
-    position: absolute;
-    top: 24px;
-    right: 28px;
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--accent-blue);
-    opacity: 0.3;
-}
-
-.pillar-tag {
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    color: var(--accent-blue);
-    margin-bottom: 12px;
-    display: inline-block;
-}
-
-.pillar-title {
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin: 0 0 16px 0;
-}
-
-.pillar-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
-
-.pillar-list li {
-    font-size: 0.95rem;
-    color: var(--secondary);
-    padding-left: 18px;
-    position: relative;
-    margin-bottom: 8px;
-}
-
-.pillar-list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--accent-cyan);
-    font-size: 1.4rem;
-    line-height: 1;
-}
-
-.pillar-outcome {
-    border-top: 1px dashed var(--border);
-    padding-top: 14px;
-    font-size: 0.88rem;
-    color: var(--content);
-}
-
-.pillar-outcome strong {
-    color: var(--accent-blue);
-}
-
-/* ==========================================================================
-   7. FIXED & RESTORED EXPLORE SECTION
+   6. EXPLORE SECTION
    ========================================================================== */
 .editorial-explore-container {
     margin-top: 1.5rem;
@@ -419,10 +327,9 @@ a:hover {
 }
 
 .explore-item-link {
-    display: grid;
-    grid-template-columns: 160px 1fr 180px 40px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
     padding: 1.5rem 1rem;
     text-decoration: none !important;
     color: var(--primary) !important;
@@ -453,47 +360,145 @@ a:hover {
     color: var(--primary);
 }
 
-.explore-image-slot {
-    width: 180px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.explore-inline-preview {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    opacity: 0.6;
-    transition: all 0.25s ease;
-}
-
-.explore-inline-preview img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.explore-editorial-item:hover .explore-inline-preview {
-    opacity: 1;
-    border-color: var(--accent-cyan);
-    box-shadow: 0 0 12px var(--accent-glow);
-}
-
 .explore-arrow {
     font-size: 1.4rem;
     color: var(--accent-blue);
-    text-align: right;
     transition: transform 0.2s ease;
 }
 
 .explore-editorial-item:hover .explore-arrow {
     transform: translateX(6px);
     color: var(--accent-cyan);
+}
+
+/* ==========================================================================
+   7. SERVICES: CATEGORY PILLS & ACCORDION MATRIX
+   ========================================================================== */
+.category-pills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.pill-btn {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    color: var(--primary) !important;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.pill-btn:hover,
+.pill-btn.active {
+    background: var(--accent-blue) !important;
+    color: #FFFFFF !important;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.accordion-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.accordion-card {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.accordion-header {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+}
+
+.accordion-header .pillar-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--accent-blue);
+    display: block;
+}
+
+.accordion-header .pillar-title {
+    margin: 4px 0 0 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary) !important;
+}
+
+.accordion-icon {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    line-height: 1;
+}
+
+.accordion-body {
+    display: none;
+    padding: 0 24px 24px 24px;
+    border-top: 1px dashed var(--border);
+}
+
+.accordion-card.open .accordion-body {
+    display: block;
+}
+
+.accordion-desc {
+    color: var(--secondary) !important;
+    font-size: 0.95rem;
+    margin: 16px 0;
+}
+
+.pillar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+}
+
+.pillar-list li {
+    font-size: 0.95rem;
+    color: var(--content);
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.pillar-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.pillar-outcome {
+    border-top: 1px dashed var(--border);
+    padding-top: 12px;
+    font-size: 0.9rem;
+    color: var(--content);
+}
+
+.pillar-outcome strong {
+    color: var(--accent-blue);
 }
 
 /* ==========================================================================
@@ -509,10 +514,11 @@ a:hover {
     font-weight: 800; 
     font-size: 2rem; 
     margin-bottom: 8px;
+    color: var(--primary) !important;
 }
 
 .cta-subheading {
-    color: var(--secondary); 
+    color: var(--secondary) !important; 
     font-size: 1rem; 
     margin-bottom: 28px;
 }
@@ -538,21 +544,12 @@ a:hover {
 }
 
 /* ==========================================================================
-   9. RESPONSIVE BREAKPOINTS
+   9. MOBILE RESPONSIVE FIXES
    ========================================================================== */
 @media screen and (max-width: 868px) {
-    .philosophy-layout,
-    .deliverables-grid {
+    .philosophy-layout {
         grid-template-columns: 1fr;
-    }
-    
-    .explore-item-link {
-        grid-template-columns: 1fr auto;
-        gap: 0.75rem;
-    }
-    
-    .explore-image-slot {
-        display: none;
+        gap: 2rem;
     }
 }
 
@@ -563,5 +560,41 @@ a:hover {
     
     .hero-title {
         font-size: 2.4rem;
+    }
+
+    .explore-item-link {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        padding: 1rem 0.5rem !important;
+    }
+
+    .explore-editorial-item {
+        width: 100% !important;
+    }
+
+    .explore-item-title {
+        font-size: 1.1rem !important;
+        color: var(--primary) !important;
+    }
+
+    .section-block {
+        color: var(--primary) !important;
+    }
+
+    .section-block p, 
+    .section-block span, 
+    .section-block h2, 
+    .section-block h3 {
+        opacity: 1 !important;
+    }
+
+    .category-pills-container {
+        justify-content: flex-start;
+    }
+
+    .pill-btn {
+        font-size: 0.8rem;
+        padding: 8px 14px;
     }
 }
