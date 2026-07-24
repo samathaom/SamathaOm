@@ -335,7 +335,7 @@ nav {
 }
 
 /* ==========================================================================
-   5. DELIVERABLES SECTION & ACCORDION (Full Vibrant Blue & Pure White)
+   5. DELIVERABLES SECTION & ACCORDION (Spacious Layout)
    ========================================================================== */
 .section-capabilities-blue {
     width: 100vw !important;
@@ -346,214 +346,12 @@ nav {
     margin-right: -50vw !important;
     background-color: var(--brand-blue) !important;
     color: #FFFFFF !important;
-    padding: 6rem 5vw;
-    box-sizing: border-box;
-}
-
-.section-blue-header h2,
-.section-blue-subtitle {
-    color: #FFFFFF !important;
-}
-
-.section-capabilities-blue .cap-card,
-.section-capabilities-blue button.cap-header,
-.section-capabilities-blue .cap-header {
-    background-color: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: var(--radius);
-}
-
-.section-capabilities-blue .cap-card:hover,
-.section-capabilities-blue button.cap-header:hover {
-    background-color: rgba(255, 255, 255, 0.15) !important;
-}
-
-.section-capabilities-blue .cap-tag,
-.section-capabilities-blue .cap-title,
-.section-capabilities-blue .cap-icon,
-.section-capabilities-blue .cap-bullet-list li {
-    color: #FFFFFF !important;
-}
-
-.section-capabilities-blue .cap-bullet-list li::before {
-    color: #FFFFFF !important;
-}
-
-.cap-header {
-    width: 100%;
-    background: transparent;
-    border: none;
-    padding: 22px 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    cursor: pointer;
-}
-
-.cap-tag {
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    display: block;
-}
-
-.cap-title {
-    margin: 4px 0 0 0;
-    font-size: 1.35rem;
-    font-weight: 800;
-}
-
-.cap-icon {
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.cap-body {
-    display: none;
-    padding: 0 28px 28px 28px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.cap-card.open .cap-body {
-    display: block;
-}
-
-.cap-bullet-list {
-    list-style: none;
-    padding: 18px 0 0 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 12px 24px;
-}
-
-.cap-bullet-list li {
-    font-size: 1rem;
-    padding-left: 20px;
-    position: relative;
-    line-height: 1.5;
-}
-
-.cap-bullet-list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    font-size: 1.4rem;
-    line-height: 1;
-}
-
-/* ==========================================================================
-   6. CALL TO ACTION SECTION (Vibrant Blue Button)
-   ========================================================================== */
-.text-center-cta {
-    text-align: center;
-}
-
-.cta-heading {
-    font-size: 2.25rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-}
-
-.cta-subheading {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-}
-
-.cta-button,
-button, 
-input[type="submit"] {
-    display: inline-block;
-    background-color: var(--brand-blue) !important;
-    color: #FFFFFF !important;
-    padding: 14px 32px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    border: none;
-    transition: background-color 0.25s ease, transform 0.25s ease;
-    box-shadow: 0 10px 15px -3px rgba(0, 82, 204, 0.25);
-}
-
-.cta-button:hover,
-button:hover, 
-input[type="submit"]:hover {
-    background-color: #0041A3 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 15px 20px -3px rgba(0, 82, 204, 0.35);
-}
-
-/* ==========================================================================
-   RESPONSIVE & MOBILE ALIGNMENT (Left-Aligned Profile Image on Mobile)
-   ========================================================================== */
-@media screen and (max-width: 900px) {
-    .hero-content-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: left !important;
-    }
-
-    .hero-profile-wrapper {
-        order: -1;
-        margin: 0 !important; /* Left aligns the wrapper */
-        max-width: 180px;
-        align-self: flex-start;
-    }
-
-    .hero-profile-img {
-        margin-left: 0 !important;
-        margin-right: auto !important;
-    }
-
-    .philosophy-layout {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-
-    .explore-item-link {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-        padding: 1.25rem 0;
-    }
-
-    .explore-image-slot,
-    .explore-arrow {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .cap-bullet-list {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-statement {
-        font-size: 2rem;
-    }
-}
-
-/* ==========================================================================
-   5. DELIVERABLES SECTION & ACCORDION (Spacious & Clean Layout)
-   ========================================================================== */
-.section-capabilities-blue {
-    width: 100vw !important;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
-    background-color: var(--brand-blue) !important;
-    color: #FFFFFF !important;
-    padding: 7rem 5vw; /* Increased vertical padding for breathability */
+    padding: 7rem 5vw;
     box-sizing: border-box;
 }
 
 .section-blue-header {
-    margin-bottom: 3rem; /* Spacing between header and accordion cards */
+    margin-bottom: 3rem;
 }
 
 .section-blue-header h2,
@@ -564,7 +362,7 @@ input[type="submit"]:hover {
 .capabilities-matrix {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* Distinct spacing between each accordion item */
+    gap: 1.5rem;
 }
 
 .section-capabilities-blue .cap-card,
@@ -656,13 +454,12 @@ input[type="submit"]:hover {
     line-height: 1;
 }
 
-
 /* ==========================================================================
-   6. CALL TO ACTION SECTION (Strict Vibrant Blue - #0052CC)
+   6. CALL TO ACTION SECTION (Strict Vibrant Blue #0052CC Button)
    ========================================================================== */
 .text-center-cta {
     text-align: center;
-    padding: 6rem 0; /* Space between Deliverables section and CTA content */
+    padding: 6rem 0;
 }
 
 .cta-heading {
@@ -677,12 +474,13 @@ input[type="submit"]:hover {
     margin-bottom: 2.5rem;
 }
 
+/* Strict button color override preventing theme default variable leaks */
 .cta-button,
 button, 
 input[type="submit"] {
     display: inline-block;
-    background: #0052CC !important; /* Strict vibrant blue, var(--accent-blue) completely removed */
-    background-color: #0052CC !important;
+    background: var(--brand-blue) !important;
+    background-color: var(--brand-blue) !important;
     color: #FFFFFF !important;
     padding: 16px 36px;
     border-radius: 30px;
@@ -701,4 +499,53 @@ input[type="submit"]:hover {
     background-color: #0041A3 !important;
     transform: translateY(-2px);
     box-shadow: 0 15px 20px -3px rgba(0, 82, 204, 0.35);
+}
+
+/* ==========================================================================
+   RESPONSIVE & MOBILE ALIGNMENT
+   ========================================================================== */
+@media screen and (max-width: 900px) {
+    .hero-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: left !important;
+    }
+
+    .hero-profile-wrapper {
+        order: -1;
+        margin: 0 !important;
+        max-width: 180px;
+        align-self: flex-start;
+    }
+
+    .hero-profile-img {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+
+    .philosophy-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .explore-item-link {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 1.25rem 0;
+    }
+
+    .explore-image-slot,
+    .explore-arrow {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cap-bullet-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-statement {
+        font-size: 2rem;
+    }
 }
