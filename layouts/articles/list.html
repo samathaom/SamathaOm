@@ -11,16 +11,13 @@
 
     <div class="custom-layout-container" style="margin-bottom: 6rem; padding: 0 var(--gap);">
         
-        <!-- Dynamic Category Pills Filter -->
+        <!-- Category Pills Filter -->
         <div class="article-filters" style="display: flex; gap: 10px; margin-bottom: 40px; flex-wrap: wrap;">
-            <button class="filter-btn active" data-filter="all">All</button>
-            
-            {{- $categories := slice "Spiritual" "Technical" "Design" "Personal Development" -}}
-
-            {{- range $categories }}
-            {{- $slug := . | urlize }}
-            <button class="filter-btn" data-filter="{{ $slug }}">{{ . }}</button>
-            {{- end }}
+            <button type="button" class="filter-btn active" data-filter="all">All</button>
+            <button type="button" class="filter-btn" data-filter="spiritual">Spiritual</button>
+            <button type="button" class="filter-btn" data-filter="technical">Technical</button>
+            <button type="button" class="filter-btn" data-filter="design">Design</button>
+            <button type="button" class="filter-btn" data-filter="personal-development">Personal Development</button>
         </div>
 
         <div class="articles-list">
@@ -94,10 +91,7 @@
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
 
                     const filterValue = button.getAttribute('data-filter');
@@ -132,8 +126,8 @@
         }
 
         .article-filters .filter-btn.active {
-            background: var(--accent-blue);
-            color: #FFFFFF;
+            background: var(--accent-blue) !important;
+            color: #FFFFFF !important;
         }
 
         .articles-list {
