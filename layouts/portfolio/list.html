@@ -41,14 +41,14 @@
                         <img src="{{ $image_url }}" alt="{{ .Title }}" loading="lazy" class="bento-img">
                     {{- else }}
                         <div class="bento-fallback-media">
-                            <svg viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" stroke-width="1.2">
+                            <svg viewBox="0 0 100 100" fill="none" stroke="var(--brand-blue)" stroke-width="1.2">
                                 <circle cx="50" cy="50" r="35" stroke-dasharray="4 2" />
                                 <polygon points="50,20 75,70 25,70" stroke-dasharray="1 1" />
                                 <line x1="50" y1="20" x2="50" y2="70" />
-                                <circle cx="50" cy="20" r="3" fill="#FFFFFF" />
-                                <circle cx="75" cy="70" r="3" fill="#FFFFFF" />
-                                <circle cx="25" cy="70" r="3" fill="#FFFFFF" />
-                                <circle cx="50" cy="50" r="4" fill="#FFFFFF" />
+                                <circle cx="50" cy="20" r="3" fill="var(--brand-blue)" />
+                                <circle cx="75" cy="70" r="3" fill="var(--brand-blue)" />
+                                <circle cx="25" cy="70" r="3" fill="var(--brand-blue)" />
+                                <circle cx="50" cy="50" r="4" fill="var(--brand-blue)" />
                             </svg>
                         </div>
                     {{- end }}
@@ -124,13 +124,13 @@
             grid-column: span 2;
         }
 
-        /* Brand Blue Image Container */
+        /* Image Wrapper Matched to Theme Background */
         .bento-image-wrapper {
             display: block;
             width: 100%;
             aspect-ratio: 16 / 10;
             position: relative;
-            background: var(--brand-blue); /* Brand blue container background */
+            background: var(--entry); /* Matches the site theme background */
             border-bottom: 1px solid var(--border);
             overflow: hidden;
         }
@@ -155,13 +155,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--brand-blue);
+            background: rgba(0, 82, 204, 0.02);
         }
 
         .bento-fallback-media svg {
             width: 32%;
             height: 32%;
-            opacity: 0.8;
+            opacity: 0.18;
         }
 
         /* Floating Tag Pill - Sharp 4px corners */
