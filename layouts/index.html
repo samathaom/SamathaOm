@@ -27,7 +27,27 @@
         </div>
     </section>
 
-    <!-- 2. Design Philosophy Section (Full-Width Studio Blue) -->
+    <!-- 2. About Me Section (RESTORED) -->
+    <section class="section-block section-about-bg">
+        <div class="custom-layout-container">
+            <header class="section-standard-header">
+                <h2>About me</h2>
+            </header>
+            <div class="about-bio-text full-width-constraint">
+                <p>
+                    I am a Creative Director & Technical Architect with 10 years of experience crafting raw, minimal, and high-clarity software products and print materials.
+                </p>
+                <p>
+                    While my daily focus is entirely on UI/UX and visual execution, my technical foundation in Python, JavaScript, React, and Angular.js allows me to bridge the gap between design and engineering seamlessly.
+                </p>
+                <p>
+                    By combining human behavior analysis with clean design architecture, I eliminate cognitive friction and replace complex clutter with absolute visual clarity.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Design Philosophy Section -->
     <section class="section-block section-philosophy-bg">
         <div class="custom-layout-container">
             <div class="philosophy-layout">
@@ -66,7 +86,7 @@
         </div>
     </section>
 
-    <!-- 3. Explore Section (Placed First) -->
+    <!-- 4. Explore Section (RESTORED WITH IMAGES) -->
     <section class="section-block section-explore-bg">
         <div class="custom-layout-container">
             <header class="section-standard-header">
@@ -87,6 +107,7 @@
                                 <span class="explore-sub">{{ $firstArticle.ReadingTime }} min read</span>
                             </div>
                             <h3 class="explore-item-title">{{ $firstArticle.Title }}</h3>
+                            <div class="explore-image-slot"></div>
                             <span class="explore-arrow">&rarr;</span>
                         </a>
                     </li>
@@ -95,6 +116,15 @@
                     <!-- Recent Project Item -->
                     {{- $firstProject := index (where .Site.RegularPages "Section" "portfolio") 0 -}}
                     {{- if $firstProject -}}
+                    {{- $projectImg := $firstProject.Params.image | default $firstProject.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstProject.Content 1) 0) -}}
+                    {{- $projectImgUrl := "" -}}
+                    {{- if $projectImg -}}
+                        {{- if strings.HasPrefix $projectImg "<img" -}}
+                            {{- $projectImgUrl = index (findRE "src=\"([^\">]+)\"" $projectImg 1) 1 -}}
+                        {{- else -}}
+                            {{- $projectImgUrl = $projectImg -}}
+                        {{- end -}}
+                    {{- end -}}
                     <li class="explore-editorial-item">
                         <a href="{{ $firstProject.RelPermalink }}" class="explore-item-link">
                             <div class="explore-meta">
@@ -102,6 +132,13 @@
                                 <span class="explore-sub">Selected Project</span>
                             </div>
                             <h3 class="explore-item-title">{{ $firstProject.Title }}</h3>
+                            <div class="explore-image-slot">
+                                {{- if $projectImgUrl -}}
+                                <div class="explore-inline-preview">
+                                    <img src="{{ $projectImgUrl }}" alt="{{ $firstProject.Title }}" loading="lazy" />
+                                </div>
+                                {{- end -}}
+                            </div>
                             <span class="explore-arrow">&rarr;</span>
                         </a>
                     </li>
@@ -110,6 +147,15 @@
                     <!-- Recent Resource Item -->
                     {{- $firstResource := index (where .Site.RegularPages "Section" "resources") 0 -}}
                     {{- if $firstResource -}}
+                    {{- $resourceImg := $firstResource.Params.image | default $firstResource.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstResource.Content 1) 0) -}}
+                    {{- $resourceImgUrl := "" -}}
+                    {{- if $resourceImg -}}
+                        {{- if strings.HasPrefix $resourceImg "<img" -}}
+                            {{- $resourceImgUrl = index (findRE "src=\"([^\">]+)\"" $resourceImg 1) 1 -}}
+                        {{- else -}}
+                            {{- $resourceImgUrl = $resourceImg -}}
+                        {{- end -}}
+                    {{- end -}}
                     <li class="explore-editorial-item">
                         <a href="{{ $firstResource.RelPermalink }}" class="explore-item-link">
                             <div class="explore-meta">
@@ -117,125 +163,19 @@
                                 <span class="explore-sub">Tool / Tracker</span>
                             </div>
                             <h3 class="explore-item-title">{{ $firstResource.Title }}</h3>
+                            <div class="explore-image-slot">
+                                {{- if $resourceImgUrl -}}
+                                <div class="explore-inline-preview">
+                                    <img src="{{ $resourceImgUrl }}" alt="{{ $firstResource.Title }}" loading="lazy" />
+                                </div>
+                                {{- end -}}
+                            </div>
                             <span class="explore-arrow">&rarr;</span>
                         </a>
                     </li>
                     {{- end -}}
 
                 </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Capabilities & Services (Tabbed Pills + Accordion Matrix) -->
-    <section class="section-block section-services-bg">
-        <div class="custom-layout-container">
-            <header class="section-standard-header">
-                <span class="section-tag">CAPABILITIES</span>
-                <h2>Services & Deliverables</h2>
-                <p class="section-subtitle-spacer">Select a category to view tangible outcomes and deliverables.</p>
-            </header>
-
-            <!-- Category Filter Pills -->
-            <div class="category-pills-container">
-                <button class="pill-btn active" onclick="filterCategory('all', this)">All</button>
-                <button class="pill-btn" onclick="filterCategory('print', this)">Print Design</button>
-                <button class="pill-btn" onclick="filterCategory('product', this)">Product Design</button>
-                <button class="pill-btn" onclick="filterCategory('technical', this)">Technical Work</button>
-                <button class="pill-btn" onclick="filterCategory('education', this)">Education</button>
-            </div>
-
-            <!-- Accordion Deliverables Matrix -->
-            <div class="accordion-matrix">
-                
-                <!-- Category 1: Print Design -->
-                <div class="accordion-card" data-category="print">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="header-left">
-                            <span class="pillar-tag">PRINT DESIGN</span>
-                            <h3 class="pillar-title">Brand Identity & Print Collateral</h3>
-                        </div>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-body">
-                        <p class="accordion-desc">Tactile branding, layout precision, and press-ready typography systems.</p>
-                        <ul class="pillar-list">
-                            <li>Vector brand identity manuals & typography specs</li>
-                            <li>Print-ready collateral (brochures, editorial layouts, cards)</li>
-                            <li>Packaging vector graphics & prepress production files</li>
-                        </ul>
-                        <div class="pillar-outcome">
-                            <strong>Outcome:</strong> Absolute visual consistency across physical and print touchpoints.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category 2: Product Design -->
-                <div class="accordion-card" data-category="product">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="header-left">
-                            <span class="pillar-tag">PRODUCT DESIGN</span>
-                            <h3 class="pillar-title">High-Fidelity UI/UX & Design Systems</h3>
-                        </div>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-body">
-                        <p class="accordion-desc">Frictionless user interfaces engineered for clarity and cognitive ease.</p>
-                        <ul class="pillar-list">
-                            <li>Figma UI/UX component libraries & design systems</li>
-                            <li>Interactive user journey maps & workflow diagrams</li>
-                            <li>High-fidelity desktop & mobile interface wireframes</li>
-                        </ul>
-                        <div class="pillar-outcome">
-                            <strong>Outcome:</strong> Zero user friction and intuitive, modern product interaction.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category 3: Technical Work -->
-                <div class="accordion-card" data-category="technical">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="header-left">
-                            <span class="pillar-tag">TECHNICAL WORK</span>
-                            <h3 class="pillar-title">Architecture Blueprints & Code Systems</h3>
-                        </div>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-body">
-                        <p class="accordion-desc">Robust backend/frontend architecture built for speed and scaling.</p>
-                        <ul class="pillar-list">
-                            <li>System architecture diagrams & database schema design</li>
-                            <li>Front-end component implementation (React, Angular.js)</li>
-                            <li>UX, performance, and accessibility audit reports</li>
-                        </ul>
-                        <div class="pillar-outcome">
-                            <strong>Outcome:</strong> A clean, modular technical foundation for low maintenance.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category 4: Education -->
-                <div class="accordion-card" data-category="education">
-                    <button class="accordion-header" onclick="toggleAccordion(this)">
-                        <div class="header-left">
-                            <span class="pillar-tag">EDUCATION</span>
-                            <h3 class="pillar-title">Curriculum Architecture & Onboarding</h3>
-                        </div>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-body">
-                        <p class="accordion-desc">Structured learning models and technical documentation for teams.</p>
-                        <ul class="pillar-list">
-                            <li>Computer Science curriculum blueprints & lesson plans</li>
-                            <li>Developer onboarding documentation & engineering wikis</li>
-                            <li>Technical workshop materials & training frameworks</li>
-                        </ul>
-                        <div class="pillar-outcome">
-                            <strong>Outcome:</strong> Rapid team skill acquisition and seamless knowledge transfer.
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -253,42 +193,8 @@
         </div>
     </section>
 
-    <!-- Tab Filtering & Accordion Script -->
+    <!-- Typewriter Script -->
     <script>
-        function filterCategory(category, btnElement) {
-            // Update active pill button
-            var buttons = document.querySelectorAll('.pill-btn');
-            buttons.forEach(function(btn) { btn.classList.remove('active'); });
-            btnElement.classList.add('active');
-
-            // Filter accordion cards
-            var cards = document.querySelectorAll('.accordion-card');
-            cards.forEach(function(card) {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        function toggleAccordion(headerElement) {
-            var card = headerElement.parentElement;
-            var isActive = card.classList.contains('open');
-            
-            // Close all open cards
-            document.querySelectorAll('.accordion-card').forEach(function(c) {
-                c.classList.remove('open');
-                c.querySelector('.accordion-icon').textContent = '+';
-            });
-
-            // Open clicked card if it wasn't open
-            if (!isActive) {
-                card.classList.add('open');
-                headerElement.querySelector('.accordion-icon').textContent = '−';
-            }
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             var el = document.getElementById('typewriter-hook');
             if (!el) return;
