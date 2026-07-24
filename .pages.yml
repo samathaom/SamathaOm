@@ -1,6 +1,7 @@
 media:
   input: static/images
   output: /images
+
 content:
   - name: articles
     label: Articles
@@ -9,6 +10,14 @@ content:
     fields:
       - name: title
         type: string
+      - name: category
+        type: select
+        options:
+          values:
+            - Spiritual
+            - Technical
+            - Design
+            - Personal Development
       - name: body
         type: rich-text
       - name: date
@@ -16,6 +25,7 @@ content:
       - name: tags
         type: string
         list: true
+
   - name: portfolio
     label: Portfolio
     type: collection
@@ -29,22 +39,23 @@ content:
       - name: body
         type: rich-text
       - name: date
-        type: date    
+        type: date
       - name: tags
         type: string
         list: true
+
   - name: resources
     label: Resources
     type: collection
     path: content/resources
     fields:
       - name: title
-        type: string     
+        type: string
       - name: thumbnail
         label: Resource Thumbnail
         type: image
       - name: body
-        type: rich-text     
+        type: rich-text
       - name: tags
         type: string
         list: true
