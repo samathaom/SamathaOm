@@ -1,7 +1,7 @@
 ---
 title: ID Card Designs
+project-number: 6
 thumbnail: /images/Mockup 07(1).png
-date: 2026-06-03
 tags:
   - ID card
   - Print Design
