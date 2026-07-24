@@ -168,7 +168,7 @@
             position: absolute;
             top: 12px;
             left: 12px;
-            background: #10B981; /* High-trust green for free indicator */
+            background: #10B981;
             color: #FFFFFF;
             font-size: 0.68rem;
             font-weight: 800;
@@ -230,7 +230,7 @@
             color: var(--secondary);
         }
 
-        /* Download Button Bar */
+        /* Download Button Bar & Hover Contrast Fix */
         .resource-card-footer {
             margin-top: auto;
             padding-top: 14px;
@@ -242,7 +242,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px 12px;
+            padding: 8px 14px;
             background: var(--code-bg);
             border: 1px solid var(--border);
             border-radius: 4px;
@@ -250,13 +250,19 @@
             font-size: 0.85rem;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
         }
 
+        .resource-download-btn:hover,
         .resource-card:hover .resource-download-btn {
-            background: var(--brand-blue);
-            color: #FFFFFF;
-            border-color: var(--brand-blue);
+            background: var(--brand-blue) !important;
+            color: #FFFFFF !important;
+            border-color: var(--brand-blue) !important;
+        }
+
+        .resource-download-btn span,
+        .resource-btn-icon {
+            color: inherit;
         }
 
         .resource-btn-icon {
