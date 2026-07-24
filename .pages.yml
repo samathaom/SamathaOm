@@ -38,8 +38,8 @@ content:
         type: image
       - name: body
         type: rich-text
-      - name: date
-        type: date
+      - name: order-number 
+        type: number 
       - name: tags
         type: string
         list: true
