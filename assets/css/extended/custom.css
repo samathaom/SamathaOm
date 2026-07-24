@@ -6,7 +6,6 @@
     --accent-cyan: #00F0FF;
     --text-dark: #1E293B;
     --text-muted: #64748B;
-    --bg-light: #F8FAFC;
     --bg-white: #FFFFFF;
     --border-color: #E2E8F0;
     --radius: 12px;
@@ -144,12 +143,6 @@ body {
 /* ==========================================================================
    2. ABOUT ME SECTION
    ========================================================================== */
-.section-about-bg {
-    background-color: var(--bg-light);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
 .section-standard-header h2 {
     font-size: 2rem;
     font-weight: 800;
@@ -226,7 +219,7 @@ body {
 }
 
 /* ==========================================================================
-   4. EXPLORE SECTION
+   4. EXPLORE SECTION (WITH RICH HOVER INTERACTIONS)
    ========================================================================== */
 .section-explore-bg {
     background-color: var(--bg-white);
@@ -260,11 +253,12 @@ body {
     padding: 1.75rem 0;
     text-decoration: none;
     color: var(--text-dark);
-    transition: var(--transition-fast);
+    transition: background-color 0.25s ease, padding 0.25s ease;
 }
 
 .explore-item-link:hover {
     color: var(--brand-blue);
+    padding-left: 0.5rem;
 }
 
 .explore-category {
@@ -286,6 +280,18 @@ body {
     font-weight: 700;
     margin: 0;
     padding-right: 1.5rem;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.explore-item-link:hover .explore-item-title {
+    transform: translateX(4px);
+    color: var(--brand-blue);
+}
+
+.explore-inline-preview {
+    opacity: 0.6;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .explore-inline-preview img {
@@ -293,20 +299,28 @@ body {
     height: 50px;
     object-fit: cover;
     border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.explore-item-link:hover .explore-inline-preview {
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 .explore-arrow {
     font-size: 1.5rem;
-    transition: transform 0.2s ease;
+    transition: transform 0.25s ease, color 0.25s ease;
     text-align: right;
+    color: var(--text-muted);
 }
 
 .explore-item-link:hover .explore-arrow {
-    transform: translateX(6px);
+    transform: translateX(8px);
+    color: var(--brand-blue);
 }
 
 /* ==========================================================================
-   5. CAPABILITIES / DELIVERABLES SECTION (FULL BLEED STUDIO BLUE)
+   5. CAPABILITIES / DELIVERABLES SECTION (FULL BLEED BLUE, ACCORDION ONLY)
    ========================================================================== */
 .section-capabilities-blue {
     width: 100vw !important;
@@ -335,36 +349,6 @@ body {
     margin-bottom: 2.5rem;
 }
 
-/* Category Filter Pills */
-.capabilities-pills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 2.5rem;
-}
-
-.cap-pill-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #FFFFFF !important;
-    padding: 10px 22px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    backdrop-filter: blur(8px);
-}
-
-.cap-pill-btn:hover,
-.cap-pill-btn.active {
-    background: var(--accent-cyan) !important;
-    color: #000000 !important;
-    border-color: var(--accent-cyan);
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
-}
-
-/* Accordion & Deliverables Matrix */
 .capabilities-matrix {
     display: flex;
     flex-direction: column;
@@ -429,7 +413,6 @@ body {
     display: block;
 }
 
-/* Custom Bulleted Lists */
 .cap-bullet-list {
     list-style: none;
     padding: 18px 0 0 0;
@@ -459,11 +442,6 @@ body {
 /* ==========================================================================
    6. CALL TO ACTION SECTION
    ========================================================================== */
-.section-cta-bg {
-    background-color: var(--bg-light);
-    border-top: 1px solid var(--border-color);
-}
-
 .text-center-cta {
     text-align: center;
 }
@@ -539,11 +517,6 @@ body {
 
     .cap-bullet-list {
         grid-template-columns: 1fr;
-    }
-
-    .cap-pill-btn {
-        font-size: 0.8rem;
-        padding: 8px 16px;
     }
 
     .hero-statement {

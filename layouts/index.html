@@ -28,7 +28,7 @@
     </section>
 
     <!-- 2. About Me Section -->
-    <section class="section-block section-about-bg">
+    <section class="section-block">
         <div class="custom-layout-container">
             <header class="section-standard-header">
                 <h2>About me</h2>
@@ -180,7 +180,7 @@
         </div>
     </section>
 
-    <!-- 5. Capabilities / Deliverables Section (FULL BLEED BLUE BACKGROUND) -->
+    <!-- 5. Capabilities / Deliverables Section -->
     <section class="section-block section-capabilities-blue" id="capabilities">
         <div class="custom-layout-container">
             <header class="section-blue-header">
@@ -188,20 +188,11 @@
                 <p class="section-blue-subtitle">Comprehensive design, technical execution, and educational offerings.</p>
             </header>
 
-            <!-- Main Tabs -->
-            <div class="capabilities-pills-container">
-                <button class="cap-pill-btn active" data-filter="all">All Deliverables</button>
-                <button class="cap-pill-btn" data-filter="print">Print Designs</button>
-                <button class="cap-pill-btn" data-filter="product">Product Design</button>
-                <button class="cap-pill-btn" data-filter="technical">Technical Work</button>
-                <button class="cap-pill-btn" data-filter="education">Education</button>
-            </div>
-
-            <!-- Accordion / Deliverables Matrix -->
+            <!-- Accordion Deliverables Matrix -->
             <div class="capabilities-matrix">
 
                 <!-- 1. Print Designs -->
-                <div class="cap-card" data-category="print">
+                <div class="cap-card">
                     <button class="cap-header" type="button">
                         <div>
                             <span class="cap-tag">TACTILE & MEDIA</span>
@@ -225,7 +216,7 @@
                 </div>
 
                 <!-- 2. Product Design -->
-                <div class="cap-card" data-category="product">
+                <div class="cap-card">
                     <button class="cap-header" type="button">
                         <div>
                             <span class="cap-tag">UI/UX & STRATEGY</span>
@@ -247,27 +238,26 @@
                 </div>
 
                 <!-- 3. Technical Work -->
-                <div class="cap-card" data-category="technical">
+                <div class="cap-card">
                     <button class="cap-header" type="button">
                         <div>
                             <span class="cap-tag">DEVELOPMENT & CONSULTING</span>
                             <h3 class="cap-title">Technical Work</h3>
                         </div>
-                        <span class="cap-icon">+</span>
-                    </button>
-                    <div class="cap-body">
-                        <ul class="cap-bullet-list">
-                            <li>School Website Creation</li>
-                            <li>Portfolio Website Creation</li>
-                            <li>Shop Website Creation</li>
-                            <li>Technical Consultation</li>
-                            <li>Hiring Engineers, Designers, Teachers</li>
-                        </ul>
+                        <span class="cap-body">
+                            <ul class="cap-bullet-list">
+                                <li>School Website Creation</li>
+                                <li>Portfolio Website Creation</li>
+                                <li>Shop Website Creation</li>
+                                <li>Technical Consultation</li>
+                                <li>Hiring Engineers, Designers, Teachers</li>
+                            </ul>
+                        </span>
                     </div>
                 </div>
 
                 <!-- 4. Education -->
-                <div class="cap-card" data-category="education">
+                <div class="cap-card">
                     <button class="cap-header" type="button">
                         <div>
                             <span class="cap-tag">ACADEMICS & MENTORSHIP</span>
@@ -288,7 +278,7 @@
     </section>
 
     <!-- 6. Call to Action Section -->
-    <section class="section-block section-cta-bg text-center-cta">
+    <section class="section-block text-center-cta">
         <div class="custom-layout-container">
             <h3 class="cta-heading">Let's build a clean system.</h3>
             <p class="cta-subheading">Select a slot to discuss your creative and technical strategy.</p>
@@ -321,26 +311,6 @@
                         const icon = card.querySelector('.cap-icon');
                         if (icon) icon.textContent = '−';
                     }
-                });
-            });
-
-            // Capabilities Filter Logic
-            const capPillBtns = document.querySelectorAll('.cap-pill-btn');
-            const capCards = document.querySelectorAll('.cap-card');
-
-            capPillBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    capPillBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    const filter = btn.getAttribute('data-filter');
-                    capCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
                 });
             });
 
