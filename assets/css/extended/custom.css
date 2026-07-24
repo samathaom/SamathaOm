@@ -104,7 +104,6 @@ body {
 
 .hero-title {
     display: block;
-    color: var(--text-dark);
 }
 
 .css-txt-rotator {
@@ -152,7 +151,6 @@ body {
 
 .about-bio-text p {
     font-size: 1.15rem;
-    color: var(--text-dark);
     margin-bottom: 1.25rem;
     line-height: 1.7;
 }
@@ -221,10 +219,6 @@ body {
 /* ==========================================================================
    4. EXPLORE SECTION (WITH RICH HOVER INTERACTIONS)
    ========================================================================== */
-.section-explore-bg {
-    background-color: var(--bg-white);
-}
-
 .section-subtitle-spacer {
     color: var(--text-muted);
     font-size: 1.05rem;
@@ -252,7 +246,7 @@ body {
     align-items: center;
     padding: 1.75rem 0;
     text-decoration: none;
-    color: var(--text-dark);
+    color: inherit;
     transition: background-color 0.25s ease, padding 0.25s ease;
 }
 
