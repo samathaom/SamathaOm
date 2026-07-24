@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
     --brand-blue: #0052CC;
-    --accent-gold: #F59E0B; /* Modern Warm Gold secondary color */
+    --accent-gold: #F59E0B; /* Warm Gold secondary accent */
     --text-dark: #1E293B;
     --text-muted: #64748B;
     --bg-white: #FFFFFF;
@@ -38,15 +38,16 @@ body {
 }
 
 /* ==========================================================================
-   NAVBAR (UNIFIED BLUE INTEGRATION)
+   NAVBAR (Vibrant Blue Text, Clean Background)
    ========================================================================== */
 .navbar, .site-header, nav {
-    background-color: var(--brand-blue) !important;
-    color: #FFFFFF !important;
+    background-color: var(--bg-white) !important;
+    color: var(--brand-blue) !important;
 }
 
 .navbar a, .site-header a, nav a {
-    color: #FFFFFF !important;
+    color: var(--brand-blue) !important;
+    font-weight: 600;
 }
 
 /* ==========================================================================
@@ -200,7 +201,7 @@ body {
 }
 
 .philosophy-left h2 span {
-    color: var(--accent-gold) !important; /* Warm Gold highlight */
+    color: var(--accent-gold) !important;
 }
 
 .philosophy-left p {
@@ -218,7 +219,7 @@ body {
 .principle-block h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--accent-gold) !important; /* Warm Gold subheaders */
+    color: var(--accent-gold) !important;
     margin-bottom: 0.5rem;
 }
 
@@ -327,7 +328,7 @@ body {
 }
 
 /* ==========================================================================
-   5. DELIVERABLES SECTION (FULL BLEED BLUE)
+   5. DELIVERABLES SECTION (FULL BLEED VIBRANT BLUE & ACCORDION)
    ========================================================================== */
 .section-capabilities-blue {
     width: 100vw !important;
@@ -336,7 +337,7 @@ body {
     right: 50%;
     margin-left: -50vw !important;
     margin-right: -50vw !important;
-    background: var(--brand-blue) !important;
+    background: var(--brand-blue) !important; /* Full Section Vibrant Blue */
     color: #FFFFFF !important;
     padding: 6rem 5vw;
     box-sizing: border-box;
@@ -364,16 +365,17 @@ body {
 }
 
 .cap-card {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-left: 4px solid var(--accent-gold); /* Warm Gold Accent border */
+    background: rgba(255, 255, 255, 0.08) !important; /* Vibrant Blue Glass Card */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-left: 5px solid var(--accent-gold) !important; /* Warm Gold Accent */
     border-radius: var(--radius);
     overflow: hidden;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.25s ease;
 }
 
 .cap-card:hover {
-    background: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.14) !important;
+    transform: translateY(-2px);
 }
 
 .cap-header {
@@ -392,7 +394,7 @@ body {
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.12em;
-    color: var(--accent-gold) !important; /* Warm Gold Tag */
+    color: var(--accent-gold) !important;
     display: block;
 }
 
@@ -406,14 +408,14 @@ body {
 .cap-icon {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--accent-gold); /* Warm Gold '+' Icon */
+    color: var(--accent-gold) !important;
     line-height: 1;
 }
 
 .cap-body {
     display: none;
     padding: 0 28px 28px 28px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .cap-card.open .cap-body {
@@ -441,13 +443,13 @@ body {
     content: "•";
     position: absolute;
     left: 0;
-    color: var(--accent-gold); /* Warm Gold Bullet Points */
+    color: var(--accent-gold) !important;
     font-size: 1.4rem;
     line-height: 1;
 }
 
 /* ==========================================================================
-   6. CALL TO ACTION SECTION (UNIFIED BLUE BUTTON)
+   6. CALL TO ACTION SECTION
    ========================================================================== */
 .text-center-cta {
     text-align: center;
@@ -517,11 +519,6 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .section-capabilities-blue,
-    .section-capabilities-blue * {
-        background-color: #0052CC !important;
-    }
-
     .cap-bullet-list {
         grid-template-columns: 1fr;
     }
