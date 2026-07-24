@@ -527,3 +527,92 @@ body {
         font-size: 2rem;
     }
 }
+
+/* ==========================================================================
+   1. ACCORDION FIX (Force #0052CC on Deliverables Accordion Cards & Buttons)
+   ========================================================================== */
+.section-capabilities-blue .cap-card,
+.section-capabilities-blue button.cap-header,
+.section-capabilities-blue .cap-header {
+    background-color: #0052CC !important;
+}
+
+/* ==========================================================================
+   2. NAVBAR TEXT FIX (Force #0052CC on Header Links & Logos)
+   ========================================================================== */
+.header a, 
+.nav a, 
+.logo a, 
+#menu a, 
+.menu a,
+.navbar a, 
+.site-header a, 
+nav a {
+    color: #0052CC !important;
+}
+
+/* ==========================================================================
+   NAVBAR (Vibrant Studio Blue Text Override)
+   ========================================================================== */
+.header a, 
+.nav a, 
+.logo a, 
+#menu a, 
+.menu a,
+.navbar a, 
+.site-header a, 
+nav a {
+    color: #0052CC !important;
+    background-color: transparent !important;
+}
+
+/* ==========================================================================
+   DELIVERABLES SECTION & ACCORDION (Full Vibrant Studio Blue #0052CC)
+   ========================================================================== */
+.section-capabilities-blue {
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    background-color: #0052CC !important;
+    color: #FFFFFF !important;
+    padding: 6rem 5vw;
+    box-sizing: border-box;
+}
+
+/* Overriding global button/input base CSS specificity */
+.section-capabilities-blue .cap-card,
+.section-capabilities-blue button.cap-header,
+.section-capabilities-blue .cap-header {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-left: 5px solid #F59E0B !important; /* Warm Gold Accent */
+    border-radius: 12px;
+}
+
+.section-capabilities-blue .cap-card:hover,
+.section-capabilities-blue button.cap-header:hover {
+    background-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.section-capabilities-blue .cap-tag {
+    color: #F59E0B !important;
+}
+
+.section-capabilities-blue .cap-title {
+    color: #FFFFFF !important;
+}
+
+.section-capabilities-blue .cap-icon {
+    color: #F59E0B !important;
+}
+
+.section-capabilities-blue .cap-bullet-list li {
+    color: #FFFFFF !important;
+}
+
+.section-capabilities-blue .cap-bullet-list li::before {
+    color: #F59E0B !important;
+}
