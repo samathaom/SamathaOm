@@ -1,5 +1,6 @@
 ---
 title: E3 - Spiritual retreats and meditation
+category: Spiritual
 date: 2026-06-08
 tags:
   - Spiritual experiences
