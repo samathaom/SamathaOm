@@ -1107,8 +1107,8 @@ a:hover {
 
 /* Profile Image Avatar Styling */
 .hero-profile-wrapper {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 3px solid #FFFFFF; /* Crisp white border */
     box-shadow: 0 0 0 1px var(--border), 0 8px 20px rgba(0, 0, 0, 0.12);
