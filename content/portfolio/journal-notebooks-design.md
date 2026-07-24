@@ -18,7 +18,7 @@ Here is the design thinking and creative process behind crafting a journal engin
 The core objective was to design a sanctuary—a physical object that immediately signals to the human brain that the digital chaos of the world has stopped.
 
 - **Frictionless Transition:** When a user opens the journal, every design element must work to lower their heart rate. We moved away from stark white papers that cause eye strain and rigid, intimidating grid lines that feel like a test.
-- **Tactile Grounding:** Drawing from historical bookbinding and sensory psychology, the physical weight, texture, and open-flat mechanics were treated as the primary interface for calming the nervous system.
+- **Tactile Grounding:** Drawing from historical bookbinding and sensory psychology, the physical weight, texture, and open-flat mechanics were treated as the primary interface for calming the nervous system
 
 
 
