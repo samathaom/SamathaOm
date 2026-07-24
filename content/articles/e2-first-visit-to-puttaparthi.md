@@ -1,5 +1,6 @@
 ---
 title: E2- First Visit to Puttaparthi
+category: Spiritual
 date: 2026-06-05
 tags:
   - Sri Sathya Sai Baba
