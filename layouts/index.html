@@ -5,14 +5,14 @@
         <div class="hero-content-grid">
             <div class="hero-text-column">
                 <h1 class="hero-statement">
-                    <span class="hero-greeting animate-fade-in">👋 Hi there!</span>
-                    <span class="hero-title animate-fade-up delay-1">I am a Creative Director & Technical Architect.</span>
-                    <span class="css-txt-rotator animate-fade-up delay-2">
+                    <span class="hero-greeting">👋 Hi there!</span>
+                    <span class="hero-title">I am a Creative Director & Technical Architect.</span>
+                    <span class="css-txt-rotator">
                         <span class="rotator-line" id="typewriter-hook"></span><span class="txt-cursor">|</span>
                     </span>
                 </h1>
             </div>
-            <div class="hero-image-column animate-scale-in">
+            <div class="hero-image-column">
                 <div class="hero-profile-wrapper">
                     <img src="/images/Profilepic.png" alt="Profile Picture" class="hero-profile-img" loading="lazy" />
                 </div>
@@ -23,13 +23,13 @@
     <!-- About Me Section -->
     <div class="custom-layout-container section-about-align">
         <header class="section-standard-header">
-            <h2 class="section-title-giant">About me</h2>
+            <h2>About me</h2>
         </header>
         <div class="about-bio-text full-width-constraint">
-            <p class="lead-paragraph">
+            <p>
                 I am a Creative Director & Technical Architect with 10 years of experience crafting raw, minimal, and high-clarity software products and print materials.
             </p>
-            <p class="lead-paragraph">
+            <p>
                 While my daily focus is entirely on UI/UX and visual execution, my technical foundation in Python, JavaScript, React, and Angular.js allows me to bridge the gap between design and engineering seamlessly.
             </p>
             <p>
@@ -43,7 +43,7 @@
         <div class="philosophy-layout">
             
             <div class="philosophy-left">
-                <h2 class="philosophy-headline">
+                <h2>
                     Design is <br><span>architecture</span>, not decoration.
                 </h2>
                 <p>
@@ -52,21 +52,21 @@
             </div>
 
             <div class="philosophy-right">
-                <div class="principle-block interactive-card">
+                <div class="principle-block">
                     <h3>Cognitive Ease First</h3>
                     <p>
                         Every pixel must justify its existence. By analyzing human mental models, I structure workflows that require zero learning curves and eliminate user friction.
                     </p>
                 </div>
 
-                <div class="principle-block interactive-card">
+                <div class="principle-block">
                     <h3>Engineering Alignment</h3>
                     <p>
                         Great designs survive the production pipeline. Understanding Python, JavaScript, and modern frameworks ensures that what is designed is precisely what gets deployed.
                     </p>
                 </div>
 
-                <div class="principle-block end-margin-reset interactive-card">
+                <div class="principle-block end-margin-reset">
                     <h3>Tactile Print Precision</h3>
                     <p>
                         Clarity transcends digital boundaries. I apply structural typographic principles and strict geometric grids to tactile print mediums with identical layout rigor.
@@ -80,7 +80,7 @@
     <!-- Explore Section (Heading, Excerpt for Article, Thumbnail for Project/Resource) -->
     <div class="custom-layout-container">
         <header class="section-standard-header">
-            <h2 class="section-title-giant">Explore</h2>
+            <h2>Explore</h2>
             <p class="section-subtitle-spacer">Selected design, free resource, and spiritual writings.</p>
         </header>
         
@@ -89,26 +89,23 @@
             <!-- Bento Item 1: Recent Article (Text & Excerpt Only) -->
             {{- $firstArticle := index (where .Site.RegularPages "Section" "articles") 0 -}}
             {{- if $firstArticle -}}
-            <a href="{{ $firstArticle.RelPermalink }}" class="grid-card pad-md card-neutral flex-column bento-article-span explore-card-link">
+            <div class="grid-card pad-md card-neutral flex-column bento-article-span">
                 <div class="card-header-meta">
                     <span class="card-tag">Recent ARTICLE</span>
                     <span class="card-meta-time">{{ $firstArticle.ReadingTime }} min read</span>
                 </div>
-                <h3 class="card-title">{{ $firstArticle.Title }}</h3>
+                <h3 class="card-title"><a href="{{ $firstArticle.RelPermalink }}" class="card-title-link">{{ $firstArticle.Title }}</a></h3>
                 {{- $words := split ($firstArticle.Summary | plainify) " " -}}
                 {{- $snippetLength := cond (gt (len $words) 30) 30 (len $words) -}}
                 <p class="card-excerpt mt-auto">{{ delimit (first $snippetLength $words) " " }}...</p>
-                <div class="card-hover-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-            </a>
+            </div>
             {{- end -}}
 
             <!-- Bento Item 2: Recent Project -->
             {{- $firstProject := index (where .Site.RegularPages "Section" "portfolio") 0 -}}
             {{- if $firstProject -}}
             {{- $projectImg := $firstProject.Params.image | default $firstProject.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstProject.Content 1) 0) -}}
-            <a href="{{ $firstProject.RelPermalink }}" class="grid-card pad-md card-neutral flex-column explore-card-link">
+            <div class="grid-card pad-md card-neutral flex-column">
                 <div class="card-header-meta">
                     <span class="card-tag">Recent PROJECT</span>
                 </div>
@@ -121,18 +118,15 @@
                     <span class="fallback-media-text">PROJECT PREVIEW</span>
                 </div>
                 {{- end -}}
-                <h3 class="card-title mt-auto">{{ $firstProject.Title }}</h3>
-                <div class="card-hover-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-            </a>
+                <h3 class="card-title mt-auto"><a href="{{ $firstProject.RelPermalink }}" class="card-title-link">{{ $firstProject.Title }}</a></h3>
+            </div>
             {{- end -}}
 
             <!-- Bento Item 3: Recent Resource -->
             {{- $firstResource := index (where .Site.RegularPages "Section" "resources") 0 -}}
             {{- if $firstResource -}}
             {{- $resourceImg := $firstResource.Params.image | default $firstResource.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstResource.Content 1) 0) -}}
-            <a href="{{ $firstResource.RelPermalink }}" class="grid-card pad-md card-neutral flex-column explore-card-link">
+            <div class="grid-card pad-md card-neutral flex-column">
                 <div class="card-header-meta">
                     <span class="card-tag">Recent RESOURCE</span>
                 </div>
@@ -145,11 +139,8 @@
                     <span class="fallback-media-text">RESOURCE PREVIEW</span>
                 </div>
                 {{- end -}}
-                <h3 class="card-title mt-auto">{{ $firstResource.Title }}</h3>
-                <div class="card-hover-arrow">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-            </a>
+                <h3 class="card-title mt-auto"><a href="{{ $firstResource.RelPermalink }}" class="card-title-link">{{ $firstResource.Title }}</a></h3>
+            </div>
             {{- end -}}
 
         </div>
@@ -158,7 +149,7 @@
     <!-- Services Marquee Matrix Block -->
     <section class="services-section">
         <header class="section-standard-header">
-            <h2 class="section-title-giant">Services</h2>
+            <h2>Services</h2>
             <p>Core capabilities crafted with absolute execution.</p>
         </header>
 
@@ -176,7 +167,7 @@
                         <p class="service-desc">Structural print layout design, editorial design, physical product packaging, brand identity guidelines, and premium typographic systems.</p>
                     </div>
                     <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Print Project Call &rarr;</a>
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Print Project Call</a>
                     </div>
                 </div>
 
@@ -190,7 +181,7 @@
                         <p class="service-desc">End-to-end UI/UX systems, user flow engineering, structural wireframing, high-fidelity Figma systems, and interactive software prototyping.</p>
                     </div>
                     <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Product Discovery &rarr;</a>
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Product Discovery</a>
                     </div>
                 </div>
 
@@ -204,7 +195,7 @@
                         <p class="service-desc">Strategic guidance on software architectures, front-end infrastructure scaling, curriculum blueprints, and cross-functional workflow optimization.</p>
                     </div>
                     <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation &rarr;</a>
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation</a>
                     </div>
                 </div>
 
@@ -219,7 +210,7 @@
                         <p class="service-desc">Structural print layout design, editorial design, physical product packaging, brand identity guidelines, and premium typographic systems.</p>
                     </div>
                     <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Print Project Call &rarr;</a>
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Print Project Call</a>
                     </div>
                 </div>
 
@@ -233,7 +224,7 @@
                         <p class="service-desc">End-to-end UI/UX systems, user flow engineering, structural wireframing, high-fidelity Figma systems, and interactive software prototyping.</p>
                     </div>
                     <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Product Discovery &rarr;</a>
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Product Discovery</a>
                     </div>
                 </div>
 
@@ -247,7 +238,7 @@
                         <p class="service-desc">Strategic guidance on software architectures, front-end infrastructure scaling, curriculum blueprints, and cross-functional workflow optimization.</p>
                     </div>
                     <div class="card-footer-action">
-                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation &rarr;</a>
+                        <a href="https://cal.com/samathaom/20min" target="_blank" class="service-booking-btn">Book Technical Consultation</a>
                     </div>
                 </div>
 
@@ -257,199 +248,14 @@
 
     <!-- Call to Action Area -->
     <div class="custom-layout-container text-center-cta">
-        <h3 class="cta-heading-giant">Let's build a clean system.</h3>
+        <h3 class="cta-heading">Let's build a clean system.</h3>
         <p class="cta-subheading">Select a slot to discuss your creative and technical strategy.</p>
         <div class="cta-container">
-            <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" class="cta-button-animated">
-                Book a Free Call <span class="cta-arrow">&rarr;</span>
+            <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" class="cta-button">
+                Book a Free Call &rarr;
             </a>
         </div>
     </div>
-
-    <!-- Styles, Native Smooth Scrolling, & Hardware-Accelerated Animations -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body, h1, h2, h3, h4, p, span, a {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
-        }
-
-        .hero-statement {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-        }
-
-        .hero-title {
-            display: block;
-            font-weight: 800;
-            color: var(--primary);
-            margin-top: 10px;
-        }
-
-        .hero-greeting {
-            display: inline-block;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--secondary);
-            margin-bottom: 8px;
-        }
-
-        .section-title-giant {
-            font-size: clamp(2.2rem, 3.5vw, 3rem) !important;
-            font-weight: 800 !important;
-            letter-spacing: -0.03em !important;
-            color: var(--primary);
-        }
-
-        .philosophy-headline {
-            font-size: clamp(2rem, 3vw, 2.75rem) !important;
-            font-weight: 800 !important;
-            line-height: 1.15 !important;
-            letter-spacing: -0.025em;
-        }
-
-        .philosophy-headline span {
-            color: var(--accent-blue, #2563eb);
-        }
-
-        .lead-paragraph {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        .cta-heading-giant {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .interactive-card, .grid-card, .service-scroll-card {
-            will-change: transform, background-color, border-color, box-shadow;
-            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .interactive-card:hover, .grid-card:hover {
-            transform: translateY(-4px);
-            background-color: var(--code-bg);
-            border-color: var(--border);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
-        }
-
-        .explore-card-link {
-            position: relative;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-        }
-
-        .card-hover-arrow {
-            position: absolute;
-            bottom: 24px;
-            right: 24px;
-            color: var(--accent-blue, #2563eb);
-            opacity: 0;
-            transform: translateX(-8px);
-            will-change: opacity, transform;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-        }
-
-        .explore-card-link:hover .card-hover-arrow {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .explore-card-link:hover .card-title {
-            color: var(--accent-blue, #2563eb);
-            transition: color 0.2s ease;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(16px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.96);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .animate-fade-up {
-            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .delay-1 {
-            animation-delay: 0.1s;
-        }
-
-        .delay-2 {
-            animation-delay: 0.2s;
-        }
-
-        .animate-scale-in {
-            animation: scaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .cta-button-animated {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 32px;
-            background-color: var(--primary);
-            color: var(--bg, #ffffff);
-            font-weight: 600;
-            border-radius: 100px;
-            text-decoration: none;
-            will-change: transform, background-color;
-            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
-        }
-
-        .cta-button-animated:hover {
-            transform: scale(1.03) translateY(-2px);
-            background-color: var(--accent-blue, #2563eb);
-        }
-
-        .cta-button-animated .cta-arrow {
-            transition: transform 0.2s ease;
-        }
-
-        .cta-button-animated:hover .cta-arrow {
-            transform: translateX(4px);
-        }
-
-        .service-booking-btn {
-            display: inline-block;
-            font-weight: 600;
-            color: var(--accent-blue, #2563eb);
-            text-decoration: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-        }
-
-        .service-booking-btn:hover {
-            opacity: 0.8;
-            transform: translateX(4px);
-        }
-    </style>
 
     <!-- JavaScript Native Typewriter Script Component -->
     <script>
