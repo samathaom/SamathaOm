@@ -1,8 +1,8 @@
 ---
 title: Website Design with Clarity and Minimalism
+project-number: 1
 thumbnail: /images/Screenshot 2026-07-15 at 16-29-55 Furniture website design
   (4) Images Behance.png
-date: 2026-07-15
 tags:
   - Website Design
   - Minimalism

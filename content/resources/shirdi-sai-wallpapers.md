@@ -1,5 +1,6 @@
 ---
 title: "Shirdi Sai Wallpapers | Mobile and desktop "
+resource-number: 1
 thumbnail: /images/Shirdi Sai DTP.jpg
 tags:
   - Sai Baba

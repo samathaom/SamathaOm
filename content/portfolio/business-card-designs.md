@@ -1,7 +1,7 @@
 ---
 title: Premium Business Card Designs
+project-number: 2
 thumbnail: /images/BC1 Mockup.png
-date: 2026-05-16
 tags:
   - Portfolio
   - Business Cards

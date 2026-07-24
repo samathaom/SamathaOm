@@ -1,7 +1,7 @@
 ---
 title: Letterhead Design
-thumbnail: /images/Mockup 07-1.png
-date: 2026-07-11
+project-number: 4
+thumbnail: /images/Mockup 01(3).png
 tags:
   - Letterhead
   - Design
