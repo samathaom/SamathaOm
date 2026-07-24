@@ -16,7 +16,7 @@
             {{- if .IsHome }}
                 {{- $pages = where site.RegularPages "Type" "projects" }}
             {{- end }}
-            {{- $pages = sort $pages ".Params.project-nunber" "asc" }}
+            {{- $pages = sort $pages ".Params.project-number" "asc" }}
 
             {{- range $pages }}
             <article class="entry-wrapper project-card-node" style="display: flex; flex-direction: column; padding: 0 !important; overflow: hidden; height: 100%;">
