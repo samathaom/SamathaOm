@@ -1,5 +1,6 @@
 ---
 title: E1 - Connecting with Sai Baba
+category: Spiritual
 date: 2026-06-04
 tags:
   - Sai Baba
