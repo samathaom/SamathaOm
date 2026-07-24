@@ -1,7 +1,7 @@
 ---
 title: Calming Journal Notebooks
 project-number: 3
-thumbnail: /images/Book Mockup - 10.png
+thumbnail: /images/Journalbook.png
 tags:
   - Journal
   - Peace
