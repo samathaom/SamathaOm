@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
     --brand-blue: #0052CC;
-    --accent-cyan: #00F0FF;
+    --accent-gold: #F59E0B; /* Modern Warm Gold secondary color */
     --text-dark: #1E293B;
     --text-muted: #64748B;
     --bg-white: #FFFFFF;
@@ -35,6 +35,18 @@ body {
 
 .section-block {
     padding: 5rem 0;
+}
+
+/* ==========================================================================
+   NAVBAR (UNIFIED BLUE INTEGRATION)
+   ========================================================================== */
+.navbar, .site-header, nav {
+    background-color: var(--brand-blue) !important;
+    color: #FFFFFF !important;
+}
+
+.navbar a, .site-header a, nav a {
+    color: #FFFFFF !important;
 }
 
 /* ==========================================================================
@@ -109,14 +121,15 @@ body {
 .css-txt-rotator {
     display: block;
     font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--brand-blue);
+    font-weight: 600;
+    color: var(--brand-blue) !important;
     margin-top: 1rem;
     min-height: 2em;
 }
 
 .txt-cursor {
     animation: blink 0.8s infinite;
+    color: var(--brand-blue);
 }
 
 @keyframes blink {
@@ -187,7 +200,7 @@ body {
 }
 
 .philosophy-left h2 span {
-    color: var(--accent-cyan) !important;
+    color: var(--accent-gold) !important; /* Warm Gold highlight */
 }
 
 .philosophy-left p {
@@ -205,7 +218,7 @@ body {
 .principle-block h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--accent-cyan) !important;
+    color: var(--accent-gold) !important; /* Warm Gold subheaders */
     margin-bottom: 0.5rem;
 }
 
@@ -217,7 +230,7 @@ body {
 }
 
 /* ==========================================================================
-   4. EXPLORE SECTION (WITH RICH HOVER INTERACTIONS)
+   4. EXPLORE SECTION
    ========================================================================== */
 .section-subtitle-spacer {
     color: var(--text-muted);
@@ -314,7 +327,7 @@ body {
 }
 
 /* ==========================================================================
-   5. CAPABILITIES / DELIVERABLES SECTION (FULL BLEED BLUE, ACCORDION ONLY)
+   5. DELIVERABLES SECTION (FULL BLEED BLUE)
    ========================================================================== */
 .section-capabilities-blue {
     width: 100vw !important;
@@ -351,16 +364,16 @@ body {
 }
 
 .cap-card {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-left: 4px solid var(--accent-cyan);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-left: 4px solid var(--accent-gold); /* Warm Gold Accent border */
     border-radius: var(--radius);
     overflow: hidden;
     transition: background 0.3s ease;
 }
 
 .cap-card:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.14);
 }
 
 .cap-header {
@@ -379,7 +392,7 @@ body {
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.12em;
-    color: var(--accent-cyan) !important;
+    color: var(--accent-gold) !important; /* Warm Gold Tag */
     display: block;
 }
 
@@ -393,7 +406,7 @@ body {
 .cap-icon {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--accent-cyan);
+    color: var(--accent-gold); /* Warm Gold '+' Icon */
     line-height: 1;
 }
 
@@ -428,13 +441,13 @@ body {
     content: "•";
     position: absolute;
     left: 0;
-    color: var(--accent-cyan);
+    color: var(--accent-gold); /* Warm Gold Bullet Points */
     font-size: 1.4rem;
     line-height: 1;
 }
 
 /* ==========================================================================
-   6. CALL TO ACTION SECTION
+   6. CALL TO ACTION SECTION (UNIFIED BLUE BUTTON)
    ========================================================================== */
 .text-center-cta {
     text-align: center;
@@ -454,8 +467,8 @@ body {
 
 .cta-button {
     display: inline-block;
-    background-color: var(--brand-blue);
-    color: #FFFFFF;
+    background-color: var(--brand-blue) !important;
+    color: #FFFFFF !important;
     padding: 14px 32px;
     border-radius: 30px;
     font-weight: 700;
@@ -466,7 +479,7 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #0041A3;
+    background-color: #0041A3 !important;
     transform: translateY(-2px);
     box-shadow: 0 15px 20px -3px rgba(0, 82, 204, 0.35);
 }
