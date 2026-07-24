@@ -535,3 +535,170 @@ input[type="submit"]:hover {
         font-size: 2rem;
     }
 }
+
+/* ==========================================================================
+   5. DELIVERABLES SECTION & ACCORDION (Spacious & Clean Layout)
+   ========================================================================== */
+.section-capabilities-blue {
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    background-color: var(--brand-blue) !important;
+    color: #FFFFFF !important;
+    padding: 7rem 5vw; /* Increased vertical padding for breathability */
+    box-sizing: border-box;
+}
+
+.section-blue-header {
+    margin-bottom: 3rem; /* Spacing between header and accordion cards */
+}
+
+.section-blue-header h2,
+.section-blue-subtitle {
+    color: #FFFFFF !important;
+}
+
+.capabilities-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Distinct spacing between each accordion item */
+}
+
+.section-capabilities-blue .cap-card,
+.section-capabilities-blue button.cap-header,
+.section-capabilities-blue .cap-header {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: var(--radius);
+}
+
+.section-capabilities-blue .cap-card:hover,
+.section-capabilities-blue button.cap-header:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.section-capabilities-blue .cap-tag,
+.section-capabilities-blue .cap-title,
+.section-capabilities-blue .cap-icon,
+.section-capabilities-blue .cap-bullet-list li {
+    color: #FFFFFF !important;
+}
+
+.section-capabilities-blue .cap-bullet-list li::before {
+    color: #FFFFFF !important;
+}
+
+.cap-header {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+}
+
+.cap-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    display: block;
+}
+
+.cap-title {
+    margin: 6px 0 0 0;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.cap-icon {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.cap-body {
+    display: none;
+    padding: 0 32px 32px 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cap-card.open .cap-body {
+    display: block;
+}
+
+.cap-bullet-list {
+    list-style: none;
+    padding: 24px 0 0 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px 28px;
+}
+
+.cap-bullet-list li {
+    font-size: 1.05rem;
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.cap-bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+
+/* ==========================================================================
+   6. CALL TO ACTION SECTION (Strict Vibrant Blue - #0052CC)
+   ========================================================================== */
+.text-center-cta {
+    text-align: center;
+    padding: 6rem 0; /* Space between Deliverables section and CTA content */
+}
+
+.cta-heading {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.cta-subheading {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.cta-button,
+button, 
+input[type="submit"] {
+    display: inline-block;
+    background: #0052CC !important; /* Strict vibrant blue, var(--accent-blue) completely removed */
+    background-color: #0052CC !important;
+    color: #FFFFFF !important;
+    padding: 16px 36px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 82, 204, 0.25);
+}
+
+.cta-button:hover,
+button:hover, 
+input[type="submit"]:hover {
+    background: #0041A3 !important;
+    background-color: #0041A3 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 20px -3px rgba(0, 82, 204, 0.35);
+}
