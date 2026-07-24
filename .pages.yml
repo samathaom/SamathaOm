@@ -1,6 +1,7 @@
 media:
   input: static/images
   output: /images
+
 content:
   - name: articles
     label: Articles
@@ -27,6 +28,7 @@ content:
       - name: tags
         type: string
         list: true
+
   - name: portfolio
     label: Portfolio
     type: collection
@@ -44,6 +46,7 @@ content:
       - name: tags
         type: string
         list: true
+
   - name: resources
     label: Resources
     type: collection
