@@ -36,7 +36,7 @@ content:
       - name: body
         type: rich-text
       - name: date
-        type: date    
+        type: date
       - name: tags
         type: string
         list: true
@@ -46,12 +46,12 @@ content:
     path: content/resources
     fields:
       - name: title
-        type: string     
+        type: string
       - name: thumbnail
         label: Resource Thumbnail
         type: image
       - name: body
-        type: rich-text     
+        type: rich-text
       - name: tags
         type: string
         list: true
