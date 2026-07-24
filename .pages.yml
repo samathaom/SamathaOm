@@ -13,14 +13,11 @@ content:
       - name: category
         type: select
         options:
-          - label: Spiritual
-            value: spiritual
-          - label: Technical
-            value: technical
-          - label: Design
-            value: design
-          - label: Personal Development
-            value: personal-development
+          values:
+            - Spiritual
+            - Technical
+            - Design
+            - Personal Development
       - name: body
         type: rich-text
       - name: date
