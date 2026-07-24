@@ -1,5 +1,6 @@
 ---
 title: Buddhist Precepts Tracker | Minimalist Habit Trackers
+resource-number: 2
 thumbnail: /images/Thumbnail.png
 tags:
   - Habits
