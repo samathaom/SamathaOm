@@ -1,106 +1,151 @@
 {{- define "main" -}}
 
-    {{- if .Title }}
-    <header class="page-header" style="max-width: var(--main-width); margin: 2rem auto 3rem auto; padding: 0 var(--gap);">
-        <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 12px; color: var(--primary); letter-spacing: -0.015em;">{{ .Title }}</h1>
-        {{- if .Description }}
-        <p style="color: var(--secondary); font-size: 1.1rem; margin: 0; line-height: 1.6; max-width: 720px;">{{ .Description }}</p>
-        {{- end }}
-    </header>
+{{- if .Title }}
+<header class="page-header" style="max-width: var(--main-width); margin: 2rem auto 3rem auto; padding: 0 var(--gap);">
+    <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 12px; color: var(--primary); letter-spacing: -0.015em;">{{ .Title }}</h1>
+    {{- if .Description }}
+    <p style="color: var(--secondary); font-size: 1.1rem; margin: 0; line-height: 1.6; max-width: 720px;">{{ .Description }}</p>
     {{- end }}
+</header>
+{{- end }}
 
-    <div class="custom-layout-container" style="margin-bottom: 6rem; padding: 0 var(--gap);">
-        <div class="articles-list">
+<div class="custom-layout-container" style="margin-bottom: 6rem; padding: 0 var(--gap);">
+    
+    <!-- Minimalist Category Pills Filter -->
+    <div class="article-filters" style="display: flex; gap: 10px; margin-bottom: 40px; flex-wrap: wrap;">
+        <button class="filter-btn active" data-filter="all" style="background: var(--accent-blue); border: none; color: #FFFFFF; padding: 8px 16px; border-radius: 100px; font-size: 14px; cursor: pointer; transition: all 0.2s ease;">All</button>
+        <button class="filter-btn" data-filter="spiritual" style="background: var(--code-bg); border: none; color: var(--secondary); padding: 8px 16px; border-radius: 100px; font-size: 14px; cursor: pointer; transition: all 0.2s ease;">Spiritual</button>
+        <button class="filter-btn" data-filter="technical" style="background: var(--code-bg); border: none; color: var(--secondary); padding: 8px 16px; border-radius: 100px; font-size: 14px; cursor: pointer; transition: all 0.2s ease;">Technical</button>
+        <button class="filter-btn" data-filter="personal-development" style="background: var(--code-bg); border: none; color: var(--secondary); padding: 8px 16px; border-radius: 100px; font-size: 14px; cursor: pointer; transition: all 0.2s ease;">Personal Development</button>
+    </div>
+
+    <div class="articles-list">
+        
+        {{- $pages := .Pages }}
+        {{- if .IsHome }}
+            {{- $pages = where site.RegularPages "Type" "posts" }}
+        {{- end }}
+
+        {{- range $pages }}
+        {{- $categorySlug := "" }}
+        {{- with .Params.categories }}{{ $categorySlug = index . 0 | urlize }}{{ end }}
+        <article class="entry-wrapper article-row-node" data-category="{{ $categorySlug }}" style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px; padding: 32px !important; height: 100%;">
             
-            {{- $pages := .Pages }}
-            {{- if .IsHome }}
-                {{- $pages = where site.RegularPages "Type" "posts" }}
-            {{- end }}
+            <div>
+                <!-- Metadata Header -->
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap;">
+                    {{- if .Date }}
+                    <time style="font-size: 0.8rem; font-weight: 500; color: var(--secondary); letter-spacing: 0.02em;">
+                        {{ .Date.Format "January 2, 2006" }}
+                    </time>
+                    {{- end }}
+                    
+                    {{- if and .Date .Params.tags }}
+                    <span style="color: var(--border); font-size: 0.8rem;">•</span>
+                    {{- end }}
 
-            {{- range $pages }}
-            <article class="entry-wrapper article-row-node" style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px; padding: 32px !important; height: 100%;">
-                
-                <div>
-                    <!-- Metadata Header -->
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap;">
-                        {{- if .Date }}
-                        <time style="font-size: 0.8rem; font-weight: 500; color: var(--secondary); letter-spacing: 0.02em;">
-                            {{ .Date.Format "January 2, 2006" }}
-                        </time>
-                        {{- end }}
-                        
-                        {{- if and .Date .Params.tags }}
-                        <span style="color: var(--border); font-size: 0.8rem;">•</span>
-                        {{- end }}
-
-                        {{- if .Params.tags }}
-                        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                            {{- range first 2 .Params.tags }}
-                            <span style="font-size: 0.75rem; font-weight: 500; padding: 2px 8px; background: var(--code-bg); border-radius: 4px; color: var(--secondary);">{{ . }}</span>
-                            {{- end }}
-                        </div>
+                    {{- if .Params.tags }}
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                        {{- range first 2 .Params.tags }}
+                        <span style="font-size: 0.75rem; font-weight: 500; padding: 2px 8px; background: var(--code-bg); border-radius: 4px; color: var(--secondary);">{{ . }}</span>
                         {{- end }}
                     </div>
-
-                    <!-- Article Title -->
-                    <h3 style="margin: 0 0 12px 0; font-size: 1.4rem; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em;">
-                        <a href="{{ .Permalink }}" style="color: var(--primary); text-decoration: none; transition: color 0.2s ease;">{{ .Title }}</a>
-                    </h3>
-                    
-                    <!-- Article Summary -->
-                    {{- if .Summary }}
-                    <p style="margin: 0; font-size: 0.98rem; line-height: 1.6; color: var(--secondary);">
-                        {{ .Summary | plainify | truncate 160 }}
-                    </p>
                     {{- end }}
                 </div>
 
-                <!-- Read Link Anchor -->
-                <div style="margin-top: auto; padding-top: 8px;">
-                    <a href="{{ .Permalink }}" style="font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; color: var(--accent-blue);">
-                        Read Article 
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s ease;">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
+                <!-- Article Title -->
+                <h3 style="margin: 0 0 12px 0; font-size: 1.4rem; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em;">
+                    <a href="{{ .Permalink }}" style="color: var(--primary); text-decoration: none; transition: color 0.2s ease;">{{ .Title }}</a>
+                </h3>
+                
+                <!-- Article Summary -->
+                {{- if .Summary }}
+                <p style="margin: 0; font-size: 0.98rem; line-height: 1.6; color: var(--secondary);">
+                    {{ .Summary | plainify | truncate 160 }}
+                </p>
+                {{- end }}
+            </div>
 
-            </article>
-            {{- end }}
+            <!-- Read Link Anchor -->
+            <div style="margin-top: auto; padding-top: 8px;">
+                <a href="{{ .Permalink }}" style="font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; color: var(--accent-blue);">
+                    Read Article 
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s ease;">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
 
-        </div>
+        </article>
+        {{- end }}
+
     </div>
+</div>
 
-    <style>
-        /* 3-column layout matching the portfolio and resources grid system on desktops */
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.article-filters .filter-btn');
+        const articleCards = document.querySelectorAll('.articles-list .article-row-node');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const activeBtn = document.querySelector('.article-filters .filter-btn.active');
+                if (activeBtn) {
+                    activeBtn.classList.remove('active');
+                    activeBtn.style.background = 'var(--code-bg)';
+                    activeBtn.style.color = 'var(--secondary)';
+                }
+
+                button.classList.add('active');
+                button.style.background = 'var(--accent-blue)';
+                button.style.color = '#FFFFFF';
+
+                const filterValue = button.getAttribute('data-filter');
+
+                articleCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+<style>
+    /* 3-column layout matching the portfolio and resources grid system on desktops */
+    .articles-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap);
+        width: 100%;
+    }
+
+    .article-row-node h3 a:hover {
+        color: var(--accent-blue) !important;
+    }
+
+    .article-row-node:hover svg {
+        transform: translateX(3px);
+    }
+    
+    @media (max-width: 992px) {
         .articles-list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--gap);
-            width: 100%;
+            grid-template-columns: repeat(2, 1fr);
         }
+    }
+    
+    @media (max-width: 768px) {
+        .articles-list {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+        }
+    }
+</style>
 
-        .article-row-node h3 a:hover {
-            color: var(--accent-blue) !important;
-        }
-
-        .article-row-node:hover svg {
-            transform: translateX(3px);
-        }
-        
-        @media (max-width: 992px) {
-            .articles-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .articles-list {
-                grid-template-columns: 1fr !important;
-                gap: 1.5rem !important;
-            }
-        }
-    </style>
 
 {{- end -}}
