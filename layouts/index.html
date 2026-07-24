@@ -77,72 +77,90 @@
         </div>
     </section>
 
-    <!-- Explore Section (Heading, Excerpt for Article, Thumbnail for Project/Resource) -->
+    <!-- Explore Section (Option 3: Editorial Typography List with Image Reveal) -->
     <div class="custom-layout-container">
         <header class="section-standard-header">
             <h2>Explore</h2>
             <p class="section-subtitle-spacer">Selected design, free resource, and spiritual writings.</p>
         </header>
         
-        <div class="minimal-grid bento-cols gap-md">
-            
-            <!-- Bento Item 1: Recent Article (Text & Excerpt Only) -->
-            {{- $firstArticle := index (where .Site.RegularPages "Section" "articles") 0 -}}
-            {{- if $firstArticle -}}
-            <div class="grid-card pad-md card-neutral flex-column bento-article-span">
-                <div class="card-header-meta">
-                    <span class="card-tag">Recent ARTICLE</span>
-                    <span class="card-meta-time">{{ $firstArticle.ReadingTime }} min read</span>
-                </div>
-                <h3 class="card-title"><a href="{{ $firstArticle.RelPermalink }}" class="card-title-link">{{ $firstArticle.Title }}</a></h3>
-                {{- $words := split ($firstArticle.Summary | plainify) " " -}}
-                {{- $snippetLength := cond (gt (len $words) 30) 30 (len $words) -}}
-                <p class="card-excerpt mt-auto">{{ delimit (first $snippetLength $words) " " }}...</p>
-            </div>
-            {{- end -}}
+        <div class="editorial-explore-container">
+            <ul class="explore-editorial-list">
+                
+                <!-- Recent Article Item -->
+                {{- $firstArticle := index (where .Site.RegularPages "Section" "articles") 0 -}}
+                {{- if $firstArticle -}}
+                <li class="explore-editorial-item" data-preview="article-preview">
+                    <a href="{{ $firstArticle.RelPermalink }}" class="explore-item-link">
+                        <div class="explore-meta">
+                            <span class="explore-category">WRITING</span>
+                            <span class="explore-sub">{{ $firstArticle.ReadingTime }} min read</span>
+                        </div>
+                        <h3 class="explore-item-title">{{ $firstArticle.Title }}</h3>
+                        <span class="explore-arrow">&rarr;</span>
+                    </a>
+                </li>
+                {{- end -}}
 
-            <!-- Bento Item 2: Recent Project -->
-            {{- $firstProject := index (where .Site.RegularPages "Section" "portfolio") 0 -}}
-            {{- if $firstProject -}}
-            {{- $projectImg := $firstProject.Params.image | default $firstProject.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstProject.Content 1) 0) -}}
-            <div class="grid-card pad-md card-neutral flex-column">
-                <div class="card-header-meta">
-                    <span class="card-tag">Recent PROJECT</span>
-                </div>
+                <!-- Recent Project Item -->
+                {{- $firstProject := index (where .Site.RegularPages "Section" "portfolio") 0 -}}
+                {{- if $firstProject -}}
+                {{- $projectImg := $firstProject.Params.image | default $firstProject.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstProject.Content 1) 0) -}}
+                {{- $projectImgUrl := "" -}}
                 {{- if $projectImg -}}
-                <div class="explore-media-wrapper">
-                    <img src="{{ if strings.HasPrefix $projectImg "<img" }}{{ index (findRE "src=\"([^\">]+)\"" $projectImg 1) 1 }}{{ else }}{{ $projectImg }}{{ end }}" alt="{{ $firstProject.Title }}" class="explore-media-img" loading="lazy" />
-                </div>
-                {{- else -}}
-                <div class="explore-media-wrapper fallback-media-slot">
-                    <span class="fallback-media-text">PROJECT PREVIEW</span>
-                </div>
+                    {{- if strings.HasPrefix $projectImg "<img" -}}
+                        {{- $projectImgUrl = index (findRE "src=\"([^\">]+)\"" $projectImg 1) 1 -}}
+                    {{- else -}}
+                        {{- $projectImgUrl = $projectImg -}}
+                    {{- end -}}
                 {{- end -}}
-                <h3 class="card-title mt-auto"><a href="{{ $firstProject.RelPermalink }}" class="card-title-link">{{ $firstProject.Title }}</a></h3>
-            </div>
-            {{- end -}}
+                <li class="explore-editorial-item" data-preview="project-preview">
+                    <a href="{{ $firstProject.RelPermalink }}" class="explore-item-link">
+                        <div class="explore-meta">
+                            <span class="explore-category">CASE STUDY</span>
+                            <span class="explore-sub">Selected Project</span>
+                        </div>
+                        <h3 class="explore-item-title">{{ $firstProject.Title }}</h3>
+                        <span class="explore-arrow">&rarr;</span>
+                    </a>
+                    {{- if $projectImgUrl -}}
+                    <div id="project-preview" class="explore-hover-preview">
+                        <img src="{{ $projectImgUrl }}" alt="{{ $firstProject.Title }}" loading="lazy" />
+                    </div>
+                    {{- end -}}
+                </li>
+                {{- end -}}
 
-            <!-- Bento Item 3: Recent Resource -->
-            {{- $firstResource := index (where .Site.RegularPages "Section" "resources") 0 -}}
-            {{- if $firstResource -}}
-            {{- $resourceImg := $firstResource.Params.image | default $firstResource.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstResource.Content 1) 0) -}}
-            <div class="grid-card pad-md card-neutral flex-column">
-                <div class="card-header-meta">
-                    <span class="card-tag">Recent RESOURCE</span>
-                </div>
+                <!-- Recent Resource Item -->
+                {{- $firstResource := index (where .Site.RegularPages "Section" "resources") 0 -}}
+                {{- if $firstResource -}}
+                {{- $resourceImg := $firstResource.Params.image | default $firstResource.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstResource.Content 1) 0) -}}
+                {{- $resourceImgUrl := "" -}}
                 {{- if $resourceImg -}}
-                <div class="explore-media-wrapper">
-                    <img src="{{ if strings.HasPrefix $resourceImg "<img" }}{{ index (findRE "src=\"([^\">]+)\"" $resourceImg 1) 1 }}{{ else }}{{ $resourceImg }}{{ end }}" alt="{{ $firstResource.Title }}" class="explore-media-img" loading="lazy" />
-                </div>
-                {{- else -}}
-                <div class="explore-media-wrapper fallback-media-slot">
-                    <span class="fallback-media-text">RESOURCE PREVIEW</span>
-                </div>
+                    {{- if strings.HasPrefix $resourceImg "<img" -}}
+                        {{- $resourceImgUrl = index (findRE "src=\"([^\">]+)\"" $resourceImg 1) 1 -}}
+                    {{- else -}}
+                        {{- $resourceImgUrl = $resourceImg -}}
+                    {{- end -}}
                 {{- end -}}
-                <h3 class="card-title mt-auto"><a href="{{ $firstResource.RelPermalink }}" class="card-title-link">{{ $firstResource.Title }}</a></h3>
-            </div>
-            {{- end -}}
+                <li class="explore-editorial-item" data-preview="resource-preview">
+                    <a href="{{ $firstResource.RelPermalink }}" class="explore-item-link">
+                        <div class="explore-meta">
+                            <span class="explore-category">FREE RESOURCE</span>
+                            <span class="explore-sub">Tool / Tracker</span>
+                        </div>
+                        <h3 class="explore-item-title">{{ $firstResource.Title }}</h3>
+                        <span class="explore-arrow">&rarr;</span>
+                    </a>
+                    {{- if $resourceImgUrl -}}
+                    <div id="resource-preview" class="explore-hover-preview">
+                        <img src="{{ $resourceImgUrl }}" alt="{{ $firstResource.Title }}" loading="lazy" />
+                    </div>
+                    {{- end -}}
+                </li>
+                {{- end -}}
 
+            </ul>
         </div>
     </div>
 
@@ -257,9 +275,128 @@
         </div>
     </div>
 
-    <!-- Styles & Scripts for Mobile Spacing Fix & Pure CSS Parallax -->
+    <!-- Inline Styles for Option 3 Layout & Animations -->
     <style>
+        .editorial-explore-container {
+            position: relative;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .explore-editorial-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .explore-editorial-item {
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .explore-item-link {
+            display: grid;
+            grid-template-columns: 180px 1fr auto;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .explore-editorial-item:hover .explore-item-link {
+            transform: translateX(6px);
+        }
+
+        .explore-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .explore-category {
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.5;
+        }
+
+        .explore-sub {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .explore-item-title {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .explore-arrow {
+            font-size: 1.2rem;
+            opacity: 0.4;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .explore-editorial-item:hover .explore-arrow {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+        /* Hover Image Reveal Styling */
+        .explore-hover-preview {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%) scale(0.95);
+            width: 220px;
+            height: 140px;
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+            z-index: 10;
+        }
+
+        .explore-hover-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .explore-editorial-item:hover .explore-hover-preview {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50%) scale(1);
+        }
+
+        /* Responsive handling for mobile */
         @media (max-width: 768px) {
+            .explore-item-link {
+                grid-template-columns: 1fr auto;
+                gap: 0.75rem;
+                padding: 1.25rem 0;
+            }
+
+            .explore-meta {
+                grid-column: 1 / -1;
+                flex-direction: row;
+                gap: 0.75rem;
+                align-items: center;
+            }
+
+            .explore-hover-preview {
+                display: none; /* Hide image reveal popups on touch screens for clean UX */
+            }
+
             .custom-layout-container.text-center-cta {
                 padding-top: 4rem !important;
                 padding-bottom: 4rem !important;
