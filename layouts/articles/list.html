@@ -20,7 +20,8 @@
             <button type="button" class="filter-btn" data-filter="personal-development">Personal Development</button>
         </div>
 
-        <div class="articles-list">
+        <!-- Clean Editorial List Container -->
+        <div class="articles-list editorial-list">
             
             {{- $pages := .Pages }}
             {{- if .IsHome }}
@@ -30,55 +31,36 @@
             {{- range $pages }}
             {{- $categorySlug := "" }}
             {{- with .Params.category }}{{ $categorySlug = . | urlize }}{{ end }}
-            <article class="entry-wrapper article-row-node" data-category="{{ $categorySlug }}" style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px; padding: 32px !important; height: 100%;">
+            <a href="{{ .Permalink }}" class="editorial-row article-row-node" data-category="{{ $categorySlug }}">
                 
-                <div>
-                    <!-- Metadata Header -->
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap;">
-                        {{- if .Date }}
-                        <time style="font-size: 0.8rem; font-weight: 500; color: var(--secondary); letter-spacing: 0.02em;">
-                            {{ .Date.Format "January 2, 2006" }}
-                        </time>
-                        {{- end }}
-                        
-                        {{- if and .Date .Params.tags }}
-                        <span style="color: var(--border); font-size: 0.8rem;">•</span>
-                        {{- end }}
-
-                        {{- if .Params.tags }}
-                        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                            {{- range first 2 .Params.tags }}
-                            <span style="font-size: 0.75rem; font-weight: 500; padding: 2px 8px; background: var(--code-bg); border-radius: 4px; color: var(--secondary);">{{ . }}</span>
-                            {{- end }}
-                        </div>
-                        {{- end }}
-                    </div>
-
-                    <!-- Article Title -->
-                    <h3 style="margin: 0 0 12px 0; font-size: 1.4rem; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em;">
-                        <a href="{{ .Permalink }}" style="color: var(--primary); text-decoration: none; transition: color 0.2s ease;">{{ .Title }}</a>
-                    </h3>
-                    
-                    <!-- Article Summary -->
-                    {{- if .Summary }}
-                    <p style="margin: 0; font-size: 0.98rem; line-height: 1.6; color: var(--secondary);">
-                        {{ .Summary | plainify | truncate 160 }}
-                    </p>
-                    {{- end }}
+                <!-- Left: Date -->
+                <div class="editorial-date">
+                    {{- if .Date -}}
+                        {{ .Date.Format "Jan 2" }}
+                    {{- end -}}
                 </div>
 
-                <!-- Read Link Anchor -->
-                <div style="margin-top: auto; padding-top: 8px;">
-                    <a href="{{ .Permalink }}" style="font-size: 0.9rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; color: var(--accent-blue);">
-                        Read Article 
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s ease;">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
+                <!-- Arrow Icon (Hardware-accelerated transition) -->
+                <div class="editorial-arrow">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                 </div>
 
-            </article>
+                <!-- Middle: Title -->
+                <div class="editorial-title">
+                    {{ .Title }}
+                </div>
+
+                <!-- Right: Category / Meta -->
+                <div class="editorial-meta">
+                    {{- with .Params.category -}}
+                    <span class="editorial-cat">{{ . }}</span>
+                    {{- end -}}
+                </div>
+
+            </a>
             {{- end }}
 
         </div>
@@ -87,7 +69,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const filterButtons = document.querySelectorAll('.article-filters .filter-btn');
-            const articleCards = document.querySelectorAll('.articles-list .article-row-node');
+            const articleRows = document.querySelectorAll('.articles-list .article-row-node');
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -96,12 +78,12 @@
 
                     const filterValue = button.getAttribute('data-filter');
 
-                    articleCards.forEach(card => {
-                        const cardCategory = card.getAttribute('data-category');
-                        if (filterValue === 'all' || cardCategory === filterValue) {
-                            card.style.display = 'flex';
+                    articleRows.forEach(row => {
+                        const rowCategory = row.getAttribute('data-category');
+                        if (filterValue === 'all' || rowCategory === filterValue) {
+                            row.style.display = 'grid';
                         } else {
-                            card.style.display = 'none';
+                            row.style.display = 'none';
                         }
                     });
                 });
@@ -119,7 +101,7 @@
             border-radius: 100px;
             font-size: 14px;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: color 0.2s ease, background-color 0.2s ease;
         }
 
         .article-filters .filter-btn:hover {
@@ -132,31 +114,93 @@
             color: #FFFFFF !important;
         }
 
-        .articles-list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--gap);
+        /* Editorial List Layout */
+        .editorial-list {
+            display: flex;
+            flex-direction: column;
             width: 100%;
+            border-top: 1px solid var(--border);
         }
 
-        .article-row-node h3 a:hover {
-            color: var(--accent-blue) !important;
+        .editorial-row {
+            display: grid;
+            grid-template-columns: 70px 24px 1fr auto;
+            align-items: center;
+            padding: 18px 12px;
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            will-change: transform, background-color;
+            transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            color: inherit;
         }
 
-        .article-row-node:hover svg {
-            transform: translateX(3px);
+        .editorial-row:hover {
+            background-color: var(--code-bg);
+            transform: translateX(6px);
         }
-        
-        @media (max-width: 992px) {
-            .articles-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
+
+        .editorial-date {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--secondary);
+            letter-spacing: 0.02em;
         }
-        
+
+        .editorial-arrow {
+            display: flex;
+            align-items: center;
+            color: var(--accent-blue);
+            opacity: 0;
+            transform: translateX(-6px);
+            will-change: opacity, transform;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .editorial-row:hover .editorial-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .editorial-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: -0.01em;
+            transition: color 0.2s ease;
+        }
+
+        .editorial-row:hover .editorial-title {
+            color: var(--accent-blue);
+        }
+
+        .editorial-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .editorial-cat {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 3px 10px;
+            background: var(--code-bg);
+            border-radius: 100px;
+            color: var(--secondary);
+        }
+
         @media (max-width: 768px) {
-            .articles-list {
-                grid-template-columns: 1fr !important;
-                gap: 1.5rem !important;
+            .editorial-row {
+                grid-template-columns: 60px 1fr auto;
+                padding: 14px 8px;
+            }
+            .editorial-row:hover {
+                transform: none;
+            }
+            .editorial-arrow {
+                display: none;
+            }
+            .editorial-title {
+                font-size: 0.95rem;
             }
         }
     </style>
