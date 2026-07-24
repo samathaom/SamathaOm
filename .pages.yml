@@ -9,6 +9,13 @@ content:
     fields:
       - name: title
         type: string
+      - name: category
+        type: select
+        options:
+          - Spiritual
+          - Technical
+          - Design
+          - Personal Development
       - name: body
         type: rich-text
       - name: date
