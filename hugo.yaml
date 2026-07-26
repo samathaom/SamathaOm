@@ -7,34 +7,17 @@ contentDir: "content"
 publishDir: "public"
 
 params:
-  env: production
-  author: "Samatha Om"
+  env: production  
   description: "Technical Leader, Software Architect & Computer Science Educator"
-  recentPostsCount: 5
-
+  
   author:
     name: "Samatha Om"
     avatar: "images/Profilepic.png"
   
   mainSections:
-    - articles
     - portfolio
+    - articles
     - resources
-
-  # --- 1. Fixed Profile Mode Matrix ---
-  # --- profileMode:---
-   # enabled: true
-    #title: "Samatha Om"
-    #subtitle: "System Architect, Technical Leader & Educator"
-    #imageUrl: "images/avatar.jpg" 
-    #imageWidth: 150
-    #imageHeight: 150
-    #imageTitle: "Profile Avatar"
-    #buttons:
-     # - name: "Explore Resources"
-    #    url: "/resources/"
-      #- name: "Read Articles"
-      #  url: "/articles/"
 
   # --- 2. Fixed Social Icons Vector Placement ---
   # Moving this here allows PaperMod's SVG asset injector to find and display them
