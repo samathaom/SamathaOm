@@ -1,9 +1,254 @@
+<style>
+    /* ==========================================================================
+       1. GLOBAL SECTION SPACING & LAYOUT UTILITIES
+       ========================================================================== */
+    .section-block {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /* Accent Corner Crosses for Hero */
+    .hero-corner-cross {
+        color: var(--accent-blue, #0066cc);
+        font-weight: bold;
+    }
+
+    /* Standard Section Headers */
+    .section-standard-header h2,
+    .section-blue-header h2,
+    .section-philosophy-bg h2 {
+        color: inherit;
+    }
+
+    /* ==========================================================================
+       2. FEATURED CASE STUDIES GALLERY
+       ========================================================================== */
+    .featured-gallery-section {
+        margin-top: 3rem;
+    }
+
+    .gallery-section-title {
+        color: var(--text-color, #ffffff);
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .case-studies-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .gallery-card {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 0px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .gallery-card-link {
+        text-decoration: none;
+        display: block;
+    }
+
+    .gallery-thumbnail-wrapper {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 0px;
+    }
+
+    .gallery-thumbnail-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .gallery-thumbnail-fallback {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        color: var(--text-color, #ffffff);
+    }
+
+    .gallery-card-content {
+        padding: 1.25rem;
+    }
+
+    .gallery-card-tag {
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        opacity: 0.8;
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-color, #ffffff);
+    }
+
+    .gallery-card-heading {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-color, #ffffff);
+        display: block;
+        visibility: visible;
+    }
+
+    /* ==========================================================================
+       3. HOW DO I WORK SECTION (PRINCIPLES & PROCESS)
+       ========================================================================== */
+    .work-visual-explorations {
+        margin-top: 1.5rem;
+    }
+
+    .exploration-block {
+        margin-bottom: 4rem;
+    }
+
+    .exploration-block:last-child {
+        margin-bottom: 0;
+    }
+
+    .exploration-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: inherit;
+    }
+
+    /* The Principles Cards */
+    .process-horizontal-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        position: relative;
+    }
+
+    .process-step-card {
+        border: 1px solid rgba(255, 255, 255, 0.18); /* Slightly visible refined border */
+        border-radius: 12px;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.03);
+        min-height: 240px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .process-step-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .process-step-card-title {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: inherit;
+        letter-spacing: -0.01em;
+    }
+
+    .process-step-card-number {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    .process-step-card-body {
+        margin: 0;
+        font-size: 0.95rem;
+        opacity: 0.85;
+        line-height: 1.5;
+        color: inherit;
+    }
+
+    /* The Process Matrix */
+    .process-matrix-layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .process-intro-column {
+        padding-right: 1rem;
+    }
+
+    .process-intro-heading {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin: 0 0 1rem 0;
+        color: inherit;
+    }
+
+    .process-intro-text {
+        opacity: 0.85;
+        line-height: 1.6;
+        margin: 0;
+        color: inherit;
+    }
+
+    .process-features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .process-feature-card {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 1.25rem;
+        border-radius: 6px;
+        background: rgba(0, 0, 0, 0.15);
+    }
+
+    .process-feature-icon-wrapper {
+        margin-bottom: 0.5rem;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+    }
+
+    .process-feature-title {
+        margin: 0 0 0.25rem 0;
+        font-size: 0.95rem;
+        color: inherit;
+    }
+
+    .process-feature-desc {
+        margin: 0;
+        font-size: 0.8rem;
+        opacity: 0.8;
+        color: inherit;
+    }
+
+    /* ==========================================================================
+       4. CALL TO ACTION SECTION
+       ========================================================================== */
+    .cta-heading {
+        color: inherit;
+    }
+
+    .cta-subheading {
+        color: inherit;
+        opacity: 0.85;
+    }
+</style>
+
 {{- define "main" -}}
 
     <!-- 1. HERO SECTION -->
-    <section class="hero-callout-container modern-hero-animate">
-        <span class="hero-corner-cross top-left" style="color: var(--accent-blue, #0066cc); font-weight: bold;">+</span>
-        <span class="hero-corner-cross bottom-right" style="color: var(--accent-blue, #0066cc); font-weight: bold;">+</span>
+    <section class="section-block hero-callout-container modern-hero-animate">
+        <span class="hero-corner-cross top-left">+</span>
+        <span class="hero-corner-cross bottom-right">+</span>
 
         <div class="hero-content-grid">
             <div class="hero-text-column">
@@ -28,7 +273,7 @@
     </section>
 
     <!-- 2. ABOUT ME SECTION -->
-    <section class="section-block" style="margin-top: 0; padding-top: 0;">
+    <section class="section-block">
         <div class="custom-layout-container">
             <header class="section-standard-header">
                 <h2>About me</h2>
@@ -49,14 +294,14 @@
     <section class="section-block section-capabilities-blue" id="what-do-i-do">
         <div class="custom-layout-container">
             <header class="section-blue-header">
-                <h2 style="color: inherit;">What do I do</h2>
+                <h2>What do I do</h2>
                 <p class="section-blue-subtitle">Translating complex ideas into clean, high-performance digital systems, tactile print, and impactful learning experiences.</p>
             </header>
 
             <!-- Accordion Deliverables Matrix -->
             <div class="capabilities-matrix">
 
-                <!-- 3. Technical Work -->
+                <!-- Technical Work -->
                 <div class="cap-card">
                     <button class="cap-header" type="button">
                         <div>
@@ -76,7 +321,7 @@
                     </div>
                 </div>
 
-                <!-- 1. Print Designs -->
+                <!-- Print Designs -->
                 <div class="cap-card">
                     <button class="cap-header" type="button">
                         <div>
@@ -102,7 +347,7 @@
                     </div>
                 </div>
 
-                <!-- 2. Product Design -->
+                <!-- Product Design -->
                 <div class="cap-card">
                     <button class="cap-header" type="button">
                         <div>
@@ -124,7 +369,7 @@
                     </div>
                 </div>
 
-                <!-- 4. Education -->
+                <!-- Education -->
                 <div class="cap-card">
                     <button class="cap-header" type="button">
                         <div>
@@ -145,10 +390,10 @@
             </div>
 
             <!-- Featured Case Studies Gallery -->
-            <div class="featured-gallery-section" style="margin-top: 3rem;">
-                <h3 class="gallery-section-title" style="color: var(--text-color, #ffffff); font-size: 1.5rem; margin-bottom: 1.5rem;">Featured Case Studies</h3>
+            <div class="featured-gallery-section">
+                <h3 class="gallery-section-title">Featured Case Studies</h3>
                 
-                <div class="case-studies-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div class="case-studies-gallery">
                     {{- $allPortfolio := where .Site.RegularPages "Section" "portfolio" -}}
                     
                     {{- range seq 1 2 -}}
@@ -165,18 +410,18 @@
                                 {{- end -}}
                             {{- end -}}
 
-                            <div class="gallery-card" style="border: 1px solid rgba(255,255,255,0.15); border-radius: 0px; overflow: hidden; background: rgba(255, 255, 255, 0.05); transition: transform 0.2s ease, box-shadow 0.2s ease;">
-                                <a href="{{ .RelPermalink }}" style="text-decoration: none; display: block;">
-                                    <div class="gallery-thumbnail-wrapper" style="width: 100%; height: 200px; overflow: hidden; background: rgba(0,0,0,0.1); border-radius: 0px;">
+                            <div class="gallery-card">
+                                <a href="{{ .RelPermalink }}" class="gallery-card-link">
+                                    <div class="gallery-thumbnail-wrapper">
                                         {{- if $pImgUrl -}}
-                                        <img src="{{ $pImgUrl }}" alt="{{ $pTitle }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                                        <img src="{{ $pImgUrl }}" alt="{{ $pTitle }}" loading="lazy" class="gallery-thumbnail-img" />
                                         {{- else -}}
-                                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; opacity: 0.7; color: var(--text-color, #ffffff);">No Preview</div>
+                                        <div class="gallery-thumbnail-fallback">No Preview</div>
                                         {{- end -}}
                                     </div>
-                                    <div class="gallery-card-content" style="padding: 1.25rem;">
-                                        <span style="font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.8; display: block; margin-bottom: 0.5rem; color: var(--text-color, #ffffff);">CASE STUDY</span>
-                                        <h4 class="gallery-card-heading" style="margin: 0; font-size: 1.2rem; font-weight: 600; color: var(--text-color, #ffffff); display: block; visibility: visible;">{{ $pTitle }}</h4>
+                                    <div class="gallery-card-content">
+                                        <span class="gallery-card-tag">CASE STUDY</span>
+                                        <h4 class="gallery-card-heading">{{ $pTitle }}</h4>
                                     </div>
                                 </a>
                             </div>
@@ -191,7 +436,7 @@
     <section class="section-block">
         <div class="custom-layout-container">
             <header class="section-standard-header">
-                <h2 style="color: inherit;">Explore</h2>
+                <h2>Explore</h2>
                 <p class="section-subtitle-spacer">A collection of practical tools, resources, and short essays written for daily clarity.</p>
             </header>
             
@@ -250,95 +495,97 @@
         </div>
     </section>
 
-    <!-- 5. HOW DO I WORK? SECTION -->
+    <!-- 5. HOW DO I WORK SECTION -->
     <section class="section-block section-philosophy-bg">
         <div class="custom-layout-container">
             <header class="section-standard-header">
-                <h2 style="color: inherit;">How do I work?</h2>
+                <h2>How do I work?</h2>
             </header>
                         
             <!-- Visual Implementations Playground -->
-            <div class="work-visual-explorations" style="margin-top: 1.5rem;">
+            <div class="work-visual-explorations">
 
                 <!-- The Principles Section -->
-                <div class="exploration-block" style="margin-bottom: 4rem;">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: inherit;">The Principles</h3>
-                    <div class="process-horizontal-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; position: relative;">
+                <div class="exploration-block">
+                    <h3 class="exploration-title">The Principles</h3>
+                    <p>Clearing the noise with these principles so what matters shines.</p>
+                    <div class="process-horizontal-grid">
                         
                         <!-- 01 Minimalism -->
-                        <div class="process-step-card" style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 2rem; background: rgba(255,255,255,0.03); min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                <h4 style="margin: 0; font-size: 1.5rem; font-weight: 600; color: inherit; letter-spacing: -0.01em;">Minimalism</h4>
-                                <span style="font-size: 1.1rem; font-weight: 600; color: rgba(255, 255, 255, 0.4);">01</span>
+                        <div class="process-step-card">
+                            <div class="process-step-card-header">
+                                <h4 class="process-step-card-title">Minimalism</h4>
+                                <span class="process-step-card-number">01</span>
                             </div>
-                            <p style="margin: 0; font-size: 0.95rem; opacity: 0.85; line-height: 1.5; color: inherit;">Removing extra noise so your ideas shine through clearly and effortlessly.</p>
+                            <p class="process-step-card-body">Removing extra noise so your ideas shine through clearly and effortlessly.</p>
                         </div>
 
                         <!-- 02 Clarity -->
-                        <div class="process-step-card" style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 2rem; background: rgba(255,255,255,0.03); min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                <h4 style="margin: 0; font-size: 1.5rem; font-weight: 600; color: inherit; letter-spacing: -0.01em;">Clarity</h4>
-                                <span style="font-size: 1.1rem; font-weight: 600; color: rgba(255, 255, 255, 0.4);">02</span>
+                        <div class="process-step-card">
+                            <div class="process-step-card-header">
+                                <h4 class="process-step-card-title">Clarity</h4>
+                                <span class="process-step-card-number">02</span>
                             </div>
-                            <p style="margin: 0; font-size: 0.95rem; opacity: 0.85; line-height: 1.5; color: inherit;">Making sure every visitor easily understands your message right away.</p>
+                            <p class="process-step-card-body">Making sure every visitor easily understands your message right away.</p>
                         </div>
 
                         <!-- 03 Quality -->
-                        <div class="process-step-card" style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 2rem; background: rgba(255,255,255,0.03); min-height: 240px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                <h4 style="margin: 0; font-size: 1.5rem; font-weight: 600; color: inherit; letter-spacing: -0.01em;">Quality</h4>
-                                <span style="font-size: 1.1rem; font-weight: 600; color: rgba(255, 255, 255, 0.4);">03</span>
+                        <div class="process-step-card">
+                            <div class="process-step-card-header">
+                                <h4 class="process-step-card-title">Quality</h4>
+                                <span class="process-step-card-number">03</span>
                             </div>
-                            <p style="margin: 0; font-size: 0.95rem; opacity: 0.85; line-height: 1.5; color: inherit;">Crafting thoughtful, durable work that feels great to use every single day.</p>
+                            <p class="process-step-card-body">Crafting thoughtful, durable work that feels great to use every single day.</p>
                         </div>
 
                     </div>
                 </div>
 
                 <!-- The Process Section -->
-                <div class="exploration-block" style="margin-bottom: 4rem;">
-                    <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: inherit;">The Process</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: start;">
-                        <div style="padding-right: 1rem;">
-                            <h3 style="font-size: 1.8rem; line-height: 1.2; margin: 0 0 1rem 0; color: inherit;">Systematic execution.<br> Zero cognitive clutter.</h3>
-                            <p style="opacity: 0.85; line-height: 1.6; margin: 0; color: inherit;">Every project balances human behavior analysis, technical stability, and structural print standards.</p>
+                <div class="exploration-block">
+                    <h3 class="exploration-title">The Process</h3>
+                    <p>Mapping out your goals with total clarity with this process.</p>
+                    <div class="process-matrix-layout">
+                        <div class="process-intro-column">
+                            <h3 class="process-intro-heading">Systematic execution.<br> Zero cognitive clutter.</h3>
+                            <p class="process-intro-text">Every project balances human behavior analysis, technical stability, and structural print standards.</p>
                         </div>
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div class="process-features-grid">
                             
                             <!-- Cognitive Ease -->
-                            <div style="border: 1px solid rgba(255,255,255,0.12); padding: 1.25rem; border-radius: 6px; background: rgba(0,0,0,0.15);">
-                                <div style="margin-bottom: 0.5rem; color: #ffffff; display: flex; align-items: center;">
+                            <div class="process-feature-card">
+                                <div class="process-feature-icon-wrapper">
                                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 3.31 2.01 6.16 4.88 7.36.38.16.62.53.62.94V20a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-1.7c0-.41.24-.78.62-.94A8.003 8.003 0 0 0 20 10a8 8 0 0 0-8-8z"/><path d="M9 22h6"/></svg>
                                 </div>
-                                <h4 style="margin: 0 0 0.25rem 0; font-size: 0.95rem; color: inherit;">Cognitive Ease</h4>
-                                <p style="margin: 0; font-size: 0.8rem; opacity: 0.8; color: inherit;">Zero friction workflows.</p>
+                                <h4 class="process-feature-title">Cognitive Ease</h4>
+                                <p class="process-feature-desc">Zero friction workflows.</p>
                             </div>
 
                             <!-- Mobile friendliness -->
-                            <div style="border: 1px solid rgba(255,255,255,0.12); padding: 1.25rem; border-radius: 6px; background: rgba(0,0,0,0.15);">
-                                <div style="margin-bottom: 0.5rem; color: #ffffff; display: flex; align-items: center;">
+                            <div class="process-feature-card">
+                                <div class="process-feature-icon-wrapper">
                                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
                                 </div>
-                                <h4 style="margin: 0 0 0.25rem 0; font-size: 0.95rem; color: inherit;">Mobile friendliness</h4>
-                                <p style="margin: 0; font-size: 0.8rem; opacity: 0.8; color: inherit;">Adaptive layout engineering.</p>
+                                <h4 class="process-feature-title">Mobile friendliness</h4>
+                                <p class="process-feature-desc">Adaptive layout engineering.</p>
                             </div>
 
                             <!-- Design Precision -->
-                            <div style="border: 1px solid rgba(255,255,255,0.12); padding: 1.25rem; border-radius: 6px; background: rgba(0,0,0,0.15);">
-                                <div style="margin-bottom: 0.5rem; color: #ffffff; display: flex; align-items: center;">
+                            <div class="process-feature-card">
+                                <div class="process-feature-icon-wrapper">
                                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
                                 </div>
-                                <h4 style="margin: 0 0 0.25rem 0; font-size: 0.95rem; color: inherit;">Design Precision</h4>
-                                <p style="margin: 0; font-size: 0.8rem; opacity: 0.8; color: inherit;">Clear visual hierarchy.</p>
+                                <h4 class="process-feature-title">Design Precision</h4>
+                                <p class="process-feature-desc">Clear visual hierarchy.</p>
                             </div>
 
                             <!-- Happy clients -->
-                            <div style="border: 1px solid rgba(255,255,255,0.12); padding: 1.25rem; border-radius: 6px; background: rgba(0,0,0,0.15);">
-                                <div style="margin-bottom: 0.5rem; color: #ffffff; display: flex; align-items: center;">
+                            <div class="process-feature-card">
+                                <div class="process-feature-icon-wrapper">
                                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                                 </div>
-                                <h4 style="margin: 0 0 0.25rem 0; font-size: 0.95rem; color: inherit;">Happy clients</h4>
-                                <p style="margin: 0; font-size: 0.8rem; opacity: 0.8; color: inherit;">Seamless project outcomes.</p>
+                                <h4 class="process-feature-title">Happy clients</h4>
+                                <p class="process-feature-desc">Seamless project outcomes.</p>
                             </div>
 
                         </div>
@@ -352,8 +599,8 @@
     <!-- 6. CALL TO ACTION SECTION -->
     <section class="section-block text-center-cta">
         <div class="custom-layout-container">
-            <h3 class="cta-heading" style="color: inherit;">Let's build a clean system.</h3>
-            <p class="cta-subheading" style="color: inherit; opacity: 0.85;">Select a slot to discuss your creative and technical strategy.</p>
+            <h3 class="cta-heading">Let's build a clean system.</h3>
+            <p class="cta-subheading">Select a slot to discuss your creative and technical strategy.</p>
             <div class="cta-container">
                 <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" class="cta-button">
                     Book a Free Call &rarr;
@@ -362,7 +609,7 @@
         </div>
     </section>
 
-    <!-- Scripts -->
+    <!-- Interactive Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Deliverables Accordion Logic
@@ -386,7 +633,7 @@
                 });
             });
 
-            // Blueprint Tabs Logic (Option 04)
+            // Blueprint Tabs Logic
             const tabBtns = document.querySelectorAll('.bp-tab-btn');
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
