@@ -1,364 +1,245 @@
 {{- define "main" -}}
 
-    <!-- 1. HERO SECTION -->
-    <section class="hero-callout-container modern-hero-animate">
-        <span class="hero-corner-cross top-left">+</span>
-        <span class="hero-corner-cross bottom-right">+</span>
+<div class="custom-layout-container" style="max-width: var(--main-width); margin: 0 auto; padding: 0 var(--gap);">
 
-        <div class="hero-content-grid">
-            <div class="hero-text-column">
-                <div class="hero-status-pill">
-                    <span class="status-dot"></span> Available for Q3/Q4 Projects
-                </div>
-                
-                <h1 class="hero-statement">
-                    <span class="hero-greeting">👋 Hi there!</span>
-                    <span class="hero-title">I am a Creative Director & Technical Architect.</span>
-                    <span class="css-txt-rotator">
-                        <span class="rotator-line" id="typewriter-hook"></span><span class="txt-cursor">|</span>
-                    </span>
+    <!-- 1. WHO AM I? (Hero / About Me) -->
+    <section class="hero-section" style="padding: 4rem 0 3rem 0;">
+        <div class="hero-content" style="display: flex; align-items: center; gap: 2rem;">
+            <div class="profile-avatar-wrapper">
+                <img src="{{ .Site.Params.author.avatar | relURL }}" alt="Profile" class="profile-avatar-img">
+            </div>
+            <div>
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 8px; color: var(--primary); letter-spacing: -0.025em;">
+                    Digital Craft & Technical Leadership
                 </h1>
-            </div>
-            <div class="hero-image-column">
-                <div class="hero-profile-wrapper">
-                    <img src="/images/Profilepic.png" alt="Profile Picture" class="hero-profile-img" loading="lazy" />
+                <p style="color: var(--secondary); font-size: 1.15rem; line-height: 1.6; max-width: 680px; margin: 0 0 1.5rem 0;">
+                    Building high-performance software, intuitive user interfaces, and minimalist digital resources. Simple. Functional. Impactful.
+                </p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#what-i-do" class="hero-btn-primary">Explore Work</a>
+                    <a href="/resources/" class="hero-btn-secondary">Free Resources</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. ABOUT ME SECTION -->
-    <section class="section-block">
-        <div class="custom-layout-container">
-            <header class="section-standard-header">
-                <h2>About me</h2>
-            </header>
-            <div class="about-bio-text full-width-constraint">
-                <p>
-                    I am a Creative Director & Technical Architect with 10 years of experience crafting raw, minimal, and high-clarity software products and print materials.
-                </p>
-                <p>
-                    While my daily focus is entirely on UI/UX and visual execution, my technical foundation in Python, JavaScript, React, and Angular.js allows me to bridge the gap between design and engineering seamlessly.
-                </p>
-                <p>
-                    By combining human behavior analysis with clean design architecture, I eliminate cognitive friction and replace complex clutter with absolute visual clarity.
-                </p>
-            </div>
+    <hr style="border: 0; border-top: 1px solid var(--border); margin: 2rem 0 4rem 0;">
+
+    <!-- 2. WHAT DO I DO? (Services / Deliverables + Top 2 Featured Projects) -->
+    <section id="what-i-do" style="margin-bottom: 5rem;">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+            <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 6px;">What Do I Do</h2>
+            <p style="color: var(--secondary); font-size: 1rem; margin: 0;">Specialized technical deliverables and selected case studies.</p>
         </div>
-    </section>
 
-    <!-- 3. DESIGN PHILOSOPHY SECTION -->
-    <section class="section-block section-philosophy-bg">
-        <div class="custom-layout-container">
-            <div class="philosophy-layout">
-                <div class="philosophy-left">
-                    <h2>
-                        Design is <br><span>architecture</span>, not decoration.
-                    </h2>
-                    <p>
-                        I replace complex digital clutter with absolute layout clarity, building interfaces anchored in human behavior.
-                    </p>
-                </div>
-
-                <div class="philosophy-right">
-                    <div class="principle-block">
-                        <h3>Cognitive Ease First</h3>
-                        <p>
-                            Every pixel must justify its existence. By analyzing human mental models, I structure workflows that require zero learning curves and eliminate user friction.
-                        </p>
-                    </div>
-
-                    <div class="principle-block">
-                        <h3>Engineering Alignment</h3>
-                        <p>
-                            Great designs survive the production pipeline. Understanding Python, JavaScript, and modern frameworks ensures that what is designed is precisely what gets deployed.
-                        </p>
-                    </div>
-
-                    <div class="principle-block end-margin-reset">
-                        <h3>Tactile Print Precision</h3>
-                        <p>
-                            Clarity transcends digital boundaries. I apply structural typographic principles and strict geometric grids to tactile print mediums with identical layout rigor.
-                        </p>
-                    </div>
-                </div>
+        <!-- Service / Capabilities Grid -->
+        <div class="capabilities-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3.5rem;">
+            <!-- Print Designs -->
+            <div class="cap-card" style="background: var(--entry); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem;">
+                <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 10px;">Print Designs</h3>
+                <p style="font-size: 0.9rem; color: var(--secondary); line-height: 1.5; margin-bottom: 12px;">High-impact print and tangible brand collateral crafted to make a lasting impression.</p>
+                <ul style="padding-left: 1.2rem; margin: 0; font-size: 0.88rem; color: var(--secondary);">
+                    <li>Wedding Cards</li>
+                    <li>Custom Greeting Cards</li>
+                    <li>Brand Stationery</li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- 4. EXPLORE SECTION -->
-    <section class="section-block">
-        <div class="custom-layout-container">
-            <header class="section-standard-header">
-                <h2>Explore</h2>
-                <p class="section-subtitle-spacer">Selected design, free resource, and spiritual writings.</p>
-            </header>
-            
-            <div class="editorial-explore-container">
-                <ul class="explore-editorial-list">
-                    
-                    <!-- Recent Article Item -->
-                    {{- $firstArticle := index (where .Site.RegularPages "Section" "articles") 0 -}}
-                    {{- if $firstArticle -}}
-                    <li class="explore-editorial-item">
-                        <a href="{{ $firstArticle.RelPermalink }}" class="explore-item-link">
-                            <div class="explore-meta">
-                                <span class="explore-category">WRITING</span>
-                                <span class="explore-sub">{{ $firstArticle.ReadingTime }} min read</span>
-                            </div>
-                            <h3 class="explore-item-title">{{ $firstArticle.Title }}</h3>
-                            <div class="explore-image-slot"></div>
-                            <span class="explore-arrow">&rarr;</span>
-                        </a>
-                    </li>
-                    {{- end -}}
+            <!-- Software Architecture & UI/UX -->
+            <div class="cap-card" style="background: var(--entry); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem;">
+                <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 10px;">Software & UI/UX</h3>
+                <p style="font-size: 0.9rem; color: var(--secondary); line-height: 1.5; margin-bottom: 12px;">Clean front-end architecture and intuitive user interfaces built for high performance.</p>
+                <ul style="padding-left: 1.2rem; margin: 0; font-size: 0.88rem; color: var(--secondary);">
+                    <li>Responsive Web Applications</li>
+                    <li>Design Systems & Figma Kits</li>
+                    <li>Python & JS Development</li>
+                </ul>
+            </div>
 
-                    <!-- Recent Project Item -->
-                    {{- $firstProject := index (where .Site.RegularPages "Section" "portfolio") 0 -}}
-                    {{- if $firstProject -}}
-                    {{- $projectImg := $firstProject.Params.image | default $firstProject.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstProject.Content 1) 0) -}}
-                    {{- $projectImgUrl := "" -}}
-                    {{- if $projectImg -}}
-                        {{- if strings.HasPrefix $projectImg "<img" -}}
-                            {{- $projectImgUrl = index (findRE "src=\"([^\">]+)\"" $projectImg 1) 1 -}}
-                        {{- else -}}
-                            {{- $projectImgUrl = $projectImg -}}
-                        {{- end -}}
-                    {{- end -}}
-                    <li class="explore-editorial-item">
-                        <a href="{{ $firstProject.RelPermalink }}" class="explore-item-link">
-                            <div class="explore-meta">
-                                <span class="explore-category">CASE STUDY</span>
-                                <span class="explore-sub">Selected Project</span>
-                            </div>
-                            <h3 class="explore-item-title">{{ $firstProject.Title }}</h3>
-                            <div class="explore-image-slot">
-                                {{- if $projectImgUrl -}}
-                                <div class="explore-inline-preview">
-                                    <img src="{{ $projectImgUrl }}" alt="{{ $firstProject.Title }}" loading="lazy" />
-                                </div>
-                                {{- end -}}
-                            </div>
-                            <span class="explore-arrow">&rarr;</span>
-                        </a>
-                    </li>
-                    {{- end -}}
-
-                    <!-- Recent Resource Item -->
-                    {{- $firstResource := index (where .Site.RegularPages "Section" "resources") 0 -}}
-                    {{- if $firstResource -}}
-                    {{- $resourceImg := $firstResource.Params.image | default $firstResource.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstResource.Content 1) 0) -}}
-                    {{- $resourceImgUrl := "" -}}
-                    {{- if $resourceImg -}}
-                        {{- if strings.HasPrefix $resourceImg "<img" -}}
-                            {{- $resourceImgUrl = index (findRE "src=\"([^\">]+)\"" $resourceImg 1) 1 -}}
-                        {{- else -}}
-                            {{- $resourceImgUrl = $resourceImg -}}
-                        {{- end -}}
-                    {{- end -}}
-                    <li class="explore-editorial-item">
-                        <a href="{{ $firstResource.RelPermalink }}" class="explore-item-link">
-                            <div class="explore-meta">
-                                <span class="explore-category">FREE RESOURCE</span>
-                                <span class="explore-sub">Tool / Tracker</span>
-                            </div>
-                            <h3 class="explore-item-title">{{ $firstResource.Title }}</h3>
-                            <div class="explore-image-slot">
-                                {{- if $resourceImgUrl -}}
-                                <div class="explore-inline-preview">
-                                    <img src="{{ $resourceImgUrl }}" alt="{{ $firstResource.Title }}" loading="lazy" />
-                                </div>
-                                {{- end -}}
-                            </div>
-                            <span class="explore-arrow">&rarr;</span>
-                        </a>
-                    </li>
-                    {{- end -}}
-
+            <!-- Education & Workshops -->
+            <div class="cap-card" style="background: var(--entry); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem;">
+                <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 10px;">Education</h3>
+                <p style="font-size: 0.9rem; color: var(--secondary); line-height: 1.5; margin-bottom: 12px;">Bridging software engineering, curriculum architecture, and hands-on learning.</p>
+                <ul style="padding-left: 1.2rem; margin: 0; font-size: 0.88rem; color: var(--secondary);">
+                    <li>Conducting Workshops & Training</li>
+                    <li>Computer Science Curriculum</li>
+                    <li>Technical Mentorship</li>
                 </ul>
             </div>
         </div>
-    </section>
 
-    <!-- 5. DELIVERABLES SECTION -->
-    <section class="section-block section-capabilities-blue" id="deliverables">
-        <div class="custom-layout-container">
-            <header class="section-blue-header">
-                <h2>Deliverables</h2>
-                <p class="section-blue-subtitle">Comprehensive design, technical execution, and educational offerings.</p>
-            </header>
-
-            <!-- Accordion Deliverables Matrix -->
-            <div class="capabilities-matrix">
-
-                <!-- 1. Print Designs -->
-                <div class="cap-card">
-                    <button class="cap-header" type="button">
-                        <div>
-                            <span class="cap-tag">TACTILE & MEDIA</span>
-                            <h3 class="cap-title">Print Designs</h3>
+        <!-- Featured Projects (Top 2 Limit) -->
+        <div style="margin-top: 2rem;">
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 1.5rem;">Featured Projects</h3>
+            
+            <div class="featured-projects-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem;">
+                {{- $projects := where site.RegularPages "Type" "projects" | first 2 }}
+                {{- range $projects }}
+                <article class="bento-card">
+                    <a href="{{ .Permalink }}" class="bento-image-wrapper">
+                        {{- if .Params.cover.image }}
+                        <img src="{{ .Params.cover.image | relURL }}" alt="{{ .Title }}" loading="lazy" class="bento-img">
+                        {{- else }}
+                        <div class="bento-fallback-media">
+                            <svg viewBox="0 0 100 100" fill="none" stroke="var(--brand-blue)" stroke-width="1.2">
+                                <circle cx="50" cy="50" r="35" stroke-dasharray="4 2" />
+                            </svg>
                         </div>
-                        <span class="cap-icon">+</span>
-                    </button>
-                    <div class="cap-body">
-                        <ul class="cap-bullet-list">
-                            <li>Information Brochures</li>
-                            <li>Business Cards</li>
-                            <li>Identification Cards (ID Cards)</li>
-                            <li>Custom Notebook Design</li>
-                            <li>Journal Notebook Design</li>
-                            <li>Letterhead Design</li>
-                            <li>Progress Report Design</li>
-                            <li>Application Form Design</li>
-                            <li>Envelope Design</li>
-                            <li>Wedding Cards</li>
-                            <li>Custom Greeting Cards</li>
-                        </ul>
+                        {{- end }}
+                    </a>
+                    <div class="bento-card-body">
+                        <h4 class="bento-card-title">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </h4>
+                        {{- if .Summary }}
+                        <p class="bento-card-summary">{{ .Summary | plainify | truncate 100 }}</p>
+                        {{- end }}
                     </div>
-                </div>
+                </article>
+                {{- end }}
+            </div>
 
-                <!-- 2. Product Design -->
-                <div class="cap-card">
-                    <button class="cap-header" type="button">
-                        <div>
-                            <span class="cap-tag">UI/UX & STRATEGY</span>
-                            <h3 class="cap-title">Product Design</h3>
-                        </div>
-                        <span class="cap-icon">+</span>
-                    </button>
-                    <div class="cap-body">
-                        <ul class="cap-bullet-list">
-                            <li>User Research</li>
-                            <li>Market Research</li>
-                            <li>Core/Root Problem Analysis</li>
-                            <li>Ideation</li>
-                            <li>Wireframing</li>
-                            <li>Figma Designs</li>
-                            <li>Prototype Creation</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 3. Technical Work -->
-                <div class="cap-card">
-                    <button class="cap-header" type="button">
-                        <div>
-                            <span class="cap-tag">DEVELOPMENT & CONSULTING</span>
-                            <h3 class="cap-title">Technical Work</h3>
-                        </div>
-                        <span class="cap-icon">+</span>
-                    </button>
-                    <div class="cap-body">
-                        <ul class="cap-bullet-list">
-                            <li>School Website Creation</li>
-                            <li>Portfolio Website Creation</li>
-                            <li>Shop Website Creation</li>
-                            <li>Technical Consultation</li>
-                            <li>Hiring Engineers, Designers, Teachers</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 4. Education -->
-                <div class="cap-card">
-                    <button class="cap-header" type="button">
-                        <div>
-                            <span class="cap-tag">ACADEMICS & MENTORSHIP</span>
-                            <h3 class="cap-title">Education</h3>
-                        </div>
-                        <span class="cap-icon">+</span>
-                    </button>
-                    <div class="cap-body">
-                        <ul class="cap-bullet-list">
-                            <li>Mentoring Designers, Engineers, Teachers, Students</li>
-                            <li>Teaching Computer Science</li>
-                            <li>Workshops & Training</li>
-                        </ul>
-                    </div>
-                </div>
-
+            <!-- View All Projects Button -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="/projects/" class="view-all-btn">View All Projects →</a>
             </div>
         </div>
     </section>
 
-    <!-- 6. CALL TO ACTION SECTION -->
-    <section class="section-block text-center-cta">
-        <div class="custom-layout-container">
-            <h3 class="cta-heading">Let's build a clean system.</h3>
-            <p class="cta-subheading">Select a slot to discuss your creative and technical strategy.</p>
-            <div class="cta-container">
-                <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" class="cta-button">
-                    Book a Free Call &rarr;
+    <hr style="border: 0; border-top: 1px solid var(--border); margin: 4rem 0;">
+
+    <!-- 3. FREE RESOURCES -->
+    <section style="margin-bottom: 5rem;">
+        <div class="section-header" style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: flex-end;">
+            <div>
+                <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 6px;">Free Resources</h2>
+                <p style="color: var(--secondary); font-size: 1rem; margin: 0;">Wallpapers, habit trackers, and digital templates.</p>
+            </div>
+            <a href="/resources/" style="color: var(--brand-blue); font-weight: 600; text-decoration: none; font-size: 0.95rem;">Browse All Resources →</a>
+        </div>
+
+        <div class="resource-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+            {{- $resources := where site.RegularPages "Type" "resources" | first 3 }}
+            {{- range $resources }}
+            <article class="resource-card">
+                <a href="{{ .Permalink }}" class="resource-image-wrapper">
+                    {{- if .Params.thumbnail }}
+                    <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}" loading="lazy" class="resource-img">
+                    {{- end }}
+                    <span class="resource-free-badge">Free</span>
                 </a>
+                <div class="resource-card-body">
+                    <h3 class="resource-card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <div class="resource-card-footer">
+                        <a href="{{ .Permalink }}" class="resource-download-btn">
+                            <span>Get Resource</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+            {{- end }}
+        </div>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid var(--border); margin: 4rem 0;">
+
+    <!-- 4. HOW DO I WORK? (Formerly Design Philosophy) -->
+    <section style="margin-bottom: 5rem;">
+        <div class="section-header" style="margin-bottom: 2rem;">
+            <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 6px;">How Do I Work</h2>
+            <p style="color: var(--secondary); font-size: 1rem; margin: 0;">Architecture over decoration. Building interfaces anchored in human behavior.</p>
+        </div>
+
+        <div class="philosophy-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+            <div style="background: var(--entry); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem;">
+                <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 8px;">Cognitive Ease First</h3>
+                <p style="font-size: 0.9rem; color: var(--secondary); line-height: 1.5; margin: 0;">Every element serves a purpose. By mapping human mental models, I build workflows with zero learning curve and zero friction.</p>
+            </div>
+            <div style="background: var(--entry); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem;">
+                <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 8px;">Engineering Alignment</h3>
+                <p style="font-size: 0.9rem; color: var(--secondary); line-height: 1.5; margin: 0;">Built with real code in mind. Fluent in Python, JavaScript, and modern frameworks, ensuring what gets designed is exactly what gets built.</p>
+            </div>
+            <div style="background: var(--entry); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem;">
+                <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 8px;">Tactile Print Precision</h3>
+                <p style="font-size: 0.9rem; color: var(--secondary); line-height: 1.5; margin: 0;">Structured layout rigor applied to physical media—bringing typographic clarity and clean geometric grids to print.</p>
             </div>
         </div>
     </section>
 
-    <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Deliverables Accordion Logic
-            const capHeaders = document.querySelectorAll('.cap-header');
-            capHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const card = header.parentElement;
-                    const isOpen = card.classList.contains('open');
-                    
-                    document.querySelectorAll('.cap-card').forEach(c => {
-                        c.classList.remove('open');
-                        const icon = c.querySelector('.cap-icon');
-                        if (icon) icon.textContent = '+';
-                    });
+</div>
 
-                    if (!isOpen) {
-                        card.classList.add('open');
-                        const icon = card.querySelector('.cap-icon');
-                        if (icon) icon.textContent = '−';
-                    }
-                });
-            });
+<!-- Layout & Button Styling -->
+<style>
+    /* Profile Image Avatar Styling with Sharp White Border */
+    .profile-avatar-wrapper {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid #FFFFFF;
+        box-shadow: 0 0 0 1px var(--border), 0 8px 20px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        flex-shrink: 0;
+    }
 
-            // Typewriter Script
-            var el = document.getElementById('typewriter-hook');
-            if (!el) return;
-            var toRotate = [
-                "I design high-clarity digital systems and print materials.",
-                "I have a strong technical foundation in coding.",
-                "I manage international cross-functional teams."
-            ];
-            var loopNum = 0;
-            var period = 2000;
-            var txt = '';
-            var isDeleting = false;
+    .profile-avatar-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
 
-            function tick() {
-                var i = loopNum % toRotate.length;
-                var fullTxt = toRotate[i];
+    /* Buttons */
+    .hero-btn-primary {
+        background: var(--brand-blue);
+        color: #FFFFFF !important;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.95rem;
+    }
 
-                if (isDeleting) {
-                    txt = '';
-                    isDeleting = false;
-                    loopNum++;
-                    el.innerHTML = txt;
-                    setTimeout(tick, 400); 
-                    return;
-                } else {
-                    txt = fullTxt.substring(0, txt.length + 1);
-                }
+    .hero-btn-secondary {
+        background: var(--entry);
+        border: 1px solid var(--border);
+        color: var(--primary) !important;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.95rem;
+    }
 
-                el.innerHTML = txt;
-                var delta = 100 - Math.random() * 50; 
+    .view-all-btn {
+        display: inline-block;
+        padding: 10px 24px;
+        background: var(--entry);
+        border: 1px solid var(--border);
+        color: var(--primary);
+        font-weight: 600;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
 
-                if (!isDeleting && txt === fullTxt) {
-                    delta = period; 
-                    isDeleting = true;
-                }
+    .view-all-btn:hover {
+        border-color: var(--brand-blue);
+        color: var(--brand-blue);
+    }
 
-                setTimeout(tick, delta);
-            }
-
-            tick();
-        });
-    </script>
+    /* Responsive */
+    @media (max-width: 768px) {
+        .capabilities-grid,
+        .featured-projects-grid,
+        .resource-grid,
+        .philosophy-grid {
+            grid-template-columns: 1fr !important;
+        }
+        .hero-content {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+</style>
 
 {{- end -}}
