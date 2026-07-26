@@ -146,42 +146,43 @@
 
             </div>
 
-            <!-- Featured Case Studies Gallery (Selected via project-number: 1, 2) -->
+            <!-- Featured Case Studies Gallery (Strict Order: Project 1 Left, Project 2 Right) -->
             <div class="featured-gallery-section" style="margin-top: 3rem;">
                 <h3 class="gallery-section-title" style="color: inherit; font-size: 1.5rem; margin-bottom: 1.5rem;">Featured Case Studies</h3>
                 
                 <div class="case-studies-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                     {{- $allPortfolio := where .Site.RegularPages "Section" "portfolio" -}}
-                    {{- $p1 := where $allPortfolio "Params.project-number" 1 -}}
-                    {{- $p2 := where $allPortfolio "Params.project-number" 2 -}}
-                    {{- $selectedProjects := $p1 | union $p2 -}}
-
-                    {{- range $selectedProjects -}}
-                    {{- $pImg := .Params.image | default .Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" .Content 1) 0) -}}
-                    {{- $pImgUrl := "" -}}
-                    {{- if $pImg -}}
-                        {{- if strings.HasPrefix $pImg "<img" -}}
-                            {{- $pImgUrl = index (findRE "src=\"([^\">]+)\"" $pImg 1) 1 -}}
-                        {{- else -}}
-                            {{- $pImgUrl = $pImg -}}
-                        {{- end -}}
-                    {{- end -}}
-
-                    <div class="gallery-card" style="border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; overflow: hidden; background: rgba(255, 255, 255, 0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;">
-                        <a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit; display: block;">
-                            <div class="gallery-thumbnail-wrapper" style="width: 100%; height: 200px; overflow: hidden; background: rgba(0,0,0,0.1);">
-                                {{- if $pImgUrl -}}
-                                <img src="{{ $pImgUrl }}" alt="{{ .Title }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                    
+                    {{- range seq 1 2 -}}
+                        {{- $targetNum := . -}}
+                        {{- range where $allPortfolio "Params.project-number" $targetNum -}}
+                            {{- $pTitle := .Title | default .Params.title | default .Name -}}
+                            {{- $pImg := .Params.image | default .Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" .Content 1) 0) -}}
+                            {{- $pImgUrl := "" -}}
+                            {{- if $pImg -}}
+                                {{- if strings.HasPrefix $pImg "<img" -}}
+                                    {{- $pImgUrl = index (findRE "src=\"([^\">]+)\"" $pImg 1) 1 -}}
                                 {{- else -}}
-                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; opacity: 0.5;">No Preview</div>
+                                    {{- $pImgUrl = $pImg -}}
                                 {{- end -}}
+                            {{- end -}}
+
+                            <div class="gallery-card" style="border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; overflow: hidden; background: rgba(255, 255, 255, 0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                                <a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit; display: block;">
+                                    <div class="gallery-thumbnail-wrapper" style="width: 100%; height: 200px; overflow: hidden; background: rgba(0,0,0,0.1);">
+                                        {{- if $pImgUrl -}}
+                                        <img src="{{ $pImgUrl }}" alt="{{ $pTitle }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                                        {{- else -}}
+                                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; opacity: 0.5; color: inherit;">No Preview</div>
+                                        {{- end -}}
+                                    </div>
+                                    <div class="gallery-card-content" style="padding: 1.25rem;">
+                                        <span style="font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.8; display: block; margin-bottom: 0.5rem; color: inherit;">CASE STUDY</span>
+                                        <h4 class="gallery-card-heading" style="margin: 0; font-size: 1.2rem; font-weight: 600; color: inherit; display: block; visibility: visible;">{{ $pTitle }}</h4>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="gallery-card-content" style="padding: 1.25rem;">
-                                <span style="font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.8; display: block; margin-bottom: 0.5rem; color: inherit;">CASE STUDY</span>
-                                <h4 class="gallery-card-heading" style="margin: 0; font-size: 1.2rem; font-weight: 600; color: inherit;">{{ .Title }}</h4>
-                            </div>
-                        </a>
-                    </div>
+                        {{- end -}}
                     {{- end -}}
                 </div>
             </div>
