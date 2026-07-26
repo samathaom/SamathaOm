@@ -28,7 +28,7 @@
     </section>
 
     <!-- 2. ABOUT ME SECTION -->
-    <section class="section-block">
+    <section class="section-block" style="margin-top: 0; padding-top: 0;">
         <div class="custom-layout-container">
             <header class="section-standard-header">
                 <h2>About me</h2>
@@ -165,9 +165,9 @@
                                 {{- end -}}
                             {{- end -}}
 
-                            <div class="gallery-card" style="border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; overflow: hidden; background: rgba(255, 255, 255, 0.05); transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                            <div class="gallery-card" style="border: 1px solid rgba(255,255,255,0.15); border-radius: 0px; overflow: hidden; background: rgba(255, 255, 255, 0.05); transition: transform 0.2s ease, box-shadow 0.2s ease;">
                                 <a href="{{ .RelPermalink }}" style="text-decoration: none; display: block;">
-                                    <div class="gallery-thumbnail-wrapper" style="width: 100%; height: 200px; overflow: hidden; background: rgba(0,0,0,0.1);">
+                                    <div class="gallery-thumbnail-wrapper" style="width: 100%; height: 200px; overflow: hidden; background: rgba(0,0,0,0.1); border-radius: 0px;">
                                         {{- if $pImgUrl -}}
                                         <img src="{{ $pImgUrl }}" alt="{{ $pTitle }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                                         {{- else -}}
@@ -300,7 +300,7 @@
                     <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: inherit;">The Process</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: start;">
                         <div style="padding-right: 1rem;">
-                            <h3 style="font-size: 1.8rem; line-height: 1.2; margin: 0 0 1rem 0; color: inherit;">Systematic execution. Zero cognitive clutter.</h3>
+                            <h3 style="font-size: 1.8rem; line-height: 1.2; margin: 0 0 1rem 0; color: inherit;">Systematic execution.<br> Zero cognitive clutter.</h3>
                             <p style="opacity: 0.85; line-height: 1.6; margin: 0; color: inherit;">Every project balances human behavior analysis, technical stability, and structural print standards.</p>
                         </div>
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
