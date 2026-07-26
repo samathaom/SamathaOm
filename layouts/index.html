@@ -193,7 +193,7 @@
         <div class="custom-layout-container">
             <header class="section-standard-header">
                 <h2 style="color: inherit;">Explore</h2>
-                <p class="section-subtitle-spacer">Selected design, free resource, and spiritual writings.</p>
+                <p class="section-subtitle-spacer">A collection of practical tools, resources, and short essays written for daily clarity.</p>
             </header>
             
             <div class="editorial-explore-container">
@@ -210,37 +210,6 @@
                             </div>
                             <h3 class="explore-item-title">{{ $firstArticle.Title }}</h3>
                             <div class="explore-image-slot"></div>
-                            <span class="explore-arrow">&rarr;</span>
-                        </a>
-                    </li>
-                    {{- end -}}
-
-                    <!-- Recent Project Item -->
-                    {{- $firstProject := index (where .Site.RegularPages "Section" "portfolio") 0 -}}
-                    {{- if $firstProject -}}
-                    {{- $projectImg := $firstProject.Params.image | default $firstProject.Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" $firstProject.Content 1) 0) -}}
-                    {{- $projectImgUrl := "" -}}
-                    {{- if $projectImg -}}
-                        {{- if strings.HasPrefix $projectImg "<img" -}}
-                            {{- $projectImgUrl = index (findRE "src=\"([^\">]+)\"" $projectImg 1) 1 -}}
-                        {{- else -}}
-                            {{- $projectImgUrl = $projectImg -}}
-                        {{- end -}}
-                    {{- end -}}
-                    <li class="explore-editorial-item">
-                        <a href="{{ $firstProject.RelPermalink }}" class="explore-item-link">
-                            <div class="explore-meta">
-                                <span class="explore-category">CASE STUDY</span>
-                                <span class="explore-sub">Selected Project</span>
-                            </div>
-                            <h3 class="explore-item-title">{{ $firstProject.Title }}</h3>
-                            <div class="explore-image-slot">
-                                {{- if $projectImgUrl -}}
-                                <div class="explore-inline-preview">
-                                    <img src="{{ $projectImgUrl }}" alt="{{ $firstProject.Title }}" loading="lazy" />
-                                </div>
-                                {{- end -}}
-                            </div>
                             <span class="explore-arrow">&rarr;</span>
                         </a>
                     </li>
