@@ -11,6 +11,10 @@ params:
   author: "Samatha Om"
   description: "Technical Leader, Software Architect & Computer Science Educator"
   recentPostsCount: 5
+
+  author:
+    name: "Samatha Om"
+    avatar: "images/Profilepic.png"
   
   mainSections:
     - articles
