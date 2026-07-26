@@ -2,8 +2,8 @@
 
     <!-- 1. HERO SECTION -->
     <section class="hero-callout-container modern-hero-animate">
-        <span class="hero-corner-cross top-left">+</span>
-        <span class="hero-corner-cross bottom-right">+</span>
+        <span class="hero-corner-cross top-left" style="color: var(--accent-blue, #0066cc); font-weight: bold;">+</span>
+        <span class="hero-corner-cross bottom-right" style="color: var(--accent-blue, #0066cc); font-weight: bold;">+</span>
 
         <div class="hero-content-grid">
             <div class="hero-text-column">
@@ -47,11 +47,11 @@
         </div>
     </section>
 
-    <!-- 3. WHAT DO I DO SECTION (Formerly Deliverables) -->
+    <!-- 3. WHAT DO I DO SECTION -->
     <section class="section-block section-capabilities-blue" id="what-do-i-do">
         <div class="custom-layout-container">
             <header class="section-blue-header">
-                <h2>What do I do</h2>
+                <h2 style="color: inherit;">What do I do</h2>
                 <p class="section-blue-subtitle">Comprehensive design, technical execution, and educational offerings.</p>
             </header>
 
@@ -146,41 +146,43 @@
 
             </div>
 
-            <!-- Featured Portfolio Projects Matrix -->
-            <div class="featured-projects-subblock" style="margin-top: 2.5rem;">
-                <h3 style="margin-bottom: 1rem; color: inherit;">Featured Case Studies</h3>
-                <div class="editorial-explore-container">
-                    <ul class="explore-editorial-list">
-                        {{- $featuredProjects := first 2 (where .Site.RegularPages "Section" "portfolio") -}}
-                        {{- range $featuredProjects -}}
-                        {{- $pImg := .Params.image | default .Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" .Content 1) 0) -}}
-                        {{- $pImgUrl := "" -}}
-                        {{- if $pImg -}}
-                            {{- if strings.HasPrefix $pImg "<img" -}}
-                                {{- $pImgUrl = index (findRE "src=\"([^\">]+)\"" $pImg 1) 1 -}}
-                            {{- else -}}
-                                {{- $pImgUrl = $pImg -}}
-                            {{- end -}}
+            <!-- Featured Case Studies Gallery (Selected via project-number: 1, 2) -->
+            <div class="featured-gallery-section" style="margin-top: 3rem;">
+                <h3 class="gallery-section-title" style="color: inherit; font-size: 1.5rem; margin-bottom: 1.5rem;">Featured Case Studies</h3>
+                
+                <div class="case-studies-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    {{- $allPortfolio := where .Site.RegularPages "Section" "portfolio" -}}
+                    {{- $p1 := where $allPortfolio "Params.project-number" 1 -}}
+                    {{- $p2 := where $allPortfolio "Params.project-number" 2 -}}
+                    {{- $selectedProjects := $p1 | union $p2 -}}
+
+                    {{- range $selectedProjects -}}
+                    {{- $pImg := .Params.image | default .Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" .Content 1) 0) -}}
+                    {{- $pImgUrl := "" -}}
+                    {{- if $pImg -}}
+                        {{- if strings.HasPrefix $pImg "<img" -}}
+                            {{- $pImgUrl = index (findRE "src=\"([^\">]+)\"" $pImg 1) 1 -}}
+                        {{- else -}}
+                            {{- $pImgUrl = $pImg -}}
                         {{- end -}}
-                        <li class="explore-editorial-item">
-                            <a href="{{ .RelPermalink }}" class="explore-item-link">
-                                <div class="explore-meta">
-                                    <span class="explore-category">PORTFOLIO</span>
-                                    <span class="explore-sub">Featured Project</span>
-                                </div>
-                                <h3 class="explore-item-title">{{ .Title }}</h3>
-                                <div class="explore-image-slot">
-                                    {{- if $pImgUrl -}}
-                                    <div class="explore-inline-preview">
-                                        <img src="{{ $pImgUrl }}" alt="{{ .Title }}" loading="lazy" />
-                                    </div>
-                                    {{- end -}}
-                                </div>
-                                <span class="explore-arrow">&rarr;</span>
-                            </a>
-                        </li>
-                        {{- end -}}
-                    </ul>
+                    {{- end -}}
+
+                    <div class="gallery-card" style="border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; overflow: hidden; background: rgba(255, 255, 255, 0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit; display: block;">
+                            <div class="gallery-thumbnail-wrapper" style="width: 100%; height: 200px; overflow: hidden; background: rgba(0,0,0,0.1);">
+                                {{- if $pImgUrl -}}
+                                <img src="{{ $pImgUrl }}" alt="{{ .Title }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                                {{- else -}}
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; opacity: 0.5;">No Preview</div>
+                                {{- end -}}
+                            </div>
+                            <div class="gallery-card-content" style="padding: 1.25rem;">
+                                <span style="font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.8; display: block; margin-bottom: 0.5rem; color: inherit;">CASE STUDY</span>
+                                <h4 class="gallery-card-heading" style="margin: 0; font-size: 1.2rem; font-weight: 600; color: inherit;">{{ .Title }}</h4>
+                            </div>
+                        </a>
+                    </div>
+                    {{- end -}}
                 </div>
             </div>
         </div>
@@ -190,7 +192,7 @@
     <section class="section-block">
         <div class="custom-layout-container">
             <header class="section-standard-header">
-                <h2>Explore</h2>
+                <h2 style="color: inherit;">Explore</h2>
                 <p class="section-subtitle-spacer">Selected design, free resource, and spiritual writings.</p>
             </header>
             
@@ -280,40 +282,40 @@
         </div>
     </section>
 
-    <!-- 5. HOW DO I WORK? SECTION (Formerly Design Philosophy) -->
+    <!-- 5. HOW DO I WORK? SECTION -->
     <section class="section-block section-philosophy-bg">
         <div class="custom-layout-container">
             <header class="section-standard-header">
-                <h2>How do I work?</h2>
+                <h2 style="color: inherit;">How do I work?</h2>
             </header>
             <div class="philosophy-layout">
                 <div class="philosophy-left">
-                    <h2>
-                        Design is <br><span>architecture</span>, not decoration.
+                    <h2 style="color: inherit;">
+                        Design is <br><span style="color: var(--accent-blue, #0066cc);">architecture</span>, not decoration.
                     </h2>
-                    <p>
+                    <p style="color: inherit; opacity: 0.9;">
                         I replace complex digital clutter with absolute layout clarity, building interfaces anchored in human behavior.
                     </p>
                 </div>
 
                 <div class="philosophy-right">
                     <div class="principle-block">
-                        <h3>Cognitive Ease First</h3>
-                        <p>
+                        <h3 style="color: inherit;">Cognitive Ease First</h3>
+                        <p style="color: inherit; opacity: 0.85;">
                             Every pixel must justify its existence. By analyzing human mental models, I structure workflows that require zero learning curves and eliminate user friction.
                         </p>
                     </div>
 
                     <div class="principle-block">
-                        <h3>Engineering Alignment</h3>
-                        <p>
+                        <h3 style="color: inherit;">Engineering Alignment</h3>
+                        <p style="color: inherit; opacity: 0.85;">
                             Great designs survive the production pipeline. Understanding Python, JavaScript, and modern frameworks ensures that what is designed is precisely what gets deployed.
                         </p>
                     </div>
 
                     <div class="principle-block end-margin-reset">
-                        <h3>Tactile Print Precision</h3>
-                        <p>
+                        <h3 style="color: inherit;">Tactile Print Precision</h3>
+                        <p style="color: inherit; opacity: 0.85;">
                             Clarity transcends digital boundaries. I apply structural typographic principles and strict geometric grids to tactile print mediums with identical layout rigor.
                         </p>
                     </div>
@@ -325,8 +327,8 @@
     <!-- 6. CALL TO ACTION SECTION -->
     <section class="section-block text-center-cta">
         <div class="custom-layout-container">
-            <h3 class="cta-heading">Let's build a clean system.</h3>
-            <p class="cta-subheading">Select a slot to discuss your creative and technical strategy.</p>
+            <h3 class="cta-heading" style="color: inherit;">Let's build a clean system.</h3>
+            <p class="cta-subheading" style="color: inherit; opacity: 0.85;">Select a slot to discuss your creative and technical strategy.</p>
             <div class="cta-container">
                 <a href="https://cal.com/samathaom/20min" target="_blank" rel="noopener noreferrer" class="cta-button">
                     Book a Free Call &rarr;
