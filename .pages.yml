@@ -49,7 +49,7 @@ content:
       - name: tags
         type: string
         list: true
-      - name: publish
+      - name: published
         type: boolean
         default: true  
 
