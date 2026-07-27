@@ -1090,6 +1090,36 @@ a:hover {
     color: var(--brand-blue) !important;
 }
 
+/* ==========================================================================
+   NAVBAR OPTION STYLES (Brand Blue, Default Font Size & Active Underline)
+   ========================================================================== */
+
+/* 1. Set navbar link color to Brand Blue & restore font size to default */
+#menu a {
+    text-decoration: none !important;
+    color: var(--brand-blue, #0066cc) !important; /* Brand Blue for both light & dark themes */
+    font-size: var(--content-size, 1.05rem) !important; /* Restored to default font size */
+    font-weight: 500 !important;
+    position: relative !important;
+    padding-bottom: 2px !important;
+}
+
+#menu a:hover {
+    opacity: 0.8 !important;
+}
+
+/* 2. Active Page Underline Indicator */
+#menu a .active {
+    border-bottom: 2px solid var(--brand-blue, #0066cc) !important; /* Restores the active page underline */
+    padding-bottom: 2px !important;
+}
+
+/* Fallback if active class is applied directly to the link */
+#menu a.active {
+    border-bottom: 2px solid var(--brand-blue, #0066cc) !important;
+    padding-bottom: 2px !important;
+}
+
 /* Clean Icon-Only Theme Toggle (No background, no border) */
 #theme-toggle {
     background: transparent !important;
