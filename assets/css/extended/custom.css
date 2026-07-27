@@ -1120,3 +1120,9 @@ a:hover {
         grid-template-columns: 1fr;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .hero-callout-container {
+        margin-bottom: 1.5rem !important; /* Creates clear breathing room on mobile */
+    }
+}
