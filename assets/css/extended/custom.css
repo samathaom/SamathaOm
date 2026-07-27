@@ -1126,3 +1126,29 @@ a:hover {
         margin-bottom: 2rem !important; /* Creates clear breathing room on mobile */
     }
 }
+
+/* Target the subtitle in Portfolio and Resources to reduce trailing space */
+.portfolio-section .section-subtitle,
+.resources-section .section-subtitle,
+.section-subtitle-spacer {
+    margin-bottom: 1rem !important; /* Reduced from default large spacing */
+}
+
+/* Ensure the card container doesn't push down with extra top margin */
+.portfolio-cards-grid,
+.resources-cards-grid {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Tighten space below the Articles subtitle */
+.articles-section .section-subtitle {
+    margin-bottom: 0.75rem !important;
+}
+
+/* Bring the tag pills directly below the subtitle */
+.articles-tags-wrapper,
+.tag-pills-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
