@@ -59,6 +59,7 @@ content:
     label: Resources
     type: collection
     path: content/resources
+    filename: '{slug}.md'
     fields:
       - name: title
         type: string
