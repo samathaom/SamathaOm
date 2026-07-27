@@ -20,7 +20,7 @@
             {{- end }}
             
             /* FILTER: Only include projects where published is true  */
-            {{- $pages = where $pages ".Params.show-project" true }}
+            {{- $pages = where $pages ".Params.show-project" "==" true }}
             {{- $pages = sort $pages ".Params.project-number" "asc" }}
 
             {{- range $index, $element := $pages }}
