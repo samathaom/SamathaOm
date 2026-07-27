@@ -15,7 +15,13 @@ tags:
 
 Card Studio provides a zero-setup, minimalist web application that lets users build, customize, and export elegant social media UI cards instantly—combining low cognitive load. It lets the user with zero design knowledge to generate clean designs for various social media profiles in single place within few seconds. 
 
+![](</images/Mockup 11(1).png>)
 
+![](/images/cardstudio.png)
+
+
+
+&nbsp;
 
 
 | Attribute | Details |
@@ -69,8 +75,6 @@ Building high-value products does
 
 
 ## 5. Minimal UI Layout Design
-
-
 
 6. Key Value Metrics
 
