@@ -9,10 +9,8 @@ publishDir: "public"
 params:
   env: production  
   description: "Technical Leader, Software Architect & Computer Science Educator"
-  
-  author:
-    name: "Samatha Om"
-    avatar: "images/Profilepic.png"
+  author: "Samatha Om"
+  avatar: "images/Profilepic.png"
   
   mainSections:
     - portfolio
