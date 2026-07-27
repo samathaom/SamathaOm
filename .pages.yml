@@ -33,7 +33,7 @@ content:
     fields:
       - name: title
         type: string
-      - name: published
+      - name: show-project
         type: boolean
         default: true   
       - name: project-number 
