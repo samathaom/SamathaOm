@@ -1,5 +1,6 @@
 ---
 title: Card Studio - Instant Social Media Design tool
+published: true
 project-number: 7
 thumbnail: /images/cardstudio.png
 category: Development
@@ -9,6 +10,8 @@ tags:
   - Social Media
 ---
 *Empowering people to create clean, beautiful, production-ready social media designs in seconds.*
+
+
 
 ## Summary
 
@@ -32,6 +35,10 @@ Card Studio provides a zero-setup, minimalist web application that lets users bu
 | Tech Stack | HTML5, Tailwind CSS, Vanilla JavaScript |
 
 
+
+
+&nbsp;
+
 ## The Problem Statement
 
 Designers and developers often face friction during the prototyping phase:
@@ -40,23 +47,35 @@ Designers and developers often face friction during the prototyping phase:
 2. **Setup Overhead:** Setting up local development environments just to build or tweak a single reusable card component wastes valuable focus and momentum.
 3. **Inconsistent Design:** Hand-coded cards frequently suffer from poor alignment, weak visual hierarchy, and inconsistent padding across viewports.
 
+
+
+&nbsp;
+
 ## User Psychology & Design Strategy
 
 To ensure high adoption and zero friction, Card Studio relies on three core psychological principles:
+
+
 
 ### A. Frictionless Onboarding (Zero Cognitive Load)
 
 Users don't need to sign up, install dependencies, or navigate complex multi-level menus. The workspace is open and ready the instant the page loads.
 
+
+
 ### B. Visual Hierarchy & Spacing Discipline
 
 Using clean typography scales, consistent padding, soft rounded corners, and gentle drop-shadows, the cards naturally draw the viewer's eye to key information (title, description, and primary call-to-action).
+
+
 
 ### C. Live Visual Feedback
 
 Every adjustment updates instantaneously on screen, creating a rewarding feedback loop that keeps the user engaged in the creative flow.
 
 
+
+&nbsp;
 
 ## Technical Architecture
 
@@ -65,6 +84,8 @@ Building high-value products does
 - **Tailwind CSS via CDN:** Eliminates build steps while ensuring responsive, modern utility styling out of the box.
 - **Pure Client-Side Engine:** No servers or databases to maintain—everything runs securely inside the user's browser.
 - **Instant Copy/Export:** Generates clean, ready-to-use HTML code snippets with a single click.
+
+
 
 ### File Naming & Format Specifications
 
@@ -75,7 +96,17 @@ Building high-value products does
 | Downloaded File Format | .png |
 
 
+
+
+&nbsp;
+
 ## Minimal UI Layout Design
+
+
+
+&nbsp;
+
+&nbsp;
 
 ## Key Value Metrics
 
