@@ -1029,33 +1029,86 @@ a:hover {
 /* ==========================================================================
    MINIMAL ICON-ONLY THEME TOGGLE (PaperMod)
    ========================================================================== */
+/* ==========================================================================
+   NAVBAR & HEADER RECOVERY (Minimal, Clean, Horizontal)
+   ========================================================================== */
+
+/* Header alignment */
+.header {
+    background: var(--theme) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+.nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: var(--main-width) !important;
+    margin: 0 auto !important;
+    padding: 12px var(--gap) !important;
+}
+
+/* Logo & Switcher container */
+.logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.logo-switches {
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Force horizontal menu, remove bullet points */
+#menu {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 20px !important;
+}
+
+#menu li {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important;
+}
+
+#menu a {
+    text-decoration: none !important;
+    color: var(--primary) !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    transition: color var(--transition-fast) !important;
+}
+
+#menu a:hover {
+    color: var(--brand-blue) !important;
+}
+
+/* Clean Icon-Only Theme Toggle (No background, no border) */
 #theme-toggle {
     background: transparent !important;
-    background-color: transparent !important;
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
-    padding: 6px !important;
-    margin-left: 12px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    padding: 4px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     color: var(--primary) !important;
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
 #theme-toggle:hover {
-    background: transparent !important;
-    background-color: transparent !important;
-    opacity: 0.75;
-    transform: scale(1.1);
+    opacity: 0.75 !important;
 }
 
 #theme-toggle svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    stroke: currentColor;
-    display: block;
+    width: 20px !important;
+    height: 20px !important;
 }
