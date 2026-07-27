@@ -49,6 +49,9 @@ content:
       - name: tags
         type: string
         list: true
+      - name: publish
+        type: boolean
+        default: true  
 
   - name: resources
     label: Resources
