@@ -239,8 +239,16 @@ a:hover {
     font-weight: bold;
 }
 
-.hero-corner-cross.top-left { top: 20px; left: 20px; }
-.hero-corner-cross.bottom-right { bottom: 20px; right: 20px; }
+/* Update corner positioning classes */
+.hero-corner-cross.bottom-left { 
+    bottom: 20px; 
+    left: 20px; 
+}
+
+.hero-corner-cross.top-right { 
+    top: 20px; 
+    right: 20px; 
+}
 
 .hero-content-grid {
     display: grid;
