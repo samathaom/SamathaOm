@@ -18,6 +18,9 @@
             {{- if .IsHome }}
                 {{- $pages = where site.RegularPages "Type" "projects" }}
             {{- end }}
+            
+            /* FILTER: Only include projects where published is true */
+            {{- $pages = where $pages ".Params.published" true }}
             {{- $pages = sort $pages ".Params.project-number" "asc" }}
 
             {{- range $index, $element := $pages }}
