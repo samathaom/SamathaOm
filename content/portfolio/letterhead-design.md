@@ -1,7 +1,9 @@
 ---
 title: Letterhead Design
+published: false
 project-number: 4
 thumbnail: /images/Mockup 11.png
+category: Design
 tags:
   - Letterhead
   - Design

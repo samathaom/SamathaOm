@@ -33,16 +33,26 @@ content:
     fields:
       - name: title
         type: string
+      - name: published
+        type: boolean
+        default: true   
       - name: project-number 
         type: number   
       - name: thumbnail
         label: Project Thumbnail
         type: image
+      - name: category
+        type: select
+        options:
+          values:
+            - Design
+            - Development  
       - name: body
         type: rich-text
       - name: tags
         type: string
         list: true
+     
 
   - name: resources
     label: Resources
