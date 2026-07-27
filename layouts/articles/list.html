@@ -1,18 +1,18 @@
 {{- define "main" -}}
 
     {{- if .Title }}
-    <header class="page-header" style="max-width: var(--main-width); margin: 2rem auto 3rem auto; padding: 0 var(--gap);">
-        <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 12px; color: var(--primary); letter-spacing: -0.015em;">{{ .Title }}</h1>
+    <header class="page-header" style="max-width: var(--main-width); margin: 1.5rem auto 1.25rem auto; padding: 0 var(--gap);">
+        <h1 style="font-size: 2.5rem; font-weight: 700; margin: 0 0 4px 0; color: var(--primary); letter-spacing: -0.015em;">{{ .Title }}</h1>
         {{- if .Description }}
-        <p style="color: var(--secondary); font-size: 1.1rem; margin: 0; line-height: 1.6; max-width: 720px;">{{ .Description }}</p>
+        <p style="color: var(--secondary); font-size: 1.1rem; margin: 0; line-height: 1.5; max-width: 720px;">{{ .Description }}</p>
         {{- end }}
     </header>
     {{- end }}
 
-    <div class="custom-layout-container" style="margin-bottom: 6rem; padding: 0 var(--gap);">
+    <div class="custom-layout-container" style="margin-bottom: 4rem; padding: 0 var(--gap);">
         
         <!-- Category Pills Filter -->
-        <div class="article-filters" style="display: flex; gap: 10px; margin-bottom: 40px; flex-wrap: wrap;">
+        <div class="article-filters" style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
             <button type="button" class="filter-btn active" data-filter="all">All</button>
             <button type="button" class="filter-btn" data-filter="spiritual">Spiritual</button>
             <button type="button" class="filter-btn" data-filter="technical">Technical</button>
