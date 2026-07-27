@@ -933,3 +933,36 @@ a:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* 1. Principles Section Cards - Subtle Border */
+.principle-card {
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Soft, slightly visible border */
+  /* If working on a light background, use: rgba(0, 0, 0, 0.08) */
+}
+
+/* 2. How Do I Work Section - Matching Segregator Line */
+.how-i-work-section {
+  position: relative;
+}
+
+.process-container {
+  position: relative;
+  margin-top: 3rem; /* Proper spacing above the process */
+  padding-top: 3rem;
+}
+
+.process-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--accent-color, rgba(255, 255, 255, 0.12)); /* Matches theme accent/border */
+}
+
+/* 3. Consistent Section Spacing */
+section {
+  padding-top: 5rem;    /* Uniform top padding across all sections */
+  padding-bottom: 5rem; /* Uniform bottom padding across all sections */
+}
