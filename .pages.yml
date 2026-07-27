@@ -38,6 +38,12 @@ content:
       - name: thumbnail
         label: Project Thumbnail
         type: image
+      - name: category
+        type: select
+        options:
+          values:
+            - Design
+            - Development  
       - name: body
         type: rich-text
       - name: tags
