@@ -33,6 +33,9 @@ content:
     fields:
       - name: title
         type: string
+      - name: published
+        type: boolean
+        default: true   
       - name: project-number 
         type: number   
       - name: thumbnail
@@ -49,9 +52,7 @@ content:
       - name: tags
         type: string
         list: true
-      - name: published
-        type: boolean
-        default: true  
+     
 
   - name: resources
     label: Resources
