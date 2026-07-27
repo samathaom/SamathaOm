@@ -1,7 +1,7 @@
 ---
 title: Card Studio - Instant Social Media Design tool
 project-number: 7
-thumbnail: /images/Mockup 11(1).png
+thumbnail: /images/cardstudio.png
 tags:
   - Software development
   - Tool
