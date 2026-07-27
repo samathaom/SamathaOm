@@ -19,7 +19,7 @@
                 {{- $pages = where site.RegularPages "Type" "projects" }}
             {{- end }}
             
-            /* FILTER: Only include projects where published is true */
+            /* FILTER: Only include projects where published is true  */
             {{- $pages = where $pages ".Params.show-project" true }}
             {{- $pages = sort $pages ".Params.project-number" "asc" }}
 
