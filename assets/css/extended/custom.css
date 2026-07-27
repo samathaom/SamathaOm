@@ -933,36 +933,39 @@ a:hover {
         grid-template-columns: 1fr;
     }
 }
+/* ==========================================================================
+   UNIFIED SECTION SPACING & HOW DO I WORK TWEAKS
+   ========================================================================== */
 
-/* 1. Principles Section Cards - Subtle Border */
-.principle-card {
-  border: 1px solid rgba(255, 255, 255, 0.08); /* Soft, slightly visible border */
-  /* If working on a light background, use: rgba(0, 0, 0, 0.08) */
+/* 1. Strictly Equal Vertical Spacing Across All Major Sections */
+.section-block,
+.custom-layout-container,
+.about-me,
+.explore,
+.lets-build-a-clean-system {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
-/* 2. How Do I Work Section - Matching Segregator Line */
-.how-i-work-section {
-  position: relative;
+/* Full-bleed blue sections (.what-do-i-do & .how-do-i-work) */
+.section-capabilities-blue.what-do-i-do,
+.section-philosophy-bg.how-do-i-work {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
 }
 
-.process-container {
-  position: relative;
-  margin-top: 3rem; /* Proper spacing above the process */
-  padding-top: 3rem;
+/* 2. Principles Cards Border Visibility */
+.how-do-i-work .process-step-card {
+    border: 1px solid rgba(255, 255, 255, 0.35) !important; /* Made clearly visible */
+    background: rgba(255, 255, 255, 0.06) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.process-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: var(--accent-color, rgba(255, 255, 255, 0.12)); /* Matches theme accent/border */
-}
-
-/* 3. Consistent Section Spacing */
-section {
-  padding-top: 5rem;    /* Uniform top padding across all sections */
-  padding-bottom: 5rem; /* Uniform bottom padding across all sections */
+/* 3. Segregator Line Between Principles Block & Process Block */
+.how-do-i-work-block:first-child {
+    margin-bottom: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important; /* Matching blue theme border */
 }
