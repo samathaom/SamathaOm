@@ -1142,3 +1142,31 @@ a:hover {
     width: 20px !important;
     height: 20px !important;
 }
+
+/* ==========================================================================
+   SUN ICON NEAR NAME (Light: Filled Blue | Dark: Unfilled Outline)
+   ========================================================================== */
+
+.logo a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.sun-icon-logo {
+    width: 20px !important;
+    height: 20px !important;
+    vertical-align: middle;
+}
+
+/* Light Theme: Sun filled with Brand Blue */
+body:not(.dark) .sun-icon-logo {
+    fill: var(--brand-blue, #0066cc) !important;
+    stroke: var(--brand-blue, #0066cc) !important;
+}
+
+/* Dark Theme: Sun unfilled (outline only) */
+body.dark .sun-icon-logo {
+    fill: none !important;
+    stroke: var(--brand-blue, #0066cc) !important;
+}
