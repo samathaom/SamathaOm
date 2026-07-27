@@ -1,7 +1,7 @@
 ---
 title: Card Studio - Instant Social Media Design tool
 project-number: 7
-thumbnail: /images/Cardstudio.png
+thumbnail: /images/Group 1000005078.png
 tags:
   - Software development
   - Tool
@@ -25,8 +25,6 @@ Card Studio provides a zero-setup, minimalist web application that lets users bu
 | Tech Stack | HTML5, Tailwind CSS, Vanilla JavaScript |
 
 
-
-
 ## 2. The Problem Statement
 
 Designers and developers often face friction during the prototyping phase:
@@ -34,8 +32,6 @@ Designers and developers often face friction during the prototyping phase:
 1. **Over-Engineered Tools:** Full-fledged design software (Figma, Sketch) can be overkill for quick web-card previews or component prototypes.
 2. **Setup Overhead:** Setting up local development environments just to build or tweak a single reusable card component wastes valuable focus and momentum.
 3. **Inconsistent Design:** Hand-coded cards frequently suffer from poor alignment, weak visual hierarchy, and inconsistent padding across viewports.
-
-
 
 ## 3. User Psychology & Design Strategy
 
@@ -63,8 +59,7 @@ Building high-value products does
 - **Pure Client-Side Engine:** No servers or databases to maintain—everything runs securely inside the user's browser.
 - **Instant Copy/Export:** Generates clean, ready-to-use HTML code snippets with a single click.
 
-### File Naming & Format Specifications  
-
+### File Naming & Format Specifications
 
 
 | Attribute | Details |
@@ -75,8 +70,8 @@ Building high-value products does
 
 ## 5. Minimal UI Layout Design
 
-##   
-  
+
+
 6. Key Value Metrics
 
 - **Page Load Speed:** Under **0.5 seconds**
