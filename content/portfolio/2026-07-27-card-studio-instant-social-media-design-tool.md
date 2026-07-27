@@ -102,7 +102,7 @@ Building high-value products does
 
 &nbsp;
 
-## Minimal UI Layout Design
+## Minimal UI Layout Designs
 
 
 
