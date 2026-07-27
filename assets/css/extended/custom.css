@@ -1025,3 +1025,37 @@ a:hover {
 .gallery-card:hover .gallery-thumbnail-img {
     transform: scale(1.04) !important;
 }
+
+/* ==========================================================================
+   MINIMAL ICON-ONLY THEME TOGGLE (PaperMod)
+   ========================================================================== */
+#theme-toggle {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 6px !important;
+    margin-left: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary) !important;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+#theme-toggle:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+    opacity: 0.75;
+    transform: scale(1.1);
+}
+
+#theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    stroke: currentColor;
+    display: block;
+}
