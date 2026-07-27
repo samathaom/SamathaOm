@@ -30,7 +30,7 @@ content:
     label: Portfolio
     type: collection
     path: content/portfolio
-    filename: '{slug}'
+    filename: '{slug}.md'
     fields:
       - name: title
         type: string
