@@ -948,11 +948,17 @@ a:hover {
 /* 1. Strictly Equal Vertical Spacing Across All Major Sections */
 .section-block,
 .custom-layout-container,
-.about-me,
 .explore,
 .lets-build-a-clean-system {
-    padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.about-me-bio-text{
+    padding-top: 0 !important;
+    padding-bottom: 3rem !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
@@ -960,8 +966,8 @@ a:hover {
 /* Full-bleed blue sections (.what-do-i-do & .how-do-i-work) */
 .section-capabilities-blue.what-do-i-do,
 .section-philosophy-bg.how-do-i-work {
-    padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
 }
 
 /* 2. Principles Cards Border Visibility */
