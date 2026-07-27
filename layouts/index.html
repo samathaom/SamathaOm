@@ -28,16 +28,16 @@
     </section>
 
     <!-- 2. ABOUT ME SECTION -->
-    <section class="section-block">
+    <section class="section-block about-me">
         <div class="custom-layout-container">
             <header class="section-standard-header">
                 <h2>About me</h2>
             </header>
-            <div class="about-bio-text full-width-constraint">
+            <div class="about-me-bio-text full-width-constraint">
                 <p>
                     I am a Technical Architect & Creative Director with 10 years of experience crafting raw, minimal, and high-clarity software products and print materials.
                 </p>
-                <p>Combining refined UI/UX design with technical execution in JavaScript, React, Angular.js, and cloud platforms like AWS and GCP, I build high-quality software and websites that balance clean aesthetics with robust, scalable engineering. </p>
+                <p>Combining refined UI/UX design with technical execution in JavaScript, React, Angular.js, and cloud platforms like AWS and GCP, I build high-quality software and websites that balance clean aesthetics with robust, scalable engineering.</p>
                 <p>
                     By combining human behavior analysis with clean design architecture, I eliminate cognitive friction and replace complex clutter with absolute visual clarity.
                 </p>
@@ -46,7 +46,7 @@
     </section>
 
     <!-- 3. WHAT DO I DO SECTION -->
-    <section class="section-block section-capabilities-blue" id="what-do-i-do">
+    <section class="section-block section-capabilities-blue what-do-i-do" id="what-do-i-do">
         <div class="custom-layout-container">
             <header class="section-blue-header">
                 <h2>What do I do</h2>
@@ -54,7 +54,7 @@
             </header>
 
             <!-- Accordion Deliverables Matrix -->
-            <div class="capabilities-matrix">
+            <div class="what-do-i-do-matrix">
 
                 <!-- Technical Work -->
                 <div class="cap-card">
@@ -145,7 +145,7 @@
             </div>
 
             <!-- Featured Case Studies Gallery -->
-            <div class="featured-gallery-section">
+            <div class="what-do-i-do-gallery-section">
                 <h3 class="gallery-section-title">Featured Case Studies</h3>
                 
                 <div class="case-studies-gallery">
@@ -188,14 +188,14 @@
     </section>
 
     <!-- 4. EXPLORE SECTION -->
-    <section class="section-block">
+    <section class="section-block explore">
         <div class="custom-layout-container">
             <header class="section-standard-header">
                 <h2>Explore</h2>
                 <p class="section-subtitle-spacer">A collection of practical tools, resources, and short essays written for daily clarity.</p>
             </header>
             
-            <div class="editorial-explore-container">
+            <div class="explore-container">
                 <ul class="explore-editorial-list">
                     
                     <!-- Recent Article Item -->
@@ -251,19 +251,18 @@
     </section>
 
     <!-- 5. HOW DO I WORK SECTION -->
-    <section class="section-block section-philosophy-bg">
+    <section class="section-block section-philosophy-bg how-do-i-work">
         <div class="custom-layout-container">
             <header class="section-standard-header">
-                <h2>How do I work?</h2>
+                <h2>How do I work</h2>
             </header>
                         
-            <!-- Visual Implementations Playground -->
-            <div class="work-visual-explorations">
+            <div class="how-do-i-work-content">
 
-                <!-- The Principles Section -->
-                <div class="exploration-block">
-                    <h3 class="exploration-title">The Principles</h3>
-                    <p>Clearing the noise with these principles so what matters shines.</p>
+                <!-- The Principles -->
+                <div class="how-do-i-work-block" style="margin-bottom: 3.5rem;">
+                    <h3 class="how-do-i-work-subheading">The Principles</h3>
+                    <p style="margin-bottom: 2rem;">Clearing the noise with these principles so what matters shines.</p>
                     <div class="process-horizontal-grid">
                         
                         <!-- 01 Minimalism -->
@@ -296,10 +295,10 @@
                     </div>
                 </div>
 
-                <!-- The Process Section -->
-                <div class="exploration-block">
-                    <h3 class="exploration-title">The Process</h3>
-                    <p>Mapping out your goals with total clarity with this process.</p>
+                <!-- The Process -->
+                <div class="how-do-i-work-block">
+                    <h3 class="how-do-i-work-subheading">The Process</h3>
+                    <p style="margin-bottom: 2rem;">Mapping out your goals with total clarity with this process.</p>
                     <div class="process-matrix-layout">
                         <div class="process-intro-column">
                             <h3 class="process-intro-heading">Systematic execution.<br> Zero cognitive clutter.</h3>
@@ -337,7 +336,7 @@
                             <!-- Happy clients -->
                             <div class="process-feature-card">
                                 <div class="process-feature-icon-wrapper">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 1 0 7.75"/></svg>
                                 </div>
                                 <h4 class="process-feature-title">Happy clients</h4>
                                 <p class="process-feature-desc">Seamless project outcomes.</p>
@@ -352,7 +351,7 @@
     </section>
 
     <!-- 6. CALL TO ACTION SECTION -->
-    <section class="section-block text-center-cta">
+    <section class="section-block text-center-cta lets-build-a-clean-system">
         <div class="custom-layout-container">
             <h3 class="cta-heading">Let's build a clean system.</h3>
             <p class="cta-subheading">Select a slot to discuss your creative and technical strategy.</p>
@@ -411,7 +410,7 @@
             var el = document.getElementById('typewriter-hook');
             if (!el) return;
             var toRotate = [
-                "I develop high-quality software & websites.",
+                "I develop high-quality softwares & websites.",
                 "I design high-clarity digital systems & print materials.",                
                 "I conduct tech workshops."
             ];
