@@ -1215,3 +1215,60 @@ body.dark .sun-icon-logo {
     padding-bottom: 4px !important;
     display: inline-block !important;
 }
+
+/* ==========================================================================
+   LOGO, THEME TOGGLE & SINGLE UNDERLINE FIX
+   ========================================================================== */
+
+/* Align Sun Icon and Name side-by-side */
+.logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+/* Standalone Sun Toggle Button */
+#theme-toggle {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.sun-icon-logo {
+    width: 20px !important;
+    height: 20px !important;
+    transition: fill 0.2s ease, stroke 0.2s ease !important;
+}
+
+/* Light Theme: Sun filled with Brand Blue */
+body:not(.dark) .sun-icon-logo {
+    fill: var(--brand-blue, #0066cc) !important;
+    stroke: var(--brand-blue, #0066cc) !important;
+}
+
+/* Dark Theme: Sun unfilled (outline only) */
+body.dark .sun-icon-logo {
+    fill: none !important;
+    stroke: var(--brand-blue, #0066cc) !important;
+}
+
+/* Single Underline for Active Page Only */
+#menu a.active-link {
+    border-bottom: 2px solid var(--brand-blue, #0066cc) !important;
+    padding-bottom: 4px !important;
+    display: inline-block !important;
+}
+
+/* Clear any nested span borders to prevent double lines */
+#menu a.active-link span,
+#menu a span.active {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
