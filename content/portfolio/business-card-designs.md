@@ -3,6 +3,7 @@ title: Premium Business Card Designs
 project-number: 2
 thumbnail: /images/BC1 Mockup.png
 category: Design
+show-project: true
 tags:
   - Portfolio
   - Business Cards

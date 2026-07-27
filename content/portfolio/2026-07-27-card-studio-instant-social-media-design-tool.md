@@ -1,6 +1,6 @@
 ---
 title: Card Studio - Instant Social Media Design tool
-published: true
+show-project: true
 project-number: 7
 thumbnail: /images/cardstudio.png
 category: Development

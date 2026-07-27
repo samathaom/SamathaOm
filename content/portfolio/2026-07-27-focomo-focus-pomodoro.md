@@ -6,7 +6,7 @@ tags:
   - Software Development
   - Minimalism
   - Pomodoro
-publish: true
+show-project: true
 ---
 *Mindful productivity made minimal, beautiful, and effortless.*
 

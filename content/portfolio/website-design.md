@@ -4,6 +4,7 @@ project-number: 1
 thumbnail: /images/Screenshot 2026-07-15 at 16-29-55 Furniture website design
   (4) Images Behance.png
 category: Design
+show-project: true
 tags:
   - Website Design
   - Minimalism
