@@ -1123,6 +1123,6 @@ a:hover {
 
 @media screen and (max-width: 768px) {
     .hero-callout-container {
-        margin-bottom: 1.5rem !important; /* Creates clear breathing room on mobile */
+        margin-bottom: 2rem !important; /* Creates clear breathing room on mobile */
     }
 }
