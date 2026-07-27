@@ -983,3 +983,45 @@ a:hover {
     padding-bottom: 3.5rem !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important; /* Matching blue theme border */
 }
+
+/* ==========================================================================
+   WHAT DO I DO: FEATURED CASE STUDIES ENHANCEMENTS
+   ========================================================================== */
+
+/* 1. Separator Line Above Featured Case Studies */
+.what-do-i-do-gallery-section {
+    margin-top: 3.5rem !important;
+    padding-top: 3.5rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.25) !important; /* Matches theme elements */
+}
+
+/* 2. Container & Card Border Radius set strictly to 2px */
+.what-do-i-do-gallery-section,
+.case-studies-gallery,
+.gallery-card,
+.gallery-thumbnail-wrapper {
+    border-radius: 2px !important;
+}
+
+/* 3. Portfolio-style Hover Effects for Gallery Cards */
+.gallery-card {
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast) !important;
+    will-change: transform, box-shadow;
+}
+
+.gallery-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(255, 255, 255, 0.45) !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Smooth zoom on thumbnail image during card hover */
+.gallery-thumbnail-img {
+    transition: transform var(--transition-smooth) !important;
+}
+
+.gallery-card:hover .gallery-thumbnail-img {
+    transform: scale(1.04) !important;
+}
