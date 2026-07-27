@@ -1370,3 +1370,39 @@ body.dark .sun-icon-logo {
         display: inline-block !important;
     }
 }
+
+/* ==========================================================================
+   NAVBAR ALIGNMENT FIX (Right-Aligned Options)
+   ========================================================================== */
+
+/* 1. Desktop: Right-align menu options */
+#menu {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important; /* Forces menu items to the right */
+    margin-left: auto !important;         /* Pushes container to the right */
+    list-style: none !important;
+    gap: 20px !important;
+}
+
+#menu li {
+    text-align: right !important;
+}
+
+/* 2. Mobile (<= 768px): Right-align stacked menu options */
+@media screen and (max-width: 768px) {
+    #menu {
+        align-items: flex-end !important; /* Aligns list items to right edge */
+        text-align: right !important;
+    }
+
+    #menu li {
+        text-align: right !important;
+    }
+
+    #menu a.active-link {
+        display: inline-block !important;
+        text-align: right !important;
+    }
+}
