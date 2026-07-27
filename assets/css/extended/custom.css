@@ -1272,3 +1272,38 @@ body.dark .sun-icon-logo {
     border-bottom: none !important;
     padding-bottom: 0 !important;
 }
+
+/* ==========================================================================
+   SUN TOGGLE STYLES (Instant Light/Dark State Visuals)
+   ========================================================================== */
+
+#theme-toggle {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.sun-icon-logo {
+    width: 20px !important;
+    height: 20px !important;
+    transition: fill 0.2s ease, stroke 0.2s ease !important;
+}
+
+/* Light Theme (when body does NOT have .dark class) */
+body:not(.dark) .sun-icon-logo {
+    fill: var(--brand-blue, #0066cc) !important;
+    stroke: var(--brand-blue, #0066cc) !important;
+}
+
+/* Dark Theme (when body HAS .dark class) */
+body.dark .sun-icon-logo {
+    fill: none !important;
+    stroke: var(--brand-blue, #0066cc) !important;
+}

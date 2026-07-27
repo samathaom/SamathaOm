@@ -33,7 +33,7 @@
         <div class="logo">
             {{- $label_text := (site.Params.label.text | default site.Title) }}
             
-            <!-- 1. Standalone Sun Toggle (Does not trigger page redirect) -->
+            <!-- 1. Standalone Sun Toggle (Works on all pages) -->
             {{- if (not site.Params.disableThemeToggle) }}
             <button id="theme-toggle" accesskey="t" title="Toggle Theme (Alt + T)" aria-label="Toggle Theme">
                 <svg class="sun-icon-logo" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -48,6 +48,20 @@
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
             </button>
+
+            <!-- Inline Theme Toggle Script -->
+            <script>
+                document.getElementById("theme-toggle").addEventListener("click", function (e) {
+                    e.preventDefault();
+                    if (document.body.classList.contains("dark")) {
+                        document.body.classList.remove("dark");
+                        localStorage.setItem("pref-theme", "light");
+                    } else {
+                        document.body.classList.add("dark");
+                        localStorage.setItem("pref-theme", "dark");
+                    }
+                });
+            </script>
             {{- end }}
 
             <!-- 2. Name Link to Homepage -->
