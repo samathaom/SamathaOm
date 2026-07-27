@@ -1,18 +1,19 @@
 ---
-title: Focomo (Focus + Pomodoro)
+title: "Focomo : Minimalist Pomodoro  "
 project-number: 8
 category: Development
 tags:
   - Software Development
   - Minimalism
   - Pomodoro
+publish: true
 ---
 *Mindful productivity made minimal, beautiful, and effortless.*
 
 ## Product Overview
 
 **Focomo** is a light-weight, web-based Pomodoro application designed to eliminate cognitive clutter and guide users into deep, sustained focus. By stripping away non-essential UI elements, Focomo provides a frictionless bridge between task setting and execution.  
-  
+
 
 
 
@@ -23,16 +24,14 @@ tags:
 | Primary Value Proposition | Zero setup time, calm visual themes, and non-intrusive sensory completion feedback |
 
 
-##   
-  
+
+
 The Problem
 
 Modern productivity tools often fail due to two psychological bottlenecks:
 
 1. **Feature Bloat & Overchoice:** Excess configuration options (complex subtasks, tags, charts) fatigue the user before work even begins.
-2. **Abrupt Sensory Interruption:** Traditional timers rely on harsh, jarring alarms that create spike anxiety instead of a peaceful transition between focus and rest.  
-  
-
+2. **Abrupt Sensory Interruption:** Traditional timers rely on harsh, jarring alarms that create spike anxiety instead of a peaceful transition between focus and rest.
 
 ## The Solution & User Psychology
 
@@ -55,8 +54,6 @@ To maintain lightning-fast load times:
 
 
 ## UI & Design Designator
-
-
 
 ## Key Results & Impact
 
