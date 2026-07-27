@@ -31,9 +31,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            {{- $label_text := (site.Params.label.text | default site.Title) }}
-            
-            <!-- 1. Standalone Sun Toggle (Works on all pages) -->
+            <!-- 1. Standalone Sun Toggle -->
             {{- if (not site.Params.disableThemeToggle) }}
             <button id="theme-toggle" accesskey="t" title="Toggle Theme (Alt + T)" aria-label="Toggle Theme">
                 <svg class="sun-icon-logo" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -49,7 +47,6 @@
                 </svg>
             </button>
 
-            <!-- Inline Theme Toggle Script -->
             <script>
                 document.getElementById("theme-toggle").addEventListener("click", function (e) {
                     e.preventDefault();
@@ -71,8 +68,17 @@
             </a>
             {{- end }}
         </div>
-        
-        <!-- 3. Navigation Links -->
+
+        <!-- 3. Hamburger Toggle Button (Visible on Mobile Only) -->
+        <button id="hamburger-toggle" aria-label="Toggle Menu" aria-expanded="false">
+            <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12" class="line-mid"></line>
+                <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
+                <line x1="3" y1="18" x2="21" y2="18" class="line-bot"></line>
+            </svg>
+        </button>
+
+        <!-- 4. Navigation Links -->
         {{- $currentPage := . }}
         <ul id="menu">
             {{- range site.Menus.main }}
@@ -88,3 +94,17 @@
         </ul>
     </nav>
 </header>
+
+<script>
+    // Hamburger Menu Toggle Logic
+    const hamburgerBtn = document.getElementById("hamburger-toggle");
+    const menuNav = document.getElementById("menu");
+
+    if (hamburgerBtn && menuNav) {
+        hamburgerBtn.addEventListener("click", function () {
+            const isExpanded = hamburgerBtn.getAttribute("aria-expanded") === "true";
+            hamburgerBtn.setAttribute("aria-expanded", !isExpanded);
+            menuNav.classList.toggle("menu-open");
+        });
+    }
+</script>

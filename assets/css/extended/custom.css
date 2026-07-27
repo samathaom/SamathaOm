@@ -1307,3 +1307,66 @@ body.dark .sun-icon-logo {
     fill: none !important;
     stroke: var(--brand-blue, #0066cc) !important;
 }
+
+/* ==========================================================================
+   MOBILE HAMBURGER MENU STYLES
+   ========================================================================== */
+
+/* Hide Hamburger button on desktop by default */
+#hamburger-toggle {
+    display: none;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    padding: 4px !important;
+    color: var(--brand-blue, #0066cc) !important;
+}
+
+.hamburger-icon {
+    width: 24px !important;
+    height: 24px !important;
+    display: block;
+}
+
+/* Mobile Media Query (Screens <= 768px) */
+@media screen and (max-width: 768px) {
+    .nav {
+        flex-wrap: wrap !important;
+        position: relative !important;
+    }
+
+    /* Show Hamburger icon on mobile */
+    #hamburger-toggle {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+    }
+
+    /* Hide desktop navigation menu by default on mobile */
+    #menu {
+        display: none !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        background: var(--theme) !important;
+        padding: 1rem 0 !important;
+        margin-top: 0.75rem !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        gap: 16px !important;
+    }
+
+    /* Display menu when hamburger is toggled active */
+    #menu.menu-open {
+        display: flex !important;
+    }
+
+    #menu li {
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    #menu a.active-link {
+        display: inline-block !important;
+    }
+}
