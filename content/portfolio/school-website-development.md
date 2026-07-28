@@ -9,7 +9,7 @@ project-number: 3
 thumbnail: /images/littlesproutsthumb.png
 category: Development
 ---
-## 📌 Project Overview
+## Project Overview
 
 - **Client:** Little Sprouts Preschool
 - **Location:** Bengalore, India
@@ -21,7 +21,7 @@ category: Development
 
 
 
-## 💬 Understanding the Goal
+## Understanding the Goal
 
 Every great project begins with active listening. During our initial discovery call, we identified the primary objective and user persona:
 
@@ -33,7 +33,7 @@ Every great project begins with active listening. During our initial discovery c
 
 &nbsp;
 
-## 🎨 User Psychology & Design System
+## User Psychology & Design System
 
 To make parents feel comfortable and confident, we selected a custom color palette and typography hierarchy:
 
@@ -45,7 +45,7 @@ To make parents feel comfortable and confident, we selected a custom color palet
 
 &nbsp;
 
-## 🛠️ Minimalist Development & Resource Optimization
+## Minimalist Development & Resource Optimization
 
 Instead of using heavy, paid CMS platforms or subscription-based plugins, we optimized resources to keep maintenance costs at **zero** for the client:
 
@@ -58,7 +58,7 @@ Instead of using heavy, paid CMS platforms or subscription-based plugins, we opt
 
 &nbsp;
 
-## 🔒 Security & Quality Assurance
+## Security & Quality Assurance
 
 Before launch, we subjected the site to rigorous cross-device testing and basic front-end protection:
 
@@ -70,7 +70,7 @@ Before launch, we subjected the site to rigorous cross-device testing and basic 
 
 &nbsp;
 
-## 🤝 Handover
+## Handover
 
 Delivered a complete, single-file HTML solution ready for free hosting on Vercel platform.  
 
@@ -78,7 +78,7 @@ Delivered a complete, single-file HTML solution ready for free hosting on Vercel
 
 &nbsp;
 
-## 📈 Key Results:
+## Key Results:
 
 - **0 Ongoing Plugin/Server Costs:** Built completely using open-source, subscription-free tech stack.
 - **100% Mobile Responsive:** Smooth user experience for parents visiting on smartphones.
