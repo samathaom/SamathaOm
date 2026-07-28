@@ -2,6 +2,11 @@
 <article class="post-single">
   <header class="post-header">
     <h1 class="post-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description }}
+    </div>
+    {{- end }}
     {{- partial "post_meta.html" . -}}
   </header>
 
@@ -18,14 +23,21 @@
       {{ end }}
     {{ end }}
 
-    <!-- Case Study Body Content -->
+    <!-- Case Study Content -->
     {{ .Content }}
 
   </div>
 
-  <!-- Portfolio Tags & Footer -->
+  <!-- Footer with Tags & Post Navigation -->
   <footer class="post-footer">
-    {{- partial "post_tags.html" . -}}
+    {{- if .Params.tags }}
+    <ul class="post-tags">
+      {{- range .Params.tags }}
+      <li><a href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    
     {{- partial "post_nav.html" . -}}
   </footer>
 </article>
