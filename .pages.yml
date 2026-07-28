@@ -63,7 +63,7 @@ content:
           - name: text
             label: Button Label
             type: string
-            default: Live Preview
+            default: "Live Preview"
           - name: url
             label: Button Link
             type: string
