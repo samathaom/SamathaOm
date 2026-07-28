@@ -31,9 +31,9 @@ Card Studio provides a zero-setup, minimalist web application that lets users bu
 | Tech Stack | HTML5, Tailwind CSS, Vanilla JavaScript |
 
 
-![](/images/cardstudio.png)
 
 
+![](/images/cardstudio-1.png)
 
 ## The Problem Statement
 
