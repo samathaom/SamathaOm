@@ -1,5 +1,5 @@
 ---
-title: Cardstudio - Instant Social Media Tool
+title: Cardstudio - Instant Social Media Design Tool
 resource-number: 3
 thumbnail: /images/cardstudio-1.png
 tags:
@@ -9,5 +9,5 @@ slider_images:
   - image: /images/cardstudio-1.png
 ---
 Card Studio lets the user with zero design knowledge to generate clean designs for various social media profiles in single place within few seconds.  
-  
+
 Try It : Cardstudio
