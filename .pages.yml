@@ -38,11 +38,11 @@ content:
       - name: show-project
         type: boolean
         default: true
+        
       - name: enable_preview
-        label: Enable Live Preview?
+        label: Show Preview / Resource Link?
         type: boolean
         default: false
-        description: Toggle ON when project is ready for preview.
     
       - name: cta_button
         label: Call To Action Button
