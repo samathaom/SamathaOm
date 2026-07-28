@@ -25,14 +25,6 @@ Card Studio provides a zero-setup, minimalist web application that lets users bu
 
 
 
-&nbsp;
-
-![](/images/cardstudio.png)
-
-
-
-&nbsp;
-
 
 | Attribute | Details |
 | ---------------- | ------------------------------------------- |
@@ -40,6 +32,12 @@ Card Studio provides a zero-setup, minimalist web application that lets users bu
 | Core Philosophy | Minimalist, zero-clutter, instant execution |
 | Tech Stack | HTML5, Tailwind CSS, Vanilla JavaScript |
 
+
+
+
+&nbsp;
+
+![](/images/cardstudio.png)
 
 
 
@@ -100,11 +98,11 @@ Building high-value products does
 
 
 
+&nbsp;
+
 ## Minimal UI Layout Designs
 
 
-
-&nbsp;
 
 ## Key Value Metrics
 
