@@ -38,7 +38,7 @@ Every great project begins with active listening. During our initial discovery c
 To make parents feel comfortable and confident, we selected a custom color palette and typography hierarchy:
 
 - **Primary Color ("Fresh Growth" Emerald Green):** Conveys growth, safety, and nature.
-- **Accent Colors (Sunshine Yellow & Sky Blue):** Creates warmth, joy, and clear Visual hierarchy for Call-to-Action (CTA) buttons.
+- **Accent Colors (Sunshine Yellow):** Creates warmth, joy, and clear Visual hierarchy for Call-to-Action (CTA) buttons.
 - **Typography:** Combined playful headline fonts (*Fredoka*) with clean, highly legible body text (*Plus Jakarta Sans*).
 
 
@@ -51,7 +51,6 @@ Instead of using heavy, paid CMS platforms or subscription-based plugins, we opt
 
 - **Tailwind CSS via CDN:** Ensures rapid rendering and instant mobile responsiveness without heavy frameworks.
 - **Infinite Gallery Loop:** Wrote a pure CSS infinite scroll animation for seamless classroom visual previews.
-- **Integrated Location & Maps:** Embedded a responsive Google Map pinpointing Jayanagar, Bengaluru alongside the tour booking form for effortless navigation.
 - **Free Form Handling:** Utilized Web3Forms API to deliver parent inquiries directly to the school's inbox without backend server overhead.
 
 
@@ -63,7 +62,6 @@ Instead of using heavy, paid CMS platforms or subscription-based plugins, we opt
 Before launch, we subjected the site to rigorous cross-device testing and basic front-end protection:
 
 - **Mobile-First Responsiveness:** Tested seamlessly across iOS, Android, and desktop screen sizes.
-- **Inspection & Content Protection:** Built-in lightweight JavaScript guards to prevent unauthorized code copying and context menu inspects.
 - **Performance Optimization:** Compressed media assets to achieve near-instantaneous load times.
 
 
