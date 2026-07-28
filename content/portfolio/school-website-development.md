@@ -6,12 +6,10 @@ cta_button:
   text: Live Preview
   url: https://work.samathaom.vercel.app/playschool.html
 project-number: 3
-thumbnail: /images/Littlesprouts.png
+thumbnail: /images/littlesproutsthumb.png
 category: Development
 ---
 ## 📌 Project Overview
-
-
 
 - **Client:** Little Sprouts Preschool
 - **Location:** Bengalore, India
@@ -22,12 +20,8 @@ category: Development
 ![](/images/Littlesprouts.png)
 
 
-&nbsp;
-
 
 ## 💬 Understanding the Goal
-
-
 
 Every great project begins with active listening. During our initial discovery call, we identified the primary objective and user persona:
 
@@ -41,8 +35,6 @@ Every great project begins with active listening. During our initial discovery c
 
 ## 🎨 User Psychology & Design System
 
-
-
 To make parents feel comfortable and confident, we selected a custom color palette and typography hierarchy:
 
 - **Primary Color ("Fresh Growth" Emerald Green):** Conveys growth, safety, and nature.
@@ -54,8 +46,6 @@ To make parents feel comfortable and confident, we selected a custom color palet
 &nbsp;
 
 ## 🛠️ Minimalist Development & Resource Optimization
-
-
 
 Instead of using heavy, paid CMS platforms or subscription-based plugins, we optimized resources to keep maintenance costs at **zero** for the client:
 
@@ -70,8 +60,6 @@ Instead of using heavy, paid CMS platforms or subscription-based plugins, we opt
 
 ## 🔒 Security & Quality Assurance
 
-
-
 Before launch, we subjected the site to rigorous cross-device testing and basic front-end protection:
 
 - **Mobile-First Responsiveness:** Tested seamlessly across iOS, Android, and desktop screen sizes.
@@ -84,8 +72,6 @@ Before launch, we subjected the site to rigorous cross-device testing and basic 
 
 ## 🤝 Handover
 
-
-
 Delivered a complete, single-file HTML solution ready for free hosting on Vercel platform.  
 
 
@@ -93,8 +79,6 @@ Delivered a complete, single-file HTML solution ready for free hosting on Vercel
 &nbsp;
 
 ## 📈 Key Results:
-
-
 
 - **0 Ongoing Plugin/Server Costs:** Built completely using open-source, subscription-free tech stack.
 - **100% Mobile Responsive:** Smooth user experience for parents visiting on smartphones.
