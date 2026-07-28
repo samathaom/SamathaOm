@@ -1,7 +1,10 @@
 ---
 title: Calming Journal Notebooks
-project-number: 3
 show-project: true
+enable_preview: false
+cta_button:
+  text: Live Preview
+project-number: 5
 thumbnail: /images/Journalbook.png
 category: Design
 tags:
