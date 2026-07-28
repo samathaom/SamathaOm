@@ -6,7 +6,7 @@ cta_button:
   text: Live Preview
   url: https://work.samathaom.vercel.app/playschool.html
 project-number: 3
-thumbnail: /images/littlesproutsthumb.png
+thumbnail: /images/Card(1).png
 category: Development
 ---
 ## Project Overview
