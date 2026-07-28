@@ -1,6 +1,10 @@
 ---
 title: Card Studio - Instant Social Media Design tool
 show-project: true
+enable_preview: true
+cta_button:
+  text: Live Preview
+  url: https://work.samathaom.vercel.app/cardstudio.html
 project-number: 7
 thumbnail: /images/cardstudio.png
 category: Development
@@ -39,8 +43,6 @@ Card Studio provides a zero-setup, minimalist web application that lets users bu
 
 
 
-&nbsp;
-
 ## The Problem Statement
 
 Designers and developers often face friction during the prototyping phase:
@@ -50,8 +52,6 @@ Designers and developers often face friction during the prototyping phase:
 3. **Inconsistent Design:** Hand-coded cards frequently suffer from poor alignment, weak visual hierarchy, and inconsistent padding across viewports.
 
 
-
-&nbsp;
 
 ## User Psychology & Design Strategy
 
@@ -100,13 +100,9 @@ Building high-value products does
 
 
 
-&nbsp;
-
 ## Minimal UI Layout Designs
 
 
-
-&nbsp;
 
 &nbsp;
 
