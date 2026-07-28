@@ -10,6 +10,7 @@ category: Development
 ---
 ## 📌 Project Overview
 
+
 - **Client:** Little Sprouts Preschool
 - **Location:** Bengalore, India
 - **Goal:** Design and develop a clean, lightweight, mobile-responsive website to increase campus tour bookings and build parent trust.
@@ -21,7 +22,8 @@ category: Development
 
 &nbsp;
 
-## 💬 Step 1: Understanding the Goal
+## 💬 Understanding the Goal
+
 
 Every great project begins with active listening. During our initial discovery call, we identified the primary objective and user persona:
 
@@ -33,7 +35,8 @@ Every great project begins with active listening. During our initial discovery c
 
 &nbsp;
 
-## 🎨 Step 2: User Psychology & Design System
+## 🎨 User Psychology & Design System
+
 
 To make parents feel comfortable and confident, we selected a custom color palette and typography hierarchy:
 
@@ -45,7 +48,8 @@ To make parents feel comfortable and confident, we selected a custom color palet
 
 &nbsp;
 
-## 🛠️ Step 3: Minimalist Development & Resource Optimization
+## 🛠️ Minimalist Development & Resource Optimization
+
 
 Instead of using heavy, paid CMS platforms or subscription-based plugins, we optimized resources to keep maintenance costs at **zero** for the client:
 
@@ -58,7 +62,8 @@ Instead of using heavy, paid CMS platforms or subscription-based plugins, we opt
 
 &nbsp;
 
-## 🔒 Step 4: Security & Quality Assurance
+## 🔒 Security & Quality Assurance
+
 
 Before launch, we subjected the site to rigorous cross-device testing and basic front-end protection:
 
@@ -70,7 +75,8 @@ Before launch, we subjected the site to rigorous cross-device testing and basic 
 
 &nbsp;
 
-## 🤝 Step 5: Handover & Results
+## 🤝 Handover 
+
 
 Delivered a complete, single-file HTML solution ready for free hosting on Vercel platform.  
 
