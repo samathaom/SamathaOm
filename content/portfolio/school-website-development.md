@@ -15,7 +15,7 @@ category: Development
 - **Client:** Little Sprouts Preschool
 - **Location:** Bengalore, India
 - **Goal:** Design and develop a clean, lightweight, mobile-responsive website to increase campus tour bookings and build parent trust.
-- **Role:** Lead Web Developer & UX Designer
+- **Role:** Lead Web Developer & UI/UX Designer
 - **Stack:** HTML5, Tailwind CSS, JavaScript (Zero bloat, zero paid plugin subscriptions)
 
 
