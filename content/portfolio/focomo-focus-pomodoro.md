@@ -6,7 +6,7 @@ cta_button:
   text: Live Preview
   url: https://work.samathaom.vercel.app/focomo.html
 project-number: 4
-thumbnail: /images/Screenshot 2026-07-28 at 20-48-24 (25 00) Focomo.png
+thumbnail: /images/Mockup 16.png
 category: Development
 tags:
   - Software Development
@@ -18,6 +18,10 @@ tags:
 ## Product Overview
 
 **Focomo** is a light-weight, web-based Pomodoro application designed to eliminate cognitive clutter and guide users into deep, sustained focus. By stripping away non-essential UI elements, Focomo provides a frictionless bridge between task setting and execution.  
+
+
+
+![](</images/Mockup 16.png>)
 
 
 
