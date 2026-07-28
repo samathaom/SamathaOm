@@ -6,6 +6,7 @@ cta_button:
   text: Live Preview
   url: https://work.samathaom.vercel.app/focomo.html
 project-number: 2
+thumbnail: /images/Screenshot 2026-07-28 at 20-48-24 (25 00) Focomo.png
 category: Development
 tags:
   - Software Development
