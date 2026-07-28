@@ -32,6 +32,20 @@
 
     {{ .Content }}
   </div>
+
+
+   <!-- Resources Tags Footer -->
+  {{- if .Params.tags }}
+  <footer class="post-footer">
+    <ul class="post-tags">
+      {{- range .Params.tags }}
+      <li><a href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a></li>
+      {{- end }}
+    </ul>
+  </footer>
+  {{- end }}
+
+
 </article>
 
 <style>

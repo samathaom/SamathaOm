@@ -13,15 +13,15 @@
   <div class="post-content">
     
     <!-- Live Preview Button -->
-    {{ if .Params.enable_preview }}
-      {{ with .Params.cta_button }}
-        <div class="preview-button-wrapper">
-          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="btn-live-preview">
-            {{ .text | default "Live Preview" }} ↗
-          </a>
-        </div>
-      {{ end }}
-    {{ end }}
+        {{ if .Params.enable_preview }}
+        {{ with .Params.cta_button }}
+            <div class="preview-button-wrapper">
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="btn-live-preview">
+                {{ if .text }}{{ .text }}{{ else }}Live Preview{{ end }} ↗
+            </a>
+            </div>
+        {{ end }}
+        {{ end }}
 
     <!-- Case Study Body Content -->
     {{ .Content }}
