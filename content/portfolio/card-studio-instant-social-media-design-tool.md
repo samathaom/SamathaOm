@@ -6,7 +6,7 @@ cta_button:
   text: Live Preview
   url: https://work.samathaom.vercel.app/cardstudio.html
 project-number: 1
-thumbnail: /images/cardstudio.png
+thumbnail: /images/cardstudio-1.png
 category: Development
 tags:
   - Software development
@@ -84,8 +84,6 @@ Building high-value products does
 | ---------------------- | ----------------------------------------- |
 | Downloaded File Name | Headline first word_Author first word.png |
 | Downloaded File Format | .png |
-
-
 
 
 ## Key Value Metrics
