@@ -23,8 +23,7 @@ category: Development
 &nbsp;
 
 ## 💬 Understanding the Goal
-
-
+&nbsp;
 
 Every great project begins with active listening. During our initial discovery call, we identified the primary objective and user persona:
 
@@ -37,6 +36,7 @@ Every great project begins with active listening. During our initial discovery c
 &nbsp;
 
 ## 🎨 User Psychology & Design System
+&nbsp;
 
 To make parents feel comfortable and confident, we selected a custom color palette and typography hierarchy:
 
@@ -49,6 +49,7 @@ To make parents feel comfortable and confident, we selected a custom color palet
 &nbsp;
 
 ## 🛠️ Minimalist Development & Resource Optimization
+&nbsp;
 
 Instead of using heavy, paid CMS platforms or subscription-based plugins, we optimized resources to keep maintenance costs at **zero** for the client:
 
@@ -62,6 +63,7 @@ Instead of using heavy, paid CMS platforms or subscription-based plugins, we opt
 &nbsp;
 
 ## 🔒 Security & Quality Assurance
+&nbsp;
 
 Before launch, we subjected the site to rigorous cross-device testing and basic front-end protection:
 
@@ -74,6 +76,7 @@ Before launch, we subjected the site to rigorous cross-device testing and basic 
 &nbsp;
 
 ## 🤝 Handover
+&nbsp;
 
 Delivered a complete, single-file HTML solution ready for free hosting on Vercel platform.  
 
@@ -82,8 +85,9 @@ Delivered a complete, single-file HTML solution ready for free hosting on Vercel
 &nbsp;
 
 ## 📈 Key Results:
+&nbsp;
 
-- **0 ₹ Ongoing Plugin/Server Costs:** Built completely using open-source, subscription-free tech stack.
+- **0 Ongoing Plugin/Server Costs:** Built completely using open-source, subscription-free tech stack.
 - **100% Mobile Responsive:** Smooth user experience for parents visiting on smartphones.
 - **High-Converting Layout:** Prominent yellow CTA buttons and location transparency drove an immediate increase in visit requests.
 
