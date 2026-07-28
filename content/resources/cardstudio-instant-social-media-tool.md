@@ -10,4 +10,4 @@ slider_images:
 ---
 Card Studio lets the user with zero design knowledge to generate clean designs for various social media profiles in single place within few seconds.  
 
-Try It : Cardstudio
+Try It : [Cardstudio](https://work.samathaom.vercel.app/cardstudio.html)
