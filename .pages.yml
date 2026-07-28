@@ -7,6 +7,7 @@ content:
     label: Articles
     type: collection
     path: content/articles
+    filename: '{slug}.md'
     fields:
       - name: title
         type: string
@@ -36,23 +37,41 @@ content:
         type: string
       - name: show-project
         type: boolean
-        default: true   
-      - name: project-number 
-        type: number   
-      - name: thumbnail
-        label: Project Thumbnail
-        type: image
-      - name: category
-        type: select
-        options:
-          values:
-            - Design
-            - Development  
-      - name: body
-        type: rich-text
-      - name: tags
-        type: string
-        list: true
+        default: true
+      - name: enable_preview
+        label: Enable Live Preview?
+        type: boolean
+        default: false
+        description: Toggle ON when project is ready for preview.
+    
+      - name: cta_button
+        label: Call To Action Button
+        type: object
+        fields:
+          - name: text
+            label: Button Label
+            type: string
+            default: "Live Preview"
+          - name: url
+            label: Button Link
+            type: string
+            
+          - name: project-number 
+            type: number   
+          - name: thumbnail
+            label: Project Thumbnail
+            type: image
+          - name: category
+            type: select
+            options:
+              values:
+                - Design
+                - Development  
+          - name: body
+            type: rich-text
+          - name: tags
+            type: string
+            list: true
      
 
   - name: resources
