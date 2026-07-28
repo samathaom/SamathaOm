@@ -5,7 +5,7 @@ enable_preview: true
 cta_button:
   text: Live Preview
   url: https://work.samathaom.vercel.app/cardstudio.html
-project-number: 7
+project-number: 1
 thumbnail: /images/cardstudio.png
 category: Development
 tags:
