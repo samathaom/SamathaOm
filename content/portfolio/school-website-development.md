@@ -14,9 +14,12 @@ category: Development
 - **Location:** Bengalore, India
 - **Goal:** Design and develop a clean, lightweight, mobile-responsive website to increase campus tour bookings and build parent trust.
 - **Role:** Lead Web Developer & UX Designer
-- **Stack:** HTML5, Tailwind CSS, JavaScript (Zero bloat, zero paid plugin subscriptions)  
-  
+- **Stack:** HTML5, Tailwind CSS, JavaScript (Zero bloat, zero paid plugin subscriptions)
 
+
+
+
+&nbsp;
 
 ## 💬 Step 1: Understanding the Goal
 
@@ -27,6 +30,8 @@ Every great project begins with active listening. During our initial discovery c
 - **Our Strategy:** Build a single-page, fast-loading, mobile-first experience using high-converting UI elements and color psychology.
 
 
+
+&nbsp;
 
 ## 🎨 Step 2: User Psychology & Design System
 
@@ -51,6 +56,8 @@ Instead of using heavy, paid CMS platforms or subscription-based plugins, we opt
 
 
 
+&nbsp;
+
 ## 🔒 Step 4: Security & Quality Assurance
 
 Before launch, we subjected the site to rigorous cross-device testing and basic front-end protection:
@@ -61,11 +68,15 @@ Before launch, we subjected the site to rigorous cross-device testing and basic 
 
 
 
+&nbsp;
+
 ## 🤝 Step 5: Handover & Results
 
 Delivered a complete, single-file HTML solution ready for free hosting on Vercel platform.  
-  
 
+
+
+&nbsp;
 
 ## 📈 Key Results:
 
