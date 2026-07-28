@@ -10,6 +10,21 @@
 
   gtag('config', 'G-SZ2HXFKXL5');
 
-  
+ 
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+    // Block keyboard shortcuts for DevTools and Source Code
+    document.addEventListener('keydown', (e) => {
+        if (
+        e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+        (e.ctrlKey && e.key === 'U') ||
+        (e.metaKey && e.altKey && (e.key === 'I' || e.key === 'J' || e.key === 'U'))
+        ) {
+        e.preventDefault();
+        }
+    });
+     
 
 </script>
