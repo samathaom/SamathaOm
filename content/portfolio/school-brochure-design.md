@@ -1,10 +1,13 @@
 ---
 title: School Brochure Design
+show-project: false
+enable_preview: false
+cta_button:
+  text: Live Preview
 project-number: 5
 thumbnail: /images/Screenshot 2026-07-15 at 16-07-18 Ekatva Public School -
   Brochure design (1) Images Behance.png
 category: Design
-show-project: true
 tags:
   - Brochure Design
   - School
