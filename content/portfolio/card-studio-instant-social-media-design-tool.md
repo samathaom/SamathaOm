@@ -17,8 +17,6 @@ tags:
 
 ## Summary
 
-
-
 **Card Studio** was conceived to solve a pervasive problem in web design and development: creating visually balanced, highly responsive, and accessible card layouts often requires repetitive custom styling, manual framework setup, and design tweaking.
 
 Card Studio provides a zero-setup, minimalist web application that lets users build, customize, and export elegant social media UI cards instantly—combining low cognitive load. It lets the user with zero design knowledge to generate clean designs for various social media profiles in single place within few seconds. 
@@ -33,8 +31,6 @@ Card Studio provides a zero-setup, minimalist web application that lets users bu
 | Tech Stack | HTML5, Tailwind CSS, Vanilla JavaScript |
 
 
-
-
 ![](/images/cardstudio.png)
 
 
@@ -46,8 +42,6 @@ Designers and developers often face friction during the prototyping phase:
 1. **Over-Engineered Tools:** Full-fledged design software (Figma, Sketch) can be overkill for quick web-card previews or component prototypes.
 2. **Setup Overhead:** Setting up local development environments just to build or tweak a single reusable card component wastes valuable focus and momentum.
 3. **Inconsistent Design:** Hand-coded cards frequently suffer from poor alignment, weak visual hierarchy, and inconsistent padding across viewports.
-
-
 
 ## User Psychology & Design Strategy
 
@@ -93,12 +87,6 @@ Building high-value products does
 
 
 
-
-## Minimal UI Layout Designs
-
-
-
-&nbsp;
 
 ## Key Value Metrics
 
