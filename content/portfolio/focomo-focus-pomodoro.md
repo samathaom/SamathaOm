@@ -17,6 +17,8 @@ tags:
 
 ## Product Overview
 
+
+
 **Focomo** is a light-weight, web-based Pomodoro application designed to eliminate cognitive clutter and guide users into deep, sustained focus. By stripping away non-essential UI elements, Focomo provides a frictionless bridge between task setting and execution.  
 
 
@@ -31,12 +33,18 @@ tags:
 
 ## The Problem
 
+
+
 Modern productivity tools often fail due to two psychological bottlenecks:
 
 1. **Feature Bloat & Overchoice:** Excess configuration options (complex subtasks, tags, charts) fatigue the user before work even begins.
 2. **Abrupt Sensory Interruption:** Traditional timers rely on harsh, jarring alarms that create spike anxiety instead of a peaceful transition between focus and rest.
 
+
+
 ## The Solution & User Psychology
+
+
 
 Focomo uses a **"Calm Tech"** design philosophy to reduce friction and encourage flow state:
 
@@ -47,6 +55,8 @@ Focomo uses a **"Calm Tech"** design philosophy to reduce friction and encourage
 
 
 ## Technical Architecture & Efficiency
+
+
 
 To maintain lightning-fast load times:
 
@@ -63,6 +73,8 @@ To maintain lightning-fast load times:
 &nbsp;
 
 ## Key Results & Impact
+
+
 
 - **Instant Load Time:** Sub-second initialization time with a total footprint under 15 KB.
 - **High User Adherence:** Clean visual zones prevent tab-switching and maintain task clarity throughout 4-session cycles.
