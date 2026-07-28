@@ -1,12 +1,16 @@
 ---
 title: "Focomo : Minimalist Pomodoro  "
+show-project: true
+enable_preview: true
+cta_button:
+  text: Live Preview
+  url: https://work.samathaom.vercel.app/focomo.html
 project-number: 8
 category: Development
 tags:
   - Software Development
   - Minimalism
   - Pomodoro
-show-project: true
 ---
 *Mindful productivity made minimal, beautiful, and effortless.*
 
@@ -22,8 +26,6 @@ show-project: true
 | Target Audience | Knowledge workers, software developers, educators, students, and minimalists |
 | Core Architecture | Single-file web app (Vanilla JS, Tailwind CSS, Web Audio API) |
 | Primary Value Proposition | Zero setup time, calm visual themes, and non-intrusive sensory completion feedback |
-
-
 
 
 The Problem

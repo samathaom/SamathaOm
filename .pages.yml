@@ -10,8 +10,11 @@ content:
     filename: '{slug}.md'
     fields:
       - name: title
+        label: Title
         type: string
+
       - name: category
+        label: Category
         type: select
         options:
           values:
@@ -19,11 +22,17 @@ content:
             - Technical
             - Design
             - Personal Development
+
       - name: body
+        label: Body
         type: rich-text
+
       - name: date
+        label: Date
         type: date
+
       - name: tags
+        label: Tags
         type: string
         list: true
 
@@ -34,18 +43,21 @@ content:
     filename: '{slug}.md'
     fields:
       - name: title
+        label: Title
         type: string
+
       - name: show-project
+        label: Show Project
         type: boolean
         default: true
-        
+
       - name: enable_preview
-        label: Show Preview / Resource Link?
+        label: Show live preview
         type: boolean
         default: false
-    
+
       - name: cta_button
-        label: Call To Action Button
+        label: CTA Button
         type: object
         fields:
           - name: text
@@ -55,24 +67,31 @@ content:
           - name: url
             label: Button Link
             type: string
-            
-          - name: project-number 
-            type: number   
-          - name: thumbnail
-            label: Project Thumbnail
-            type: image
-          - name: category
-            type: select
-            options:
-              values:
-                - Design
-                - Development  
-          - name: body
-            type: rich-text
-          - name: tags
-            type: string
-            list: true
-     
+
+      - name: project-number
+        label: Project Number
+        type: number
+
+      - name: thumbnail
+        label: Project Thumbnail
+        type: image
+
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - Design
+            - Development
+
+      - name: body
+        label: Body
+        type: rich-text
+
+      - name: tags
+        label: Tags
+        type: string
+        list: true
 
   - name: resources
     label: Resources
@@ -81,17 +100,26 @@ content:
     filename: '{slug}.md'
     fields:
       - name: title
+        label: Title
         type: string
-      - name: resource-number 
-        type: number   
+
+      - name: resource-number
+        label: Resource Number
+        type: number
+
       - name: thumbnail
         label: Resource Thumbnail
         type: image
+
       - name: body
+        label: Body
         type: rich-text
+
       - name: tags
+        label: Tags
         type: string
         list: true
+
       - name: slider_images
         label: Wallpaper Gallery
         type: object
@@ -100,6 +128,7 @@ content:
           - name: image
             label: Wallpaper Image
             type: image
+
           - name: description
             label: Description / Caption
             type: string
