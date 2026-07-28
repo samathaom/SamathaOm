@@ -1,9 +1,12 @@
 ---
 title: Premium Business Card Designs
+show-project: true
+enable_preview: false
+cta_button:
+  text: Live Preview
 project-number: 2
 thumbnail: /images/BC1 Mockup.png
 category: Design
-show-project: true
 tags:
   - Portfolio
   - Business Cards
