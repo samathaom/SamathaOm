@@ -23,22 +23,20 @@
       {{ end }}
     {{ end }}
 
-    <!-- Case Study Content -->
+    <!-- Case Study Body Content -->
     {{ .Content }}
 
   </div>
 
-  <!-- Footer with Tags & Post Navigation -->
+  <!-- Portfolio Tags Footer -->
+  {{- if .Params.tags }}
   <footer class="post-footer">
-    {{- if .Params.tags }}
     <ul class="post-tags">
       {{- range .Params.tags }}
       <li><a href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a></li>
       {{- end }}
     </ul>
-    {{- end }}
-    
-    {{- partial "post_nav.html" . -}}
   </footer>
+  {{- end }}
 </article>
 {{ end }}
