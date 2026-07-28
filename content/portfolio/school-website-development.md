@@ -6,7 +6,7 @@ cta_button:
   text: Live Preview
   url: https://work.samathaom.vercel.app/playschool.html
 project-number: 3
-thumbnail: /images/Card(1).png
+thumbnail: /images/Card(3).png
 category: Development
 ---
 ## Project Overview
@@ -16,8 +16,6 @@ category: Development
 - **Goal:** Design and develop a clean, lightweight, mobile-responsive website to increase campus tour bookings and build parent trust.
 - **Role:** Lead Web Developer & UI/UX Designer
 - **Stack:** HTML5, Tailwind CSS, JavaScript (Zero bloat, zero paid plugin subscriptions)
-
-![](/images/Littlesprouts.png)
 
 
 
@@ -31,7 +29,7 @@ Every great project begins with active listening. During our initial discovery c
 
 
 
-&nbsp;
+![](/images/Card(3).png)
 
 ## User Psychology & Design System
 
