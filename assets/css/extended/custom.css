@@ -1213,30 +1213,40 @@ a:hover {
 }
 
 
+/* Container for each category group */
 .tag-group {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    padding-top: 12px; /* Adds space above the heading */
+}
+
+/* Fix first category having no top space */
+.tag-group:first-child {
+    padding-top: 16px;
 }
 
 .tag-group:last-child {
     margin-bottom: 0;
 }
 
+/* Category Headings (Front-end, Back-end, etc.) */
 .tag-label {
     display: block;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
-    color: #666666;
-    margin-bottom: 8px;
+    color: #2563eb; /* High-contrast crisp blue (or use #000000 / #111827 for clean black) */
+    margin-bottom: 10px;
 }
 
+/* Skill pills container */
 .tag-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
 
+/* Individual skill pill */
 .skill-pill {
     display: inline-block;
     padding: 6px 12px;
