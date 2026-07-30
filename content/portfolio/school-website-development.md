@@ -5,9 +5,11 @@ enable_preview: true
 cta_button:
   text: Live Preview
   url: https://work.samathaom.vercel.app/playschool.html
-project-number: 3
+project-number: 2
 thumbnail: /images/Card(3).png
 category: Development
+tags:
+  - Website Development
 ---
 ## Project Overview
 
