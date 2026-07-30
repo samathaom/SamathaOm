@@ -1264,8 +1264,6 @@ a:hover {
     width: 100%;
     /* Option A: Change aspect-ratio to 4/3 or 3/2 for taller display */
     aspect-ratio: 4 / 3; 
-    /* Option B: Or set an explicit minimum height if preferred */
-    min-height: 260px; 
     overflow: hidden;
     border-radius: 8px 8px 0 0;
     background-color: #f4f4f5;
