@@ -1,6 +1,6 @@
 ---
 title: Calming Journal Notebooks
-show-project: true
+show-project: false
 enable_preview: false
 cta_button:
   text: Live Preview
