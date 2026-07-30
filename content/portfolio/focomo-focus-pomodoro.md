@@ -5,7 +5,7 @@ enable_preview: true
 cta_button:
   text: Live Preview
   url: https://work.samathaom.vercel.app/focomo.html
-project-number: 4
+project-number: 2
 thumbnail: /images/Focomo.png
 category: Development
 tags:
