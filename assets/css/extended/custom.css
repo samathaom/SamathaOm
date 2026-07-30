@@ -1235,7 +1235,7 @@ a:hover {
     font-weight: 700;
     letter-spacing: 0.8px;
     text-transform: uppercase;
-    color: #ffffff; /* High-contrast crisp blue (or use #000000 / #111827 for clean black) */
+    color: #ffffff; /* High-contrast white */
     margin-bottom: 10px;
 }
 
