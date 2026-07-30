@@ -168,15 +168,16 @@
             </div>
 
             <!-- Featured Case Studies Gallery -->
-            <div class="what-do-i-do-gallery-section">
-                <h3 class="gallery-section-title">Featured Case Studies</h3>
+            <div class="featured-projects-section">
+                <h3 class="section-title">Featured Projects</h3>
                 
                 <div class="case-studies-gallery">
                     {{- $allPortfolio := where .Site.RegularPages "Section" "portfolio" -}}
+                    {{- $visiblePortfolio := where $allPortfolio "Params.show-project" true -}}
                     
                     {{- range seq 1 2 -}}
                         {{- $targetNum := . -}}
-                        {{- range where $allPortfolio "Params.project-number" $targetNum -}}
+                        {{- range where $visiblePortfolio "Params.project-number" $targetNum -}}
                             {{- $pTitle := .Title | default .Params.title | default .Name -}}
                             {{- $pImg := .Params.image | default .Params.thumbnail | default (index (findRE "<img[^>]+src=\"([^\">]+)\"" .Content 1) 0) -}}
                             {{- $pImgUrl := "" -}}
@@ -198,15 +199,15 @@
                                         {{- end -}}
                                     </div>
                                     <div class="gallery-card-content">
-                                        <span class="gallery-card-tag">CASE STUDY</span>
+                                        <span class="gallery-card-tag">PROJECT</span>
                                         <h4 class="gallery-card-heading">{{ $pTitle }}</h4>
                                     </div>
                                 </a>
                             </div>
                         {{- end -}}
-                    {{- end -}}
-                </div>
-            </div>
+        {{- end -}}
+    </div>
+</div>
         </div>
     </section>
 

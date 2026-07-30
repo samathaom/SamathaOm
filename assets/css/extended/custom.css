@@ -1257,3 +1257,22 @@ a:hover {
     border: 1px solid #e4e4e7;
     white-space: nowrap;
 }
+
+/* Container for image maintaining clean ratio */
+.gallery-thumbnail-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Ensures proper frame proportion */
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    background-color: #f4f4f5;
+}
+
+/* Full image display fix */
+.gallery-thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Displays full edge-to-edge content cleanly */
+    object-position: center;
+    display: block;
+}
