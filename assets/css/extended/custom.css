@@ -1262,8 +1262,7 @@ a:hover {
 .gallery-thumbnail-wrapper {
     position: relative;
     width: 100%;
-    /* Option A: Change aspect-ratio to 4/3 or 3/2 for taller display */
-    aspect-ratio: 4 / 3; 
+    height: 100%;
     overflow: hidden;
     border-radius: 8px 8px 0 0;
     background-color: #f4f4f5;
