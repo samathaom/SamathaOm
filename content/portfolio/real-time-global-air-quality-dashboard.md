@@ -31,8 +31,6 @@ Modern weather and environmental applications often suffer from visual clutter, 
 
 
 
-![](</images/Screenshot 2026-08-03 at 05-02-07 Air Quality Dashboard Samatha Om.png>)
-
 ![](/images/aqidashboard.png)
 
 
