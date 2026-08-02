@@ -6,7 +6,7 @@ cta_button:
   text: Live Preview
   url: https://airqidashboard.vercel.app/
 project-number: 1
-thumbnail: /images/Screenshot 2026-08-03 at 05-02-07 Air Quality Dashboard Samatha Om.png
+thumbnail: /images/aqidashboard.png
 category: Development
 tags:
   - ReactJS
@@ -28,6 +28,14 @@ Modern weather and environmental applications often suffer from visual clutter, 
 - **Geospatial Interaction:** Provide an interactive world map highlighting global extremes (cleanest vs. worst cities).
 - **Minimalist Aesthetics:** Implement a dark-mode, card-based layout inspired by modern design systems, optimizing for readability and zero cognitive overload.
 - **Component Modularity:** Isolate logic into self-contained React modules with robust error handling and smooth fallback states.
+
+
+
+![](</images/Screenshot 2026-08-03 at 05-02-07 Air Quality Dashboard Samatha Om.png>)
+
+![](/images/aqidashboard.png)
+
+
 
 ## Technical Architecture & Tech Stack
 
