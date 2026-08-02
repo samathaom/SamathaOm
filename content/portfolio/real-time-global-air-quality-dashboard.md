@@ -4,6 +4,7 @@ show-project: true
 enable_preview: true
 cta_button:
   text: Live Preview
+  url: https://airqidashboard.vercel.app/
 project-number: 1
 thumbnail: /images/Screenshot 2026-08-03 at 05-02-07 Air Quality Dashboard Samatha Om.png
 category: Development
