@@ -35,6 +35,8 @@ Modern weather and environmental applications often suffer from visual clutter, 
 
 
 
+&nbsp;
+
 ## Technical Architecture & Tech Stack
 
 - **Frontend Library:** React (Functional components, Hooks: `useState`, `useEffect`)
