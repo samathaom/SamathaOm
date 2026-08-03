@@ -5,7 +5,7 @@ enable_preview: true
 cta_button:
   text: Live Preview
   url: https://work.samathaom.vercel.app/cardstudio.html
-project-number: 1
+project-number: 2
 thumbnail: /images/cardstudio-1.png
 category: Development
 tags:
@@ -29,8 +29,6 @@ Card Studio provides a zero-setup, minimalist web application that lets users bu
 | Product Category | Social media design tool |
 | Core Philosophy | Minimalist, zero-clutter, instant execution |
 | Tech Stack | HTML5, Tailwind CSS, Vanilla JavaScript |
-
-
 
 
 ![](/images/cardstudio-1.png)
