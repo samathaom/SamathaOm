@@ -1276,3 +1276,9 @@ a:hover {
     object-position: center;
     display: block;
 }
+
+/* Fix missing code block background in Pages CMS */
+pre, code {
+  background-color: #0f172a !important; /* Tailwind slate-900 */
+  color: #e2e8f0 !important;          /* Tailwind slate-200 */
+}
