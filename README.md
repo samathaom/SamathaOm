@@ -1,5 +1,5 @@
 # Hi 👋, I'm Samatha Om 
-### Lead Front-End Engineer | Full Stack Engineer | Product Designer
+### Lead Front-End Engineer | Full Stack Engineer
 
 I craft high-performance web applications and intuitive design systems. 
 Focusing on clean code, design thinking, and cloud architecture.
