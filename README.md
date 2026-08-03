@@ -25,5 +25,6 @@ Design    : Figma | Design Systems | UI/UX Research | Rapid Prototyping
 
 ### 📌 Featured Projects
 
+
 | <a href="https://airqidashboard.vercel.app/"><img src="./assets/aqidashboard1.png" alt="Real-Time Global Air Quality Dashboard" width="300" height="200" style="object-fit: cover;" /></a> <br>**[Real-Time Global Air Quality Dashboard](https://airqidashboard.vercel.app/)** | <a href="https://work.samathaom.vercel.app/cardstudio.html"><img src="./assets/cardstudio.png" alt="Card Studio — Instant Social Media Design Tool" width="300" height="200" style="object-fit: cover;" /></a> <br>**[Card Studio — Instant Design Tool](https://work.samathaom.vercel.app/cardstudio.html)**  |
 | :--- | :--- |
