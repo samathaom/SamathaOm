@@ -25,6 +25,8 @@ Design    : Figma | Design Systems | UI/UX Research | Rapid Prototyping
 
 ### 📌 Featured Projects
 
-| [![Real-Time Global Air Quality Dashboard]([./assets/aqidasboard1.png]]| [![Card Studio — Instant Social Media Design Tool](./assets/cardstudio.png)] |
+### 📌 Featured Projects
+
+| <a href="https://github.com/your-username/air-quality-dashboard"><img src="./assets/aqidasboard1.png" alt="Real-Time Global Air Quality Dashboard" width="100%" /></a> | <a href="https://github.com/your-username/card-studio"><img src="./assets/cardstudio.png" alt="Card Studio — Instant Social Media Design Tool" width="100%" /></a> |
 | :--- | :--- |
 | **[Real-Time Global Air Quality Dashboard](https://github.com/your-username/air-quality-dashboard)** <br> Real-time environmental tracking built with WebSockets, React, and AWS Serverless architecture. | **[Card Studio — Instant Design Tool](https://github.com/your-username/card-studio)** <br> Minimalist visual asset generator built with Next.js, Canvas API, and TypeScript. |
