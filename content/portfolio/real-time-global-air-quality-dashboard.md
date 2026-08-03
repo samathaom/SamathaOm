@@ -120,7 +120,7 @@ useEffect(() => {
     setLoading(true);
     try {
       const res = await fetch(
-        `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${targetLat}&longitude=${targetLng}&current=us_aqi&hourly=us_aqi&forecast_days=7&past_days=7`
+        `aqi api call`
       );
       const data = await res.json();
       
