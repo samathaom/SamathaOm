@@ -25,6 +25,6 @@ Design    : Figma | Design Systems | UI/UX Research | Rapid Prototyping
 
 ### 📌 Featured Projects
 
-| [![Real-Time Global Air Quality Dashboard](https://raw.githubusercontent.com/your-username/air-quality-dashboard/main/thumbnail.png)](https://github.com/your-username/air-quality-dashboard) | [![Card Studio — Instant Social Media Design Tool](https://raw.githubusercontent.com/your-username/card-studio/main/thumbnail.png)](https://github.com/your-username/card-studio) |
+| [![Real-Time Global Air Quality Dashboard]([https://raw.githubusercontent.com/your-username/air-quality-dashboard/main/thumbnail.png)](https://github.com/samathaom/SamathaOm/blob/main/assets/aqidashboard1.png)](https://github.com/your-username/air-quality-dashboard) | [![Card Studio — Instant Social Media Design Tool](https://raw.githubusercontent.com/your-username/card-studio/main/thumbnail.png)](https://github.com/your-username/card-studio) |
 | :--- | :--- |
 | **[Real-Time Global Air Quality Dashboard](https://github.com/your-username/air-quality-dashboard)** <br> Real-time environmental tracking built with WebSockets, React, and AWS Serverless architecture. | **[Card Studio — Instant Design Tool](https://github.com/your-username/card-studio)** <br> Minimalist visual asset generator built with Next.js, Canvas API, and TypeScript. |
